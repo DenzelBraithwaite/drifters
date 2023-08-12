@@ -25,8 +25,9 @@
 
 <main>
     <div class="game-board">
-        <h1>Hello World</h1>
+        <Button>Left</Button>
         <Card />
+        <Button>Right</Button>
     </div>
 </main>
 
@@ -34,8 +35,8 @@
 <style>
     .game-board {
         position: relative;
-        height: 85dvh;
-        width: 90%;
+        height: 90dvh;
+        width: 30%;
         padding: 0.5rem;
         max-width: 1500px;
         margin: 1rem auto;

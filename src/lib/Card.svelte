@@ -7,7 +7,6 @@
   export let img = '/public/card-bg.png';
   export let stats = {};
   export let deck = 'starter';
-  export let text = '';
 
   const createEvent = createEventDispatcher();
 
@@ -27,11 +26,9 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div on:click={cardClickHandler} class="card">
   <img class="card-img" src={img} alt="img of card">
-  <p class="card-title">{title}</p>
-  <div class="card-bottom-section">
-    <div class="bottom-section-wrapper">
-      <p>{text}</p>
-    </div>
+  <div class="dialogue-box">
+    <p class="card- "><slot /></p>
+    <p class="card-text"><slot /></p>
   </div>
 </div>
 
