@@ -4,11 +4,13 @@
 
   // props
   export let title = '';
-  export let img = '/public/card-bg.png';
+  export let img = '/public/humans/villager.png';
   export let stats = {};
   export let deck = 'starter';
 
   const createEvent = createEventDispatcher();
+  let leftTextVisible = true;
+  let rightTextVisible = true;
 
   function cardClickHandler(event) {    
     createEvent('cardClick', {
@@ -27,8 +29,12 @@
 <div on:click={cardClickHandler} class="card">
   <img class="card-img" src={img} alt="img of card">
   <div class="dialogue-box">
-    <p class="card- "><slot /></p>
-    <p class="card-text"><slot /></p>
+    {#if leftTextVisible}
+      <!-- <p class="text-left"><slot name="text-left"/></p> -->
+    {/if}
+    {#if rightTextVisible}
+      <!-- <p class="text-right"><slot name="text-right"/></p> -->
+    {/if}
   </div>
 </div>
 
@@ -37,9 +43,8 @@
     z-index: 0;
     cursor: pointer;
     position: relative;
-    width: 10.5rem;
-    height: 14.5rem;
-    border-radius: 0.25rem;
+    width: 100%;
+    border-radius: 1rem;
     box-shadow: 0 4px 12px #00000063;
     transition: all 0.3s ease-out;
 
@@ -50,66 +55,34 @@
   }
 
   .card:hover {
-    scale: 1.4;
+    scale: 1.05;
     z-index: 2;
     box-shadow: 0 4px 12px #000000a8;
   }
 
-  .card-bottom-section {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff3b;
-    overflow-y: scroll;
-    border-radius: 0.25rem;
-    text-align: center;
-    line-height: 1.125;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .card-title {
-    color: #ddd;
-    width: 100%;
-    height: 4rem;
-    text-shadow: 0 2px 8px #000000a8;
-    font-size: 1.25rem;
-    font-weight: bold;
-    text-align: center;
-    z-index: 10;
-    white-space: nowrap;
-    font-size: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .card-img {
-    height: 55%;
     width: 100%;
+    height: 480px;
     object-fit: contain;
     object-position: center;
-    border-radius: 0.25rem 0.25rem 0 0;
+    border-radius: 1rem;
+    background-color: rgba(116, 176, 255, 0.781);
   }
 
-  .bottom-section-wrapper::-webkit-scrollbar,
-  .card-bottom-section::-webkit-scrollbar {
-    background: transparent;
-    width: 0;
+  .text-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
   }
 
-  .bottom-section-wrapper {
-    width: 90%;
-    padding-bottom: 0.9rem;
-    font-size: 0.85rem;
-    color: #ebebeb;
-    text-shadow: 0 1px 3px #0000008f;
-    padding-top: 0.5rem;
-    overflow-y: scroll;
+  .text-right {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    font-size: 2rem;
   }
+
 
     /* Animation */
     @keyframes slideInLeft {

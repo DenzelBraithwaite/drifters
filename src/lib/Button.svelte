@@ -49,24 +49,6 @@
         font-family: Roboto;
     }
 
-    /* utility classes */
-    .w-100 {
-        width: 100%;
-    }
-
-    .w-50 {
-        width: 50%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .w-25 {
-        width: 25%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
 
     /* background colors */                
     .btn__green {

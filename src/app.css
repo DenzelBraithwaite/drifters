@@ -1,3 +1,4 @@
+/* Add scss */
 :root {
   --background-grey: #242424;
 
@@ -22,7 +23,11 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color: #ffffffde;
-  background-color: #242424;
+  /* background-color: #242424; */
+  background: url('/adventure-bg.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
 }
 
 html,
