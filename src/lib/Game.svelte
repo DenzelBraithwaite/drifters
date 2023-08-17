@@ -80,7 +80,7 @@
         margin: 0 auto;
         border-radius: 1rem;
         background-color: #001820ec;
-        box-shadow: 0 0.25rem 1rem #0a5c772b;
+        box-shadow: 0 0.25rem 1rem #0a5c77c7;
 
     }
 
