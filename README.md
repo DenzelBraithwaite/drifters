@@ -1,8 +1,12 @@
 # Drifters
-## A Card based decision making story survival game.
+### A Card based decision making story survival game.
+
+<br>
 
 More info coming soon...
 
+<br>
+<br>
 ___
 
 # Svelte + TS + Vite
