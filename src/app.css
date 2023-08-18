@@ -1,7 +1,8 @@
 /* Add scss */
 :root {
   --background-grey: #242424;
-
+  --cursor: url('/cursors/cursor.png'), auto;
+  --pointer: url('/cursors/pointer.png'), auto;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,11 +24,9 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color: #ffffffde;
-  /* background-color: #242424; */
-  background: url('/adventure-bg.png');
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-position: center;
+  background-color: #080808;
+  cursor: var(--cursor);
+
 }
 
 html,
@@ -38,6 +37,7 @@ h3,
 h4,
 h5,
 h6,
+main,
 p,
 a,
 pre,
@@ -50,4 +50,6 @@ tr,
 th {
   margin: 0;
   padding: 0;
+  font-family: 'Inconsolata', monospace, sans-serif;
+  letter-spacing: 1px;
 }

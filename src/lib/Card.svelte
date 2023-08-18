@@ -4,47 +4,76 @@
 
   // props
   export let title = '';
-  export let img = '/public/humans/villager.png';
+  export let img = '/public/decks/tutorial/question-mark.png';
   export let stats = {};
   export let deck = 'starter';
 
   const createEvent = createEventDispatcher();
-  let leftTextVisible = true;
-  let rightTextVisible = true;
+  let leftTextVisible = false;
+  let rightTextVisible = false;
+  let cardHover = false;
 
-  function cardClickHandler(event) {    
-    createEvent('cardClick', {
-    })
+  function showLeftText() {
+    cardHover = true;
+    leftTextVisible = true;
+    rightTextVisible = false;
   }
 
-  function capitalize(string){
-    const firstHalf = string[0].toUpperCase();
-    const secondHalf = string.slice(1);
-    return firstHalf + secondHalf;
-  };
+  function showRightText() {
+    cardHover = true;
+    rightTextVisible = true;
+    leftTextVisible = false;
+  }
+
+  function hideText() {
+    cardHover = false;
+    rightTextVisible = false;
+    leftTextVisible = false;
+  }
+
+  // TODO: Maybe move this back to inline if it's a one liner
+  function actionHandler(decision) {
+
+    createEvent('decision', decision);
+  }
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div on:click={cardClickHandler} class="card">
-  <img class="card-img" src={img} alt="img of card">
-  <div class="dialogue-box">
+<div class="card-wrapper">
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <span class="text-left" 
+   on:mouseover={showLeftText} 
+   on:mouseout={hideText}
+   on:click={() => actionHandler('left')}>
     {#if leftTextVisible}
-      <!-- <p class="text-left"><slot name="text-left"/></p> -->
+      <p><slot name="text-left" /></p>
     {/if}
+  </span>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <span class="text-right" 
+   on:mouseover={showRightText} 
+   on:mouseout={hideText}
+   on:click={() => actionHandler('right')}>
     {#if rightTextVisible}
-      <!-- <p class="text-right"><slot name="text-right"/></p> -->
+      <p><slot name="text-right" /></p>
     {/if}
+  </span>
+
+  <div class="card" class:card-hover={cardHover}>
+    <img class="card-img" src={img} alt="img of card">
+    <div class="dialogue-box">
+    </div>
   </div>
 </div>
 
-<style>
+
+<style style="scss">
   .card {
     z-index: 0;
-    cursor: pointer;
     position: relative;
     width: 100%;
-    border-radius: 1rem;
+    border-radius: 5rem 1rem 5rem 1rem;
     box-shadow: 0 4px 12px #00000063;
     transition: all 0.3s ease-out;
 
@@ -54,35 +83,78 @@
     justify-content: space-evenly;
   }
 
-  .card:hover {
-    scale: 1.05;
+  .card-hover {
+    scale: 1.0125;
     z-index: 2;
     box-shadow: 0 4px 12px #000000a8;
+    filter: blur(4px);
   }
 
   .card-img {
     width: 100%;
-    height: 480px;
-    object-fit: contain;
+    max-height: 450px;
+    background-repeat: no-repeat;
+    object-fit: cover;
     object-position: center;
-    border-radius: 1rem;
-    background-color: rgba(116, 176, 255, 0.781);
+    border-radius: 5rem 1rem 5rem 1rem;
+
   }
 
   .text-left {
+    height: 100%;
+    width: 50%;
+    padding: 1.125rem;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    border-radius: 5rem 0 0 1rem;
+    transition: all 0.3s ease-out;
+    
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 2rem;
+    z-index: 10;
+
+    &:hover {
+      scale: 1.02;
+      background-color: #a55bda5b;
+      text-align: center;
+      cursor: var(--pointer);
+    }
+
+    &:active {
+      transition: scale 0.3s ease-out;
+      scale: 1.01;
+      border-radius: 5.5rem 0 0 1.5rem;
+    }
   }
 
   .text-right {
+    height: 100%;
+    width: 50%;
+    padding: 1.125rem;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    border-radius: 0 1rem 5rem 0;
+    transition: all 0.3s ease-out;
+    
     position: absolute;
-    top: 2rem;
+    top: 0;
     right: 0;
-    font-size: 2rem;
-  }
+    z-index: 10;
 
+    &:hover {
+      scale: 1.02;
+      background-color: #2cb7b25b;
+      text-align: center;
+      cursor: var(--pointer);
+    }
+
+    &:active {
+      scale: 1.01;
+      transition: scale 0.3s ease-out;
+      border-radius: 0 1.5rem 5.5rem 0;
+    }
+  }
 
     /* Animation */
     @keyframes slideInLeft {
