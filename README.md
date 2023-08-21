@@ -1,3 +1,14 @@
+# Drifters
+### A Card based decision making story survival game.
+
+<br>
+
+More info coming soon...
+
+<br>
+<br>
+___
+
 # Svelte + TS + Vite
 
 This template should help get you started developing with Svelte and TypeScript in Vite.
