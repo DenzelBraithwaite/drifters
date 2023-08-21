@@ -7,17 +7,18 @@
     import player from './stores/player.js';
 
     const tutorialDeck = $allDecks.tutorial;
+    const chapter1Deck = $allDecks.chapter1;
     let gameOver = false;
     let tutorialActive = true;
     let currentCard = {
-        imgUrl: tutorialDeck.firstCard.imgUrl,
-        title: tutorialDeck.firstCard.title,
-        text: tutorialDeck.firstCard.text,
-        faction: tutorialDeck.firstCard.faction,
-        textLeft: tutorialDeck.firstCard.textLeft,
-        textRight: tutorialDeck.firstCard.textRight,
-        actionLeft: tutorialDeck.firstCard.actionLeft,
-        actionRight: tutorialDeck.firstCard.actionRight
+        imgUrl: tutorialDeck.card1.imgUrl,
+        title: tutorialDeck.card1.title,
+        text: tutorialDeck.card1.text,
+        faction: tutorialDeck.card1.faction,
+        textLeft: tutorialDeck.card1.textLeft,
+        textRight: tutorialDeck.card1.textRight,
+        actionLeft: tutorialDeck.card1.actionLeft,
+        actionRight: tutorialDeck.card1.actionRight
     }
     
     function actionHandler(event) {
@@ -46,9 +47,23 @@
 
         // TODO: Check if player died
         if (isPlayerDead()) gameOver = true;
+
+        // TODO: Make sure the same card doesn't appear twice during one playthrough
+        // Fetch new card
+        const deck = Object.keys(chapter1Deck);
+        const index = Math.floor(Math.random() * deck.length);
+        const newCard = deck[index];
+        
+        
+        currentCard = chapter1Deck[newCard];
+        $player.cardsDiscovered = [currentCard, ...$player.cardsDiscovered] // TODO: Use update
+        delete chapter1Deck[newCard];
+
     }
 
     function drawCard(deck, card) {
+        const cards = Object.keys(deck);
+        const randomNum = Math.floor(Math.random() * cards.length);
 
     }
 
@@ -62,8 +77,22 @@
 
     function isPlayerDead() {
         if ($player.health <= 0 || $player.sanity <= 0 || $player.hunger <= 0 || $player.impulse <= 0) {
+            resetPlayer();
             return true;
         }
+    }
+
+    function resetPlayer() {
+        player.update(p => {
+            p.name = 'unknown';
+            p.timesReborn += 1;
+            p.health = 6;
+            p.sanity = 6;
+            p.hunger = 6;
+            p.impulse = 6;
+
+            return p;
+        })
     }
 </script>
 
@@ -75,7 +104,7 @@
         </div>
     {:else}
         <div class="stats-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon red-icon">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon red-icon">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
             </svg>              
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon green-icon">
@@ -89,7 +118,12 @@
             </svg>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon white-icon">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
-            </svg>                                                                     
+            </svg>-->
+            <p class="red-icon">HP: {$player.health}</p>
+            <p class="green-icon">SNT: {$player.sanity}</p>
+            <p class="pink-icon">HGR: {$player.hunger}</p>
+            <p class="yellow-icon">IMP: {$player.impulse}</p>
+            <p class="white-icon">MRY: {$player.memory}</p>
         </div>
         <div class="container">
             <div class="card-text">
@@ -174,22 +208,27 @@
 
     .red-icon {
         stroke: #8c2323;
+        color: #8c2323;
     }
     
     .green-icon {
         stroke: #509150;
+        color: #509150;
     }
     
     .pink-icon {
         stroke: #b07680;
+        color: #b07680;
     }
     
     .yellow-icon {
         stroke: #b5b559;
+        color: #b5b559;
     }
     
     .white-icon {
         stroke: #fff;
+        color: #fff;
     }
 
     .bottom-text-wrapper {

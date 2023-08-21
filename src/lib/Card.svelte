@@ -33,7 +33,6 @@
 
   // TODO: Maybe move this back to inline if it's a one liner
   function actionHandler(decision) {
-
     createEvent('decision', decision);
   }
 </script>
@@ -100,7 +99,9 @@
 
   }
 
+  /* TODO: text-left and right are very similar, make one class */
   .text-left {
+    text-shadow: 0 2px 4px #000000c3;
     height: 100%;
     width: 50%;
     padding: 1.125rem;
@@ -129,6 +130,7 @@
   }
 
   .text-right {
+    text-shadow: 0 2px 4px #000000c3;
     height: 100%;
     width: 50%;
     padding: 1.125rem;

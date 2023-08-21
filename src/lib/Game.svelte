@@ -1,7 +1,4 @@
 <script>
-    // Hooks
-    import { onMount } from 'svelte';
-
     // Custom components
     import GameClient from '../lib/GameClient.svelte';
 
@@ -79,8 +76,8 @@
         background-position: center;
     }
 
-    .bg__cherry-blossom-bg {
-        background: url('/backgrounds/cherry-blossom.gif');
+    .bg__cherry-blossom {
+        background: url('/backgrounds/cherry-blossom-bg.gif');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
