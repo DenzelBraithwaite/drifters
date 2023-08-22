@@ -1,9 +1,11 @@
 <script>
+  import { draw } from 'svelte/transition';
     import Card from './Card.svelte';
   import Game from './Game.svelte';
 
     // Stores
-    import allDecks from './stores/allDecks';
+    import { allDecks, newDeck } from './stores/allDecks';
+
     import player from './stores/player.js';
 
     const tutorialDeck = $allDecks.tutorial;
@@ -46,25 +48,27 @@
         }
 
         // TODO: Check if player died
-        if (isPlayerDead()) gameOver = true;
+        if (isPlayerDead()) {
+            gameOver = true;
+            resetPlayer();
+            resetDecks();
+        }
 
         // TODO: Make sure the same card doesn't appear twice during one playthrough
-        // Fetch new card
-        const deck = Object.keys(chapter1Deck);
-        const index = Math.floor(Math.random() * deck.length);
-        const newCard = deck[index];
-        
-        
-        currentCard = chapter1Deck[newCard];
-        $player.cardsDiscovered = [currentCard, ...$player.cardsDiscovered] // TODO: Use update
-        delete chapter1Deck[newCard];
-
+        drawCard(chapter1Deck);
     }
 
-    function drawCard(deck, card) {
+    function drawCard(deck) {
         const cards = Object.keys(deck);
-        const randomNum = Math.floor(Math.random() * cards.length);
+        const index = Math.floor(Math.random() * cards.length);
+        const newCard = cards[index];
 
+        currentCard = deck[newCard];
+        delete deck[newCard];
+        player.update(p => {
+            p.cardsDiscovered = [currentCard, ...p.cardsDiscovered];
+            return p;
+        });
     }
 
     function playTutorial() {
@@ -93,6 +97,11 @@
 
             return p;
         })
+    }
+
+    function resetDecks() {
+        allDecks.set({...$newDeck});
+
     }
 </script>
 
