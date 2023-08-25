@@ -18,8 +18,8 @@
     const chapter1Deck = $allDecks.chapter1;
 
     // Handles which deck is displayed
-    let tutorialActive = false;
-    let chapter1Active = true;
+    let tutorialActive = true;
+    let chapter1Active = false;
 
     // Tutorial Deck
     let currentTutorialCard = {...tutorialDeck.card1};
@@ -93,7 +93,7 @@
             setTimeout(() => {
                 tutorialActive = false;
                 chapter1Active = true;
-                currentCard = $allDecks.chapter1.card1;
+                currentCard = $allDecks.chapter1.card1a;
                 $backgrounds.active = 'bg__adventure';
             }, 8000)
 
@@ -209,7 +209,7 @@
         position: relative;
         height: 800px;
         width: 30%;
-        min-width: 300px;
+        min-width: 475px;
         max-width: 700px;
         margin: 0 auto;
         border-radius: 5rem 1rem 5rem 1rem;
