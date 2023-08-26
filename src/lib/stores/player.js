@@ -3,7 +3,8 @@ import { writable } from 'svelte/store';
 const player = writable({
     name: 'Unknown',
     timesReborn: 0,
-    cardsDiscovered: [],
+    unlockedCards: [],
+    soldierDeckUnlocked: false,
     health: 6,
     sanity: 6,
     hunger: 6,

@@ -16,36 +16,29 @@
     const tutorialDeck = $allDecks.tutorial;
     const survey1Deck = $allDecks.survey1;
     const chapter1Deck = $allDecks.chapter1;
+    const soldierDeck = $allDecks.chapter1Soldiers;
+    
+    // For timer to show when a new deck has been added.
+    let cardUnlockedAlert = false;
 
     // Handles which deck is displayed
     let tutorialActive = true;
     let chapter1Active = false;
 
     // Tutorial Deck
-    let currentTutorialCard = {...tutorialDeck.card1};
+    let currentTutorialCard = {...tutorialDeck[0]};
 
-    let currentCard = {
-        imgUrl: tutorialDeck.card1.imgUrl,
-        title: tutorialDeck.card1.title,
-        text: tutorialDeck.card1.text,
-        faction: tutorialDeck.card1.faction,
-        textLeft: tutorialDeck.card1.textLeft,
-        textRight: tutorialDeck.card1.textRight,
-        actionLeft: tutorialDeck.card1.actionLeft,
-        actionRight: tutorialDeck.card1.actionRight
-    }
+    let currentCard;
 
+    // FIXME: broken still
     function drawRandomCard(deck) {
-        const cards = Object.keys(deck);
-        const index = Math.floor(Math.random() * cards.length);
-        const newCard = cards[index];
+        const index = Math.floor(Math.random() * deck.length);
+        currentCard = deck[index];
+        deck.splice(0, index);
 
-        currentCard = deck[newCard];
-        delete deck[newCard];
-        player.update(p => {
-            p.cardsDiscovered = [currentCard, ...p.cardsDiscovered];
-            return p;
-        });
+        // player.update(p => {
+        //     return p;
+        // });
     }
 
     function drawCard(card) {
@@ -54,7 +47,23 @@
     
     function actionHandler(event) {
         const choice = event.detail;
-        console.log(choice);
+
+        // Check if chapter 1 cards are done, then move on to survey 2 and more Paul dialogue
+        // if ($player.unlockedCards.id === survey1Deck.card10.id) {
+        //     setTimeout(() => {
+        //         tutorialActive = false;
+        //         chapter1Active = true;
+        //         $backgrounds.active = 'bg__adventure';
+        //         $player.unlockedCards = [{...chapter1Deck}];
+
+        //         const cards = Object.keys($player.unlockedCards[0])
+        //         const index = Math.floor(Math.random() * cards.length);
+        //         const cardDrawn = cards[index];
+        //         currentCard = $player.unlockedCards[0][cardDrawn];
+
+        //     }, 6000);
+
+        // }
 
         if (choice === 'left') {
             player.update(p => {
@@ -76,6 +85,18 @@
             });
         }
 
+        // Add soldier deck
+        if (!$player.soldierDeckUnlocked && $player.memory >= 5) {
+            $player.soldierDeckUnlocked = true;
+            $player.unlockedCards = [...soldierDeck, ...chapter1Deck];
+            cardUnlockedAlert = true;
+
+
+            setTimeout(() => {
+                cardUnlockedAlert = false;
+            }, 4000);
+        }
+
         if (isPlayerDead()) {
             gameOver = true;
             resetPlayer();
@@ -83,18 +104,28 @@
         }
 
         // TODO: Make sure the same card doesn't appear twice during one playthrough
-        drawRandomCard(chapter1Deck);
+        // Pick random deck
+        const deckIndex = Math.floor(Math.random() * $player.unlockedCards.length);
+        console.log($player.unlockedCards);
+        drawRandomCard($player.unlockedCards[deckIndex]);
     }
 
     function playTutorial(event) {
-        currentTutorialCard = tutorialHandler(event, currentTutorialCard)
-        if (currentTutorialCard.id === survey1Deck.card10.id) {
+        currentTutorialCard = tutorialHandler(event, currentTutorialCard);
+        const lastCard = tutorialDeck.find(card => card.id === 'tutorial-10');
+
+        if (currentTutorialCard.id === lastCard.id) {
             setTimeout(() => {
                 tutorialActive = false;
                 chapter1Active = true;
-                currentCard = $allDecks.chapter1.card1a;
                 $backgrounds.active = 'bg__adventure';
-            }, 8000);
+                $player.unlockedCards = [...chapter1Deck];
+
+                const index = Math.floor(Math.random() * $player.unlockedCards.length);
+                const cardDrawn = $player.unlockedCards[index];
+                currentCard = cardDrawn;
+
+            }, 6000);
 
         }
     }
@@ -185,6 +216,7 @@
             </div>
             <div class="container">
                 <div class="card-text">
+                    <p class:show={cardUnlockedAlert} class="new-card-alert">Soldier deck has been unlocked.</p>
                     <p>{currentCard.text}</p>
                 </div>
                 <div class="card-wrapper">
@@ -240,6 +272,7 @@
     }
 
     .card-text {
+        position: relative;
         background: linear-gradient(to right, #0f0814ef, #061a19);
         width: 100%;
         padding: 0.75rem;
@@ -315,5 +348,22 @@
 
     .bottom-text-wrapper {
         text-align: center;
+    }
+
+    .new-card-alert {
+        opacity: 0;
+        color: #3ce976;
+        font-size: 1.5rem;
+        line-height: 1;
+        font-weight: bold;
+        text-shadow: 0 2px 6px #4cb6ad;
+        transition: opacity 0.5s ease-out;
+
+        position: absolute;
+        top: 0rem;
+    }
+
+    .show {
+        opacity: 100%;
     }
 </style>
