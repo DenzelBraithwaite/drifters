@@ -610,11 +610,11 @@ export const allDecks = writable({
             textLeft: "I have no time for that!",
             textRight: "Sure, I guess I'm not in a rush",
             actionLeft: {
-                health: -1,
+                health: 1,
                 memory: 0,
             },
             actionRight: {
-                health: 1,
+                health: -1,
                 memory: 0,
             },
             location: 'Town of Beginning'
@@ -628,11 +628,11 @@ export const allDecks = writable({
             textLeft: "Why would I be the one to talk to their parents?",
             textRight: "Sure, but I'm not sure how I'll be able to help..",
             actionLeft: {
-                health: -1,
+                health: 1,
                 memory: 0,
             },
             actionRight: {
-                health: 1,
+                health: -1,
                 memory: 0,
             },
             location: 'Town of Beginning'
@@ -641,16 +641,16 @@ export const allDecks = writable({
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/angry-cowboy.png',
             title:'Mr. Gallock',
-            text: 'Those damn Jamison boys are ruining this village, either talk to their parents or I will.',
+            text: "I can't seem to remember what I was doing last...",
             faction: 'Farmer',
-            textLeft: "Why would I be the one to talk to their parents?",
-            textRight: "Sure, but I'm not sure how I'll be able to help..",
+            textLeft: "Don't worry, neither can I...",
+            textRight: "Try retracing your steps, see if that helps.",
             actionLeft: {
-                health: -1,
-                memory: 0,
+                health: 0,
+                memory: 1,
             },
             actionRight: {
-                health: 1,
+                health: 0,
                 memory: 0,
             },
             location: 'Town of Beginning'
@@ -662,14 +662,14 @@ export const allDecks = writable({
             title:'Shelly',
             text: 'The wild animals have been frightened lately, can you do something about it?',
             faction: 'Hunter',
-            textLeft: "I have no time for that!",
-            textRight: "Sure, I guess I'm not in a rush",
+            textLeft: "What animals? How can I help?",
+            textRight: "Shouldn't you do something about it?",
             actionLeft: {
                 health: -1,
                 memory: 0,
             },
             actionRight: {
-                health: 1,
+                health: 0,
                 memory: 0,
             },
             location: 'Town of Beginning'
@@ -678,17 +678,17 @@ export const allDecks = writable({
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/archer.png',
             title:'Shelly',
-            text: "I need to make more arrows, but there aren't any good stones around",
+            text: "I need to make more arrows, but there aren't any good stones around.",
             faction: 'Hunter',
-            textLeft: "I have no time for that!",
-            textRight: "Sure, I guess I'm not in a rush",
+            textLeft: "Perhaps you'll find the right ones if you keep looking.",
+            textRight: "You don't need arrows in a place like this.",
             actionLeft: {
                 health: -1,
                 memory: 0,
             },
             actionRight: {
-                health: 1,
-                memory: 0,
+                health: 0,
+                memory: 1,
             },
             location: 'Town of Beginning'
         },
@@ -696,17 +696,17 @@ export const allDecks = writable({
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/archer.png',
             title:'Shelly',
-            text: "I need to make more arrows, but there aren't any good stones around",
+            text: "I remember hunting in the woods, and then... And then what?",
             faction: 'Hunter',
-            textLeft: "I have no time for that!",
-            textRight: "Sure, I guess I'm not in a rush",
+            textLeft: "Maybe you decided to camp under the stars?",
+            textRight: "Keep trying, you'll remember something eventually.",
             actionLeft: {
                 health: -1,
                 memory: 0,
             },
             actionRight: {
-                health: 1,
-                memory: 0,
+                health: 0,
+                memory: 1,
             },
             location: 'Town of Beginning'
         },
@@ -715,17 +715,17 @@ export const allDecks = writable({
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/gatherer.png',
             title:'Krystina',
-            text: "The aging curse that's been put on me is getting worse, can you help me",
+            text: "The aging curse that's been put on me is getting worse, can you help me.",
             faction: 'Villager',
-            textLeft: "I'll have my friend take a look!",
-            textRight: "You look fine to me",
+            textLeft: "It looks as if it's already too late for you.",
+            textRight: "You look fine to me, maybe you just need to sleep it off.",
             actionLeft: {
-                health: -1,
-                memory: 0,
+                health: 1,
+                memory: 1,
             },
             actionRight: {
-                health: 1,
-                memory: 0,
+                health: 0,
+                memory: 1,
             },
             location: 'Town of Beginning'
         },
@@ -733,16 +733,16 @@ export const allDecks = writable({
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/gatherer.png',
             title:'Krystina',
-            text: "These flowers smell lovely, please don't steal them from me",
+            text: "These flowers smell lovely, please don't steal them from me.",
             faction: 'Villager',
             textLeft: "Well I wasn't going to until you said that...",
             textRight: "I won't I promise, but can I smell too?",
             actionLeft: {
                 health: -1,
-                memory: 0,
+                memory: 1,
             },
             actionRight: {
-                health: 1,
+                health: 0,
                 memory: 0,
             },
             location: 'Town of Beginning'
@@ -751,10 +751,10 @@ export const allDecks = writable({
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/gatherer.png',
             title:'Krystina',
-            text: "These flowers smell lovely, please don't steal them from me",
+            text: "These flowers... what is it about these flowers...",
             faction: 'Villager',
-            textLeft: "Well I wasn't going to until you said that...",
-            textRight: "I won't I promise, but can I smell too?",
+            textLeft: "Maybe they mean something to you, remind you of someone special?",
+            textRight: "They are very pretty, you have a good eye.",
             actionLeft: {
                 health: -1,
                 memory: 0,
@@ -769,13 +769,13 @@ export const allDecks = writable({
         card4a: {
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/villager.png',
-            title:'Onboarding',
-            text: "Fantastic! I'll be here in case of anything, just remember that forgetting is normal, you're all here to remember.",
-            faction: 'Tutorial',
-            textLeft: "Wait, that doesn't make any sense...",
-            textRight: 'Makes perfect sense to me.',
+            title:'Melody',
+            text: "Did you know there used to be a woman in this village who was beloved by all, even the animals.",
+            faction: 'Villager',
+            textLeft: "She sounds like an incredible person, I hope to meet her someday.",
+            textRight: "I'm afraid not, I only just got here myself and I don't plan on staying.",
             actionLeft: {
-                health: -1,
+                health: 0,
                 memory: 0,
             },
             actionRight: {
@@ -787,48 +787,66 @@ export const allDecks = writable({
         card4b: {
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/villager.png',
-            title:'Onboarding',
-            text: "Well then, off you go- oh wait! I almost forgot, there's a few questions I have to ask you before you leave.",
-            faction: 'Tutorial',
-            textLeft: 'Wait can we just slow down for a minute.',
-            textRight: 'This all seems very suspicious...',
+            title:'Meoldy',
+            text: "Do you find me beautiful? Everyone finds me beautiful, everyone.",
+            faction: 'Villager',
+            textLeft: "You're very pretty, on the outside.",
+            textRight: 'Not everyone.',
             actionLeft: {
-                health: -1,
+                health: 1,
                 memory: 0,
             },
             actionRight: {
-                health: 2,
+                health: 0,
                 memory: 0,
             },
-            location: 'tutorial'
+            location: 'Town of Beginning'
         },
         card4c: {
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/villager.png',
-            title:'Onboarding',
-            text: "Well then, off you go- oh wait! I almost forgot, there's a few questions I have to ask you before you leave.",
-            faction: 'Tutorial',
-            textLeft: 'Wait can we just slow down for a minute.',
-            textRight: 'This all seems very suspicious...',
+            title:'Melody',
+            text: "I remember him watching me... following me... What did he do to me?",
+            faction: 'Villager',
+            textLeft: 'What did who do? Why was he following you?',
+            textRight: "Do you remember something? I don't remember that, I don't remember anything.",
             actionLeft: {
-                health: -1,
+                health: -2,
                 memory: 0,
             },
             actionRight: {
-                health: 2,
-                memory: 0,
+                health: 1,
+                memory: 1,
             },
-            location: 'tutorial'
+            location: 'Town of Beginning'
         },
 
         card5a: {
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/villager-old.png',
-            title:'Onboarding',
-            text: "Fantastic! I'll be here in case of anything, just remember that forgetting is normal, you're all here to remember.",
-            faction: 'Tutorial',
-            textLeft: "Wait, that doesn't make any sense...",
-            textRight: 'Makes perfect sense to me.',
+            title:'Rowelda',
+            text: "I don't quite like the way you're sniffing about this town boy, quit it!",
+            faction: 'Villager',
+            textLeft: "Excuse you, I wasn't even doing anything.",
+            textRight: 'Mind your own business you old hag.',
+            actionLeft: {
+                health: -1,
+                memory: 0,
+            },
+            actionRight: {
+                health: 1,
+                memory: 1,
+            },
+            location: 'Town of Beginning'
+        },
+        card5b: {
+            id: 'chapter1-1',
+            imgUrl: '/decks/chapter1/villager-old.png',
+            title:'Rowelda',
+            text: "Why are you still here? If you've finished your business here then begone!",
+            faction: 'Villager',
+            textLeft: "I know who I'll never miss when I get out of this town.",
+            textRight: "You're a mean old lady you know that? You need to watch your tone.",
             actionLeft: {
                 health: -1,
                 memory: 0,
@@ -837,41 +855,23 @@ export const allDecks = writable({
                 health: 1,
                 memory: 0,
             },
-            location: 'Town of Beginning'
-        },
-        card5b: {
-            id: 'chapter1-1',
-            imgUrl: '/decks/chapter1/villager-old.png',
-            title:'Onboarding',
-            text: "Well then, off you go- oh wait! I almost forgot, there's a few questions I have to ask you before you leave.",
-            faction: 'Tutorial',
-            textLeft: 'Wait can we just slow down for a minute.',
-            textRight: 'This all seems very suspicious...',
-            actionLeft: {
-                health: -1,
-                memory: 0,
-            },
-            actionRight: {
-                health: 2,
-                memory: 0,
-            },
             location: 'tutorial'
         },
         card5c: {
             id: 'chapter1-1',
             imgUrl: '/decks/chapter1/villager-old.png',
-            title:'Onboarding',
-            text: "Well then, off you go- oh wait! I almost forgot, there's a few questions I have to ask you before you leave.",
-            faction: 'Tutorial',
-            textLeft: 'Wait can we just slow down for a minute.',
-            textRight: 'This all seems very suspicious...',
+            title:'Rowelda',
+            text: "It was so quiet before I came here, why did I ever leave... when did I leave?",
+            faction: 'Villager',
+            textLeft: "You can always go back the way you came, can't you?",
+            textRight: 'This place is your home now, you should try to get used to it.',
             actionLeft: {
-                health: -1,
+                health: -2,
                 memory: 0,
             },
             actionRight: {
-                health: 2,
-                memory: 0,
+                health: 0,
+                memory: 1,
             },
             location: 'tutorial'
         }

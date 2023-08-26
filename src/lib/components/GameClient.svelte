@@ -54,29 +54,28 @@
     
     function actionHandler(event) {
         const choice = event.detail;
+        console.log(choice);
 
         if (choice === 'left') {
             player.update(p => {
-                p.health += currentCard.actionLeft.health;
-                p.sanity += currentCard.actionLeft.sanity;
-                p.hunger += currentCard.actionLeft.hunger;
-                p.impulse += currentCard.actionLeft.impulse;
-                p.memory += currentCard.actionLeft.memory;
+                if (p.health >= 0 || p.health<= 0) p.health += currentCard.actionLeft.health;
+                if (p.sanity >= 0 || p.sanity<= 0) p.sanity += currentCard.actionLeft.sanity;
+                if (p.hunger >= 0 || p.hunger<= 0) p.hunger += currentCard.actionLeft.hunger;
+                if (p.impulse >= 0 || p.impulse<= 0) p.impulse += currentCard.actionLeft.impulse;
+                if (p.memory >= 0 || p.memory<= 0) p.memory += currentCard.actionLeft.memory;
                 return p;
             });
         } else if (choice === 'right') {
             player.update(p => {
-                p.health += currentCard.actionRight.health;
-                p.sanity += currentCard.actionRight.sanity;
-                p.hunger += currentCard.actionRight.hunger;
-                p.impulse += currentCard.actionRight.impulse;
-                p.memory += currentCard.actionRight.memory;
-            
+                if (p.health >= 0 || p.health<= 0) p.health += currentCard.actionRight.health;
+                if (p.sanity >= 0 || p.sanity<= 0) p.sanity += currentCard.actionRight.sanity;
+                if (p.hunger >= 0 || p.hunger<= 0) p.hunger += currentCard.actionRight.hunger;
+                if (p.impulse >= 0 || p.impulse<= 0) p.impulse += currentCard.actionRight.impulse;
+                if (p.memory >= 0 || p.memory <= 0) p.memory += currentCard.actionRight.memory;
                 return p;
             });
         }
 
-        // TODO: Check if player died
         if (isPlayerDead()) {
             gameOver = true;
             resetPlayer();
@@ -95,7 +94,7 @@
                 chapter1Active = true;
                 currentCard = $allDecks.chapter1.card1a;
                 $backgrounds.active = 'bg__adventure';
-            }, 8000)
+            }, 8000);
 
         }
     }
@@ -190,7 +189,7 @@
                 </div>
                 <div class="card-wrapper">
                     <Card img={currentCard.imgUrl}
-                    on:decision={() => actionHandler($allDecks.chapter1)}>
+                    on:decision={event => actionHandler(event)}>
                         <span slot="text-left">{currentCard.textLeft}</span>
                         <span slot="text-right">{currentCard.textRight}</span>
                     </Card>
