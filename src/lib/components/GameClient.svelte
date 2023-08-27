@@ -12,64 +12,41 @@
 
     import player from '../stores/player.js';
 
-    let gameOver = false;
-    const tutorialDeck = $allDecks.tutorial;
+    // Decks
+    const tutorial1Deck = $allDecks.tutorial1;
+    const tutorial2Deck = $allDecks.tutorial2;
     const survey1Deck = $allDecks.survey1;
+    const survey2Deck = $allDecks.survey2;
     const chapter1Deck = $allDecks.chapter1;
-    const soldierDeck = $allDecks.chapter1Soldiers;
-    
+    const chapter1SoldiersDeck = $allDecks.chapter1Soldiers;
+    const chapter2Deck = $allDecks.chapter1;
+
     // For timer to show when a new deck has been added.
-    let cardUnlockedAlert = false;
+    let newDeckAlert = false;
+    let newDeckAlertText = 'DECK_NAME_HERE';
+    let gameOver = false;
+    $player.unlockedCards = [...tutorial1Deck];
+    let currentCard = $player.unlockedCards[0];
+    $: hpMessage = $player.health <= 5 ? 'Hp Low' : 'HP Good';
+    $: sanityMessage = '?';
+    $: energyMessage = '?';
+    $: impulseMessage = '?';
+    $: memMessage = $player.memory <= 6 ? 'No memory' : 'Low memory';
 
-    // Handles which deck is displayed
-    let tutorialActive = true;
-    let chapter1Active = false;
-
-    // Tutorial Deck
-    let currentTutorialCard = {...tutorialDeck[0]};
-
-    let currentCard;
-
-    // FIXME: broken still
-    function drawRandomCard(deck) {
-        const index = Math.floor(Math.random() * deck.length);
-        currentCard = deck[index];
-        deck.splice(0, index);
-
-        // player.update(p => {
-        //     return p;
-        // });
-    }
-
-    function drawCard(card) {
-        return card;
+    function drawRandomCard() {
+        const index = Math.floor(Math.random() * $player.unlockedCards.length);
+        return $player.unlockedCards[index];
     }
     
+    // TODO: break down into smaller functions
     function actionHandler(event) {
         const choice = event.detail;
-
-        // Check if chapter 1 cards are done, then move on to survey 2 and more Paul dialogue
-        // if ($player.unlockedCards.id === survey1Deck.card10.id) {
-        //     setTimeout(() => {
-        //         tutorialActive = false;
-        //         chapter1Active = true;
-        //         $backgrounds.active = 'bg__adventure';
-        //         $player.unlockedCards = [{...chapter1Deck}];
-
-        //         const cards = Object.keys($player.unlockedCards[0])
-        //         const index = Math.floor(Math.random() * cards.length);
-        //         const cardDrawn = cards[index];
-        //         currentCard = $player.unlockedCards[0][cardDrawn];
-
-        //     }, 6000);
-
-        // }
 
         if (choice === 'left') {
             player.update(p => {
                 if (p.health >= 0 || p.health<= 0) p.health += currentCard.actionLeft.health;
                 if (p.sanity >= 0 || p.sanity<= 0) p.sanity += currentCard.actionLeft.sanity;
-                if (p.hunger >= 0 || p.hunger<= 0) p.hunger += currentCard.actionLeft.hunger;
+                if (p.energy >= 0 || p.energy<= 0) p.energy += currentCard.actionLeft.energy;
                 if (p.impulse >= 0 || p.impulse<= 0) p.impulse += currentCard.actionLeft.impulse;
                 if (p.memory >= 0 || p.memory<= 0) p.memory += currentCard.actionLeft.memory;
                 return p;
@@ -78,64 +55,106 @@
             player.update(p => {
                 if (p.health >= 0 || p.health<= 0) p.health += currentCard.actionRight.health;
                 if (p.sanity >= 0 || p.sanity<= 0) p.sanity += currentCard.actionRight.sanity;
-                if (p.hunger >= 0 || p.hunger<= 0) p.hunger += currentCard.actionRight.hunger;
+                if (p.energy >= 0 || p.energy<= 0) p.energy += currentCard.actionRight.energy;
                 if (p.impulse >= 0 || p.impulse<= 0) p.impulse += currentCard.actionRight.impulse;
                 if (p.memory >= 0 || p.memory <= 0) p.memory += currentCard.actionRight.memory;
                 return p;
             });
         }
 
-        // Add soldier deck
-        if (!$player.soldierDeckUnlocked && $player.memory >= 5) {
-            $player.soldierDeckUnlocked = true;
-            $player.unlockedCards = [...soldierDeck, ...chapter1Deck];
-            cardUnlockedAlert = true;
-
-
-            setTimeout(() => {
-                cardUnlockedAlert = false;
-            }, 4000);
-        }
-
+        // TODO: Finish this properly
         if (isPlayerDead()) {
             gameOver = true;
             resetPlayer();
             resetDecks();
         }
 
-        // TODO: Make sure the same card doesn't appear twice during one playthrough
-        // Pick random deck
-        const deckIndex = Math.floor(Math.random() * $player.unlockedCards.length);
-        console.log($player.unlockedCards);
-        drawRandomCard($player.unlockedCards[deckIndex]);
+        // Add soldier deck
+        if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 6) {
+            $player.unlockedDeck.chapter1Soldiers = true;
+            $player.unlockedCards = [...chapter1SoldiersDeck, ...$player.unlockedCards];
+            newDeckAlertText = 'Soldiers'
+            newDeckAlert = true;
+
+
+            setTimeout(() => {
+                newDeckAlert = false;
+            }, 4500);
+        }
+
+        // Move on to chapter 2 if enough memory.
+        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 2) { //TODO: Change, testing
+            player.update(p => {
+                    p.activeDeck = 'tutorial';
+                    p.unlockedDeck.tutorial2 = true;
+                    p.unlockedCards = [...tutorial2Deck];
+                    currentCard = p.unlockedCards[0];
+                    return p;
+                });
+                
+            backgrounds.update(bg => {
+                $backgrounds.active = $backgrounds.space;
+                return bg;
+            });
+            return;
+        }
+        
+        // Make sure the same card doesn't appear twice during one playthrough
+        const index = Math.floor(Math.random() * $player.unlockedCards.length);
+        let newCard = drawRandomCard();
+    
+        while (currentCard.id === newCard.id) newCard = drawRandomCard();
+        currentCard = newCard;
     }
 
     function playTutorial(event) {
-        currentTutorialCard = tutorialHandler(event, currentTutorialCard);
-        const lastCard = tutorialDeck.find(card => card.id === 'tutorial-10');
+        currentCard = tutorialHandler(event, currentCard);
 
-        if (currentTutorialCard.id === lastCard.id) {
+        // Checks if current card is final survey card
+        if (currentCard.id === 'survey2-10') {
             setTimeout(() => {
-                tutorialActive = false;
-                chapter1Active = true;
-                $backgrounds.active = 'bg__adventure';
-                $player.unlockedCards = [...chapter1Deck];
-
+                player.update(p => {
+                    p.activeDeck = 'chapter';
+                    p.unlockedDeck.survey2 = true;
+                    p.unlockedDeck.chapter2 = true;
+                    p.unlockedCards = [...chapter2Deck];
+                    return p;
+                });
+                
+                backgrounds.update(bg => {
+                    $backgrounds.active = $backgrounds.magicalForest;
+                    return bg;
+                });
+                
                 const index = Math.floor(Math.random() * $player.unlockedCards.length);
                 const cardDrawn = $player.unlockedCards[index];
                 currentCard = cardDrawn;
-
             }, 6000);
+        }
 
+        if (currentCard.id === 'survey1-10') {
+            setTimeout(() => {
+                player.update(p => {
+                    p.activeDeck = 'chapter';
+                    p.unlockedDeck.chapter1 = true;
+                    p.unlockedCards = [...chapter1Deck];
+                    return p;
+                });
+                
+                backgrounds.update(bg => {
+                    $backgrounds.active = $backgrounds.adventure;
+                    return bg;
+                });
+                
+                const index = Math.floor(Math.random() * $player.unlockedCards.length);
+                const cardDrawn = $player.unlockedCards[index];
+                currentCard = cardDrawn;
+            }, 6000);
         }
     }
 
-    function calculateStats(card) {
-
-    }
-
     function isPlayerDead() {
-        if ($player.health <= 0 || $player.sanity <= 0 || $player.hunger <= 0 || $player.impulse <= 0) {
+        if ($player.health <= 0 || $player.sanity <= 0 || $player.energy <= 0 || $player.impulse <= 0) {
             resetPlayer();
             return true;
         }
@@ -147,7 +166,7 @@
             p.timesReborn += 1;
             p.health = 6;
             p.sanity = 6;
-            p.hunger = 6;
+            p.energy = 6;
             p.impulse = 6;
 
             return p;
@@ -155,8 +174,7 @@
     }
 
     function resetDecks() {
-        allDecks.set({...$newDeck});
-
+        // allDecks.set({...$newDeck});
     }
 </script>
 
@@ -167,71 +185,42 @@
             <button on:click={() => gameOver = false}>Yes</button>
         </div>
     {:else}
-        {#if tutorialActive}
-            <div class="stats-wrapper">
-                <p class="red-icon">?</p>
-                <p class="green-icon">?</p>
-                <p class="pink-icon">?</p>
-                <p class="yellow-icon">?</p>
-                <p class="white-icon">?</p>
+        <div class="stats-wrapper">
+            <p class="red-icon">{$player.unlockedDeck.chapter1 ? hpMessage : '?'}</p>
+            <p class="green-icon">{$player.unlockedDeck.chapter1 ? sanityMessage : '?'}</p>
+            <p class="pink-icon">{$player.unlockedDeck.chapter1 ? energyMessage : '?'}</p>
+            <p class="yellow-icon">{$player.unlockedDeck.chapter1 ? impulseMessage : '?'}</p>
+            <p class="white-icon">{$player.unlockedDeck.chapter1 ? memMessage : '?'}</p>
+        </div>
+        <div class="container">
+            <div class="card-text">
+                <p class:show={newDeckAlert} class="new-card-alert">New deck unlocked: {newDeckAlertText}!</p>
+                <p>{currentCard.text}</p>
             </div>
-            <div class="container">
-                <div class="card-text">
-                    <p>{currentTutorialCard.text}</p>
-                </div>
-                <div class="card-wrapper">
-                    <Card img={currentTutorialCard.imgUrl}
-                    on:decision={event => playTutorial(event)}>
-                        <span slot="text-left">{currentTutorialCard.textLeft}</span>
-                        <span slot="text-right">{currentTutorialCard.textRight}</span>
-                    </Card>
-                </div>
-                <div class="bottom-text-wrapper">
-                    <p>{currentTutorialCard.title}</p>
-                    <p>{currentTutorialCard.faction}</p>
-                </div>
-            </div>
-        {:else if chapter1Active}
-            <div class="stats-wrapper">
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon red-icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
-                </svg>              
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon green-icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon pink-icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon yellow-icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon white-icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
-                </svg>-->
-                <p class="red-icon">HP: {$player.health}</p>
-                <!-- <p class="green-icon">SNT: {$player.sanity}</p> -->
-                <!-- <p class="pink-icon">HGR: {$player.hunger}</p> -->
-                <!-- <p class="yellow-icon">IMP: {$player.impulse}</p> -->
-                <p class="white-icon">MRY: {$player.memory}</p>
-            </div>
-            <div class="container">
-                <div class="card-text">
-                    <p class:show={cardUnlockedAlert} class="new-card-alert">Soldier deck has been unlocked.</p>
-                    <p>{currentCard.text}</p>
-                </div>
-                <div class="card-wrapper">
+            <div class="card-wrapper">
+                <!-- TODO: different conditions? active? -->
+                <!-- Tutorials -->
+                {#if $player.activeDeck === 'tutorial' || $player.activeDeck === 'survey'}
                     <Card img={currentCard.imgUrl}
-                    on:decision={event => actionHandler(event)}>
+                     on:decision={event => playTutorial(event)}>
                         <span slot="text-left">{currentCard.textLeft}</span>
                         <span slot="text-right">{currentCard.textRight}</span>
                     </Card>
-                </div>
-                <div class="bottom-text-wrapper">
-                    <p>{currentCard.title}</p>
-                    <p>{currentCard.faction}</p>
-                </div>
+
+                <!-- Chapters -->
+                {:else if $player.activeDeck === 'chapter'}
+                    <Card img={currentCard.imgUrl}
+                     on:decision={event => actionHandler(event, currentCard)}>
+                        <span slot="text-left">{currentCard.textLeft}</span>
+                        <span slot="text-right">{currentCard.textRight}</span>
+                    </Card>
+                {/if}
             </div>
-        {/if}
+            <div class="bottom-text-wrapper">
+                <p>{currentCard.title}</p>
+                <p>{currentCard.faction}</p>
+            </div>
+        </div>
     {/if}
 </div>
 

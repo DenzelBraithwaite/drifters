@@ -1,9 +1,9 @@
 import { writable } from 'svelte/store';
 
 export const allDecks = writable({
-    tutorial: [
+    tutorial1: [
         {
-            id: 'tutorial-1',
+            id: 'tutorial1-1',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: 'Welcome drifter, would you like to play the tutorial?',
@@ -13,7 +13,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-2a',
+            id: 'tutorial1-2a',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Well aren't you something special, that's good because there wasn't a tutorial anyway...",
@@ -23,7 +23,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-2b',
+            id: 'tutorial1-2b',
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'???',
             text: "Hahahaha.... did you really think there was a tutorial? Do you think you're playing a game right now?",
@@ -33,7 +33,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-3',
+            id: 'tutorial1-3',
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'???',
             text: "Ha, don't worry, it's normal to be confused, it's all part of the process.",
@@ -43,7 +43,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-4a',
+            id: 'tutorial1-4a',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Don't worry about the process, let the process worry about you and you'll be out of here in no time! But first things first, you'll need to make a lot of decisions. You've made decisions before right?",
@@ -53,7 +53,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-4b',
+            id: 'tutorial1-4b',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Don't worry you'll be out of here in no time, but first things first, you'll need to make a lot of decisions. You've made decisions before... right?",
@@ -63,7 +63,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-5',
+            id: 'tutorial1-5',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Well sometimes you get to make decisions, but sometimes they're made for you.",
@@ -73,7 +73,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-6a',
+            id: 'tutorial1-6a',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Is there a reason for any of this? I guess you'll have to determine that for yourself. Are you ready now?",
@@ -83,7 +83,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-6b',
+            id: 'tutorial1-6b',
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'???',
             text: "Suspicion always haunts the guilty mind. Are you ready?",
@@ -93,7 +93,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-7',
+            id: 'tutorial1-7',
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'???',
             text: "Fantastic then let's begi- oh! I almost forgot, there's something you need to do first.",
@@ -103,7 +103,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-8a',
+            id: 'tutorial1-8a',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Someone doesn't like surprises, it's just a quick harmless survey that's all. Really, don't read too much into it.",
@@ -113,7 +113,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-8b',
+            id: 'tutorial1-8b',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Are you really sure you want to do that? Come now, it's just a quick and harmless survey, you'll be fine.",
@@ -123,7 +123,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-9',
+            id: 'tutorial1-9',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "By the way, not that you asked... but you can call me Jude. Do you remember your name?",
@@ -133,7 +133,7 @@ export const allDecks = writable({
             location: 'tutorial'
         },
         {
-            id: 'tutorial-10',
+            id: 'tutorial1-10',
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Fantastic... Don't worry that's normal. For now let's just keep it simple and call you Jack, unless there's another name you'd prefer?",
@@ -142,6 +142,141 @@ export const allDecks = writable({
             textRight: "I may not know my name but it certainly isn't Jack.",
             location: 'tutorial'
         }
+    ],
+
+    tutorial2: [
+        {
+            id: 'tutorial2-1',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: 'Hello again, how have things been going since we last spoke? You seem to be handling yourself quite well in here.',
+            faction: 'Tutorial',
+            textLeft: "I'm making do with what little I know, thanks to you.",
+            textRight: "I still have no idea what I'm doing here.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-2a',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Yes you always were so... resourceful. Well don't let me keep you from all the fun, I just wanted to ask you a few more questions.",
+            faction: 'Tutorial',
+            textLeft: "Then why even bother asking?",
+            textRight: "Again with the questions, what do you want to know this time?",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-2b',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "As I've said before, that's to be expected and you shouldn't go searching your brain for memories, instead let the memories come to you. Now, I have a few more questions for you if you'd be so kind as to indulge me.",
+            faction: 'Tutorial',
+            textLeft: "Lovely, more confusing questions. Let's get this over with.",
+            textRight: "I'm sick and tired of your games, I don't want to take your stupid survey.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-3',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Don't you worry, we'll be done before you know it! The important thing is to remember your decisions have meaning.",
+            faction: 'Tutorial',
+            textLeft: "What meaning? You keep saying that but you never explain.",
+            textRight: 'I could care less whether they meant anything, I just want to leave.',
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-4a',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "As I've said before, you needn't worry about remembering or making sense of your situations, you just need to go with the flow.",
+            faction: "Tutorial",
+            textLeft: "What flow? This is more like a sick game that you seem to be enjoying a great deal.",
+            textRight: "Yeah that's easy enough for you to say, you don't know what this is like.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-4b',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "If you want to leave then you'd do well to take my advice and simply continue along this path.",
+            faction: 'Tutorial',
+            textLeft: "Just because you got bored and decided to paint a path for me, doesn't mean I have to follow it.",
+            textRight: "I think I've had enough of listening to you, why should I trust the one who's the reason for all of this?",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-5',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "...",
+            faction: 'Tutorial',
+            textLeft: "What, gone quiet all of a sudden?",
+            textRight: "Speechless? That's a first.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-6',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "You really don't remember anything do you?",
+            faction: 'Tutorial',
+            textLeft: "That's what I've been trying to tell you!",
+            textRight: "Nothing at all...",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-7',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "You really don't remember anything do you?",
+            faction: 'Tutorial',
+            textLeft: "That's what I've been trying to tell you!",
+            textRight: "Nothing at all...",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-8',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Look... just answer the questions and talk to the people you meet and I promise you, this will all be over soon.",
+            faction: 'Tutorial',
+            textLeft: "But why can't you just tell me! Why do you act as if you have no say in the matter?",
+            textRight: "What happens if I don't?",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-9a',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "You think you're asking the right questions, but finding that out won't help you any. Now then, it's time for the survey.",
+            faction: 'Tutorial',
+            textLeft: "Don't make me regret trusting you.",
+            textRight: "Any answer worth seeking is a question worth asking.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-9b',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "If you don't? Why don't you tell me.",
+            faction: 'Tutorial',
+            textLeft: "How could I possibly know?",
+            textRight: "I can't tell you what I don't know.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-10',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Haha right... well then, enough of that. The survey will begin now but don't overthink it. Remember to just answer HONESTLY, ok?",
+            faction: 'Tutorial',
+            textLeft: "Fine, but we will meet again.",
+            textRight: "Let's get on with it then.",
+            location: 'tutorial'
+        },
+        
+        
     ],
 
     survey1: [
@@ -385,11 +520,29 @@ export const allDecks = writable({
         {
             id: 'survey2-1',
             imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Time for another one of our favorite surveys. It'll be the same as last time, remember to answer honestly. Are you ready?",
+            title:'Jude',
+            text: "Fantastic, question number 1. Did you recognize anyone in the village?",
             faction: 'Surveys',
-            textLeft: "Is this question also part of the survey like last time?",
-            textRight: "As ready as I'll ever be.",
+            textLeft: "Hmmm... not really.",
+            textRight: 'Of course not, was there someone I was meant to meet?',
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-2',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "Suppose that makes sense... did you notice anything odd about any of the villagers?",
+            faction: 'Surveys',
+            textLeft: "Actually, most of them seem to be dealing with a case of sudden amnesia as well.",
+            textRight: 'I think I was more focused on trying to escape than anything.',
             actionLeft: {
                 brain: 1,
                 smiley: 0
@@ -401,13 +554,13 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-1',
+            id: 'survey2-3a',
             imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Well aren't you clever, think you know everything huh? Next question, what makes you happy?",
+            title:'Jude',
+            text: "Yes well, truth be told most people who enter that village wander in, lost. Did you remember anything while you were there?",
             faction: 'Surveys',
-            textLeft: "Reading books",
-            textRight: 'Painting',
+            textLeft: "It might please you to learn that I, along with the rest of the villagers, still do not remember a thing.",
+            textRight: "No, is there something you were hoping I'd remember?",
             actionLeft: {
                 brain: 1,
                 smiley: 0
@@ -419,185 +572,185 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-1',
+            id: 'survey2-3b',
             imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Fantastic... Question number 2, what makes you happy?",
+            title:'Jude',
+            text: "I've told you before that trying to escape is pointless. The best way to leave is to remember, did you remember anything when you were there?",
             faction: 'Surveys',
-            textLeft: "Reading books",
-            textRight: 'Painting',
+            textLeft: "All I've managed to remember is how much I must've forgotten.",
+            textRight: "Can't blame me for trying, and unfortunately no... Still completely in the dark.",
             actionLeft: {
-                brain: 1,
-                smiley: 0,
+                brain: 0,
+                smiley: 1
             },
             actionRight: {
-                brain: 0,
-                smiley: 1,
+                brain: 1,
+                smiley: 0
             },
             location: 'survey'
         },
         {
-            id: 'survey2-1',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "I suppose that was a tough one? Here's an easier one; which do you prefer?",
+            id: 'survey2-4',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Fantastic, you should start to remember soon, most likely by the next time we talk you'll have remembered something important.",
             faction: 'Surveys',
-            textLeft: "Brains",
-            textRight: 'Smiles',
+            textLeft: "That's very suspicious, it almost sounds as if you have something planned.",
+            textRight: "Why can't I remember now?",
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-5a',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "Whether or not there's a plan for you is at your discretion. But if you want to rememer, it's only a matter of time.",
+            faction: 'Surveys',
+            textLeft: "You act as if I don't want to remember, but I do... it's not just happening yet.",
+            textRight: "If I want to remember?",
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-5b',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "To rush it would mean to lose it, these things take time. Trust me, trust the process.",
+            faction: 'Surveys',
+            textLeft: "Forgive me if I have a hard time doing that.",
+            textRight: "I can't lose what I've already lost.",
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-6',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "We should get back to the survey now, although all of our interactions help me better understand you better. Do me a favor and pick one would you?",
+            faction: 'Surveys',
+            textLeft: "Brain",
+            textRight: "Mouth",
             actionLeft: {
                 brain: 2,
-                smiley: 0,
+                smiley: 0
             },
             actionRight: {
                 brain: 0,
-                smiley: 2,
+                smiley: 2
             },
             location: 'survey'
         },
         {
-            id: 'survey2-1',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Yes, makes sense, we're getting there slowly. If you could only have one, which would you choose?",
+            id: 'survey2-7',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Yes of course, that makes sense. We're almost done here just a few more. Which describes you more?",
             faction: 'Surveys',
-            textLeft: "One night with anyone in the world, dead or alive. You could ask them anything.",
-            textRight: "The chance to revisit one memory in full detail, but only once.",
+            textLeft: "I like my quiet time, where I can be alone and pursue my passions and hobbies.",
+            textRight: "I like to be around others, being the sun that shines on their rainy day.",
             actionLeft: {
                 brain: 1,
-                smiley: 0,
+                smiley: 0
             },
             actionRight: {
                 brain: 0,
-                smiley: 1,
+                smiley: 1
             },
             location: 'survey'
         },
         {
-            id: 'survey2-1',
+            id: 'survey2-8a',
             imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Very interesting, I wonder who it is you so long to see... You must have quite the list. Here's a stupid one that has no importance whatsoever.",
+            title:'Jude',
+            text: "Yes, you strike me as a bit of a recluse. It seems perhaps you do know yourself after all. Next question, pick your favorite of the two.",
             faction: 'Surveys',
-            textLeft: "Up",
-            textRight: "Down",
+            textLeft: "Warm tea in a remote winter village.",
+            textRight: "A morning cup of coffee in the backyard.",
             actionLeft: {
-                brain: 0,
-                smiley: 1,
-            },
-            actionRight: {
                 brain: 1,
-                smiley: 0,
-            },
-            location: 'survey'
-        },
-        {
-            id: 'survey2-1',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Is that so? What is it you've forgotten? Now then, here's a stupid one that has no importance whatsoever.",
-            faction: 'Surveys',
-            textLeft: "Up",
-            textRight: "Down",
-            actionLeft: {
-                brain: 0,
-                smiley: 1,
+                smiley: 0
             },
             actionRight: {
                 brain: 1,
-                smiley: 0,
+                smiley: 0
             },
             location: 'survey'
         },
         {
-            id: 'survey2-1',
+            id: 'survey2-8b',
             imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Noted, that definitely changes things... Suppose you were trapped in a dark room, what would you do?",
+            title:'Jude',
+            text: "Really, the sun? Seems a bit pretentious but no matter. Which of the two appeals more to you?",
             faction: 'Surveys',
-            textLeft: "I'd try to find a way out until I got out.",
-            textRight: "I'd wait to be rescued while keeping myself entertained.",
+            textLeft: "A cold drink in the middle of a desert.",
+            textRight: "The calm before the storm.",
             actionLeft: {
                 brain: 1,
-                smiley: 0,
+                smiley: 0
             },
             actionRight: {
                 brain: 0,
-                smiley: 1,
+                smiley: 1
             },
             location: 'survey'
         },
         {
-            id: 'survey2-1',
+            id: 'survey2-9',
             imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Keep moving forward, that's the spirit. I think I've got a clear image of you now, thank you.",
+            title:'Jude',
+            text: "I see... Last question now, and this one's an important one. Do you think you're dead?",
             faction: 'Surveys',
-            textLeft: "Does that mean we're done?",
-            textRight: "Oh, is that it then?",
+            textLeft: "To be honest, yes I do.",
+            textRight: "The thought's crossed my mind, but I don't want to assume the worst.",
             actionLeft: {
                 brain: 1,
-                smiley: 0,
+                smiley: 0
             },
             actionRight: {
                 brain: 0,
-                smiley: 1,
+                smiley: 1
             },
             location: 'survey'
         },
         {
-            id: 'survey2-1',
+            id: 'survey2-10',
             imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Isn't that a little optimistic? I think I've got a clear image of you now, thank you.",
+            title:'Jude',
+            text: "Well whether your dead or alive, you won't make any progress until your memories return. I'm going to leave you for now, but I'll be thinking about our conversations. Until next time Jack...",
             faction: 'Surveys',
-            textLeft: "Does that mean we're done?",
-            textRight: "Oh, is that it then?",
+            textLeft: "Wait! I still have questions I want to ask!",
+            textRight: "Going to abandon me again? Please, just tell me if I'm alive.",
             actionLeft: {
-                brain: 1,
-                smiley: 0,
+                brain: 0,
+                smiley: 0
             },
             actionRight: {
                 brain: 0,
-                smiley: 1,
+                smiley: 0
             },
             location: 'survey'
         },
-        {
-            id: 'survey2-1',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Very interesting... Alright here's the final one. Are you sane?",
-            faction: 'Surveys',
-            textLeft: "Of course I am",
-            textRight: "I've been starting to wonder that myself...",
-            actionLeft: {
-                brain: 0,
-                smiley: 1,
-            },
-            actionRight: {
-                brain: 1,
-                smiley: 0,
-            },
-            location: 'survey'
-        },
-        {
-            id: 'survey2-1',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Second Survey',
-            text: "Fantastic... Your decisions are important, now more than ever.",
-            faction: 'Surveys',
-            textLeft: "You aren't making any sense.",
-            textRight: "I don't understand...",
-            actionLeft: {
-                brain: 0,
-                smiley: 0,
-            },
-            actionRight: {
-                brain: 0,
-                smiley: 0,
-            },
-            location: 'survey'
-        }  
     ],
 
     chapter1: [
@@ -1479,6 +1632,593 @@ export const allDecks = writable({
                 memory: 0,
             },
             location: 'Town of Beginning'
+        },
+    ],
+
+    chapter2: [
+        {
+            id: 'chapter2-1a',
+            imgUrl: '/decks/chapter1/angry-cowboy.png',
+            title:'Mr. Gallock',
+            text: 'Shoot, it seems the pests are at my crop again, can you lend me a hand?',
+            faction: 'Farmer',
+            textLeft: "I have no time for that!",
+            textRight: "Sure, I guess I'm not in a rush",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-1b',
+            imgUrl: '/decks/chapter1/angry-cowboy.png',
+            title:'Mr. Gallock',
+            text: 'Those damn Jamison boys are ruining this village, either talk to their parents or I will.',
+            faction: 'Farmer',
+            textLeft: "Why would I be the one to talk to their parents?",
+            textRight: "Sure, but I'm not sure how I'll be able to help..",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-1c',
+            imgUrl: '/decks/chapter1/angry-cowboy.png',
+            title:'Mr. Gallock',
+            text: "I can't seem to remember what I was doing last...",
+            faction: 'Farmer',
+            textLeft: "Don't worry, neither can I...",
+            textRight: "Try retracing your steps, see if that helps.",
+            actionLeft: {
+                health: 0,
+                memory: 1,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-1d',
+            imgUrl: '/decks/chapter1/angry-cowboy.png',
+            title:'Mr. Gallock',
+            text: "Every darn person in this town is hell bent on getting in my way, are you going another delinquent in the making?",
+            faction: 'Farmer',
+            textLeft: "Don't worry, I won't be of any trouble.",
+            textRight: "Maybe you're the one getting in everyone else's way.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+
+        {
+            id: 'chapter2-2a',
+            imgUrl: '/decks/chapter1/archer.png',
+            title:'Shelly',
+            text: 'The wild animals have been frightened lately, can you do something about it?',
+            faction: 'Hunter',
+            textLeft: "What animals? How can I help?",
+            textRight: "Shouldn't you do something about it?",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-2b',
+            imgUrl: '/decks/chapter1/archer.png',
+            title:'Shelly',
+            text: "I need to make more arrows, but there aren't any good stones around.",
+            faction: 'Hunter',
+            textLeft: "Perhaps you'll find the right ones if you keep looking.",
+            textRight: "You don't need arrows in a place like this.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+            },
+            actionRight: {
+                health: 0,
+                memory: 1,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-2c',
+            imgUrl: '/decks/chapter1/archer.png',
+            title:'Shelly',
+            text: "I remember hunting in the woods, and then... And then what?",
+            faction: 'Hunter',
+            textLeft: "Maybe you decided to camp under the stars?",
+            textRight: "Keep trying, you'll remember something eventually.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+            },
+            actionRight: {
+                health: 0,
+                memory: 1,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-2d',
+            imgUrl: '/decks/chapter1/archer.png',
+            title:'Shelly',
+            text: "I've been hunting since I was little, my daddy used to take me out back in the forest before he...",
+            faction: 'Hunter',
+            textLeft: "You don't have to talk about it if you don't want to.",
+            textRight: "Did you kill him?",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+            },
+            actionRight: {
+                health: 1,
+                memory: 1,
+            },
+            location: 'Magical Forest'
+        },
+
+        {
+            id: 'chapter2-3a',
+            imgUrl: '/decks/chapter1/gatherer.png',
+            title:'Krystina',
+            text: "The aging curse that's been put on me is getting worse, can you help me.",
+            faction: 'Villager',
+            textLeft: "It looks as if it's already too late for you.",
+            textRight: "You look fine to me, maybe you just need to sleep it off.",
+            actionLeft: {
+                health: 1,
+                memory: 1,
+            },
+            actionRight: {
+                health: 0,
+                memory: 1,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-3b',
+            imgUrl: '/decks/chapter1/gatherer.png',
+            title:'Krystina',
+            text: "These flowers smell lovely, please don't steal them from me.",
+            faction: 'Villager',
+            textLeft: "Well I wasn't going to until you said that...",
+            textRight: "I won't I promise, but can I smell too?",
+            actionLeft: {
+                health: 1,
+                memory: 1,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-3c',
+            imgUrl: '/decks/chapter1/gatherer.png',
+            title:'Krystina',
+            text: "These flowers... what is it about these flowers...",
+            faction: 'Villager',
+            textLeft: "Maybe they mean something to you, remind you of someone special?",
+            textRight: "They are very pretty, you have a good eye.",
+            actionLeft: {
+                health: 0,
+                memory: 1,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-3d',
+            imgUrl: '/decks/chapter1/gatherer.png',
+            title:'Krystina',
+            text: "Flowers bring joy, comfort the sad and excite the romantic. Flowers are amazing, wouldn't you agree?",
+            faction: 'Villager',
+            textLeft: "Umm... yeah sure.",
+            textRight: "I never thought about it like that before.",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        
+
+        {
+            id: 'chapter2-4a',
+            imgUrl: '/decks/chapter1/villager.png',
+            title:'Melody',
+            text: "Did you know there used to be a woman in this village who was beloved by all, even the animals.",
+            faction: 'Villager',
+            textLeft: "She sounds like an incredible person, I hope to meet her someday.",
+            textRight: "I'm afraid not, I only just got here myself and I don't plan on staying.",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-4b',
+            imgUrl: '/decks/chapter1/villager.png',
+            title:'Meoldy',
+            text: "Do you find me beautiful? Everyone finds me beautiful, everyone.",
+            faction: 'Villager',
+            textLeft: "You're very pretty, on the outside.",
+            textRight: 'Not everyone.',
+            actionLeft: {
+                health: 1,
+                memory: 0,
+            },
+            actionRight: {
+                health: 0,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-4c',
+            imgUrl: '/decks/chapter1/villager.png',
+            title:'Melody',
+            text: "I remember him watching me... following me... What did he do to me?",
+            faction: 'Villager',
+            textLeft: 'What did who do? Why was he following you?',
+            textRight: "Do you remember something? I don't remember that, I don't remember anything.",
+            actionLeft: {
+                health: -2,
+                memory: 0,
+            },
+            actionRight: {
+                health: 1,
+                memory: 1,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-4d',
+            imgUrl: '/decks/chapter1/villager.png',
+            title:'Melody',
+            text: "Have you met my brother? He's so full of himself, claims he's the most handsome man in the village.",
+            faction: 'Villager',
+            textLeft: 'Sounds familiar...',
+            textRight: "Maybe it's a small village.",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+
+        {
+            id: 'chapter2-5a',
+            imgUrl: '/decks/chapter1/villager-old.png',
+            title:'Rowelda',
+            text: "I don't quite like the way you're sniffing about this town boy, quit it!",
+            faction: 'Villager',
+            textLeft: "Excuse you, I wasn't even doing anything.",
+            textRight: 'Mind your own business you old hag.',
+            actionLeft: {
+                health: -1,
+                memory: 0,
+            },
+            actionRight: {
+                health: 1,
+                memory: 1,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-5b',
+            imgUrl: '/decks/chapter1/villager-old.png',
+            title:'Rowelda',
+            text: "Why are you still here? If you've finished your business here then begone!",
+            faction: 'Villager',
+            textLeft: "I know who I'll never miss when I get out of this town.",
+            textRight: "You're a mean old lady you know that? You need to watch your tone.",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+            },
+            actionRight: {
+                health: 2,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-5c',
+            imgUrl: '/decks/chapter1/villager-old.png',
+            title:'Rowelda',
+            text: "It was so quiet before I came here, why did I ever leave... when did I leave?",
+            faction: 'Villager',
+            textLeft: "You can always go back the way you came, can't you?",
+            textRight: 'This place is your home now, you should try to get used to it.',
+            actionLeft: {
+                health: -2,
+                memory: 0,
+            },
+            actionRight: {
+                health: 1,
+                memory: 1,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-5d',
+            imgUrl: '/decks/chapter1/villager-old.png',
+            title:'Rowelda',
+            text: "Those Jamison boys aren't the problem, they lack discipline and parenting. Why if I raised those boys, things would be different I tell you.",
+            faction: 'Villager',
+            textLeft: "I feel inclined to believe you.",
+            textRight: "Yes well, I'll let you see to it then.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+
+        {
+            id: 'chapter2-6a',
+            imgUrl: '/decks/chapter1/cowheard.png',
+            title:'Bernard',
+            text: "My cattle are well mannered, but you can never fully trust a wild animal, wouldn't you agree?",
+            faction: 'Cowheard',
+            textLeft: "Perhaps you're being a little paranoid mister.",
+            textRight: "I don't even trust myself.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 2,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-6b',
+            imgUrl: '/decks/chapter1/cowheard.png',
+            title:'Bernard',
+            text: "Have you run into that miserable farmer Gallock? Don't pay him any mind, that's just how he is.",
+            faction: 'Cowheard',
+            textLeft: "Yeah I suspected as much, thanks for the advice.",
+            textRight: "Someone ought to knock him down a peg or two.",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+            },
+            actionRight: {
+                health: 2,
+                memory: 1,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-6c',
+            imgUrl: '/decks/chapter1/cowheard.png',
+            title:'Bernard',
+            text: "Life is simple, it's the people that complicate it. Sometimes, a lonely road is the path you want to take.",
+            faction: 'Cowheard',
+            textLeft: "Maybe you just don't see the good in people.",
+            textRight: "What's the point of living if there's no one else to share the experience?",
+            actionLeft: {
+                health: -2,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-6d',
+            imgUrl: '/decks/chapter1/cowheard.png',
+            title:'Bernard',
+            text: "One day, my time will come. I need to make sure the cattle are probably taken care of.",
+            faction: 'Cowheard',
+            textLeft: "Your life is more important than cattle.",
+            textRight: "You are a man of devotion, I can appreciate that.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+
+        {
+            id: 'chapter2-7a',
+            imgUrl: '/decks/chapter1/peasant.png',
+            title:'Felix',
+            text: "Please sir, do you have anything to spare? Anything at all will help.",
+            faction: 'Peasant',
+            textLeft: "Begone from me at once, peasant!",
+            textRight: "I'm sorry, I haven't anything to offer.",
+            actionLeft: {
+                health: 1,
+                memory: 1,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-7b',
+            imgUrl: '/decks/chapter1/peasant.png',
+            title:'Felix',
+            text: "I can't go on like this anymore, please help me.",
+            faction: 'Peasant',
+            textLeft: "No.",
+            textRight: "I wish I could.",
+            actionLeft: {
+                health: 0,
+                memory: 1,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-7c',
+            imgUrl: '/decks/chapter1/peasant.png',
+            title:'Felix',
+            text: "My mom is sick see, so if you have anything you could give me... I don't mean to beg, but if you care to spare.",
+            faction: 'Peasant',
+            textLeft: "Nobody likes a begger boy, remove yourself from me.",
+            textRight: "Good things come to those who wait, your time will come, be patient.",
+            actionLeft: {
+                health: 1,
+                memory: 1,
+            },
+            actionRight: {
+                health: -2,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-7d',
+            imgUrl: '/decks/chapter1/peasant.png',
+            title:'Felix',
+            text: "It's not fair, why can't I eat as much as everyone else gets to. What did I do wrong?",
+            faction: '...',
+            textLeft: "You can complain about it or you can do something about it.",
+            textRight: "It's not your fault, you just got unlucky.",
+            actionLeft: {
+                health: 2,
+                memory: 0,
+            },
+            actionRight: {
+                health: -2,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+
+        {
+            id: 'chapter2-8a',
+            imgUrl: '/decks/chapter1/villager-brother.png',
+            title:'Alexander',
+            text: "My beauty is renown far and wide, my sister isn't too bad herself, but her beautfy could simply never compare.",
+            faction: 'Villager',
+            textLeft: "Ugh",
+            textRight: "Yes yes, you're very handsome.",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8b',
+            imgUrl: '/decks/chapter1/villager-brother.png',
+            title:'Alexander',
+            text: "Why if I were one of the king's royal guards, the wars would be over by nightfall! Sadly I've no time for such trivial things.",
+            faction: 'Villager',
+            textLeft: "Yeah I'm sure the king's army could use a knight like you.",
+            textRight: "Ahahahaa, surely you'd make a better jester than soldier.",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8c',
+            imgUrl: '/decks/chapter1/villager-brother.png',
+            title:'Alexander',
+            text: "Everybody loves me, you don't have to be shy about it. If you'd like, I can help you be more popular.",
+            faction: 'Villager',
+            textLeft: "I hate your kind the most, no thank you.",
+            textRight: "I'll take my chances.",
+            actionLeft: {
+                health: 1,
+                memory: 1,
+            },
+            actionRight: {
+                health: 0,
+                memory: 0,
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8d',
+            imgUrl: '/decks/chapter1/villager-brother.png',
+            title:'Alexander',
+            text: "Despite my apparent good looks, I feel as if I've lost my glow. Does that make any sense to you?",
+            faction: 'Villager',
+            textLeft: "These things are destined to happen eventually.",
+            textRight: "You used to glow?",
+            actionLeft: {
+                health: 0,
+                memory: 1,
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+            },
+            location: 'Magical Forest'
         },
     ],
 });

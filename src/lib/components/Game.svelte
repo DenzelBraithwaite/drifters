@@ -58,7 +58,7 @@
 
     /* background images */
     .bg__adventure {
-        background: url('/backgrounds/adventure-bg.png');
+        background: url('/backgrounds/adventure.png');
         background-repeat: no-repeat;
         background-size:cover;
         background-position: center;
@@ -79,7 +79,14 @@
     }
 
     .bg__cherry-blossom {
-        background: url('/backgrounds/cherry-blossom-bg.gif');
+        background: url('/backgrounds/cherry-blossom.gif');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .bg__magical-forest {
+        background: url('/backgrounds/magical-forest.gif');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

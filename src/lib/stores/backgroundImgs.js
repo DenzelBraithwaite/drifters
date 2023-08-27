@@ -6,6 +6,7 @@ const backgrounds = writable({
     adventure: 'bg__adventure',
     darkForest: 'bg__dark-forest',
     cherryBlossom: 'bg__cherry-blossom',
+    magicalForest: 'bg__magical-forest',
 });
 
 export default backgrounds;
