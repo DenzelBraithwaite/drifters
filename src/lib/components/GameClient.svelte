@@ -19,7 +19,7 @@
     const survey2Deck = $allDecks.survey2;
     const chapter1Deck = $allDecks.chapter1;
     const chapter1SoldiersDeck = $allDecks.chapter1Soldiers;
-    const chapter2Deck = $allDecks.chapter1;
+    const chapter2Deck = $allDecks.chapter2;
 
     // For timer to show when a new deck has been added.
     let newDeckAlert = false;
@@ -83,7 +83,7 @@
         }
 
         // Move on to chapter 2 if enough memory.
-        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 2) { //TODO: Change, testing
+        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 12) { 
             player.update(p => {
                     p.activeDeck = 'tutorial';
                     p.unlockedDeck.tutorial2 = true;
@@ -187,9 +187,9 @@
     {:else}
         <div class="stats-wrapper">
             <p class="red-icon">{$player.unlockedDeck.chapter1 ? hpMessage : '?'}</p>
-            <p class="green-icon">{$player.unlockedDeck.chapter1 ? sanityMessage : '?'}</p>
-            <p class="pink-icon">{$player.unlockedDeck.chapter1 ? energyMessage : '?'}</p>
-            <p class="yellow-icon">{$player.unlockedDeck.chapter1 ? impulseMessage : '?'}</p>
+            <p class="green-icon">{$player.unlockedDeck.chapter2 ? sanityMessage : '?'}</p>
+            <p class="pink-icon">{$player.unlockedDeck.chapter3 ? energyMessage : '?'}</p>
+            <p class="yellow-icon">{$player.unlockedDeck.chapter4 ? impulseMessage : '?'}</p>
             <p class="white-icon">{$player.unlockedDeck.chapter1 ? memMessage : '?'}</p>
         </div>
         <div class="container">

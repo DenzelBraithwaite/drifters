@@ -611,7 +611,7 @@ export const allDecks = writable({
             id: 'survey2-5a',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
-            text: "Whether or not there's a plan for you is at your discretion. But if you want to rememer, it's only a matter of time.",
+            text: "Whether or not there's a plan for you is at your discretion. But if you want to remember, it's only a matter of time.",
             faction: 'Surveys',
             textLeft: "You act as if I don't want to remember, but I do... it's not just happening yet.",
             textRight: "If I want to remember?",
@@ -812,7 +812,7 @@ export const allDecks = writable({
             id: 'chapter1-1d',
             imgUrl: '/decks/chapter1/angry-cowboy.png',
             title:'Mr. Gallock',
-            text: "Every darn person in this town is hell bent on getting in my way, are you going another delinquent in the making?",
+            text: "Every darn person in this town is hell bent on getting in my way, are you going to be another delinquent in the making?",
             faction: 'Farmer',
             textLeft: "Don't worry, I won't be of any trouble.",
             textRight: "Maybe you're the one getting in everyone else's way.",
@@ -1638,7 +1638,7 @@ export const allDecks = writable({
     chapter2: [
         {
             id: 'chapter2-1a',
-            imgUrl: '/decks/chapter1/angry-cowboy.png',
+            imgUrl: '/chapter2/monk-white.png',
             title:'Mr. Gallock',
             text: 'Shoot, it seems the pests are at my crop again, can you lend me a hand?',
             faction: 'Farmer',
@@ -1656,7 +1656,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-1b',
-            imgUrl: '/decks/chapter1/angry-cowboy.png',
+            imgUrl: '/chapter2/monk-white.png',
             title:'Mr. Gallock',
             text: 'Those damn Jamison boys are ruining this village, either talk to their parents or I will.',
             faction: 'Farmer',
@@ -1674,7 +1674,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-1c',
-            imgUrl: '/decks/chapter1/angry-cowboy.png',
+            imgUrl: '/chapter2/monk-white.png',
             title:'Mr. Gallock',
             text: "I can't seem to remember what I was doing last...",
             faction: 'Farmer',
@@ -1692,7 +1692,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-1d',
-            imgUrl: '/decks/chapter1/angry-cowboy.png',
+            imgUrl: '/chapter2/monk-white.png',
             title:'Mr. Gallock',
             text: "Every darn person in this town is hell bent on getting in my way, are you going another delinquent in the making?",
             faction: 'Farmer',
@@ -1711,7 +1711,7 @@ export const allDecks = writable({
 
         {
             id: 'chapter2-2a',
-            imgUrl: '/decks/chapter1/archer.png',
+            imgUrl: '/chapter2/monk-white.png',
             title:'Shelly',
             text: 'The wild animals have been frightened lately, can you do something about it?',
             faction: 'Hunter',
@@ -1729,7 +1729,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-2b',
-            imgUrl: '/decks/chapter1/archer.png',
+            imgUrl: '/chapter2/monk-white.png',
             title:'Shelly',
             text: "I need to make more arrows, but there aren't any good stones around.",
             faction: 'Hunter',
@@ -1747,7 +1747,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-2c',
-            imgUrl: '/decks/chapter1/archer.png',
+            imgUrl: '/chapter2/monk-white.png',
             title:'Shelly',
             text: "I remember hunting in the woods, and then... And then what?",
             faction: 'Hunter',
@@ -1765,7 +1765,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-2d',
-            imgUrl: '/decks/chapter1/archer.png',
+            imgUrl: '/chapter2/monk-white.png',
             title:'Shelly',
             text: "I've been hunting since I was little, my daddy used to take me out back in the forest before he...",
             faction: 'Hunter',
@@ -1784,7 +1784,7 @@ export const allDecks = writable({
 
         {
             id: 'chapter2-3a',
-            imgUrl: '/decks/chapter1/gatherer.png',
+            imgUrl: '/chapter2/monk-brown.png',
             title:'Krystina',
             text: "The aging curse that's been put on me is getting worse, can you help me.",
             faction: 'Villager',
@@ -1802,7 +1802,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-3b',
-            imgUrl: '/decks/chapter1/gatherer.png',
+            imgUrl: '/chapter2/monk-brown.png',
             title:'Krystina',
             text: "These flowers smell lovely, please don't steal them from me.",
             faction: 'Villager',
@@ -1820,7 +1820,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-3c',
-            imgUrl: '/decks/chapter1/gatherer.png',
+            imgUrl: '/chapter2/monk-brown.png',
             title:'Krystina',
             text: "These flowers... what is it about these flowers...",
             faction: 'Villager',
@@ -1838,7 +1838,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-3d',
-            imgUrl: '/decks/chapter1/gatherer.png',
+            imgUrl: '/chapter2/monk-brown.png',
             title:'Krystina',
             text: "Flowers bring joy, comfort the sad and excite the romantic. Flowers are amazing, wouldn't you agree?",
             faction: 'Villager',
@@ -1858,7 +1858,7 @@ export const allDecks = writable({
 
         {
             id: 'chapter2-4a',
-            imgUrl: '/decks/chapter1/villager.png',
+            imgUrl: '/chapter2/monk-brown.png',
             title:'Melody',
             text: "Did you know there used to be a woman in this village who was beloved by all, even the animals.",
             faction: 'Villager',
@@ -1876,7 +1876,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4b',
-            imgUrl: '/decks/chapter1/villager.png',
+            imgUrl: '/chapter2/monk-brown.png',
             title:'Meoldy',
             text: "Do you find me beautiful? Everyone finds me beautiful, everyone.",
             faction: 'Villager',
@@ -1894,7 +1894,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4c',
-            imgUrl: '/decks/chapter1/villager.png',
+            imgUrl: '/chapter2/monk-brown.png',
             title:'Melody',
             text: "I remember him watching me... following me... What did he do to me?",
             faction: 'Villager',
@@ -1912,7 +1912,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4d',
-            imgUrl: '/decks/chapter1/villager.png',
+            imgUrl: '/chapter2/monk-brown.png',
             title:'Melody',
             text: "Have you met my brother? He's so full of himself, claims he's the most handsome man in the village.",
             faction: 'Villager',
@@ -1931,9 +1931,9 @@ export const allDecks = writable({
 
         {
             id: 'chapter2-5a',
-            imgUrl: '/decks/chapter1/villager-old.png',
+            imgUrl: '/characters/Bullisa.png',
             title:'Rowelda',
-            text: "I don't quite like the way you're sniffing about this town boy, quit it!",
+            text: "Hello Elisa, thanks for playing:)",
             faction: 'Villager',
             textLeft: "Excuse you, I wasn't even doing anything.",
             textRight: 'Mind your own business you old hag.',
@@ -1949,9 +1949,9 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-5b',
-            imgUrl: '/decks/chapter1/villager-old.png',
+            imgUrl: '/characters/Bullisa.png',
             title:'Rowelda',
-            text: "Why are you still here? If you've finished your business here then begone!",
+            text: "Hello Elisa, hope you enjoyed:)",
             faction: 'Villager',
             textLeft: "I know who I'll never miss when I get out of this town.",
             textRight: "You're a mean old lady you know that? You need to watch your tone.",
@@ -1967,9 +1967,9 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-5c',
-            imgUrl: '/decks/chapter1/villager-old.png',
+            imgUrl: '/characters/Bullisa.png',
             title:'Rowelda',
-            text: "It was so quiet before I came here, why did I ever leave... when did I leave?",
+            text: "Hello Elisa, I wonder what's next?:)",
             faction: 'Villager',
             textLeft: "You can always go back the way you came, can't you?",
             textRight: 'This place is your home now, you should try to get used to it.',
@@ -1985,234 +1985,15 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-5d',
-            imgUrl: '/decks/chapter1/villager-old.png',
+            imgUrl: '/characters/Bullisa.png',
             title:'Rowelda',
-            text: "Those Jamison boys aren't the problem, they lack discipline and parenting. Why if I raised those boys, things would be different I tell you.",
+            text: "Hello Elisa, from the past:)",
             faction: 'Villager',
             textLeft: "I feel inclined to believe you.",
             textRight: "Yes well, I'll let you see to it then.",
             actionLeft: {
                 health: -1,
                 memory: 0,
-            },
-            actionRight: {
-                health: -1,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-
-        {
-            id: 'chapter2-6a',
-            imgUrl: '/decks/chapter1/cowheard.png',
-            title:'Bernard',
-            text: "My cattle are well mannered, but you can never fully trust a wild animal, wouldn't you agree?",
-            faction: 'Cowheard',
-            textLeft: "Perhaps you're being a little paranoid mister.",
-            textRight: "I don't even trust myself.",
-            actionLeft: {
-                health: -1,
-                memory: 0,
-            },
-            actionRight: {
-                health: -1,
-                memory: 2,
-            },
-            location: 'Magical Forest'
-        },
-        {
-            id: 'chapter2-6b',
-            imgUrl: '/decks/chapter1/cowheard.png',
-            title:'Bernard',
-            text: "Have you run into that miserable farmer Gallock? Don't pay him any mind, that's just how he is.",
-            faction: 'Cowheard',
-            textLeft: "Yeah I suspected as much, thanks for the advice.",
-            textRight: "Someone ought to knock him down a peg or two.",
-            actionLeft: {
-                health: 1,
-                memory: 0,
-            },
-            actionRight: {
-                health: 2,
-                memory: 1,
-            },
-            location: 'Magical Forest'
-        },
-        {
-            id: 'chapter2-6c',
-            imgUrl: '/decks/chapter1/cowheard.png',
-            title:'Bernard',
-            text: "Life is simple, it's the people that complicate it. Sometimes, a lonely road is the path you want to take.",
-            faction: 'Cowheard',
-            textLeft: "Maybe you just don't see the good in people.",
-            textRight: "What's the point of living if there's no one else to share the experience?",
-            actionLeft: {
-                health: -2,
-                memory: 0,
-            },
-            actionRight: {
-                health: -1,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-        {
-            id: 'chapter2-6d',
-            imgUrl: '/decks/chapter1/cowheard.png',
-            title:'Bernard',
-            text: "One day, my time will come. I need to make sure the cattle are probably taken care of.",
-            faction: 'Cowheard',
-            textLeft: "Your life is more important than cattle.",
-            textRight: "You are a man of devotion, I can appreciate that.",
-            actionLeft: {
-                health: -1,
-                memory: 0,
-            },
-            actionRight: {
-                health: 1,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-
-        {
-            id: 'chapter2-7a',
-            imgUrl: '/decks/chapter1/peasant.png',
-            title:'Felix',
-            text: "Please sir, do you have anything to spare? Anything at all will help.",
-            faction: 'Peasant',
-            textLeft: "Begone from me at once, peasant!",
-            textRight: "I'm sorry, I haven't anything to offer.",
-            actionLeft: {
-                health: 1,
-                memory: 1,
-            },
-            actionRight: {
-                health: -1,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-        {
-            id: 'chapter2-7b',
-            imgUrl: '/decks/chapter1/peasant.png',
-            title:'Felix',
-            text: "I can't go on like this anymore, please help me.",
-            faction: 'Peasant',
-            textLeft: "No.",
-            textRight: "I wish I could.",
-            actionLeft: {
-                health: 0,
-                memory: 1,
-            },
-            actionRight: {
-                health: -1,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-        {
-            id: 'chapter2-7c',
-            imgUrl: '/decks/chapter1/peasant.png',
-            title:'Felix',
-            text: "My mom is sick see, so if you have anything you could give me... I don't mean to beg, but if you care to spare.",
-            faction: 'Peasant',
-            textLeft: "Nobody likes a begger boy, remove yourself from me.",
-            textRight: "Good things come to those who wait, your time will come, be patient.",
-            actionLeft: {
-                health: 1,
-                memory: 1,
-            },
-            actionRight: {
-                health: -2,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-        {
-            id: 'chapter2-7d',
-            imgUrl: '/decks/chapter1/peasant.png',
-            title:'Felix',
-            text: "It's not fair, why can't I eat as much as everyone else gets to. What did I do wrong?",
-            faction: '...',
-            textLeft: "You can complain about it or you can do something about it.",
-            textRight: "It's not your fault, you just got unlucky.",
-            actionLeft: {
-                health: 2,
-                memory: 0,
-            },
-            actionRight: {
-                health: -2,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-
-        {
-            id: 'chapter2-8a',
-            imgUrl: '/decks/chapter1/villager-brother.png',
-            title:'Alexander',
-            text: "My beauty is renown far and wide, my sister isn't too bad herself, but her beautfy could simply never compare.",
-            faction: 'Villager',
-            textLeft: "Ugh",
-            textRight: "Yes yes, you're very handsome.",
-            actionLeft: {
-                health: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: -1,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-        {
-            id: 'chapter2-8b',
-            imgUrl: '/decks/chapter1/villager-brother.png',
-            title:'Alexander',
-            text: "Why if I were one of the king's royal guards, the wars would be over by nightfall! Sadly I've no time for such trivial things.",
-            faction: 'Villager',
-            textLeft: "Yeah I'm sure the king's army could use a knight like you.",
-            textRight: "Ahahahaa, surely you'd make a better jester than soldier.",
-            actionLeft: {
-                health: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 1,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-        {
-            id: 'chapter2-8c',
-            imgUrl: '/decks/chapter1/villager-brother.png',
-            title:'Alexander',
-            text: "Everybody loves me, you don't have to be shy about it. If you'd like, I can help you be more popular.",
-            faction: 'Villager',
-            textLeft: "I hate your kind the most, no thank you.",
-            textRight: "I'll take my chances.",
-            actionLeft: {
-                health: 1,
-                memory: 1,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-            },
-            location: 'Magical Forest'
-        },
-        {
-            id: 'chapter2-8d',
-            imgUrl: '/decks/chapter1/villager-brother.png',
-            title:'Alexander',
-            text: "Despite my apparent good looks, I feel as if I've lost my glow. Does that make any sense to you?",
-            faction: 'Villager',
-            textLeft: "These things are destined to happen eventually.",
-            textRight: "You used to glow?",
-            actionLeft: {
-                health: 0,
-                memory: 1,
             },
             actionRight: {
                 health: -1,
