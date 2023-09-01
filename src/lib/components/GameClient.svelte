@@ -5,6 +5,7 @@
     import { draw } from 'svelte/transition';
     import Card from './Card.svelte';
     import Game from './Game.svelte';
+    import Button from './Button.svelte';
 
     // Stores
     import { allDecks, newDeck } from '../stores/allDecks';
@@ -21,12 +22,12 @@
     const chapter1SoldiersDeck = $allDecks.chapter1Soldiers;
     const chapter2Deck = $allDecks.chapter2;
 
-    // For timer to show when a new deck has been added.
+    $player.unlockedCards = [...tutorial1Deck];
     let newDeckAlert = false;
     let newDeckAlertText = 'DECK_NAME_HERE';
     let gameOver = false;
-    $player.unlockedCards = [...tutorial1Deck];
     let currentCard = $player.unlockedCards[0];
+    let menuOpen = false;
     $: hpMessage = $player.health <= 3 ? 'HP: Low!' : `HP:${$player.health}`;
     $: sanityMessage = '?'; 
     $: energyMessage = $player.energy <= 3 ? 'Energy: Low!': `Energy: ${$player.energy}`;
@@ -74,6 +75,7 @@
         if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 7) {
             $player.unlockedDeck.chapter1Soldiers = true;
             $player.unlockedCards = [...chapter1SoldiersDeck, ...$player.unlockedCards];
+            $player.displayDecks = [...$player.displayDecks, 'Chapter1/Soldiers'];
             newDeckAlertText = 'Soldiers'
             newDeckAlert = true;
 
@@ -89,6 +91,7 @@
                     p.activeDeck = 'tutorial';
                     p.unlockedDeck.tutorial2 = true;
                     p.unlockedCards = [...tutorial2Deck];
+                    p.displayDecks = [...p.displayDecks, 'Tutorial2/Survey2'];
                     currentCard = p.unlockedCards[0];
                     return p;
                 });
@@ -119,6 +122,7 @@
                     p.unlockedDeck.survey2 = true;
                     p.unlockedDeck.chapter2 = true;
                     p.unlockedCards = [...chapter2Deck];
+                    p.displayDecks = [...p.displayDecks, 'Chapter2'];
                     return p;
                 });
                 
@@ -139,6 +143,9 @@
                     p.activeDeck = 'chapter';
                     p.unlockedDeck.chapter1 = true;
                     p.unlockedCards = [...chapter1Deck];
+
+                    // Every click would add "chapter 1" as an unlocked deck in menu
+                    if (!p.displayDecks.includes('Chapter1')) p.displayDecks = [...p.displayDecks, 'Chapter1'];
                     return p;
                 });
                 
@@ -181,11 +188,28 @@
 
 <div class="game-client">
     {#if gameOver}
-        <div class="main-menu">
+        <div class="menu">
             <h2 class="main-menu-title">Play again?</h2>
             <button on:click={() => gameOver = false}>Yes</button>
         </div>
     {:else}
+    {#if menuOpen}
+        <div class="menu">
+            <h2 class="main-menu-title">Main Menu</h2>
+            <main class="menu-content">
+                <h3>Decks Unlocked:</h3>
+                <ul>
+                    {#each $player.displayDecks as deck}
+                    <!-- TODO: Display a little deck with img -->
+                    <li>{deck}</li>
+                    {/each}
+                </ul>
+            </main>
+            <div class="menu-wrapper">
+                <Button on:click={() => menuOpen = !menuOpen} bgColor={"bg-black"}>Menu</Button>
+            </div>
+        </div>
+    {/if}
         <div class="stats-wrapper">
             <p class="red-icon">{$player.unlockedDeck.chapter1 ? hpMessage : '?'}</p>
             <p class="green-icon">{$player.unlockedDeck.chapter2 ? energyMessage : '?'}</p>
@@ -223,32 +247,67 @@
             </div>
         </div>
     {/if}
+    <div class="menu-wrapper">
+        <Button on:click={() => menuOpen = !menuOpen} bgColor={"bg-black"}>Menu</Button>
+    </div>
 </div>
 
 <style lang="scss">
+    .menu-wrapper {
+        background-color: #0000003b;
+        border-radius: 5rem 5rem 0 0;
+        padding: 0.25rem;
+        width: 80%;
+        margin: 0 auto; 
+
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .menu {
+        z-index: 1000;
+        background-color: #090909f9;
+        border-radius: 5rem 1rem 5rem 1rem;
+        height: 100%;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        transition: all 0.3s ease-out;
+
+        position: absolute;
+        top: 0;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .menu-content {
+        background-color: #00000090;
+        border-radius: 5rem 1rem 5rem 1rem;
+        height: 85%;
+        padding: 2rem 1.5rem 1rem;
+        text-align: left;
+
+    }
+
     .game-client {
         position: relative;
-        height: 800px;
+        padding: 5rem 1rem;
         width: 30%;
         min-width: 475px;
         max-width: 700px;
+        min-height: 825px;
         margin: 0 auto;
+        border: 4px solid #00000079;
         border-radius: 5rem 1rem 5rem 1rem;
         background-color: #000000df;
-        background: linear-gradient(to right, #150c1dd8, #092726d5);
-        box-shadow: 0 0.25rem 1rem #18252f7f;
-    }
-
-    .main-menu {
-        background-color: #00ff9d25;
-        height: 95%;
-        width: 90%;
-        text-align: center;
-
-        position: absolute;
-        top: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
+        background: linear-gradient(to right, #000000, rgba(12, 3, 31, 0.782), #000000);
+        box-shadow: 0 0.5rem 2rem 0.5rem #0c00387e;
     }
 
     .container {
@@ -263,7 +322,8 @@
 
     .card-text {
         position: relative;
-        background: linear-gradient(to right, #0f0814ef, #061a19);
+        background-color: #00000053;
+        box-shadow: 0 0.125rem 0.5rem #0000004e;
         width: 100%;
         padding: 0.75rem;
         line-height: 1.4;
@@ -280,23 +340,31 @@
     }
 
     .card-text::-webkit-scrollbar-track {
-        background: linear-gradient(to right, #0f0814ef, #061a19);
+        background-color: #000;
         border-radius: 0.25rem;
 
     }
 
     .card-text::-webkit-scrollbar-thumb {
-        background: linear-gradient(to left, #0f0814ef, #00000095);
+        background-color: #151515;
         border-radius: 0.25rem;
 
     }
 
     .stats-wrapper {
-        height: 12%;
         background-color: #0000007f;
-        background: linear-gradient(to right, #0f0814ef, #061a19);
+        background: linear-gradient(to top, #000000e6, #0f0228ab, #000000e6);
         border-radius: 5rem 1rem 0 0;
         margin-bottom: 1rem;
+        padding: 2rem;
+        width: 100%;
+        box-shadow: 0 0.5rem 0.5rem #0000004e;
+
+        position: absolute;
+        top: 0;
+        right: 50%;
+        transform: translate(50%);
+
 
         display: flex;
         justify-content: space-evenly;
@@ -353,6 +421,7 @@
     }
 
     .show {
+        display: block;
         opacity: 100%;
     }
 </style>

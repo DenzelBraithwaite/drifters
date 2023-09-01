@@ -73,7 +73,7 @@
     position: relative;
     width: 100%;
     border-radius: 5rem 1rem 5rem 1rem;
-    box-shadow: 0 4px 12px #00000063;
+    box-shadow: 0 4px 12px #3800004d;
     transition: all 0.3s ease-out;
 
     display: flex;
@@ -96,7 +96,6 @@
     object-fit: cover;
     object-position: center;
     border-radius: 5rem 1rem 5rem 1rem;
-
   }
 
   .text-lr {

@@ -21,6 +21,7 @@ const player = writable({
         chapter4: false,
 
     },
+    displayDecks: ['Tutorial1/Survey1'],
     health: 5,
     sanity: 5,
     energy: 5,
