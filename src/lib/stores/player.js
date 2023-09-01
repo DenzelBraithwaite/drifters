@@ -21,10 +21,10 @@ const player = writable({
         chapter4: false,
 
     },
-    health: 6,
-    sanity: 6,
-    energy: 6,
-    impulse: 6,
+    health: 5,
+    sanity: 5,
+    energy: 5,
+    impulse: 0,
     memory: 0,
 });
 

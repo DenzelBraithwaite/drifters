@@ -33,7 +33,7 @@ export function tutorialHandler(event, card) {
                 nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-5');
                 break;
             case 'tutorial1-5':
-                    nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-6a');
+                nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-6a');
                 break;
             case 'tutorial1-6a':
             case 'tutorial1-6b':
@@ -83,7 +83,20 @@ export function tutorialHandler(event, card) {
                 nextCard = survey1Deck.find(card => card.id === 'survey1-10');
                 break;
             case 'survey1-10':
-                nextCard = survey1Deck.find(card => card.id === 'survey1-10');
+                nextCard = survey1Deck.find(card => card.id === 'survey1-11');
+                break;
+            case 'survey1-11':
+                nextCard = survey1Deck.find(card => card.id === 'survey1-12');
+                break;
+            case 'survey1-12':
+                nextCard = survey1Deck.find(card => card.id === 'survey1-13a');
+                break;
+            case 'survey1-13a':
+            case 'survey1-13b':
+                nextCard = survey1Deck.find(card => card.id === 'survey1-14');
+                break;
+            case 'survey1-14':
+                nextCard = survey1Deck.find(card => card.id === 'survey1-14');
                 break;
 
             // Tutorial / Survey 2
@@ -95,7 +108,7 @@ export function tutorialHandler(event, card) {
                 nextCard = tutorial2Deck.find(card => card.id === 'tutorial2-3');
                 break;
             case 'tutorial2-3':
-                    nextCard = tutorial2Deck.find(card => card.id === 'tutorial2-4a');
+                nextCard = tutorial2Deck.find(card => card.id === 'tutorial2-4a');
                 break;
             case 'tutorial2-4a':
             case 'tutorial2-4b':
@@ -151,7 +164,14 @@ export function tutorialHandler(event, card) {
                 nextCard = survey2Deck.find(card => card.id === 'survey2-10');
                 break;
             case 'survey2-10':
-                nextCard = survey2Deck.find(card => card.id === 'survey2-10');
+                nextCard = survey2Deck.find(card => card.id === 'survey2-11a');
+                break;
+            case 'survey2-11a':
+            case 'survey2-11b':
+                nextCard = survey2Deck.find(card => card.id === 'survey2-12');
+                break;
+            case 'survey2-12':
+                nextCard = survey2Deck.find(card => card.id === 'survey2-12');
                 break;
 
             default:
@@ -183,7 +203,7 @@ export function tutorialHandler(event, card) {
                 nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-7');
                 break;
             case 'tutorial1-7':
-                    nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-8b');
+                nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-8b');
                 break;
             case 'tutorial1-8a':
             case 'tutorial1-8b':
@@ -226,7 +246,20 @@ export function tutorialHandler(event, card) {
                 nextCard = survey1Deck.find(card => card.id === 'survey1-10');
                 break;
             case 'survey1-10':
-                nextCard = survey1Deck.find(card => card.id === 'survey1-10');
+                nextCard = survey1Deck.find(card => card.id === 'survey1-11');
+                break;
+            case 'survey1-11':
+                nextCard = survey1Deck.find(card => card.id === 'survey1-12');
+                break;
+            case 'survey1-12':
+                nextCard = survey1Deck.find(card => card.id === 'survey1-13b');
+                break;
+            case 'survey1-13a':
+            case 'survey1-13b':
+                nextCard = survey1Deck.find(card => card.id === 'survey1-14');
+                break;
+            case 'survey1-14':
+                nextCard = survey1Deck.find(card => card.id === 'survey1-14');
                 break;
 
             // Tutorial / Survey 2
@@ -238,7 +271,7 @@ export function tutorialHandler(event, card) {
                 nextCard = tutorial2Deck.find(card => card.id === 'tutorial2-3');
                 break;
             case 'tutorial2-3':
-                    nextCard = tutorial2Deck.find(card => card.id === 'tutorial2-4b');
+                nextCard = tutorial2Deck.find(card => card.id === 'tutorial2-4b');
                 break;
             case 'tutorial2-4a':
             case 'tutorial2-4b':
@@ -294,7 +327,17 @@ export function tutorialHandler(event, card) {
                 nextCard = survey2Deck.find(card => card.id === 'survey2-10');
                 break;
             case 'survey2-10':
-                nextCard = survey2Deck.find(card => card.id === 'survey2-10');
+                nextCard = survey2Deck.find(card => card.id === 'survey2-11b');
+                break;
+            case 'survey2-11a':
+            case 'survey2-11b':
+                nextCard = survey2Deck.find(card => card.id === 'survey2-12');
+                break;
+            case 'survey2-11b':
+                nextCard = survey2Deck.find(card => card.id === 'survey2-12');
+                break;
+            case 'survey2-12':
+                nextCard = survey2Deck.find(card => card.id === 'survey2-12');
                 break;
 
             default:

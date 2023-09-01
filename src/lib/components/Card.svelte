@@ -41,7 +41,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="card-wrapper">
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <span class="text-left" 
+  <span class="text-lr text-left" 
    on:mouseover={showLeftText} 
    on:mouseout={hideText}
    on:click={() => actionHandler('left')}>
@@ -50,7 +50,7 @@
     {/if}
   </span>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <span class="text-right" 
+  <span class="text-lr text-right" 
    on:mouseover={showRightText} 
    on:mouseout={hideText}
    on:click={() => actionHandler('right')}>
@@ -99,26 +99,29 @@
 
   }
 
-  /* TODO: text-left and right are very similar, make one class */
-  .text-left {
-    text-shadow: 0 2px 4px #000000c3;
+  .text-lr {
+    text-align: center;
+    text-shadow: 0 2px 4px #000000e5;
     height: 100%;
     width: 50%;
-    padding: 1.125rem;
+    padding: 1rem;
+    line-height: 1.4;
     padding-top: 2rem;
-    font-size: 1.5rem;
-    border-radius: 5rem 0 0 1rem;
+    font-size: 1.3rem;
     transition: all 0.3s ease-out;
-    
+    z-index: 10;
+
+  }
+
+  .text-left {
+    border-radius: 5rem 0 0 1rem;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
 
     &:hover {
       scale: 1.02;
       background-color: #a55bda5b;
-      text-align: center;
       cursor: var(--pointer);
     }
 
@@ -130,24 +133,14 @@
   }
 
   .text-right {
-    text-shadow: 0 2px 4px #000000c3;
-    height: 100%;
-    width: 50%;
-    padding: 1.125rem;
-    padding-top: 2rem;
-    font-size: 1.5rem;
     border-radius: 0 1rem 5rem 0;
-    transition: all 0.3s ease-out;
-    
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 10;
 
     &:hover {
       scale: 1.02;
       background-color: #2cb7b25b;
-      text-align: center;
       cursor: var(--pointer);
     }
 

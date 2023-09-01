@@ -27,11 +27,12 @@
     let gameOver = false;
     $player.unlockedCards = [...tutorial1Deck];
     let currentCard = $player.unlockedCards[0];
-    $: hpMessage = $player.health <= 5 ? 'Hp Low' : 'HP Good';
-    $: sanityMessage = '?';
-    $: energyMessage = '?';
+    $: hpMessage = $player.health <= 3 ? 'HP: Low!' : `HP:${$player.health}`;
+    $: sanityMessage = '?'; 
+    $: energyMessage = $player.energy <= 3 ? 'Energy: Low!': `Energy: ${$player.energy}`;
     $: impulseMessage = '?';
-    $: memMessage = $player.memory <= 6 ? 'No memory' : 'Low memory';
+    $: memMessage = $player.memory < 1 ? 'No memory' : `MEM:${$player.memory}`;
+    console.log($player.energy);
 
     function drawRandomCard() {
         const index = Math.floor(Math.random() * $player.unlockedCards.length);
@@ -44,20 +45,20 @@
 
         if (choice === 'left') {
             player.update(p => {
-                if (p.health >= 0 || p.health<= 0) p.health += currentCard.actionLeft.health;
-                if (p.sanity >= 0 || p.sanity<= 0) p.sanity += currentCard.actionLeft.sanity;
-                if (p.energy >= 0 || p.energy<= 0) p.energy += currentCard.actionLeft.energy;
-                if (p.impulse >= 0 || p.impulse<= 0) p.impulse += currentCard.actionLeft.impulse;
-                if (p.memory >= 0 || p.memory<= 0) p.memory += currentCard.actionLeft.memory;
+                p.health += currentCard.actionLeft.health;
+                p.sanity += currentCard.actionLeft.sanity;
+                p.energy += currentCard.actionLeft.energy;
+                p.impulse += currentCard.actionLeft.impulse;
+                p.memory += currentCard.actionLeft.memory;
                 return p;
             });
         } else if (choice === 'right') {
             player.update(p => {
-                if (p.health >= 0 || p.health<= 0) p.health += currentCard.actionRight.health;
-                if (p.sanity >= 0 || p.sanity<= 0) p.sanity += currentCard.actionRight.sanity;
-                if (p.energy >= 0 || p.energy<= 0) p.energy += currentCard.actionRight.energy;
-                if (p.impulse >= 0 || p.impulse<= 0) p.impulse += currentCard.actionRight.impulse;
-                if (p.memory >= 0 || p.memory <= 0) p.memory += currentCard.actionRight.memory;
+                p.health += currentCard.actionRight.health;
+                p.sanity += currentCard.actionRight.sanity;
+                p.energy += currentCard.actionRight.energy;
+                p.impulse += currentCard.actionRight.impulse;
+                p.memory += currentCard.actionRight.memory;
                 return p;
             });
         }
@@ -70,7 +71,7 @@
         }
 
         // Add soldier deck
-        if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 6) {
+        if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 7) {
             $player.unlockedDeck.chapter1Soldiers = true;
             $player.unlockedCards = [...chapter1SoldiersDeck, ...$player.unlockedCards];
             newDeckAlertText = 'Soldiers'
@@ -83,7 +84,7 @@
         }
 
         // Move on to chapter 2 if enough memory.
-        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 12) { 
+        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 15) { 
             player.update(p => {
                     p.activeDeck = 'tutorial';
                     p.unlockedDeck.tutorial2 = true;
@@ -111,7 +112,7 @@
         currentCard = tutorialHandler(event, currentCard);
 
         // Checks if current card is final survey card
-        if (currentCard.id === 'survey2-10') {
+        if (currentCard.id === 'survey2-12') {
             setTimeout(() => {
                 player.update(p => {
                     p.activeDeck = 'chapter';
@@ -129,10 +130,10 @@
                 const index = Math.floor(Math.random() * $player.unlockedCards.length);
                 const cardDrawn = $player.unlockedCards[index];
                 currentCard = cardDrawn;
-            }, 6000);
+            }, 4000);
         }
 
-        if (currentCard.id === 'survey1-10') {
+        if (currentCard.id === 'survey1-14') {
             setTimeout(() => {
                 player.update(p => {
                     p.activeDeck = 'chapter';
@@ -149,12 +150,12 @@
                 const index = Math.floor(Math.random() * $player.unlockedCards.length);
                 const cardDrawn = $player.unlockedCards[index];
                 currentCard = cardDrawn;
-            }, 6000);
+            }, 6500);
         }
     }
 
     function isPlayerDead() {
-        if ($player.health <= 0 || $player.sanity <= 0 || $player.energy <= 0 || $player.impulse <= 0) {
+        if ($player.health <= 0 || $player.energy <= 0 || $player.sanity <= 0 || $player.impulse >= 10) {
             resetPlayer();
             return true;
         }
@@ -187,8 +188,8 @@
     {:else}
         <div class="stats-wrapper">
             <p class="red-icon">{$player.unlockedDeck.chapter1 ? hpMessage : '?'}</p>
-            <p class="green-icon">{$player.unlockedDeck.chapter2 ? sanityMessage : '?'}</p>
-            <p class="pink-icon">{$player.unlockedDeck.chapter3 ? energyMessage : '?'}</p>
+            <p class="green-icon">{$player.unlockedDeck.chapter2 ? energyMessage : '?'}</p>
+            <p class="pink-icon">{$player.unlockedDeck.chapter3 ? sanityMessage : '?'}</p>
             <p class="yellow-icon">{$player.unlockedDeck.chapter4 ? impulseMessage : '?'}</p>
             <p class="white-icon">{$player.unlockedDeck.chapter1 ? memMessage : '?'}</p>
         </div>
@@ -265,13 +266,12 @@
         background: linear-gradient(to right, #0f0814ef, #061a19);
         width: 100%;
         padding: 0.75rem;
+        line-height: 1.4;
         height: 7rem;
         margin: 1rem auto;
-        font-size: 1.25rem;
+        font-size: 1.125rem;
         border-radius: 0.5rem;
         overflow-y: scroll;
-
-
 
             &::-webkit-scrollbar {
                 width: 0.5rem;

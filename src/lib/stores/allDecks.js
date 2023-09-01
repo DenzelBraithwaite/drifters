@@ -502,8 +502,8 @@ export const allDecks = writable({
             title:'Jude',
             text: "Fantastic, then it's time. Remember, your decisions have meaning. You aren't alone here, but this is your show... Good luck Jack, hahahaa...",
             faction: 'First Survey',
-            textLeft: "",
-            textRight: "",
+            textLeft: "Wait come back!",
+            textRight: "Wait I'm not alone here?",
             actionLeft: {
                 heart: 0,
                 diamond: 0,
@@ -513,7 +513,97 @@ export const allDecks = writable({
                 diamond: 0,
             },
             location: 'survey'
-        }  
+        },
+        {
+            id: 'survey1-11',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "Oh- and by the way, I probably should have mentioned this sooner... But every time we speak, you will gain a memento.",
+            faction: 'First Survey',
+            textLeft: "A memento?",
+            textRight: "For what?",
+            actionLeft: {
+                heart: 0,
+                diamond: 0,
+            },
+            actionRight: {
+                heart: 0,
+                diamond: 0,
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey1-12',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "The mementos are linked to you, you must protect them. If one of them ever becomes fully damaged... Just remember it's important to keep them intact.",
+            faction: 'First Survey',
+            textLeft: "How would they get damaged?",
+            textRight: "Wait, what happens if one breaks?",
+            actionLeft: {
+                heart: 0,
+                diamond: 0,
+            },
+            actionRight: {
+                heart: 0,
+                diamond: 0,
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey1-13a',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "It depends on your actions, who you talk to, what you decide to say. Right now you only have one memento to worry about, but soon you will have more... very soon.",
+            faction: 'First Survey',
+            textLeft: "How could me talking to other people damage my mementos?",
+            textRight: "What should I avoid saying then?",
+            actionLeft: {
+                heart: 0,
+                diamond: 0,
+            },
+            actionRight: {
+                heart: 0,
+                diamond: 0,
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey1-13b',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Now where's the fun in telling you that...",
+            faction: 'First Survey',
+            textLeft: "What about this is fun period?",
+            textRight: "Is this a joke to you?",
+            actionLeft: {
+                heart: 0,
+                diamond: 0,
+            },
+            actionRight: {
+                heart: 0,
+                diamond: 0,
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey1-14',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "That's enough questions for now, don't worry you'll be fine. Or maybe you won't, only one way to know for sure. We will speak again soon Jack, very soon...",
+            faction: 'First Survey',
+            textLeft: "I'm not done yet, I still have more questions.",
+            textRight: "My questions aren't going anywhere, see you soon \"Jude\".",
+            actionLeft: {
+                heart: 0,
+                diamond: 0,
+            },
+            actionRight: {
+                heart: 0,
+                diamond: 0,
+            },
+            location: 'survey'
+        }
     ],
 
     survey2: [
@@ -524,7 +614,7 @@ export const allDecks = writable({
             text: "Fantastic, question number 1. Did you recognize anyone in the village?",
             faction: 'Surveys',
             textLeft: "Hmmm... not really.",
-            textRight: 'Of course not, was there someone I was meant to meet?',
+            textRight: "Of course not, It's not like I've met them before.",
             actionLeft: {
                 brain: 0,
                 smiley: 1
@@ -560,7 +650,7 @@ export const allDecks = writable({
             text: "Yes well, truth be told most people who enter that village wander in, lost. Did you remember anything while you were there?",
             faction: 'Surveys',
             textLeft: "It might please you to learn that I, along with the rest of the villagers, still do not remember a thing.",
-            textRight: "No, is there something you were hoping I'd remember?",
+            textRight: "Still nothing but blanks, when will my memory return?",
             actionLeft: {
                 brain: 1,
                 smiley: 0
@@ -593,7 +683,7 @@ export const allDecks = writable({
             id: 'survey2-4',
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
-            text: "Fantastic, you should start to remember soon, most likely by the next time we talk you'll have remembered something important.",
+            text: "Well, you should start to remember soon, most likely by the next time we talk you'll have remembered something important.",
             faction: 'Surveys',
             textLeft: "That's very suspicious, it almost sounds as if you have something planned.",
             textRight: "Why can't I remember now?",
@@ -611,7 +701,7 @@ export const allDecks = writable({
             id: 'survey2-5a',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
-            text: "Whether or not there's a plan for you is at your discretion. But if you want to remember, it's only a matter of time.",
+            text: "Well whether or not there's a plan for you is at your discretion. But if you want to remember, it's only a matter of time.",
             faction: 'Surveys',
             textLeft: "You act as if I don't want to remember, but I do... it's not just happening yet.",
             textRight: "If I want to remember?",
@@ -647,7 +737,7 @@ export const allDecks = writable({
             id: 'survey2-6',
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
-            text: "We should get back to the survey now, although all of our interactions help me better understand you better. Do me a favor and pick one would you?",
+            text: "We should get back to the survey, although all of our interactions help me better understand you better. Do me a favor and pick one would you?",
             faction: 'Surveys',
             textLeft: "Brain",
             textRight: "Mouth",
@@ -737,7 +827,7 @@ export const allDecks = writable({
             id: 'survey2-10',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
-            text: "Well whether your dead or alive, you won't make any progress until your memories return. I'm going to leave you for now, but I'll be thinking about our conversations. Until next time Jack...",
+            text: "hehe, whether you're dead or alive you won't make any progress until your memories return. I'm going to leave you for now, but I'll be thinking about our conversations. Until next time Jack...",
             faction: 'Surveys',
             textLeft: "Wait! I still have questions I want to ask!",
             textRight: "Going to abandon me again? Please, just tell me if I'm alive.",
@@ -751,6 +841,61 @@ export const allDecks = writable({
             },
             location: 'survey'
         },
+        {
+            id: 'survey2-11a',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "More questions? No matter how many I answer, only you can answer the important ones. You should focus on protecting your mementos for now.",
+            faction: 'Surveys',
+            textLeft: "Fine, but I still don't understand what you mean.",
+            textRight: "Answering some questions is better than none.",
+            actionLeft: {
+                brain: 0,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-11b',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Abandon you? What ever gave you the impression I was gone. Don't worry about life and death, just focus on guarding the mementos and you'll be... fine.",
+            faction: 'Surveys',
+            textLeft: "Wait, have you been watching me the entire time?",
+            textRight: "Memento this, memento that. What's so important about them anyways?",
+            actionLeft: {
+                brain: 0,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-12',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Looks like that's all the time we have for now, see you soon Jack...",
+            faction: 'Surveys',
+            textLeft: "But I-",
+            textRight: "...",
+            actionLeft: {
+                brain: 0,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        
     ],
 
     chapter1: [
@@ -765,10 +910,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
-                health: -1,
+                health: -2,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -783,10 +932,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -801,10 +954,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 1,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -819,10 +976,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-1e',
+            imgUrl: '/decks/chapter1/angry-cowboy.png',
+            title:'Mr. Gallock',
+            text: "I can't stand this village I tell you! The first chance I get, I'm gone like the wind.",
+            faction: 'Farmer',
+            textLeft: "I hear you.",
+            textRight: "Be patient, maybe it'll get better.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: -2,
+                memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -838,10 +1021,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -856,10 +1043,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 0,
                 memory: 1,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -874,10 +1065,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: 0,
                 memory: 1,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -890,12 +1085,38 @@ export const allDecks = writable({
             textLeft: "You don't have to talk about it if you don't want to.",
             textRight: "Did you kill him?",
             actionLeft: {
-                health: 0,
+                health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-2e',
+            imgUrl: '/decks/chapter1/archer.png',
+            title:'Shelly',
+            text: "Hunting is in my blood, but I've never liked violence... is that weird?",
+            faction: 'Hunter',
+            textLeft: "No, I think that makes sense.",
+            textRight: "Yes and no.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -911,10 +1132,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             actionRight: {
-                health: 0,
+                health: -1,
                 memory: 1,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -929,10 +1154,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             actionRight: {
-                health: -1,
+                health: -2,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -947,10 +1176,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 1,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -965,10 +1198,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-3e',
+            imgUrl: '/decks/chapter1/gatherer.png',
+            title:'Krystina',
+            text: "Truth be told, I don't think I was ever cursed, I just miss my youth so much.",
+            faction: 'Villager',
+            textLeft: "Nothing lasts forever, time's arrow marches forward.",
+            textRight: "Kind of ridiculous to go around telling everyone you're cursed then.",
+            actionLeft: {
+                health: 1,
+                memory: 1,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -985,10 +1244,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1003,10 +1266,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 0,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1021,10 +1288,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -2,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1039,10 +1310,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-4e',
+            imgUrl: '/decks/chapter1/villager.png',
+            title:'Melody',
+            text: "I've heard there are fairies and other magical creatures in a forest nearby.",
+            faction: 'Villager',
+            textLeft: "Yeah, I'll believe it when I see it.",
+            textRight: "That can't be possible.",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1058,10 +1355,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1076,10 +1377,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: 2,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1094,10 +1399,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -2,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 1,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1112,10 +1421,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-5e',
+            imgUrl: '/decks/chapter1/villager-old.png',
+            title:'Rowelda',
+            text: "Sometimes I sit and wonder, am I the oldest person in the village? There's so much I wish I'd done sooner... Don't waste your life",
+            faction: 'Villager',
+            textLeft: "Don't worry, you still have plenty of years left.",
+            textRight: "Thanks for the advice, but I don't plan on wasting my years.",
+            actionLeft: {
+                health: -2,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1131,10 +1466,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 2,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1149,10 +1488,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 2,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1167,10 +1510,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -2,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1185,10 +1532,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-6e',
+            imgUrl: '/decks/chapter1/cowheard.png',
+            title:'Bernard',
+            text: "Animals are simple creatures; they eat, sleep and poop. We could learn a lot from animals.",
+            faction: 'Cowheard',
+            textLeft: "We never give animals enough credit.",
+            textRight: "You sound like a crazy person, you know that right?",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1204,10 +1577,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1222,10 +1599,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1240,10 +1621,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -2,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1258,10 +1643,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: 2,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -2,
                 memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-7e',
+            imgUrl: '/decks/chapter1/peasant.png',
+            title:'Felix',
+            text: "I might not have much, but I have my health. That's worth more than any amo-",
+            faction: '...',
+            textLeft: "Yeah yeah, whatever helps you sleep at night.",
+            textRight: "Any amount of money in the world, I couldn't agree more.",
+            actionLeft: {
+                health: 1,
+                memory: 1,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: -2,
+                memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1277,10 +1688,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1295,10 +1710,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1313,10 +1732,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: 0,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1331,10 +1754,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 1,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-8e',
+            imgUrl: '/decks/chapter1/villager-brother.png',
+            title:'Alexander',
+            text: "If only someone understood the hardships of being so amazing and talented, I truly am alone at the top.",
+            faction: 'Villager',
+            textLeft: "You're alone but it's not because you're \"at the top\" that's for sure.",
+            textRight: "The next time you go to speak, don't.",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1352,10 +1801,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 0,
                 memory: 1,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: -2,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1370,10 +1823,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1388,10 +1845,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: 0,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1406,10 +1867,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-s-1e',
+            imgUrl: '/decks/chapter1/soldiers/soldier-red.png',
+            title:'Oscar',
+            text: "I can't talk right now, I need to go train.",
+            faction: 'Soldier',
+            textLeft: "Sorry to bother you.",
+            textRight: "Yes you probably do.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1425,10 +1912,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 1,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1439,14 +1930,18 @@ export const allDecks = writable({
             text: "War is the only thing you can count on, remember that.",
             faction: 'Soldier',
             textLeft: "There's more to life than death and violence.",
-            textRight: "Death and taxes brother.",
+            textRight: "Death and taxes friend.",
             actionLeft: {
                 health: -2,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1461,10 +1956,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1479,10 +1978,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: 0,
                 memory: 1,
+                good: 1,
+                evil: 0
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-s-2e',
+            imgUrl: '/decks/chapter1/soldiers/soldier-brown.png',
+            title:'August',
+            text: "If I run away from the army, do you think they'll have me hanged?",
+            faction: 'Soldier',
+            textLeft: "It's a strong possibility.",
+            textRight: "You'll be fine, won't know unless you try.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1491,17 +2016,21 @@ export const allDecks = writable({
             id: 'chapter1-s-3a',
             imgUrl: '/decks/chapter1/soldiers/soldier-black.png',
             title:'Dedu',
-            text: "I've come a long way from my home village, the people here to not know war like my people do.",
+            text: "I've come a long way from my home village, the people here do not know war like my people do.",
             faction: 'Soldier',
             textLeft: "Don't judge people before getting to know them, you might be surprised..",
             textRight: "I'm sorry you have to live through that.",
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1516,10 +2045,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1534,10 +2067,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 0,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
@@ -1552,10 +2089,36 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: 0,
                 memory: 1,
+                good: 0,
+                evil: 0
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-s-3e',
+            imgUrl: '/decks/chapter1/soldiers/soldier-black.png',
+            title:'Dedu',
+            text: "Life isn't all about the glory of battle, but it doesn't hurt to know how to defend yourself.",
+            faction: 'Soldier',
+            textLeft: "I suppose you're right, but I don't want to hurt anyone.",
+            textRight: "If push comes to shove, I can defend myself just fine.",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 1,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1572,10 +2135,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1590,10 +2157,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -2,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1608,10 +2179,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             location: 'Town of Beginning'
         },
@@ -1626,378 +2201,826 @@ export const allDecks = writable({
             actionLeft: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
+            },
+            location: 'Town of Beginning'
+        },
+        {
+            id: 'chapter1-s-4e',
+            imgUrl: '/decks/chapter1/soldiers/captain.png',
+            title:'Hugo',
+            text: "What makes a great leader?",
+            faction: 'Soldier',
+            textLeft: "Making hard decisions, even if it means abandoning one of your men.",
+            textRight: "Listening to your people and allowing everyone to have a say.",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Town of Beginning'
         },
     ],
 
     chapter2: [
+        // Monk-white
         {
             id: 'chapter2-1a',
-            imgUrl: '/chapter2/monk-white.png',
-            title:'Mr. Gallock',
-            text: 'Shoot, it seems the pests are at my crop again, can you lend me a hand?',
-            faction: 'Farmer',
-            textLeft: "I have no time for that!",
-            textRight: "Sure, I guess I'm not in a rush",
+            imgUrl: '/chapter2/monk-white-1.png',
+            title:'Hayden',
+            text: 'Everything has a natural rythm, if you listen closely you can hear it.',
+            faction: 'Monk',
+            textLeft: "Yeah good luck with that.",
+            textRight: "I don't think I'm ready to hear it yet, but I'll give it a try.",
             actionLeft: {
                 health: 1,
+                energy: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
-                memory: 0,
+                memory: 1,
+                energy: -1,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-1b',
-            imgUrl: '/chapter2/monk-white.png',
-            title:'Mr. Gallock',
-            text: 'Those damn Jamison boys are ruining this village, either talk to their parents or I will.',
-            faction: 'Farmer',
-            textLeft: "Why would I be the one to talk to their parents?",
-            textRight: "Sure, but I'm not sure how I'll be able to help..",
+            imgUrl: '/chapter2/monk-white-1.png',
+            title:'Hayden',
+            text: 'Ohhmmmmmmmmmmmmmmmmmmmm...',
+            faction: 'Monk',
+            textLeft: "OooohhhhMMMmmMMmmMmmmmmm...",
+            textRight: "I never could meditate like that.",
             actionLeft: {
-                health: 1,
+                health: -1,
+                energy: 1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
-                health: -1,
-                memory: 0,
+                health: 0,
+                energy: -1,
+                memory: 1,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-1c',
-            imgUrl: '/chapter2/monk-white.png',
-            title:'Mr. Gallock',
-            text: "I can't seem to remember what I was doing last...",
-            faction: 'Farmer',
-            textLeft: "Don't worry, neither can I...",
-            textRight: "Try retracing your steps, see if that helps.",
+            imgUrl: '/chapter2/monk-white-1.png',
+            title:'Hayden',
+            text: "If you're looking for answers, you must seek within",
+            faction: 'Monk',
+            textLeft: "When I look within, I see nothing.",
+            textRight: "I'm not quite sure how to do that.",
             actionLeft: {
-                health: 0,
+                health: 2,
                 memory: 1,
+                energy: -1,
+                good: 0,
+                evil: 1
             },
             actionRight: {
-                health: -1,
+                health: 0,
                 memory: 0,
+                energy: 1,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-1d',
-            imgUrl: '/chapter2/monk-white.png',
-            title:'Mr. Gallock',
-            text: "Every darn person in this town is hell bent on getting in my way, are you going another delinquent in the making?",
-            faction: 'Farmer',
-            textLeft: "Don't worry, I won't be of any trouble.",
-            textRight: "Maybe you're the one getting in everyone else's way.",
+            imgUrl: '/chapter2/monk-white-2.png',
+            title:'Hayden',
+            text: "I sense a great disturbance within you.",
+            faction: 'Monk',
+            textLeft: "I don't feel disturbed.",
+            textRight: "Why don't you focus within yourself instead.",
             actionLeft: {
                 health: -1,
+                energy: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 1,
+                energy: 0,
                 memory: 0,
+                good: 0,
+                evil: 1
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-1e',
+            imgUrl: '/chapter2/monk-white-2.png',
+            title:'Hayden',
+            text: "If you encounter Moses in this forest, he's a fellow student of the monastery and a gentle soul.",
+            faction: 'Monk',
+            textLeft: "I'll be sure to keep an eye out.",
+            textRight: "Actually I have met him, it's like talking to the same person.",
+            actionLeft: {
+                health: -1,
+                energy: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                energy: 0,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Magical Forest'
         },
 
+        // Monk-brown
         {
             id: 'chapter2-2a',
-            imgUrl: '/chapter2/monk-white.png',
-            title:'Shelly',
-            text: 'The wild animals have been frightened lately, can you do something about it?',
-            faction: 'Hunter',
-            textLeft: "What animals? How can I help?",
-            textRight: "Shouldn't you do something about it?",
+            imgUrl: '/chapter2/monk-brown.png',
+            title:'Moses',
+            text: "Sometimes Hayden can come off as a bit preachy, but he's got a good heart.",
+            faction: 'Moses',
+            textLeft: "You both seem to be good hearted people, I feel at peace around you.",
+            textRight: "I don't see it that way.",
             actionLeft: {
-                health: -1,
+                health: -2,
+                energy: 1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                energy: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-2b',
-            imgUrl: '/chapter2/monk-white.png',
-            title:'Shelly',
-            text: "I need to make more arrows, but there aren't any good stones around.",
-            faction: 'Hunter',
-            textLeft: "Perhaps you'll find the right ones if you keep looking.",
-            textRight: "You don't need arrows in a place like this.",
+            imgUrl: '/chapter2/monk-brown.png',
+            title:'Moses',
+            text: "You must always be mindful of all living beings, that includes animals and vegetation as well.",
+            faction: 'Moses',
+            textLeft: "I could care less about hurting plants.",
+            textRight: "I could care less about hurting animals.",
             actionLeft: {
-                health: -1,
+                health: 1,
+                energy: 0,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
-                health: 0,
+                health: 2,
+                energy: 0,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-2c',
-            imgUrl: '/chapter2/monk-white.png',
-            title:'Shelly',
-            text: "I remember hunting in the woods, and then... And then what?",
-            faction: 'Hunter',
-            textLeft: "Maybe you decided to camp under the stars?",
-            textRight: "Keep trying, you'll remember something eventually.",
+            imgUrl: '/chapter2/monk-brown.png',
+            title:'Moses',
+            text: "You seem like you've been running when you could have been walking. Maybe it's time to slow down.",
+            faction: 'Moses',
+            textLeft: "You're right, I haven't had a moment to catch my breath since I got here.",
+            textRight: "You seem like someone who should mind their own business.",
             actionLeft: {
                 health: -1,
-                memory: 0,
+                energy: 1,
+                memory: 1,
+                good: 1,
+                evil: 0
             },
             actionRight: {
-                health: 0,
-                memory: 1,
+                health: 2,
+                energy: -2,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-2d',
-            imgUrl: '/chapter2/monk-white.png',
-            title:'Shelly',
-            text: "I've been hunting since I was little, my daddy used to take me out back in the forest before he...",
-            faction: 'Hunter',
-            textLeft: "You don't have to talk about it if you don't want to.",
-            textRight: "Did you kill him?",
+            imgUrl: '/chapter2/monk-brown-smile.png',
+            title:'Moses',
+            text: "I came here to be in touch with nature, but I didn't expect to find magical creatures.",
+            faction: 'Moses',
+            textLeft: "A surprise is nice every now and then.",
+            textRight: "I'm not sure if I can trust those beasts.",
             actionLeft: {
-                health: 0,
-                memory: 0,
+                health: 1,
+                energy: 0,
+                memory: 1,
+                good: 1,
+                evil: 0
             },
             actionRight: {
                 health: 1,
-                memory: 1,
+                energy: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-2e',
+            imgUrl: '/chapter2/monk-brown-smile.png',
+            title:'Moses',
+            text: "As much as I sit in thought, I cannot remember if I was always a monk. Where was I before I came to this forest?",
+            faction: 'Moses',
+            textLeft: "Nobody seems to remember anything.",
+            textRight: "Perhaps you've always been here, and you always will be.",
+            actionLeft: {
+                health: -1,
+                energy: 0,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: -1,
+                energy: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
 
+        // Fairy-blue TODO: continue adding energy: 0,
         {
             id: 'chapter2-3a',
-            imgUrl: '/chapter2/monk-brown.png',
-            title:'Krystina',
-            text: "The aging curse that's been put on me is getting worse, can you help me.",
-            faction: 'Villager',
-            textLeft: "It looks as if it's already too late for you.",
-            textRight: "You look fine to me, maybe you just need to sleep it off.",
+            imgUrl: '/chapter2/fairy-blue.png',
+            title:'Spinkle',
+            text: "Humans confuse me, why do they run when faced with unfamiliar beings?",
+            faction: 'Fairy',
+            textLeft: "Because unfamiliarity leads to danger.",
+            textRight: "Aren't you the least bit frightened to meet strangers like me?",
             actionLeft: {
                 health: 1,
                 memory: 1,
+                good: 1,
+                evil: 0
             },
             actionRight: {
-                health: 0,
+                health: 2,
                 memory: 1,
+                good: 0,
+                evil: 1
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-3b',
-            imgUrl: '/chapter2/monk-brown.png',
-            title:'Krystina',
-            text: "These flowers smell lovely, please don't steal them from me.",
-            faction: 'Villager',
-            textLeft: "Well I wasn't going to until you said that...",
-            textRight: "I won't I promise, but can I smell too?",
+            imgUrl: '/chapter2/fairy-blue.png',
+            title:'Spinkle',
+            text: "I live in this forest with my 2 sisters, but recently there have been a lot of visitors.",
+            faction: 'Fairy',
+            textLeft: "I don't think any of us meant to show up.",
+            textRight: "So everyone showed up here around the same time...",
             actionLeft: {
-                health: 1,
+                health: 0,
                 memory: 1,
+                good: 1,
+                evil: 0
             },
             actionRight: {
-                health: -1,
-                memory: 0,
+                health: 0,
+                memory: 1,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-3c',
-            imgUrl: '/chapter2/monk-brown.png',
-            title:'Krystina',
-            text: "These flowers... what is it about these flowers...",
-            faction: 'Villager',
-            textLeft: "Maybe they mean something to you, remind you of someone special?",
-            textRight: "They are very pretty, you have a good eye.",
+            imgUrl: '/chapter2/fairy-blue.png',
+            title:'Spinkle',
+            text: "Hey there, I'm Spinkle! I'm a fairy and you seem to be human, nice to meet you!",
+            faction: 'Fairy',
+            textLeft: "Hi Spinkle, I'm... I'm Jack?",
+            textRight: "A real fairy, wow.",
             actionLeft: {
-                health: 0,
-                memory: 1,
+                health: -2,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-3d',
-            imgUrl: '/chapter2/monk-brown.png',
-            title:'Krystina',
-            text: "Flowers bring joy, comfort the sad and excite the romantic. Flowers are amazing, wouldn't you agree?",
-            faction: 'Villager',
-            textLeft: "Umm... yeah sure.",
-            textRight: "I never thought about it like that before.",
+            imgUrl: '/chapter2/fairy-blue.png',
+            title:'Spinkle',
+            text: "Sometimes I worry about my younger sisters, one tends to get into trouble and the other is too trusting.",
+            faction: 'Fairy',
+            textLeft: "It's normal to worry when you're the eldest.",
+            textRight: "You should let them live and learn, you're worrying for nothing.",
             actionLeft: {
-                health: 0,
+                health: -2,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
-                health: -1,
+                health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Magical Forest'
         },
-        
-
         {
-            id: 'chapter2-4a',
-            imgUrl: '/chapter2/monk-brown.png',
-            title:'Melody',
-            text: "Did you know there used to be a woman in this village who was beloved by all, even the animals.",
-            faction: 'Villager',
-            textLeft: "She sounds like an incredible person, I hope to meet her someday.",
-            textRight: "I'm afraid not, I only just got here myself and I don't plan on staying.",
+            id: 'chapter2-3e',
+            imgUrl: '/chapter2/fairy-blue.png',
+            title:'Spinkle',
+            text: "My sisters and I are actually magical triplets, meaning we were all born from the same ingredients. Still, they refer to me as their \" big sister\".",
+            faction: 'Fairy',
+            textLeft: "I have no idea what that meant.",
+            textRight: "Maybe because you're the most mature.",
             actionLeft: {
                 health: 0,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
+        // Fairy-purple
+        {
+            id: 'chapter2-4a',
+            imgUrl: '/chapter2/fairy-purple.png',
+            title:'Tinkle',
+            text: "Woah a human, want to be best friends?",
+            faction: 'Fairy',
+            textLeft: "That was fast.",
+            textRight: "And you are?",
+            actionLeft: {
+                health: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-4b',
-            imgUrl: '/chapter2/monk-brown.png',
-            title:'Meoldy',
-            text: "Do you find me beautiful? Everyone finds me beautiful, everyone.",
-            faction: 'Villager',
-            textLeft: "You're very pretty, on the outside.",
-            textRight: 'Not everyone.',
+            imgUrl: '/chapter2/fairy-purple.png',
+            title:'Tinkle',
+            text: "You have a nice face, I haven't seen many like it.",
+            faction: 'Fairy',
+            textLeft: "Thank you!",
+            textRight: "Thank you?",
             actionLeft: {
-                health: 1,
+                health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
-                health: 0,
-                memory: 0,
+                health: 1,
+                memory: 1,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-4c',
-            imgUrl: '/chapter2/monk-brown.png',
-            title:'Melody',
-            text: "I remember him watching me... following me... What did he do to me?",
-            faction: 'Villager',
-            textLeft: 'What did who do? Why was he following you?',
-            textRight: "Do you remember something? I don't remember that, I don't remember anything.",
+            imgUrl: '/chapter2/fairy-purple.png',
+            title:'Tinkle',
+            text: "Spinkle never trusts anybody, but people are good! I don't understand why she doesn't understand that.",
+            faction: 'Fairy',
+            textLeft: "Not everyone is good.",
+            textRight: "Maybe she's met the wrong people.",
             actionLeft: {
-                health: -2,
-                memory: 0,
-            },
-            actionRight: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-4d',
-            imgUrl: '/chapter2/monk-brown.png',
-            title:'Melody',
-            text: "Have you met my brother? He's so full of himself, claims he's the most handsome man in the village.",
-            faction: 'Villager',
-            textLeft: 'Sounds familiar...',
-            textRight: "Maybe it's a small village.",
+            imgUrl: '/chapter2/fairy-purple.png',
+            title:'Tinkle',
+            text: "Spinkle, Winkle and Tinkle, the super duper awesome fairy berry very cherry trio!!!",
+            faction: 'Fairy',
+            textLeft: "...",
+            textRight: "Spinkle, winky and tink what? Can you repeat that.",
             actionLeft: {
                 health: 0,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
-                health: -1,
+                health: 1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
-
         {
-            id: 'chapter2-5a',
-            imgUrl: '/characters/Bullisa.png',
-            title:'Rowelda',
-            text: "Hello Elisa, thanks for playing:)",
-            faction: 'Villager',
-            textLeft: "Excuse you, I wasn't even doing anything.",
-            textRight: 'Mind your own business you old hag.',
+            id: 'chapter2-4e',
+            imgUrl: '/chapter2/fairy-purple.png',
+            title:'Tinkle',
+            text: "Hey I'm Tinkle... wait have we already met?",
+            faction: 'Fairy',
+            textLeft: "Yes, not even that long ago.",
+            textRight: "If we have I don't remember.",
             actionLeft: {
-                health: -1,
+                health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
             },
             actionRight: {
                 health: 1,
                 memory: 1,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
+        // Fairy-green
+        {
+            id: 'chapter2-4a',
+            imgUrl: '/chapter2/fairy-green.png',
+            title:'Winkle',
+            text: "Winkle here, not winkle, WRINKLE. Wait, no I mean not wrinkle it's winkle, WINKLE!",
+            faction: 'Fairy',
+            textLeft: "Nice to mean you winklewinkle",
+            textRight: "How are you confused about your own name?",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-4b',
+            imgUrl: '/chapter2/fairy-green.png',
+            title:'Winkle',
+            text: "Some people are surprised that fairies exist, but some people are even more surprised that we aren't tiny. Why would we by tiny?",
+            faction: 'Fairy',
+            textLeft: "I guess humans just always assumed you were small.",
+            textRight: "Well I can't seem to picture a giant fairy.",
+            actionLeft: {
+                health: -1,
+                memory: 1,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-4c',
+            imgUrl: '/chapter2/fairy-green.png',
+            title:'Winkle',
+            text: "You're probably like all the other humans, greedy and rude.",
+            faction: 'Fairy',
+            textLeft: "You don't even know me...",
+            textRight: "Humans are the worst, you won't hear any arguments here.",
+            actionLeft: {
+                health: -2,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 1,
+                good: 0,
+                evil: 1
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-4d',
+            imgUrl: '/chapter2/fairy-green.png',
+            title:'Winkle',
+            text: "I bet you wish you could fly too.",
+            faction: 'Fairy',
+            textLeft: "I bet you wish you weren't green.",
+            textRight: "Sure, rub it in my face.",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-4e',
+            imgUrl: '/chapter2/fairy-green.png',
+            title:'Winkle',
+            text: "My sisters seem to think we've always lived here... but I don't know. Part of me feels like there was something before all of this.",
+            faction: 'Fairy',
+            textLeft: "You too?",
+            textRight: "Since most people arrived here, you probably did too.",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                memory: 1,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
+        // Druid
+        {
+            id: 'chapter2-5a',
+            imgUrl: '/chapter2/druid.png',
+            title:'Deku',
+            text: "Leave this place.",
+            faction: 'Druid',
+            textLeft: "Such hospitality.",
+            textRight: "Believe me, I would love to.",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-5b',
-            imgUrl: '/characters/Bullisa.png',
-            title:'Rowelda',
-            text: "Hello Elisa, hope you enjoyed:)",
-            faction: 'Villager',
-            textLeft: "I know who I'll never miss when I get out of this town.",
-            textRight: "You're a mean old lady you know that? You need to watch your tone.",
+            imgUrl: '/chapter2/druid.png',
+            title:'Deku',
+            text: "...",
+            faction: 'Druid',
+            textLeft: "Can I help you?",
+            textRight: "Staring is rude.",
             actionLeft: {
-                health: 1,
+                health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
-                health: 2,
+                health: -1,
                 memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-5c',
-            imgUrl: '/characters/Bullisa.png',
-            title:'Rowelda',
-            text: "Hello Elisa, I wonder what's next?:)",
-            faction: 'Villager',
-            textLeft: "You can always go back the way you came, can't you?",
-            textRight: 'This place is your home now, you should try to get used to it.',
+            imgUrl: '/chapter2/druid.png',
+            title:'Deku',
+            text: "Who are you people?",
+            faction: 'Druid',
+            textLeft: "I don't mean to trespass, I'm looking for my way home.",
+            textRight: "Who are you?",
             actionLeft: {
-                health: -2,
+                health: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
             },
             actionRight: {
-                health: 1,
-                memory: 1,
+                health: 0,
+                memory: 0,
+                good: 0,
+                evil: 1
             },
             location: 'Magical Forest'
         },
         {
             id: 'chapter2-5d',
-            imgUrl: '/characters/Bullisa.png',
-            title:'Rowelda',
-            text: "Hello Elisa, from the past:)",
-            faction: 'Villager',
-            textLeft: "I feel inclined to believe you.",
-            textRight: "Yes well, I'll let you see to it then.",
+            imgUrl: '/chapter2/druid.png',
+            title:'Deku',
+            text: "I guard this forest alone, I don't know what became of the other druids.",
+            faction: 'Druid',
+            textLeft: "Maybe they all died?",
+            textRight: "I'm sorry did you say druid?",
             actionLeft: {
-                health: -1,
+                health: 1,
                 memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 0,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-5e',
+            imgUrl: '/chapter2/druid.png',
+            title:'Deku',
+            text: "You humans are no friend to nature, therefore I am no friend to humans.",
+            faction: 'Druid',
+            textLeft: "I'll think about you the next time I eat a salad.",
+            textRight: "Is that a threat?",
+            actionLeft: {
+                health: 2,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
+        // Rabbit
+        {
+            id: 'chapter2-6a',
+            imgUrl: '/chapter2/rabbit.png',
+            title:'Bounder',
+            text: "*Sniff* *Sniff*",
+            faction: 'Lapin',
+            textLeft: "Do I smell like food or something?",
+            textRight: "I don't have any food strange bunny.",
+            actionLeft: {
+                health: 1,
+                memory: 0,
+                good: 0,
+                evil: 0
             },
             actionRight: {
                 health: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
+            },
+            location: 'Magical Forest'
+        },
+
+        // Snake
+        {
+            id: 'chapter2-7a',
+            imgUrl: '/chapter2/snake.png',
+            title:'Pentser',
+            text: "...",
+            faction: 'Sirpent',
+            textLeft: "...",
+            textRight: "...",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
+        // Hippy-boy
+        {
+            id: 'chapter2-8a',
+            imgUrl: '/chapter2/hippy-boy.png',
+            title:'Ziggy',
+            text: "...",
+            faction: 'Human',
+            textLeft: "...",
+            textRight: "...",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
+        // Hippy-girl
+        {
+            id: 'chapter2-8a',
+            imgUrl: '/chapter2/hippy-girl.png',
+            title:'Powder',
+            text: "...",
+            faction: 'Human',
+            textLeft: "...",
+            textRight: "...",
+            actionLeft: {
+                health: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
             },
             location: 'Magical Forest'
         },
