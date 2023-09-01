@@ -128,8 +128,8 @@ export const allDecks = writable({
             title:'Jude',
             text: "By the way, not that you asked... but you can call me Jude. Do you remember your name?",
             faction: 'Tutorial',
-            textLeft: "Jude? Wow that's... really not what I was expecting. And no, I don't remember my name...",
-            textRight: "Hey Jude, I'm... I ca- I can't seem to...",
+            textLeft: "Jude? that's not what I was expecting... No, I don't remember my name...",
+            textRight: "Hey Jude, I ca- I can't seem to...",
             location: 'tutorial'
         },
         {
@@ -145,6 +145,142 @@ export const allDecks = writable({
     ],
 
     tutorial2: [
+        {
+            id: 'tutorial2-1',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: 'Hello again, how have things been going since we last spoke? You seem to be handling yourself quite well in here.',
+            faction: 'Tutorial',
+            textLeft: "I'm making do with what little I know, thanks to you.",
+            textRight: "I still have no idea what I'm doing here.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-2a',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Yes you always were so... resourceful. Well don't let me keep you from all the fun, I just wanted to ask you a few more questions.",
+            faction: 'Tutorial',
+            textLeft: "Then why even bother asking?",
+            textRight: "Again with the questions, what do you want to know this time?",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-2b',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "As I've said before, that's to be expected and you shouldn't go searching your brain for memories, instead let the memories come to you. Now, I have a few more questions for you if you'd be so kind as to indulge me.",
+            faction: 'Tutorial',
+            textLeft: "Lovely, more confusing questions. Let's get this over with.",
+            textRight: "I'm sick and tired of your games, I don't want to take your stupid survey.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-3',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Don't you worry, we'll be done before you know it! The important thing is to remember your decisions have meaning.",
+            faction: 'Tutorial',
+            textLeft: "What meaning? You keep saying that but you never explain.",
+            textRight: 'I could care less whether they meant anything, I just want to leave.',
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-4a',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "As I've said before, you needn't worry about remembering or making sense of your situations, you just need to go with the flow.",
+            faction: "Tutorial",
+            textLeft: "What flow? This is more like a sick game that you seem to be enjoying a great deal.",
+            textRight: "Yeah that's easy enough for you to say, you don't know what this is like.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-4b',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "If you want to leave then you'd do well to take my advice and simply continue along this path.",
+            faction: 'Tutorial',
+            textLeft: "Just because you got bored and decided to paint a path for me, doesn't mean I have to follow it.",
+            textRight: "I think I've had enough of listening to you, why should I trust the one who's the reason for all of this?",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-5',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "...",
+            faction: 'Tutorial',
+            textLeft: "What, gone quiet all of a sudden?",
+            textRight: "Speechless? That's a first.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-6',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "You really don't remember anything do you?",
+            faction: 'Tutorial',
+            textLeft: "That's what I've been trying to tell you!",
+            textRight: "Nothing at all...",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-7',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "You really don't remember anything do you?",
+            faction: 'Tutorial',
+            textLeft: "That's what I've been trying to tell you!",
+            textRight: "Nothing at all...",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-8',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Look... just answer the questions and talk to the people you meet and I promise you, this will all be over soon.",
+            faction: 'Tutorial',
+            textLeft: "But why can't you just tell me! Why do you act as if you have no say in the matter?",
+            textRight: "What happens if I don't?",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-9a',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "You think you're asking the right questions, but finding that out won't help you any. Now then, it's time for the survey.",
+            faction: 'Tutorial',
+            textLeft: "I hope I don't live to regret this.",
+            textRight: "Any answer worth seeking is a question worth asking.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-9b',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "If you don't? Why don't you tell me.",
+            faction: 'Tutorial',
+            textLeft: "How could I possibly know?",
+            textRight: "I can't tell you what I don't know.",
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial2-10',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Haha right... well then, enough of that. The survey will begin now but don't overthink it. Remember to just answer HONESTLY, ok?",
+            faction: 'Tutorial',
+            textLeft: "Fine, but we will meet again.",
+            textRight: "Let's get on with it then.",
+            location: 'tutorial'
+        },
+        
+        
+    ],
+
+    // TODO:
+    tutorial3: [
         {
             id: 'tutorial2-1',
             imgUrl: '/decks/tutorial/judicator-white.png',
@@ -302,7 +438,7 @@ export const allDecks = writable({
             id: 'survey1-2a',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
-            text: "Thank you for your willing cooperation. Now, question 2: What's more important to you?",
+            text: "Thank you for your willing cooperation. Moving on, what's more important to you?",
             faction: 'First Survey',
             textLeft: "Comfort",
             textRight: 'Sacrifice',
@@ -320,7 +456,7 @@ export const allDecks = writable({
             id: 'survey1-2b',
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
-            text: "Hmm... interesting, your decision has been noted. Now, question 2: What's more important to you?",
+            text: "Hmm... interesting, your decision has been noted. Moving on, what's more important to you?",
             faction: 'First Survey',
             textLeft: "Comfort",
             textRight: 'Sacrifice',
@@ -607,6 +743,299 @@ export const allDecks = writable({
     ],
 
     survey2: [
+        {
+            id: 'survey2-1',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "Fantastic, question number 1. Did you recognize anyone in the village?",
+            faction: 'Surveys',
+            textLeft: "Hmmm... not really.",
+            textRight: "Of course not, It's not like I've met them before.",
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-2',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "Suppose that makes sense... did you notice anything odd about any of the villagers?",
+            faction: 'Surveys',
+            textLeft: "Actually, most of them seem to be dealing with a case of sudden amnesia as well.",
+            textRight: 'I think I was more focused on trying to escape than anything.',
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-3a',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "Yes well, truth be told most people who enter that village wander in, lost. Did you remember anything while you were there?",
+            faction: 'Surveys',
+            textLeft: "It might please you to learn that I, along with the rest of the villagers, still do not remember a thing.",
+            textRight: "Still nothing but blanks, when will my memory return?",
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-3b',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "I've told you before that trying to escape is pointless. The best way to leave is to remember, did you remember anything when you were there?",
+            faction: 'Surveys',
+            textLeft: "All I've managed to remember is how much I must've forgotten.",
+            textRight: "Can't blame me for trying, and unfortunately no... Still completely in the dark.",
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-4',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Well, you should start to remember soon, most likely by the next time we talk you'll have remembered something important.",
+            faction: 'Surveys',
+            textLeft: "That's very suspicious, it almost sounds as if you have something planned.",
+            textRight: "Why can't I remember now?",
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-5a',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "Well whether or not there's a plan for you is at your discretion. But if you want to remember, it's only a matter of time.",
+            faction: 'Surveys',
+            textLeft: "You act as if I don't want to remember, but I do... it's not just happening yet.",
+            textRight: "If I want to remember?",
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-5b',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "To rush it would mean to lose it, these things take time. Trust me, trust the process.",
+            faction: 'Surveys',
+            textLeft: "Forgive me if I have a hard time doing that.",
+            textRight: "I can't lose what I've already lost.",
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-6',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "We should get back to the survey, although all of our interactions help me better understand you better. Do me a favor and pick one would you?",
+            faction: 'Surveys',
+            textLeft: "Brain",
+            textRight: "Mouth",
+            actionLeft: {
+                brain: 2,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 2
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-7',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Yes of course, that makes sense. We're almost done here just a few more. Which describes you more?",
+            faction: 'Surveys',
+            textLeft: "I like my quiet time, where I can be alone and pursue my passions and hobbies.",
+            textRight: "I like to be around others, being the sun that shines on their rainy day.",
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-8a',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "Yes, you strike me as a bit of a recluse. It seems perhaps you do know yourself after all. Next question, pick your favorite of the two.",
+            faction: 'Surveys',
+            textLeft: "Warm tea in a remote winter village.",
+            textRight: "A morning cup of coffee in the backyard.",
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-8b',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "Really, the sun? Seems a bit pretentious but no matter. Which of the two appeals more to you?",
+            faction: 'Surveys',
+            textLeft: "A cold drink in the middle of a desert.",
+            textRight: "The calm before the storm.",
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-9',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "I see... Last question now, and this one's an important one. Do you think you're dead?",
+            faction: 'Surveys',
+            textLeft: "To be honest, yes I do.",
+            textRight: "The thought's crossed my mind, but I don't want to assume the worst.",
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-10',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "hehe, whether you're dead or alive you won't make any progress until your memories return. I'm going to leave you for now, but I'll be thinking about our conversations. Until next time Jack...",
+            faction: 'Surveys',
+            textLeft: "Wait! I still have questions I want to ask!",
+            textRight: "Going to abandon me again? Please, just tell me if I'm alive.",
+            actionLeft: {
+                brain: 0,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-11a',
+            imgUrl: '/decks/tutorial/judicator-white.png',
+            title:'Jude',
+            text: "More questions? No matter how many I answer, only you can answer the important ones. You should focus on protecting your mementos for now.",
+            faction: 'Surveys',
+            textLeft: "Fine, but I still don't understand what you mean.",
+            textRight: "Answering some questions is better than none.",
+            actionLeft: {
+                brain: 0,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-11b',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Abandon you? What ever gave you the impression I was gone. Don't worry about life and death, just focus on guarding the mementos and you'll be... fine.",
+            faction: 'Surveys',
+            textLeft: "Wait, have you been watching me the entire time?",
+            textRight: "Memento this, memento that. What's so important about them anyways?",
+            actionLeft: {
+                brain: 0,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey2-12',
+            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            title:'Jude',
+            text: "Looks like that's all the time we have for now, see you soon Jack...",
+            faction: 'Surveys',
+            textLeft: "But I-",
+            textRight: "...",
+            actionLeft: {
+                brain: 0,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        
+    ],
+
+    // TODO:
+    survey3: [
         {
             id: 'survey2-1',
             imgUrl: '/decks/tutorial/judicator-white.png',
@@ -1436,7 +1865,7 @@ export const allDecks = writable({
             id: 'chapter1-5e',
             imgUrl: '/decks/chapter1/villager-old.png',
             title:'Rowelda',
-            text: "Sometimes I sit and wonder, am I the oldest person in the village? There's so much I wish I'd done sooner... Don't waste your life",
+            text: "Sometimes I sit and wonder, am I the oldest person in the village? There's so much I wish I'd done sooner... Don't waste your life boy!",
             faction: 'Villager',
             textLeft: "Don't worry, you still have plenty of years left.",
             textRight: "Thanks for the advice, but I don't plan on wasting my years.",
@@ -1681,7 +2110,7 @@ export const allDecks = writable({
             id: 'chapter1-8a',
             imgUrl: '/decks/chapter1/villager-brother.png',
             title:'Alexander',
-            text: "My beauty is renown far and wide, my sister isn't too bad herself, but her beautfy could simply never compare.",
+            text: "My beauty is renown far and wide, my sister isn't too bad herself, but her beauty could simply never compare.",
             faction: 'Villager',
             textLeft: "Ugh",
             textRight: "Yes yes, you're very handsome.",
@@ -2248,7 +2677,7 @@ export const allDecks = writable({
             textRight: "I don't think I'm ready to hear it yet, but I'll give it a try.",
             actionLeft: {
                 health: 1,
-                energy: 1,
+                aura: 2,
                 memory: 0,
                 good: 0,
                 evil: 1
@@ -2256,7 +2685,7 @@ export const allDecks = writable({
             actionRight: {
                 health: -1,
                 memory: 1,
-                energy: -1,
+                aura: -2,
                 good: 0,
                 evil: 0
             },
@@ -2272,14 +2701,14 @@ export const allDecks = writable({
             textRight: "I never could meditate like that.",
             actionLeft: {
                 health: -1,
-                energy: 1,
+                aura: 2,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 0,
-                energy: -1,
+                aura: -1,
                 memory: 1,
                 good: 0,
                 evil: 0
@@ -2297,14 +2726,14 @@ export const allDecks = writable({
             actionLeft: {
                 health: 2,
                 memory: 1,
-                energy: -1,
+                aura: -1,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: 0,
                 memory: 0,
-                energy: 1,
+                aura: -1,
                 good: 0,
                 evil: 0
             },
@@ -2320,14 +2749,14 @@ export const allDecks = writable({
             textRight: "Why don't you focus within yourself instead.",
             actionLeft: {
                 health: -1,
-                energy: -1,
+                aura: 2,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 1,
-                energy: 0,
+                aura: 2,
                 memory: 0,
                 good: 0,
                 evil: 1
@@ -2344,14 +2773,14 @@ export const allDecks = writable({
             textRight: "Actually I have met him, it's like talking to the same person.",
             actionLeft: {
                 health: -1,
-                energy: -1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: 1,
-                energy: 0,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
@@ -2370,7 +2799,7 @@ export const allDecks = writable({
             textRight: "I don't see it that way.",
             actionLeft: {
                 health: -2,
-                energy: 1,
+                aura: 2,
                 memory: 0,
                 good: 1,
                 evil: 0
@@ -2378,7 +2807,7 @@ export const allDecks = writable({
             actionRight: {
                 health: -1,
                 memory: 0,
-                energy: 0,
+                aura: -1,
                 good: 0,
                 evil: 0
             },
@@ -2390,18 +2819,18 @@ export const allDecks = writable({
             title:'Moses',
             text: "You must always be mindful of all living beings, that includes animals and vegetation as well.",
             faction: 'Moses',
-            textLeft: "I could care less about hurting plants.",
-            textRight: "I could care less about hurting animals.",
+            textLeft: "I don't care what happens to plants.",
+            textRight: "I don't care what happens to animals.",
             actionLeft: {
                 health: 1,
-                energy: 0,
+                aura: 2,
                 memory: 0,
                 good: 0,
                 evil: 0
             },
             actionRight: {
                 health: 2,
-                energy: 0,
+                aura: 2,
                 memory: 1,
                 good: 0,
                 evil: 1
@@ -2418,14 +2847,14 @@ export const allDecks = writable({
             textRight: "You seem like someone who should mind their own business.",
             actionLeft: {
                 health: -1,
-                energy: 1,
+                aura: 2,
                 memory: 1,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 2,
-                energy: -2,
+                aura: -2,
                 memory: 0,
                 good: 0,
                 evil: 1
@@ -2442,14 +2871,14 @@ export const allDecks = writable({
             textRight: "I'm not sure if I can trust those beasts.",
             actionLeft: {
                 health: 1,
-                energy: 0,
+                aura: -1,
                 memory: 1,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 1,
-                energy: -1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
@@ -2466,14 +2895,14 @@ export const allDecks = writable({
             textRight: "Perhaps you've always been here, and you always will be.",
             actionLeft: {
                 health: -1,
-                energy: 0,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: -1,
-                energy: -1,
+                aura: -2,
                 memory: 0,
                 good: 0,
                 evil: 0
@@ -2481,7 +2910,6 @@ export const allDecks = writable({
             location: 'Magical Forest'
         },
 
-        // Fairy-blue TODO: continue adding energy: 0,
         {
             id: 'chapter2-3a',
             imgUrl: '/decks/chapter2/fairy-blue.png',
@@ -2492,6 +2920,7 @@ export const allDecks = writable({
             textRight: "Aren't you the least bit frightened to meet strangers like me?",
             actionLeft: {
                 health: 1,
+                aura: -1,
                 memory: 1,
                 good: 1,
                 evil: 0
@@ -2499,6 +2928,7 @@ export const allDecks = writable({
             actionRight: {
                 health: 2,
                 memory: 1,
+                aura: 2,
                 good: 0,
                 evil: 1
             },
@@ -2510,16 +2940,18 @@ export const allDecks = writable({
             title:'Spinkle',
             text: "I live in this forest with my 2 sisters, but recently there have been a lot of visitors.",
             faction: 'Fairy',
-            textLeft: "I don't think any of us meant to show up.",
-            textRight: "So everyone showed up here around the same time...",
+            textLeft: "I don't think any of us meant to show up here, but here we are.",
+            textRight: "So everyone showed up here around the same time... Interesting.",
             actionLeft: {
                 health: 0,
+                aura: -1,
                 memory: 1,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 0,
+                aura: -1,
                 memory: 1,
                 good: 0,
                 evil: 0
@@ -2537,11 +2969,13 @@ export const allDecks = writable({
             actionLeft: {
                 health: -2,
                 memory: 0,
+                aura: -1,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: -1,
+                aura: 2,
                 memory: 0,
                 good: 1,
                 evil: 0
@@ -2558,12 +2992,14 @@ export const allDecks = writable({
             textRight: "You should let them live and learn, you're worrying for nothing.",
             actionLeft: {
                 health: -2,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 1,
+                aura: 1,
                 memory: 0,
                 good: 0,
                 evil: 1
@@ -2580,12 +3016,14 @@ export const allDecks = writable({
             textRight: "Maybe because you're the most mature.",
             actionLeft: {
                 health: 0,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
             },
             actionRight: {
                 health: -1,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
@@ -2604,12 +3042,14 @@ export const allDecks = writable({
             textRight: "And you are?",
             actionLeft: {
                 health: -1,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
@@ -2626,12 +3066,14 @@ export const allDecks = writable({
             textRight: "Thank you?",
             actionLeft: {
                 health: -1,
+                aura: 1,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 1,
+                aura: -1,
                 memory: 1,
                 good: 0,
                 evil: 0
@@ -2648,12 +3090,14 @@ export const allDecks = writable({
             textRight: "Maybe she's met the wrong people.",
             actionLeft: {
                 health: 1,
+                aura: 1,
                 memory: 1,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: -1,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
@@ -2670,12 +3114,14 @@ export const allDecks = writable({
             textRight: "Spinkle, winky and tink what? Can you repeat that.",
             actionLeft: {
                 health: 0,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
@@ -2692,12 +3138,14 @@ export const allDecks = writable({
             textRight: "If we have I don't remember.",
             actionLeft: {
                 health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: 1,
+                aura: -1,
                 memory: 1,
                 good: 0,
                 evil: 0
@@ -2716,12 +3164,14 @@ export const allDecks = writable({
             textRight: "How are you confused about your own name?",
             actionLeft: {
                 health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
@@ -2738,12 +3188,14 @@ export const allDecks = writable({
             textRight: "Well I can't seem to picture a giant fairy.",
             actionLeft: {
                 health: -1,
+                aura: -1,
                 memory: 1,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
@@ -2760,12 +3212,14 @@ export const allDecks = writable({
             textRight: "Humans are the worst, you won't hear any arguments here.",
             actionLeft: {
                 health: -2,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 1,
+                aura: 2,
                 memory: 1,
                 good: 0,
                 evil: 1
@@ -2782,12 +3236,14 @@ export const allDecks = writable({
             textRight: "Sure, rub it in my face.",
             actionLeft: {
                 health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: -1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
@@ -2804,12 +3260,14 @@ export const allDecks = writable({
             textRight: "Since most people arrived here, you probably did too.",
             actionLeft: {
                 health: 0,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
             },
             actionRight: {
                 health: 1,
+                aura: -1,
                 memory: 1,
                 good: 1,
                 evil: 0
@@ -2828,12 +3286,14 @@ export const allDecks = writable({
             textRight: "Believe me, I would love to.",
             actionLeft: {
                 health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: -1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
@@ -2850,12 +3310,14 @@ export const allDecks = writable({
             textRight: "Staring is rude.",
             actionLeft: {
                 health: -1,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: -1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
@@ -2872,12 +3334,14 @@ export const allDecks = writable({
             textRight: "Who are you?",
             actionLeft: {
                 health: -1,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
             },
             actionRight: {
                 health: 0,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
@@ -2894,12 +3358,14 @@ export const allDecks = writable({
             textRight: "I'm sorry did you say druid?",
             actionLeft: {
                 health: 1,
+                aura: 2,
                 memory: 0,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: 0,
+                aura: -1,
                 memory: 0,
                 good: 1,
                 evil: 0
@@ -2916,12 +3382,14 @@ export const allDecks = writable({
             textRight: "Is that a threat?",
             actionLeft: {
                 health: 2,
+                aura: 2,
                 memory: 0,
                 good: 0,
                 evil: 1
             },
             actionRight: {
                 health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
@@ -2939,16 +3407,114 @@ export const allDecks = writable({
             textLeft: "Do I smell like food or something?",
             textRight: "I don't have any food strange bunny.",
             actionLeft: {
-                health: 1,
+                health: -1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
             },
             actionRight: {
                 health: -1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 1
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-6b',
+            imgUrl: '/decks/chapter2/rabbit.png',
+            title:'Bounder',
+            text: "*Sniff* *Sniff* *Sniff* *Sniff* *Sniff* *Sniff*!!!",
+            faction: 'Lapin',
+            textLeft: "UNPAW ME YOU WASCALLY WABBIT!",
+            textRight: "AHHHHHHHHHHHH!!!!",
+            actionLeft: {
+                health: 2,
+                aura: -1,
+                memory: 1,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: -2,
+                aura: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-6c',
+            imgUrl: '/decks/chapter2/rabbit.png',
+            title:'Bounder',
+            text: "*Sniff*...",
+            faction: 'Lapin',
+            textLeft: "That's a nice distance, stay there.",
+            textRight: "I should sniff you back so you know how it feels.",
+            actionLeft: {
+                health: -1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-6d',
+            imgUrl: '/decks/chapter2/rabbit.png',
+            title:'Bounder',
+            text: "The rabbit stares at you and smiles. * :3 *",
+            faction: 'Lapin',
+            textLeft: "Let's just sit here and relax.",
+            textRight: "You're not so bad now are you?",
+            actionLeft: {
+                health: 1,
+                aura: 3,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: -1,
+                aura: 2,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-6e',
+            imgUrl: '/decks/chapter2/rabbit.png',
+            title:'Bounder',
+            text: "Hey",
+            faction: 'Lapin',
+            textLeft: "Holy shit you can talk?",
+            textRight: "Hey",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: -1,
+                aura: 2,
+                memory: 0,
+                good: 1,
+                evil: 0
             },
             location: 'Magical Forest'
         },
@@ -2957,20 +3523,118 @@ export const allDecks = writable({
         {
             id: 'chapter2-7a',
             imgUrl: '/decks/chapter2/snake.png',
-            title:'Pentser',
-            text: "...",
+            title:'Pentsser',
+            text: "What'ss up friend, you want ssome sspecial weaponss?",
             faction: 'Sirpent',
-            textLeft: "...",
-            textRight: "...",
+            textLeft: "No thank you ssir.",
+            textRight: "SSounds like a ssssscam!",
             actionLeft: {
-                health: 0,
+                health: -1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
             },
             actionRight: {
-                health: 0,
+                health: 1,
+                aura: -1,
                 memory: 0,
+                good: 0,
+                evil: 1
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-7b',
+            imgUrl: '/decks/chapter2/snake.png',
+            title:'Pentsser',
+            text: "SSay, you look like a man who needss a new sscimitar!",
+            faction: 'Sirpent',
+            textLeft: "Is that what I look like?",
+            textRight: "Something tells me there's bad \"sssss\"ecrets about your shop.",
+            actionLeft: {
+                health: 1,
+                aura: 2,
+                memory: 1,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: -1,
+                aura: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-7c',
+            imgUrl: '/decks/chapter2/snake.png',
+            title:'Pentsser',
+            text: "SSurfs up on new sshieldss perfect for sshield ssurfing on ssale at Pentsserss only!!!",
+            faction: 'Sirpent',
+            textLeft: "I wonder if I should take a look...",
+            textRight: "You won't tempt me snake!",
+            actionLeft: {
+                health: -1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                aura: -1,
+                memory: 1,
+                good: 0,
+                evil: 1
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-7d',
+            imgUrl: '/decks/chapter2/snake.png',
+            title:'Pentsser',
+            text: "SSir, sstop right there! You musst take a look at my sshop behind thesse busshess...",
+            faction: 'Sirpent',
+            textLeft: "Does anyone fall for that?",
+            textRight: "You couldn't be any creepier.",
+            actionLeft: {
+                health: 1,
+                aura: 2,
+                memory: 1,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: -2,
+                aura: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-7e',
+            imgUrl: '/decks/chapter2/snake.png',
+            title:'Pentsser',
+            text: "SSurprissed I can talk? SSo am I, sss-ss-ss-ss-ssss!",
+            faction: 'Sirpent',
+            textLeft: "Is that you laughing?",
+            textRight: "How odd.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: -1,
+                aura: 2,
+                memory: 1,
                 good: 0,
                 evil: 0
             },
@@ -2982,19 +3646,117 @@ export const allDecks = writable({
             id: 'chapter2-8a',
             imgUrl: '/decks/chapter2/hippy-boy.png',
             title:'Ziggy',
-            text: "...",
+            text: "Maaan you're totally like the first normal lookin dude I've seen here.",
             faction: 'Human',
-            textLeft: "...",
-            textRight: "...",
+            textLeft: "Yeah, this forest has a lot of interesting... creatures.",
+            textRight: "I'm glad we aren't the only ones.",
             actionLeft: {
-                health: 0,
+                health: -1,
+                aura: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: -1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8b',
+            imgUrl: '/decks/chapter2/hippy-boy.png',
+            title:'Ziggy',
+            text: "You know, before I got here man... I was like, I was. I was totally like... um-",
+            faction: 'Human',
+            textLeft: "Forget what you were going to say?",
+            textRight: "Don't worry, we all forgot what we were doing.",
+            actionLeft: {
+                health: -1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
             },
             actionRight: {
-                health: 0,
+                health: -1,
+                aura: -1,
                 memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8c',
+            imgUrl: '/decks/chapter2/hippy-boy.png',
+            title:'Ziggy',
+            text: "So like, I'm walking through the forest for some reason ya know... and I'm looking for... shoot my mind's totally blank man.",
+            faction: 'Human',
+            textLeft: "Didn't happen to find magic mushrooms did you?",
+            textRight: "Maybe you should drink some water.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 1,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: -1,
+                aura: 2,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8d',
+            imgUrl: '/decks/chapter2/hippy-boy.png',
+            title:'Ziggy',
+            text: "Woah... you know something? I think I'm here with a friend, I totally forgot hahaha. Wonder where she is now?",
+            faction: 'Human',
+            textLeft: "How did you manage to forget that you're here with someone?",
+            textRight: "It seems you have a special case of this amnesia.",
+            actionLeft: {
+                health: -1,
+                aura: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: 1,
+                aura: 2,
+                memory: 1,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8e',
+            imgUrl: '/decks/chapter2/hippy-boy.png',
+            title:'Ziggy',
+            text: "POWDER!!! That's what I forgot, it's powder man! I need to find power!",
+            faction: 'Human',
+            textLeft: "Yeah you can find powder on your own.",
+            textRight: "Ohhhhhh powder.",
+            actionLeft: {
+                health: -1,
+                aura: -1,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            actionRight: {
+                health: -1,
+                aura: 2,
+                memory: 1,
                 good: 0,
                 evil: 0
             },
@@ -3006,18 +3768,116 @@ export const allDecks = writable({
             id: 'chapter2-8a',
             imgUrl: '/decks/chapter2/hippy-girl.png',
             title:'Powder',
-            text: "...",
+            text: "Have you seen um... Have you seen... Ahhh forget it.",
             faction: 'Human',
-            textLeft: "...",
-            textRight: "...",
+            textLeft: "Okay?",
+            textRight: "Guess it wasn't important.",
             actionLeft: {
-                health: 0,
+                health: 1,
+                aura: 2,
                 memory: 0,
                 good: 0,
                 evil: 0
             },
             actionRight: {
-                health: 0,
+                health: 1,
+                aura: 2,
+                memory: 0,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8b',
+            imgUrl: '/decks/chapter2/hippy-girl.png',
+            title:'Powder',
+            text: "Hey, the names Powder. I can't remember what I'm doing in these woods, but I know I'm doing something.",
+            faction: 'Human',
+            textLeft: "Yeah join the club.",
+            textRight: "You remind me of someone.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 1,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                aura: -1,
+                memory: 1,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8c',
+            imgUrl: '/decks/chapter2/hippy-girl.png',
+            title:'Powder',
+            text: "Zion? Zack..? Z-zzz..... zzzzi- Zigo? Ziga? Ughh forget it.",
+            faction: 'Human',
+            textLeft: "I want to help, but I kind of also want to watch.",
+            textRight: "You'll get there eventually.",
+            actionLeft: {
+                health: 2,
+                aura: 2,
+                memory: 1,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                aura: 2,
+                memory: 1,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8d',
+            imgUrl: '/decks/chapter2/hippy-girl.png',
+            title:'Powder',
+            text: "You know what, if I am here with someone, they'll find me eventually. I give up on looking.",
+            faction: 'Human',
+            textLeft: "Hopeless.",
+            textRight: "That's a solid plan.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-8e',
+            imgUrl: '/decks/chapter2/hippy-girl.png',
+            title:'Powder',
+            text: "Oh.My.God. I forgot about Ziggy AGAIN! Ziggyyyyyyyy!!!",
+            faction: 'Human',
+            textLeft: "It's like watching a dog chase their tail.",
+            textRight: "One day you'll find each other, one day...",
+            actionLeft: {
+                health: 1,
+                aura: 2,
+                memory: 1,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                aura: -1,
                 memory: 0,
                 good: 0,
                 evil: 0
@@ -3027,57 +3887,215 @@ export const allDecks = writable({
     ],
 
     chapter2Elves: [
-        // Male Elf
+        // Elf Male
         {
             id: 'chapter2-e-1a',
             imgUrl: '/decks/chapter2/elves/elf-male.png',
             title:'Aldwin',
-            text: "I'm an elf",
+            text: "You must be a human, oh I hoped I wouldn't run into one. I must ask you to leave at once.",
             faction: 'Elf',
-            textLeft: "Cool",
-            textRight: "Radical",
+            textLeft: "So elves are jerks after all, well I'm not going anywhere.",
+            textRight: "Well I was excited to meet an elf until now.",
             actionLeft: {
-                health: 0,
-                energy: 0,
+                health: 1,
+                aura: 2,
                 memory: 0,
                 good: 0,
-                evil: 0
+                evil: 1
             },
             actionRight: {
-                health: 0,
+                health: 1,
                 memory: 0,
-                energy: 0,
-                good: 0,
+                aura: -1,
+                good: 1,
                 evil: 0
             },
             location: 'Magical Forest'
         },
-        // TODO: remove comment, temp reminder that there's also smile elf
         {
-            id: 'chapter2-e-1b',
+            id: 'chapter2-e-1d',
             imgUrl: '/decks/chapter2/elves/elf-male-smile.png',
             title:'Aldwin',
-            text: "I'm an elf",
+            text: "You must be a human, oh I hoped I wouldn't run into one. I must ask you to leave at once.",
             faction: 'Elf',
-            textLeft: "Cool",
-            textRight: "Radical",
+            textLeft: "So elves are jerks after all, well I'm not going anywhere.",
+            textRight: "Well I was excited to meet an elf until now.",
             actionLeft: {
-                health: 0,
-                energy: 0,
+                health: 1,
+                aura: 2,
                 memory: 0,
                 good: 0,
-                evil: 0
+                evil: 1
             },
             actionRight: {
-                health: 0,
+                health: 1,
                 memory: 0,
-                energy: 0,
-                good: 0,
+                aura: -1,
+                good: 1,
                 evil: 0
             },
             location: 'Magical Forest'
         },
+
+        // Elf Villager
+        {
+            id: 'chapter2-e-2a',
+            imgUrl: '/decks/chapter2/elves/elf-villager.png',
+            title:'Eldia',
+            text: "I'm an elf.",
+            faction: 'Elf',
+            textLeft: "So elves are jerks after all, well I'm not going anywhere.",
+            textRight: "Well I was excited to meet an elf until now.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                aura: -1,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-e-2d',
+            imgUrl: '/decks/chapter2/elves/elf-villager-hand.png',
+            title:'Eldia',
+            text: "I'm an elf.",
+            faction: 'Elf',
+            textLeft: "So elves are jerks after all, well I'm not going anywhere.",
+            textRight: "Well I was excited to meet an elf until now.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                aura: -1,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
+        // Elf Angry
+        {
+            id: 'chapter2-e-3a',
+            imgUrl: '/decks/chapter2/elves/elf-angry.png',
+            title:'Fenris',
+            text: "I'm an elf.",
+            faction: 'Elf',
+            textLeft: "So elves are jerks after all, well I'm not going anywhere.",
+            textRight: "Well I was excited to meet an elf until now.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                aura: -1,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        {
+            id: 'chapter2-e-3d',
+            imgUrl: '/decks/chapter2/elves/elf-angry2.png',
+            title:'Fenris',
+            text: "I'm an elf.",
+            faction: 'Elf',
+            textLeft: "So elves are jerks after all, well I'm not going anywhere.",
+            textRight: "Well I was excited to meet an elf until now.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                aura: -1,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
+        // Elf Archer Green
+        {
+            id: 'chapter2-e-4a',
+            imgUrl: '/decks/chapter2/elves/elf-archer-green.png',
+            title:'Estelle',
+            text: "I'm an elf.",
+            faction: 'Elf',
+            textLeft: "So elves are jerks after all, well I'm not going anywhere.",
+            textRight: "Well I was excited to meet an elf until now.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                aura: -1,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
+        // Elf Archer White
+        {
+            id: 'chapter2-e-5a',
+            imgUrl: '/decks/chapter2/elves/elf-archer-white.png',
+            title:'Aradora',
+            text: "I'm an elf.",
+            faction: 'Elf',
+            textLeft: "So elves are jerks after all, well I'm not going anywhere.",
+            textRight: "Well I was excited to meet an elf until now.",
+            actionLeft: {
+                health: 1,
+                aura: -1,
+                memory: 0,
+                good: 0,
+                evil: 1
+            },
+            actionRight: {
+                health: 1,
+                memory: 0,
+                aura: -1,
+                good: 1,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+
     ],
+
+    // TODO:
+    chapter3: [],
+
+    // TODO:
+    chapter3Goblins: [],
 });
 
 // For resetting the game

@@ -3,6 +3,7 @@
   --background-grey: #242424;
   --cursor: url('/cursors/cursor.png'), auto;
   --pointer: url('/cursors/pointer.png'), auto;
+  --white: #ffffffde;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,7 +24,7 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #ffffffde;
+  color: var(--white);
   background-color: #080808;
   cursor: var(--cursor);
 
@@ -55,7 +56,8 @@ th {
 }
 
 *::selection {
-  background-color: #103a3868;
-  color: #d2b6e7;
-  text-shadow: 0 2px 6px #000;
+  // background-color: #103a3868;
+  text-shadow: none;
+  color: default;
+  background: none;
 }

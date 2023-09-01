@@ -28,9 +28,9 @@ const player = writable({
             img: '/public/decks/tutorial/judicator-white.png'
         }
     ],
-    health: 50,
-    sanity: 5,
-    energy: 5,
+    health: 10,
+    sanity: 10,
+    aura: 10,
     impulse: 0,
     memory: 0,
 });

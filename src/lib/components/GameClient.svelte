@@ -32,10 +32,19 @@
     let menuOpen = false;
     $: hpMessage = $player.health <= 3 ? 'HP: Low!' : `HP:${$player.health}`;
     $: sanityMessage = '?'; 
-    $: energyMessage = $player.energy <= 3 ? 'Energy: Low!': `Energy: ${$player.energy}`;
+    $: auraMessage = $player.aura <= 3 ? 'Aura: Low!': `Aura: ${$player.aura}`;
     $: impulseMessage = '?';
     $: memMessage = $player.memory < 1 ? 'No memory' : `MEM:${$player.memory}`;
-    console.log($player.energy);
+
+    function controlStats() {
+        player.update(p => {
+            if (p.health >= 10) p.health = 10;
+            if (p.aura >= 10) p.aura = 10;
+            if (p.sanity >= 10) p.sanity = 10;
+            if (p.health <= 0) p.impulse = 0;
+            return p;
+        })
+    }
 
     function drawRandomCard() {
         const index = Math.floor(Math.random() * $player.unlockedCards.length);
@@ -50,7 +59,7 @@
             player.update(p => {
                 p.health += currentCard.actionLeft.health;
                 p.sanity += currentCard.actionLeft.sanity;
-                p.energy += currentCard.actionLeft.energy;
+                p.aura += currentCard.actionLeft.aura;
                 p.impulse += currentCard.actionLeft.impulse;
                 p.memory += currentCard.actionLeft.memory;
                 return p;
@@ -59,7 +68,7 @@
             player.update(p => {
                 p.health += currentCard.actionRight.health;
                 p.sanity += currentCard.actionRight.sanity;
-                p.energy += currentCard.actionRight.energy;
+                p.aura += currentCard.actionRight.aura;
                 p.impulse += currentCard.actionRight.impulse;
                 p.memory += currentCard.actionRight.memory;
                 return p;
@@ -69,9 +78,11 @@
         // TODO: Finish this properly
         if (isPlayerDead()) {
             gameOver = true;
-            resetPlayer();
             resetDecks();
         }
+
+        // Make sure stats have limit 10
+        controlStats();
 
         // Add Elves deck
         if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 25) {
@@ -230,7 +241,7 @@
     }
 
     function isPlayerDead() {
-        if ($player.health <= 0 || $player.energy <= 0 || $player.sanity <= 0 || $player.impulse >= 10) {
+        if ($player.health <= 0 || $player.aura <= 0 || $player.sanity <= 0 || $player.impulse >= 10) {
             resetPlayer();
             return true;
         }
@@ -238,12 +249,12 @@
 
     function resetPlayer() {
         player.update(p => {
-            p.name = 'unknown';
+            p.name = 'Jack';
             p.timesReborn += 1;
-            p.health = 6;
-            p.sanity = 6;
-            p.energy = 6;
-            p.impulse = 6;
+            p.health = 10;
+            p.sanity = 10;
+            p.aura = 10;
+            p.impulse = 0;
 
             return p;
         })
@@ -257,27 +268,28 @@
 <div class="game-client">
     {#if gameOver}
         <div class="menu">
-            <h2 class="main-menu-title">Play again?</h2>
-            <button on:click={() => gameOver = false}>Yes</button>
+            <h2 class="main-menu-title">Continue?</h2>
+            <Button on:click={() => gameOver = false}>Yes</Button>
         </div>
     {:else}
     {#if menuOpen}
         <div class="menu">
             <h2 class="main-menu-title">Main Menu</h2>
             <main class="menu-content">
-                <h3>Decks Unlocked:</h3>
+                <h3 class="menu-header">Times died: <span class="menu-deaths">{$player.timesReborn}</span></h3>
+                <h3 class="menu-header">Decks Unlocked:</h3>
                     {#each $player.displayDecks as deck}
                         <MenuDeck title={deck.title} img={deck.img}/>
                     {/each}
             </main>
             <div class="menu-wrapper">
-                <Button on:click={() => menuOpen = !menuOpen} bgColor={"bg-black"}>Menu</Button>
+                <Button on:click={() => menuOpen = !menuOpen} bgColor={"bg-black"}>Close</Button>
             </div>
         </div>
     {/if}
         <div class="stats-wrapper">
             <p class="red-icon">{$player.unlockedDeck.chapter1 ? hpMessage : '?'}</p>
-            <p class="green-icon">{$player.unlockedDeck.chapter2 ? energyMessage : '?'}</p>
+            <p class="green-icon">{$player.unlockedDeck.chapter2 ? auraMessage : '?'}</p>
             <p class="pink-icon">{$player.unlockedDeck.chapter3 ? sanityMessage : '?'}</p>
             <p class="yellow-icon">{$player.unlockedDeck.chapter4 ? impulseMessage : '?'}</p>
             <p class="white-icon">{$player.unlockedDeck.chapter1 ? memMessage : '?'}</p>
@@ -362,6 +374,16 @@
         &::-webkit-scrollbar {
             display: none;
         }
+    }
+
+    .menu-header {
+        margin-bottom: 1rem;
+    }
+
+    .menu-deaths {
+        color: #500c0c;
+        font-weight: bold;
+        font-size: 1.5rem;
     }
 
     .game-client {
