@@ -251,7 +251,7 @@ export const allDecks = writable({
             title:'Jude',
             text: "You think you're asking the right questions, but finding that out won't help you any. Now then, it's time for the survey.",
             faction: 'Tutorial',
-            textLeft: "Don't make me regret trusting you.",
+            textLeft: "I hope I don't live to regret this.",
             textRight: "Any answer worth seeking is a question worth asking.",
             location: 'tutorial'
         },
@@ -2240,7 +2240,7 @@ export const allDecks = writable({
         // Monk-white
         {
             id: 'chapter2-1a',
-            imgUrl: '/chapter2/monk-white-1.png',
+            imgUrl: '/decks/chapter2/monk-white-1.png',
             title:'Hayden',
             text: 'Everything has a natural rythm, if you listen closely you can hear it.',
             faction: 'Monk',
@@ -2264,7 +2264,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-1b',
-            imgUrl: '/chapter2/monk-white-1.png',
+            imgUrl: '/decks/chapter2/monk-white-1.png',
             title:'Hayden',
             text: 'Ohhmmmmmmmmmmmmmmmmmmmm...',
             faction: 'Monk',
@@ -2288,7 +2288,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-1c',
-            imgUrl: '/chapter2/monk-white-1.png',
+            imgUrl: '/decks/chapter2/monk-white-1.png',
             title:'Hayden',
             text: "If you're looking for answers, you must seek within",
             faction: 'Monk',
@@ -2312,7 +2312,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-1d',
-            imgUrl: '/chapter2/monk-white-2.png',
+            imgUrl: '/decks/chapter2/monk-white-2.png',
             title:'Hayden',
             text: "I sense a great disturbance within you.",
             faction: 'Monk',
@@ -2336,7 +2336,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-1e',
-            imgUrl: '/chapter2/monk-white-2.png',
+            imgUrl: '/decks/chapter2/monk-white-2.png',
             title:'Hayden',
             text: "If you encounter Moses in this forest, he's a fellow student of the monastery and a gentle soul.",
             faction: 'Monk',
@@ -2362,7 +2362,7 @@ export const allDecks = writable({
         // Monk-brown
         {
             id: 'chapter2-2a',
-            imgUrl: '/chapter2/monk-brown.png',
+            imgUrl: '/decks/chapter2/monk-brown.png',
             title:'Moses',
             text: "Sometimes Hayden can come off as a bit preachy, but he's got a good heart.",
             faction: 'Moses',
@@ -2386,7 +2386,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-2b',
-            imgUrl: '/chapter2/monk-brown.png',
+            imgUrl: '/decks/chapter2/monk-brown.png',
             title:'Moses',
             text: "You must always be mindful of all living beings, that includes animals and vegetation as well.",
             faction: 'Moses',
@@ -2410,7 +2410,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-2c',
-            imgUrl: '/chapter2/monk-brown.png',
+            imgUrl: '/decks/chapter2/monk-brown.png',
             title:'Moses',
             text: "You seem like you've been running when you could have been walking. Maybe it's time to slow down.",
             faction: 'Moses',
@@ -2434,7 +2434,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-2d',
-            imgUrl: '/chapter2/monk-brown-smile.png',
+            imgUrl: '/decks/chapter2/monk-brown-smile.png',
             title:'Moses',
             text: "I came here to be in touch with nature, but I didn't expect to find magical creatures.",
             faction: 'Moses',
@@ -2458,7 +2458,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-2e',
-            imgUrl: '/chapter2/monk-brown-smile.png',
+            imgUrl: '/decks/chapter2/monk-brown-smile.png',
             title:'Moses',
             text: "As much as I sit in thought, I cannot remember if I was always a monk. Where was I before I came to this forest?",
             faction: 'Moses',
@@ -2484,7 +2484,7 @@ export const allDecks = writable({
         // Fairy-blue TODO: continue adding energy: 0,
         {
             id: 'chapter2-3a',
-            imgUrl: '/chapter2/fairy-blue.png',
+            imgUrl: '/decks/chapter2/fairy-blue.png',
             title:'Spinkle',
             text: "Humans confuse me, why do they run when faced with unfamiliar beings?",
             faction: 'Fairy',
@@ -2506,7 +2506,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-3b',
-            imgUrl: '/chapter2/fairy-blue.png',
+            imgUrl: '/decks/chapter2/fairy-blue.png',
             title:'Spinkle',
             text: "I live in this forest with my 2 sisters, but recently there have been a lot of visitors.",
             faction: 'Fairy',
@@ -2528,7 +2528,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-3c',
-            imgUrl: '/chapter2/fairy-blue.png',
+            imgUrl: '/decks/chapter2/fairy-blue.png',
             title:'Spinkle',
             text: "Hey there, I'm Spinkle! I'm a fairy and you seem to be human, nice to meet you!",
             faction: 'Fairy',
@@ -2550,7 +2550,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-3d',
-            imgUrl: '/chapter2/fairy-blue.png',
+            imgUrl: '/decks/chapter2/fairy-blue.png',
             title:'Spinkle',
             text: "Sometimes I worry about my younger sisters, one tends to get into trouble and the other is too trusting.",
             faction: 'Fairy',
@@ -2572,7 +2572,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-3e',
-            imgUrl: '/chapter2/fairy-blue.png',
+            imgUrl: '/decks/chapter2/fairy-blue.png',
             title:'Spinkle',
             text: "My sisters and I are actually magical triplets, meaning we were all born from the same ingredients. Still, they refer to me as their \" big sister\".",
             faction: 'Fairy',
@@ -2596,7 +2596,7 @@ export const allDecks = writable({
         // Fairy-purple
         {
             id: 'chapter2-4a',
-            imgUrl: '/chapter2/fairy-purple.png',
+            imgUrl: '/decks/chapter2/fairy-purple.png',
             title:'Tinkle',
             text: "Woah a human, want to be best friends?",
             faction: 'Fairy',
@@ -2618,7 +2618,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4b',
-            imgUrl: '/chapter2/fairy-purple.png',
+            imgUrl: '/decks/chapter2/fairy-purple.png',
             title:'Tinkle',
             text: "You have a nice face, I haven't seen many like it.",
             faction: 'Fairy',
@@ -2640,7 +2640,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4c',
-            imgUrl: '/chapter2/fairy-purple.png',
+            imgUrl: '/decks/chapter2/fairy-purple.png',
             title:'Tinkle',
             text: "Spinkle never trusts anybody, but people are good! I don't understand why she doesn't understand that.",
             faction: 'Fairy',
@@ -2662,7 +2662,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4d',
-            imgUrl: '/chapter2/fairy-purple.png',
+            imgUrl: '/decks/chapter2/fairy-purple.png',
             title:'Tinkle',
             text: "Spinkle, Winkle and Tinkle, the super duper awesome fairy berry very cherry trio!!!",
             faction: 'Fairy',
@@ -2684,7 +2684,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4e',
-            imgUrl: '/chapter2/fairy-purple.png',
+            imgUrl: '/decks/chapter2/fairy-purple.png',
             title:'Tinkle',
             text: "Hey I'm Tinkle... wait have we already met?",
             faction: 'Fairy',
@@ -2708,7 +2708,7 @@ export const allDecks = writable({
         // Fairy-green
         {
             id: 'chapter2-4a',
-            imgUrl: '/chapter2/fairy-green.png',
+            imgUrl: '/decks/chapter2/fairy-green.png',
             title:'Winkle',
             text: "Winkle here, not winkle, WRINKLE. Wait, no I mean not wrinkle it's winkle, WINKLE!",
             faction: 'Fairy',
@@ -2730,7 +2730,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4b',
-            imgUrl: '/chapter2/fairy-green.png',
+            imgUrl: '/decks/chapter2/fairy-green.png',
             title:'Winkle',
             text: "Some people are surprised that fairies exist, but some people are even more surprised that we aren't tiny. Why would we by tiny?",
             faction: 'Fairy',
@@ -2752,7 +2752,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4c',
-            imgUrl: '/chapter2/fairy-green.png',
+            imgUrl: '/decks/chapter2/fairy-green.png',
             title:'Winkle',
             text: "You're probably like all the other humans, greedy and rude.",
             faction: 'Fairy',
@@ -2774,7 +2774,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4d',
-            imgUrl: '/chapter2/fairy-green.png',
+            imgUrl: '/decks/chapter2/fairy-green.png',
             title:'Winkle',
             text: "I bet you wish you could fly too.",
             faction: 'Fairy',
@@ -2796,7 +2796,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-4e',
-            imgUrl: '/chapter2/fairy-green.png',
+            imgUrl: '/decks/chapter2/fairy-green.png',
             title:'Winkle',
             text: "My sisters seem to think we've always lived here... but I don't know. Part of me feels like there was something before all of this.",
             faction: 'Fairy',
@@ -2820,7 +2820,7 @@ export const allDecks = writable({
         // Druid
         {
             id: 'chapter2-5a',
-            imgUrl: '/chapter2/druid.png',
+            imgUrl: '/decks/chapter2/druid.png',
             title:'Deku',
             text: "Leave this place.",
             faction: 'Druid',
@@ -2842,7 +2842,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-5b',
-            imgUrl: '/chapter2/druid.png',
+            imgUrl: '/decks/chapter2/druid.png',
             title:'Deku',
             text: "...",
             faction: 'Druid',
@@ -2864,7 +2864,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-5c',
-            imgUrl: '/chapter2/druid.png',
+            imgUrl: '/decks/chapter2/druid.png',
             title:'Deku',
             text: "Who are you people?",
             faction: 'Druid',
@@ -2886,7 +2886,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-5d',
-            imgUrl: '/chapter2/druid.png',
+            imgUrl: '/decks/chapter2/druid.png',
             title:'Deku',
             text: "I guard this forest alone, I don't know what became of the other druids.",
             faction: 'Druid',
@@ -2908,7 +2908,7 @@ export const allDecks = writable({
         },
         {
             id: 'chapter2-5e',
-            imgUrl: '/chapter2/druid.png',
+            imgUrl: '/decks/chapter2/druid.png',
             title:'Deku',
             text: "You humans are no friend to nature, therefore I am no friend to humans.",
             faction: 'Druid',
@@ -2932,7 +2932,7 @@ export const allDecks = writable({
         // Rabbit
         {
             id: 'chapter2-6a',
-            imgUrl: '/chapter2/rabbit.png',
+            imgUrl: '/decks/chapter2/rabbit.png',
             title:'Bounder',
             text: "*Sniff* *Sniff*",
             faction: 'Lapin',
@@ -2956,7 +2956,7 @@ export const allDecks = writable({
         // Snake
         {
             id: 'chapter2-7a',
-            imgUrl: '/chapter2/snake.png',
+            imgUrl: '/decks/chapter2/snake.png',
             title:'Pentser',
             text: "...",
             faction: 'Sirpent',
@@ -2980,7 +2980,7 @@ export const allDecks = writable({
         // Hippy-boy
         {
             id: 'chapter2-8a',
-            imgUrl: '/chapter2/hippy-boy.png',
+            imgUrl: '/decks/chapter2/hippy-boy.png',
             title:'Ziggy',
             text: "...",
             faction: 'Human',
@@ -3004,7 +3004,7 @@ export const allDecks = writable({
         // Hippy-girl
         {
             id: 'chapter2-8a',
-            imgUrl: '/chapter2/hippy-girl.png',
+            imgUrl: '/decks/chapter2/hippy-girl.png',
             title:'Powder',
             text: "...",
             faction: 'Human',
@@ -3019,6 +3019,59 @@ export const allDecks = writable({
             actionRight: {
                 health: 0,
                 memory: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+    ],
+
+    chapter2Elves: [
+        // Male Elf
+        {
+            id: 'chapter2-e-1a',
+            imgUrl: '/decks/chapter2/elves/elf-male.png',
+            title:'Aldwin',
+            text: "I'm an elf",
+            faction: 'Elf',
+            textLeft: "Cool",
+            textRight: "Radical",
+            actionLeft: {
+                health: 0,
+                energy: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: 0,
+                memory: 0,
+                energy: 0,
+                good: 0,
+                evil: 0
+            },
+            location: 'Magical Forest'
+        },
+        // TODO: remove comment, temp reminder that there's also smile elf
+        {
+            id: 'chapter2-e-1b',
+            imgUrl: '/decks/chapter2/elves/elf-male-smile.png',
+            title:'Aldwin',
+            text: "I'm an elf",
+            faction: 'Elf',
+            textLeft: "Cool",
+            textRight: "Radical",
+            actionLeft: {
+                health: 0,
+                energy: 0,
+                memory: 0,
+                good: 0,
+                evil: 0
+            },
+            actionRight: {
+                health: 0,
+                memory: 0,
+                energy: 0,
                 good: 0,
                 evil: 0
             },

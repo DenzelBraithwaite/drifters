@@ -6,6 +6,7 @@
     import Card from './Card.svelte';
     import Game from './Game.svelte';
     import Button from './Button.svelte';
+    import MenuDeck from './MenuDeck.svelte';
 
     // Stores
     import { allDecks, newDeck } from '../stores/allDecks';
@@ -20,6 +21,7 @@
     const survey2Deck = $allDecks.survey2;
     const chapter1Deck = $allDecks.chapter1;
     const chapter1SoldiersDeck = $allDecks.chapter1Soldiers;
+    const chapter2ElvesDeck = $allDecks.chapter2Elves;
     const chapter2Deck = $allDecks.chapter2;
 
     $player.unlockedCards = [...tutorial1Deck];
@@ -71,14 +73,50 @@
             resetDecks();
         }
 
+        // Add Elves deck
+        if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 25) {
+            newDeckAlertText = 'Elves'
+            newDeckAlert = true;
+
+            player.update(p => {
+                p.unlockedCards = [...chapter2ElvesDeck, ...p.unlockedCards];
+                if (!p.unlockedDeck.chapter2Elves) {
+                    p.displayDecks = [
+                        ...p.displayDecks,
+                        {
+                            title: 'Chapter2/Elves',
+                            img: '/decks/chapter2/elves/elf-archer-white.png'
+                        }
+                    ]
+                }
+                p.unlockedDeck.chapter2Elves = true;
+                return p;
+            });
+
+            setTimeout(() => {
+                newDeckAlert = false;
+            }, 4500);
+        }
+
         // Add soldier deck
         if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 7) {
-            $player.unlockedDeck.chapter1Soldiers = true;
-            $player.unlockedCards = [...chapter1SoldiersDeck, ...$player.unlockedCards];
-            $player.displayDecks = [...$player.displayDecks, 'Chapter1/Soldiers'];
             newDeckAlertText = 'Soldiers'
             newDeckAlert = true;
 
+            player.update(p => {
+                p.unlockedCards = [...chapter1SoldiersDeck, ...p.unlockedCards];
+                if (!p.unlockedDeck.chapter1Soldiers) {
+                    p.displayDecks = [
+                        ...p.displayDecks,
+                        {
+                            title: 'Chapter1/Soldiers',
+                            img: '/decks/chapter1/soldiers/captain.png'
+                        }
+                    ]
+                }
+                p.unlockedDeck.chapter1Soldiers = true;
+                return p;
+            });
 
             setTimeout(() => {
                 newDeckAlert = false;
@@ -89,10 +127,20 @@
         if (!$player.unlockedDeck.tutorial2 && $player.memory >= 15) { 
             player.update(p => {
                     p.activeDeck = 'tutorial';
-                    p.unlockedDeck.tutorial2 = true;
                     p.unlockedCards = [...tutorial2Deck];
-                    p.displayDecks = [...p.displayDecks, 'Tutorial2/Survey2'];
                     currentCard = p.unlockedCards[0];
+
+                    if (!p.unlockedDeck.tutorial2) {
+                        p.displayDecks = [
+                            ...p.displayDecks,
+                            {
+                                title: 'Tutorial2/Survey2',
+                                img: '/decks/tutorial/judicator-white-smile.png'
+                            }
+                        ]
+                    }
+
+                    p.unlockedDeck.tutorial2 = true;
                     return p;
                 });
                 
@@ -119,13 +167,23 @@
             setTimeout(() => {
                 player.update(p => {
                     p.activeDeck = 'chapter';
+                    p.unlockedCards = [...chapter2Deck];
+                    if (!p.unlockedDeck.chapter2) {
+                        p.displayDecks = [
+                            ...p.displayDecks,
+                            {
+                                title: 'Chapter2',
+                                img: '/decks/chapter2/druid.png'
+                            }
+                        ]
+                    }
+
                     p.unlockedDeck.survey2 = true;
                     p.unlockedDeck.chapter2 = true;
-                    p.unlockedCards = [...chapter2Deck];
-                    p.displayDecks = [...p.displayDecks, 'Chapter2'];
                     return p;
                 });
                 
+                // Change background
                 backgrounds.update(bg => {
                     $backgrounds.active = $backgrounds.magicalForest;
                     return bg;
@@ -141,13 +199,23 @@
             setTimeout(() => {
                 player.update(p => {
                     p.activeDeck = 'chapter';
-                    p.unlockedDeck.chapter1 = true;
+                    
                     p.unlockedCards = [...chapter1Deck];
 
-                    // Every click would add "chapter 1" as an unlocked deck in menu
-                    if (!p.displayDecks.includes('Chapter1')) p.displayDecks = [...p.displayDecks, 'Chapter1'];
-                    return p;
-                });
+                // If statement avoids duplicates
+                if (!p.unlockedDeck.chapter1) {
+                    p.displayDecks = [
+                        ...p.displayDecks,
+                        {
+                            title: 'Chapter1',
+                            img: '/decks/chapter1/peasant.png'
+                        }
+                    ]
+                }
+                
+                p.unlockedDeck.chapter1 = true;
+                return p;
+            });
                 
                 backgrounds.update(bg => {
                     $backgrounds.active = $backgrounds.adventure;
@@ -198,12 +266,9 @@
             <h2 class="main-menu-title">Main Menu</h2>
             <main class="menu-content">
                 <h3>Decks Unlocked:</h3>
-                <ul>
                     {#each $player.displayDecks as deck}
-                    <!-- TODO: Display a little deck with img -->
-                    <li>{deck}</li>
+                        <MenuDeck title={deck.title} img={deck.img}/>
                     {/each}
-                </ul>
             </main>
             <div class="menu-wrapper">
                 <Button on:click={() => menuOpen = !menuOpen} bgColor={"bg-black"}>Menu</Button>
@@ -292,7 +357,11 @@
         height: 85%;
         padding: 2rem 1.5rem 1rem;
         text-align: left;
+        overflow-y: scroll;
 
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     .game-client {
@@ -306,7 +375,7 @@
         border: 4px solid #00000079;
         border-radius: 5rem 1rem 5rem 1rem;
         background-color: #000000df;
-        background: linear-gradient(to right, #000000, rgba(12, 3, 31, 0.782), #000000);
+        background: linear-gradient(to right, #000000, #090218e4, #000000);
         box-shadow: 0 0.5rem 2rem 0.5rem #0c00387e;
     }
 
@@ -322,7 +391,7 @@
 
     .card-text {
         position: relative;
-        background-color: #00000053;
+        background-color: #0f0f0f53;
         box-shadow: 0 0.125rem 0.5rem #0000004e;
         width: 100%;
         padding: 0.75rem;

@@ -29,7 +29,8 @@
 
 <style lang="scss">
     button {
-        padding: 0.75rem;
+        padding: 0.75rem 1rem;
+        letter-spacing: 0.1rem;
         border: none;
         font-size: 0.75rem;
         text-align: center;
@@ -40,15 +41,16 @@
 
     /* background colors */                
     .bg-black {
-        background-color: #060606;
-        color: #fff;
         cursor: pointer;
+        background-color: #090909;
+        color: #fff;
         box-shadow: 0 0.25rem 0.5rem #00000073;
         transition: box-shadow 0.3s ease-out;
 
         &:hover {
-            // box-shadow: 0 0 10rem #3a109c;
-            box-shadow: 0 -5rem 20rem 4rem #3a109c;
+            box-shadow: 0 0 10rem #3a109c;
+            background-color: #0a0a0a;
+            box-shadow: 0 0 2rem 1rem #0c003842;
         }
 
         &:active {

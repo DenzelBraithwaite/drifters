@@ -17,12 +17,18 @@ const player = writable({
         chapter1: false,
         chapter1Soldiers: false,
         chapter2: false,
+        chapter2Elves: false,
         chapter3: false,
         chapter4: false,
 
     },
-    displayDecks: ['Tutorial1/Survey1'],
-    health: 5,
+    displayDecks: [
+        {
+            title: 'Tutorial1/Survey1',
+            img: '/public/decks/tutorial/judicator-white.png'
+        }
+    ],
+    health: 50,
     sanity: 5,
     energy: 5,
     impulse: 0,
