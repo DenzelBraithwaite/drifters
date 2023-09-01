@@ -31,8 +31,8 @@
     let currentCard = $player.unlockedCards[0];
     let menuOpen = false;
     $: hpMessage = $player.health <= 3 ? 'HP: Low!' : `HP:${$player.health}`;
+    $: auraMessage = $player.aura <= 3 ? 'Aura: Low!' : `Aura:${$player.aura}`;
     $: sanityMessage = '?'; 
-    $: auraMessage = $player.aura <= 3 ? 'Aura: Low!': `Aura: ${$player.aura}`;
     $: impulseMessage = '?';
     $: memMessage = $player.memory < 1 ? 'No memory' : `MEM:${$player.memory}`;
 
@@ -57,20 +57,20 @@
 
         if (choice === 'left') {
             player.update(p => {
-                p.health += currentCard.actionLeft.health;
-                p.sanity += currentCard.actionLeft.sanity;
-                p.aura += currentCard.actionLeft.aura;
-                p.impulse += currentCard.actionLeft.impulse;
-                p.memory += currentCard.actionLeft.memory;
+                if (currentCard.actionLeft.health) p.health += currentCard.actionLeft.health;
+                if (currentCard.actionLeft.aura) p.aura += currentCard.actionLeft.aura;
+                if (currentCard.actionLeft.sanity) p.sanity += currentCard.actionLeft.sanity;
+                if (currentCard.actionLeft.impulse) p.impulse += currentCard.actionLeft.impulse;
+                if (currentCard.actionLeft.memory) p.memory += currentCard.actionLeft.memory;
                 return p;
             });
         } else if (choice === 'right') {
             player.update(p => {
-                p.health += currentCard.actionRight.health;
-                p.sanity += currentCard.actionRight.sanity;
-                p.aura += currentCard.actionRight.aura;
-                p.impulse += currentCard.actionRight.impulse;
-                p.memory += currentCard.actionRight.memory;
+                if (currentCard.actionRight.health) p.health += currentCard.actionRight.health;
+                if (currentCard.actionRight.aura) p.aura += currentCard.actionRight.aura;
+                if (currentCard.actionRight.sanity) p.sanity += currentCard.actionRight.sanity;
+                if (currentCard.actionRight.impulse) p.impulse += currentCard.actionRight.impulse;
+                if (currentCard.actionRight.memory) p.memory += currentCard.actionRight.memory;
                 return p;
             });
         }
@@ -210,7 +210,6 @@
             setTimeout(() => {
                 player.update(p => {
                     p.activeDeck = 'chapter';
-                    
                     p.unlockedCards = [...chapter1Deck];
 
                 // If statement avoids duplicates

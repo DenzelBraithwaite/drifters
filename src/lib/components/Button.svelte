@@ -37,11 +37,14 @@
         border-radius: 0.25rem;
         margin: 0.5rem 0;
         transition: background-color 0.3s ease-out;
+
+        &hover {
+            cursor: pointer;
+        }
     }
 
     /* background colors */                
     .bg-black {
-        cursor: pointer;
         background-color: #090909;
         color: #fff;
         box-shadow: 0 0.25rem 0.5rem #00000073;
