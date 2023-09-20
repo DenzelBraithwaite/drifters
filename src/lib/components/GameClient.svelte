@@ -17,12 +17,20 @@
     // Decks
     const tutorial1Deck = $allDecks.tutorial1;
     const tutorial2Deck = $allDecks.tutorial2;
+    const tutorial3Deck = $allDecks.tutorial3;
+    const tutorial4Deck = $allDecks.tutorial4;
     const survey1Deck = $allDecks.survey1;
     const survey2Deck = $allDecks.survey2;
+    const survey3Deck = $allDecks.survey3;
+    const survey4Deck = $allDecks.survey4;
     const chapter1Deck = $allDecks.chapter1;
     const chapter1SoldiersDeck = $allDecks.chapter1Soldiers;
-    const chapter2ElvesDeck = $allDecks.chapter2Elves;
     const chapter2Deck = $allDecks.chapter2;
+    const chapter2ElvesDeck = $allDecks.chapter2Elves;
+    const chapter3Deck = $allDecks.chapter3;
+    const chapter3GoblinsDeck = $allDecks.chapter3Goblins;
+    // const chapter4ToBeDecidedDeck = $allDecks.chapter4ToBeDecidedDeck;
+    const chapter4Deck = $allDecks.chapter4;
 
     $player.unlockedCards = [...tutorial1Deck];
     let newDeckAlert = false;
@@ -32,8 +40,8 @@
     let menuOpen = false;
     $: hpMessage = $player.health <= 3 ? 'HP: Low!' : `HP:${$player.health}`;
     $: auraMessage = $player.aura <= 3 ? 'Aura: Low!' : `Aura:${$player.aura}`;
-    $: sanityMessage = '?'; 
-    $: impulseMessage = '?';
+    $: sanityMessage = $player.sanity <= 3 ? 'Sanity: Low!' : `Sanity:${$player.sanity}`;
+    $: impulseMessage = $player.impulse >= 7 ? 'Impulse: High!' : `Impulse:${$player.impulse}`;
     $: memMessage = $player.memory < 1 ? 'No memory' : `MEM:${$player.memory}`;
 
     function controlStats() {
@@ -84,6 +92,31 @@
         // Make sure stats have limit 10
         controlStats();
 
+        // Add Goblins deck
+        if (!$player.unlockedDeck.chapter3Goblins && $player.memory >= 50) {
+            newDeckAlertText = 'Goblins'
+            newDeckAlert = true;
+
+            player.update(p => {
+                p.unlockedCards = [...chapter3GoblinsDeck, ...p.unlockedCards];
+                if (!p.unlockedDeck.chapter3GoblinsDeck) {
+                    p.displayDecks = [
+                        ...p.displayDecks,
+                        {
+                            title: 'Chapter3 / Goblins',
+                            img: '/decks/chapter3/goblins/goblin-blade.png'
+                        }
+                    ]
+                }
+                p.unlockedDeck.chapter3Goblins = true;
+                return p;
+            });
+
+            setTimeout(() => {
+                newDeckAlert = false;
+            }, 4500);
+        }
+
         // Add Elves deck
         if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 25) {
             newDeckAlertText = 'Elves'
@@ -95,7 +128,7 @@
                     p.displayDecks = [
                         ...p.displayDecks,
                         {
-                            title: 'Chapter2/Elves',
+                            title: 'Chapter2 / Elves',
                             img: '/decks/chapter2/elves/elf-archer-white.png'
                         }
                     ]
@@ -120,7 +153,7 @@
                     p.displayDecks = [
                         ...p.displayDecks,
                         {
-                            title: 'Chapter1/Soldiers',
+                            title: 'Chapter1 / Soldiers',
                             img: '/decks/chapter1/soldiers/captain.png'
                         }
                     ]
@@ -134,26 +167,84 @@
             }, 4500);
         }
 
-        // Move on to chapter 2 if enough memory.
-        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 15) { 
+        // Move on to chapter 3 if enough memory.
+        if (!$player.unlockedDeck.tutorial3 && $player.memory >= 40) { 
             player.update(p => {
                     p.activeDeck = 'tutorial';
-                    p.unlockedCards = [...tutorial2Deck];
+                    p.unlockedCards = [...tutorial3Deck];
                     currentCard = p.unlockedCards[0];
 
-                    if (!p.unlockedDeck.tutorial2) {
+                    // TODO: Confirm why this is here, I believe it's to avoid user's extra clicks to create multiple deck images.
+                    if (!p.unlockedDeck.tutorial3) {
                         p.displayDecks = [
                             ...p.displayDecks,
                             {
-                                title: 'Tutorial2/Survey2',
-                                img: '/decks/tutorial/judicator-white-smile.png'
+                                title: 'Tutorial3 / Survey3',
+                                img: '/decks/tutorial/judicator-purple.png'
                             }
                         ]
                     }
 
-                    p.unlockedDeck.tutorial2 = true;
+                    p.unlockedDeck.tutorial3 = true;
                     return p;
                 });
+                
+            backgrounds.update(bg => {
+                $backgrounds.active = $backgrounds.space;
+                return bg;
+            });
+            return;
+        }
+
+        // Move on to chapter 4 if enough memory.
+        if (!$player.unlockedDeck.tutorial4 && $player.memory >= 65) { 
+            player.update(p => {
+                p.activeDeck = 'tutorial';
+                p.unlockedCards = [...tutorial4Deck];
+                currentCard = p.unlockedCards[0];
+
+                // TODO: Confirm why this is here, I believe it's to avoid user's extra clicks to create multiple deck images.
+                if (!p.unlockedDeck.tutorial4) {
+                    p.displayDecks = [
+                        ...p.displayDecks,
+                        {
+                            title: 'Tutorial4 / Survey4',
+                            img: '/decks/tutorial/judicator-purple-smile.png'
+                        }
+                    ]
+                }
+
+                p.unlockedDeck.tutorial4 = true;
+                return p;
+            });
+                
+            backgrounds.update(bg => {
+                $backgrounds.active = $backgrounds.space;
+                return bg;
+            });
+            return;
+        }
+
+        // Move on to chapter 2 if enough memory.
+        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 15) { 
+            player.update(p => {
+                p.activeDeck = 'tutorial';
+                p.unlockedCards = [...tutorial2Deck];
+                currentCard = p.unlockedCards[0];
+
+                if (!p.unlockedDeck.tutorial2) {
+                    p.displayDecks = [
+                        ...p.displayDecks,
+                        {
+                            title: 'Tutorial2 / Survey2',
+                            img: '/decks/tutorial/judicator-white-smile.png'
+                        }
+                    ]
+                }
+
+                p.unlockedDeck.tutorial2 = true;
+                return p;
+            });
                 
             backgrounds.update(bg => {
                 $backgrounds.active = $backgrounds.space;

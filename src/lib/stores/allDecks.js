@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store';
 
+// TODO:FIXME:TODO: Save all of these as their own smaller store and then import them here. 4000 lines is a bit much.
 export const allDecks = writable({
     tutorial1: [
         {
@@ -7,9 +8,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: 'Welcome drifter, would you like to play the tutorial?',
-            faction: 'Tutorial',
-            textLeft: "Nah, I know what I'm doing.",
-            textRight: 'Yes please!',
+            faction: '???',
+            textLeft: "Nah, I know what I'm doing.", // ->tutorial1-2a
+            textRight: 'Yes please!', // ->tutorial-2b
             location: 'tutorial'
         },
         {
@@ -17,9 +18,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Well aren't you something special, that's good because there wasn't a tutorial anyway...",
-            faction: 'Tutorial',
-            textLeft: "Then why even bother asking?",
-            textRight: "...",
+            faction: '???',
+            textLeft: "Then why even bother asking?", // ->tutorial-3
+            textRight: "...", // ->tutorial-3
             location: 'tutorial'
         },
         {
@@ -27,9 +28,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'???',
             text: "Hahahaha.... did you really think there was a tutorial? Do you think you're playing a game right now?",
-            faction: 'Tutorial',
-            textLeft: "What...",
-            textRight: "I'm not sure what this is or where I am.",
+            faction: '???',
+            textLeft: "What...", // ->tutorial-3
+            textRight: "I'm not sure what this is or where I am.", // ->tutorial-3
             location: 'tutorial'
         },
         {
@@ -37,9 +38,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'???',
             text: "Ha, don't worry, it's normal to be confused, it's all part of the process.",
-            faction: 'Tutorial',
-            textLeft: "What process?",
-            textRight: 'I think I want to leave now.',
+            faction: '???',
+            textLeft: "What process?", // ->tutorial-4a
+            textRight: 'I think I want to leave now.', // ->tutorial-4b
             location: 'tutorial'
         },
         {
@@ -47,9 +48,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Don't worry about the process, let the process worry about you and you'll be out of here in no time! But first things first, you'll need to make a lot of decisions. You've made decisions before right?",
-            faction: 'Tutorial',
-            textLeft: "I never decided to be here.",
-            textRight: 'What kind of question is that, everyone has made a decision before.',
+            faction: '???',
+            textLeft: "I never decided to be here.", // ->tutorial-5
+            textRight: 'What kind of question is that, everyone has made a decision before.', // ->tutorial-5
             location: 'tutorial'
         },
         {
@@ -57,9 +58,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Don't worry you'll be out of here in no time, but first things first, you'll need to make a lot of decisions. You've made decisions before... right?",
-            faction: 'Tutorial',
-            textLeft: "I never decided to be here.",
-            textRight: 'What kind of question is that, everyone has made a decision before.',
+            faction: '???',
+            textLeft: "I never decided to be here.", // ->tutorial-5
+            textRight: 'What kind of question is that, everyone has made a decision before.', // ->tutorial-5
             location: 'tutorial'
         },
         {
@@ -67,9 +68,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Well sometimes you get to make decisions, but sometimes they're made for you.",
-            faction: 'Tutorial',
-            textLeft: "Okay... is there a reason you're telling me this?",
-            textRight: 'This all seems very suspicious...',
+            faction: '???',
+            textLeft: "Okay... is there a reason you're telling me this?", // ->tutorial-6a
+            textRight: 'This all seems very suspicious...', // ->tutorial-6b
             location: 'tutorial'
         },
         {
@@ -77,9 +78,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Is there a reason for any of this? I guess you'll have to determine that for yourself. Are you ready now?",
-            faction: 'Tutorial',
-            textLeft: "Ready for what? You haven't told me anything yet.",
-            textRight: 'Wait slow down, I have so many questions!',
+            faction: '???',
+            textLeft: "Ready for what? You haven't told me anything yet.", // ->tutorial-7
+            textRight: 'Wait slow down, I have so many questions!', // ->tutorial-7
             location: 'tutorial'
         },
         {
@@ -87,9 +88,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'???',
             text: "Suspicion always haunts the guilty mind. Are you ready?",
-            faction: 'Tutorial',
-            textLeft: "What's that supposed to mean...",
-            textRight: 'Only one way to find out.',
+            faction: '???',
+            textLeft: "What's that supposed to mean...", // ->tutorial-7
+            textRight: 'Only one way to find out.', // ->tutorial-7
             location: 'tutorial'
         },
         {
@@ -97,9 +98,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'???',
             text: "Fantastic then let's begi- oh! I almost forgot, there's something you need to do first.",
-            faction: 'Tutorial',
-            textLeft: "And that is?",
-            textRight: 'What if I refuse?',
+            faction: '???',
+            textLeft: "And that is?", // ->tutorial-8a
+            textRight: 'What if I refuse?', // ->tutorial-8b
             location: 'tutorial'
         },
         {
@@ -107,9 +108,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Someone doesn't like surprises, it's just a quick harmless survey that's all. Really, don't read too much into it.",
-            faction: 'Tutorial',
-            textLeft: "I wasn't until you said that.",
-            textRight: 'Fine, if it will help me get out of here.',
+            faction: '???',
+            textLeft: "I wasn't until you said that.", // ->tutorial-9
+            textRight: 'Fine, if it will help me get out of here.', // ->tutorial-9
             location: 'tutorial'
         },
         {
@@ -117,9 +118,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'???',
             text: "Are you really sure you want to do that? Come now, it's just a quick and harmless survey, you'll be fine.",
-            faction: 'Tutorial',
-            textLeft: "I'm no stranger to threats, fine I'll do the stupid survey.",
-            textRight: "Let's just get this over with.",
+            faction: '???',
+            textLeft: "I'm no stranger to threats, fine I'll do the stupid survey.", // ->tutorial-9
+            textRight: "Let's just get this over with.", // ->tutorial-9
             location: 'tutorial'
         },
         {
@@ -127,9 +128,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "By the way, not that you asked... but you can call me Jude. Do you remember your name?",
-            faction: 'Tutorial',
-            textLeft: "Jude? that's not what I was expecting... No, I don't remember my name...",
-            textRight: "Hey Jude, I ca- I can't seem to...",
+            faction: '???',
+            textLeft: "Jude? that's not what I was expecting... No, I don't remember my name...", // ->tutorial-10
+            textRight: "Hey Jude, I ca- I can't seem to...", // ->tutorial-10
             location: 'tutorial'
         },
         {
@@ -137,9 +138,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Fantastic... Don't worry that's normal. For now let's just keep it simple and call you Jack, unless there's another name you'd prefer?",
-            faction: 'Tutorial',
-            textLeft: "Jack? Doesn't really seem to suit me but I guess I'll go by Jack until I can remember my actual name.",
-            textRight: "I may not know my name but it certainly isn't Jack.",
+            faction: '???',
+            textLeft: "Jack? Doesn't really seem to suit me but I guess I'll go by Jack until I can remember my actual name.", // ->survey-1
+            textRight: "I may not know my name but it certainly isn't Jack.", // ->survey-1
             location: 'tutorial'
         }
     ],
@@ -150,9 +151,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: 'Hello again, how have things been going since we last spoke? You seem to be handling yourself quite well in here.',
-            faction: 'Tutorial',
-            textLeft: "I'm making do with what little I know, thanks to you.",
-            textRight: "I still have no idea what I'm doing here.",
+            faction: '???',
+            textLeft: "I'm making do with what little I know, thanks to you.", // ->tutorial2-2a
+            textRight: "I still have no idea what I'm doing here.", // ->tutorial2-2b
             location: 'tutorial'
         },
         {
@@ -160,9 +161,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Yes you always were so... resourceful. Well don't let me keep you from all the fun, I just wanted to ask you a few more questions.",
-            faction: 'Tutorial',
-            textLeft: "Then why even bother asking?",
-            textRight: "Again with the questions, what do you want to know this time?",
+            faction: '???',
+            textLeft: "Then why even bother asking?", // ->tutorial2-3
+            textRight: "Again with the questions, what do you want to know this time?", // ->tutorial2-3
             location: 'tutorial'
         },
         {
@@ -170,9 +171,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "As I've said before, that's to be expected and you shouldn't go searching your brain for memories, instead let the memories come to you. Now, I have a few more questions for you if you'd be so kind as to indulge me.",
-            faction: 'Tutorial',
-            textLeft: "Lovely, more confusing questions. Let's get this over with.",
-            textRight: "I'm sick and tired of your games, I don't want to take your stupid survey.",
+            faction: '???',
+            textLeft: "Lovely, more confusing questions. Let's get this over with.", // ->tutorial2-3
+            textRight: "I'm sick and tired of your games, I don't want to take your stupid survey.", // ->tutorial2-3
             location: 'tutorial'
         },
         {
@@ -180,9 +181,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Don't you worry, we'll be done before you know it! The important thing is to remember your decisions have meaning.",
-            faction: 'Tutorial',
-            textLeft: "What meaning? You keep saying that but you never explain.",
-            textRight: 'I could care less whether they meant anything, I just want to leave.',
+            faction: '???',
+            textLeft: "What meaning? You keep saying that but you never explain.", // ->tutorial2-4a
+            textRight: 'I could care less whether they meant anything, I just want to leave.', // ->tutorial2-4b
             location: 'tutorial'
         },
         {
@@ -190,9 +191,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "As I've said before, you needn't worry about remembering or making sense of your situations, you just need to go with the flow.",
-            faction: "Tutorial",
-            textLeft: "What flow? This is more like a sick game that you seem to be enjoying a great deal.",
-            textRight: "Yeah that's easy enough for you to say, you don't know what this is like.",
+            faction: "???",
+            textLeft: "What flow? This is more like a sick game that you seem to be enjoying a great deal.", // ->tutorial2-5
+            textRight: "Yeah that's easy enough for you to say, you don't know what this is like.", // ->tutorial2-5
             location: 'tutorial'
         },
         {
@@ -200,9 +201,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "If you want to leave then you'd do well to take my advice and simply continue along this path.",
-            faction: 'Tutorial',
-            textLeft: "Just because you got bored and decided to paint a path for me, doesn't mean I have to follow it.",
-            textRight: "I think I've had enough of listening to you, why should I trust the one who's the reason for all of this?",
+            faction: '???',
+            textLeft: "Just because you got bored and decided to paint a path for me, doesn't mean I have to follow it.", // ->tutorial2-5
+            textRight: "I think I've had enough of listening to you, why should I trust the one who's the reason for all of this?", // ->tutorial2-5
             location: 'tutorial'
         },
         {
@@ -210,9 +211,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "...",
-            faction: 'Tutorial',
-            textLeft: "What, gone quiet all of a sudden?",
-            textRight: "Speechless? That's a first.",
+            faction: '???',
+            textLeft: "What, gone quiet all of a sudden?", // ->tutorial2-6
+            textRight: "Speechless? That's a first.", // ->tutorial2-6
             location: 'tutorial'
         },
         {
@@ -220,9 +221,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "You really don't remember anything do you?",
-            faction: 'Tutorial',
-            textLeft: "That's what I've been trying to tell you!",
-            textRight: "Nothing at all...",
+            faction: '???',
+            textLeft: "That's what I've been trying to tell you!", // ->tutorial2-7
+            textRight: "Nothing at all...", // ->tutorial2-7
             location: 'tutorial'
         },
         {
@@ -230,9 +231,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "You really don't remember anything do you?",
-            faction: 'Tutorial',
-            textLeft: "That's what I've been trying to tell you!",
-            textRight: "Nothing at all...",
+            faction: '???',
+            textLeft: "That's what I've been trying to tell you!", // ->tutorial2-8
+            textRight: "Nothing at all...", // ->tutorial2-8
             location: 'tutorial'
         },
         {
@@ -240,9 +241,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Look... just answer the questions and talk to the people you meet and I promise you, this will all be over soon.",
-            faction: 'Tutorial',
-            textLeft: "But why can't you just tell me! Why do you act as if you have no say in the matter?",
-            textRight: "What happens if I don't?",
+            faction: '???',
+            textLeft: "But why can't you just tell me! Why do you act as if you have no say in the matter?", // ->tutorial2-9a
+            textRight: "What happens if I don't?", // ->tutorial2-9b
             location: 'tutorial'
         },
         {
@@ -250,9 +251,9 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "You think you're asking the right questions, but finding that out won't help you any. Now then, it's time for the survey.",
-            faction: 'Tutorial',
-            textLeft: "I hope I don't live to regret this.",
-            textRight: "Any answer worth seeking is a question worth asking.",
+            faction: '???',
+            textLeft: "I hope I don't live to regret this.", // ->tutorial2-10
+            textRight: "Any answer worth seeking is a question worth asking.", // ->tutorial2-10
             location: 'tutorial'
         },
         {
@@ -260,160 +261,190 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "If you don't? Why don't you tell me.",
-            faction: 'Tutorial',
-            textLeft: "How could I possibly know?",
-            textRight: "I can't tell you what I don't know.",
+            faction: '???',
+            textLeft: "How could I possibly know?", // ->tutorial2-10
+            textRight: "I can't tell you what I don't know.", // ->tutorial2-10
             location: 'tutorial'
         },
         {
             id: 'tutorial2-10',
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
-            text: "Haha right... well then, enough of that. The survey will begin now but don't overthink it. Remember to just answer HONESTLY, ok?",
-            faction: 'Tutorial',
-            textLeft: "Fine, but we will meet again.",
-            textRight: "Let's get on with it then.",
+            text: "Haha right... anyway, enough of that. The survey will begin now but don't overthink it. Remember to just answer HONESTLY, ok?",
+            faction: '???',
+            textLeft: "Fine, but we will meet again.", // ->survey2-1
+            textRight: "Let's get on with it then.", // ->survey2-1
             location: 'tutorial'
         },
         
         
     ],
 
-    // TODO:
     tutorial3: [
         {
-            id: 'tutorial2-1',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'tutorial3-1',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
             title:'Jude',
-            text: 'Hello again, how have things been going since we last spoke? You seem to be handling yourself quite well in here.',
-            faction: 'Tutorial',
-            textLeft: "I'm making do with what little I know, thanks to you.",
-            textRight: "I still have no idea what I'm doing here.",
+            text: "A magical forest with mythical creatures, now that's an interesting one. Hey there Jack, having fun on your adventure?",
+            faction: '???',
+            textLeft: "Adventure? You're the one who keeps sending me away and then reappearing out of thin air.", // ->tutorial3-2a
+            textRight: "Oh great, it's you again. To what do I owe the... pleasure?", // ->tutorial3-2b
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-2a',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'tutorial3-2a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "Yes you always were so... resourceful. Well don't let me keep you from all the fun, I just wanted to ask you a few more questions.",
-            faction: 'Tutorial',
-            textLeft: "Then why even bother asking?",
-            textRight: "Again with the questions, what do you want to know this time?",
+            text: "Am I? I don't think I recall doing anything of the sort.",
+            faction: '???',
+            textLeft: "Haha very funny.", // ->tutorial3-3-a
+            textRight: "Oh yeah, if not you then who?", // ->tutorial3-3-a
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-2b',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'tutorial3-3-a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "As I've said before, that's to be expected and you shouldn't go searching your brain for memories, instead let the memories come to you. Now, I have a few more questions for you if you'd be so kind as to indulge me.",
-            faction: 'Tutorial',
-            textLeft: "Lovely, more confusing questions. Let's get this over with.",
-            textRight: "I'm sick and tired of your games, I don't want to take your stupid survey.",
+            text: "I'm being serious Jack, I'm not the one who's moving you. I'm not the one who's doing any of this, I'm simply a judicator.",
+            faction: '???',
+            textLeft: "A judicator? That means you must be judging me... which means I'm likely dead.", // ->tutorial3-4-a
+            textRight: "If you're not doing this than who is? Where am I?!?", // ->tutorial3-4-a
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-3',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'tutorial3-4-a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "Don't you worry, we'll be done before you know it! The important thing is to remember your decisions have meaning.",
-            faction: 'Tutorial',
-            textLeft: "What meaning? You keep saying that but you never explain.",
-            textRight: 'I could care less whether they meant anything, I just want to leave.',
+            text: "Deep down you know the truth, but you aren't ready to face it. You are dead Jack, and this world is your creation.",
+            faction: '???',
+            textLeft: "My... creation?", // ->tutorial3-5
+            textRight: "You mean I- I really am...", // ->tutorial3-5
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-4a',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'tutorial3-2b',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
             title:'Jude',
-            text: "As I've said before, you needn't worry about remembering or making sense of your situations, you just need to go with the flow.",
-            faction: "Tutorial",
-            textLeft: "What flow? This is more like a sick game that you seem to be enjoying a great deal.",
-            textRight: "Yeah that's easy enough for you to say, you don't know what this is like.",
+            text: "The pleasure? Careful now, one might think you're starting to enjoy this place a little too much...",
+            faction: '???',
+            textLeft: "I can't tell if you can't read my sarcasm or if I can't read yours.", // ->tutorial3-3a
+            textRight: "I promise you that won't be an issue. You however, seem to be enjoying yourself quite a bit.", // ->tutorial3-3a
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-4b',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'tutorial3-3a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "If you want to leave then you'd do well to take my advice and simply continue along this path.",
-            faction: 'Tutorial',
-            textLeft: "Just because you got bored and decided to paint a path for me, doesn't mean I have to follow it.",
-            textRight: "I think I've had enough of listening to you, why should I trust the one who's the reason for all of this?",
+            text: "I am capable of emotions you know, I'm not some sort of celestial unfeeling robot. In fact, I'm not so different from you.",
+            faction: '???',
+            textLeft: "Not so different? Have you seen yourself?", // ->tutorial3-4a-a
+            textRight: "I highly doubt something like you can understand human emotions, but you do seem capable of sarcasm.", // ->tutorial3-4a-b
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-5',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'tutorial3-4a-a',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
             title:'Jude',
-            text: "...",
-            faction: 'Tutorial',
-            textLeft: "What, gone quiet all of a sudden?",
-            textRight: "Speechless? That's a first.",
+            text: "Have you seen yourself?",
+            faction: '???',
+            textLeft: "...", // ->tutorial3-5
+            textRight: "I know what I look like.", // ->tutorial3-5
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-6',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'tutorial3-4a-b',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "You really don't remember anything do you?",
-            faction: 'Tutorial',
-            textLeft: "That's what I've been trying to tell you!",
-            textRight: "Nothing at all...",
+            text: "Oh I'm capable of much more than just sarcasm...",
+            faction: '???',
+            textLeft: "Was that a threat?", // ->tutorial3-5
+            textRight: "...", // ->tutorial3-5
+            location: 'tutorial'
+        }, 
+        {
+            id: 'tutorial3-5',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
+            title:'Jude',
+            text: "RIGHT THEN! Ding dong ding dong, it's time for another survey!",
+            faction: '???',
+            textLeft: "None of this matters, I don't care about your stupid survey.", // ->tutorial3-6a
+            textRight: "Wait, can we go back to what we were talking about!", // ->tutorial3-6b
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-7',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'tutorial3-6a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "You really don't remember anything do you?",
-            faction: 'Tutorial',
-            textLeft: "That's what I've been trying to tell you!",
-            textRight: "Nothing at all...",
+            text: "Oh I assure you this does matter. Have you not been listening to me? Your choices matter.",
+            faction: '???',
+            textLeft: "It's kind of hard to believe that right now.", // ->tutorial3-7
+            textRight: "Maybe to you they do, but not to me.", // ->tutorial3-7
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-8',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'tutorial3-6b',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "Look... just answer the questions and talk to the people you meet and I promise you, this will all be over soon.",
-            faction: 'Tutorial',
-            textLeft: "But why can't you just tell me! Why do you act as if you have no say in the matter?",
-            textRight: "What happens if I don't?",
+            text: "Go back? There isn't a soul alive who can turn back the hands of time. Instead, you should focus on moving forward.",
+            faction: '???',
+            textLeft: "Excuse me if I'm feeling a bit lethargic at the moment.", // ->tutorial3-7
+            textRight: "Yeah yeah...move forward, I know.", // ->tutorial3-7
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-9a',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'tutorial3-7',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "You think you're asking the right questions, but finding that out won't help you any. Now then, it's time for the survey.",
-            faction: 'Tutorial',
-            textLeft: "I hope I don't live to regret this.",
-            textRight: "Any answer worth seeking is a question worth asking.",
+            text: "Feeling down are we? Nothing the survey can't fix! Now, as always it's important that you answer honestly and don't think too hard. Just pick the first one that speaks to you.",
+            faction: '???',
+            textLeft: "Let's just get this over with.", // ->tutorial3-8a
+            textRight: "You don't need to tell me that every time.", // ->tutorial3-8b
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-9b',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'tutorial3-8a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "If you don't? Why don't you tell me.",
-            faction: 'Tutorial',
-            textLeft: "How could I possibly know?",
-            textRight: "I can't tell you what I don't know.",
+            text: "Your enthusiasm is delightfully refreshing as always. Alright, it's time to begin!",
+            faction: '???',
+            textLeft: "Begin Survey", // ->survey3-1
+            textRight: "Hey, before we start, can I ask you something? Is your name really 'Jude'?", // ->tutorial3-9
             location: 'tutorial'
         },
         {
-            id: 'tutorial2-10',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'tutorial3-8b',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "Haha right... well then, enough of that. The survey will begin now but don't overthink it. Remember to just answer HONESTLY, ok?",
-            faction: 'Tutorial',
-            textLeft: "Fine, but we will meet again.",
-            textRight: "Let's get on with it then.",
+            text: "And you don't need to tell me how to do my job.",
+            faction: '???',
+            textLeft: "Begin Survey", // ->survey3-1
+            textRight: "Begin Survey", // ->survey3-1
             location: 'tutorial'
         },
-        
+        {
+            id: 'tutorial3-9',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
+            title:'Jude',
+            text: "About as much as your name is Jack.",
+            faction: '???',
+            textLeft: "Begin Survey", // ->survey3-1
+            textRight: "What's the real purpose of these questions and surveys?", // ->tutorial3-10
+            location: 'tutorial'
+        },
+        {
+            id: 'tutorial3-10',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
+            title:'Jude',
+            text: "Wouldn't you like to know...",
+            faction: '???',
+            textLeft: "Begin Survey", // ->survey3-1
+            textRight: "Begin Survey", // ->survey3-1
+            location: 'tutorial'
+        },
         
     ],
+
+    tutorial4: [],
 
     survey1: [
         {
@@ -421,7 +452,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Fantastic Jack! Yes Jack it is and Jack it must be. Now again, it's just a random survey, just answer honestly. Alright, and away we go!",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Start survey",
             textRight: 'Abandon survey',
             actionLeft: {
@@ -439,7 +470,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Thank you for your willing cooperation. Moving on, what's more important to you?",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Comfort",
             textRight: 'Sacrifice',
             actionLeft: {
@@ -457,7 +488,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Hmm... interesting, your decision has been noted. Moving on, what's more important to you?",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Comfort",
             textRight: 'Sacrifice',
             actionLeft: {
@@ -475,7 +506,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Really? I suppose I should've guessed as much. Alright on to the next one; which do you prefer?",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Hearts",
             textRight: 'Diamonds',
             actionLeft: {
@@ -493,7 +524,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Naturally, what's next now... here we go. You only have time for one, which do you choose?",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Save a stranger from a fire, but he won't show any gratitude.",
             textRight: "Steal a stranger's wallet filled with cash with no chance of being caught. He wouldn't even miss it.",
             actionLeft: {
@@ -511,7 +542,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "How selfless of you, what a saint! Truly, you must be a gift from above. Perhaps you should answer the next one honestly though.",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Left",
             textRight: "Right",
             actionLeft: {
@@ -529,7 +560,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Hahahaha yes, nicely done. I'm glad you aren't a stranger to yourself. Now for the next one!",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Left",
             textRight: "Right",
             actionLeft: {
@@ -547,7 +578,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Here's a question, do you think any of your answers have meant anything? Even the last one, did you think that meant something?",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "I'd hope so, otherwise this is just one big waste of time.",
             textRight: "I'm not sure, probably not? I just want to get out of here.",
             actionLeft: {
@@ -565,7 +596,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Well they are indeed important, except for that left or right one. Honestly I'm not even sure why that one was in there.",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Are we almost done yet?",
             textRight: "Is this all a joke or something?",
             actionLeft: {
@@ -583,7 +614,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Bit of a Debbie downer aren't we? Little Sassy Susan wants to go out and play. You won't last very long with an attitude like that you know.",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Whatever, are we done yet?",
             textRight: "Don't lecture me when you won't even tell me what's going on here.",
             actionLeft: {
@@ -601,7 +632,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "So many questions as always, you'd think I was the one taking the survey. Alright here's the final one, get ready.",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "...",
             textRight: "Ready whenever.",
             actionLeft: {
@@ -619,7 +650,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Who are you?",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "I don- I don't remember...",
             textRight: "I am who I am... whoever that is.",
             actionLeft: {
@@ -637,7 +668,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Fantastic, then it's time. Remember, your decisions have meaning. You aren't alone here, but this is your show... Good luck Jack, hahahaa...",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "Wait come back!",
             textRight: "Wait I'm not alone here?",
             actionLeft: {
@@ -655,7 +686,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Oh- and by the way, I probably should have mentioned this sooner... But every time we speak, you will gain a memento.",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "A memento?",
             textRight: "For what?",
             actionLeft: {
@@ -673,7 +704,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "The mementos are linked to you, you must protect them. If one of them ever becomes fully damaged... Just remember it's important to keep them intact.",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "How would they get damaged?",
             textRight: "Wait, what happens if one breaks?",
             actionLeft: {
@@ -691,7 +722,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "It depends on your actions, who you talk to, what you decide to say. Right now you only have one memento to worry about, but soon you will have more... very soon.",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "How could me talking to other people damage my mementos?",
             textRight: "What should I avoid saying then?",
             actionLeft: {
@@ -709,7 +740,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Now where's the fun in telling you that...",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "What about this is fun period?",
             textRight: "Is this a joke to you?",
             actionLeft: {
@@ -727,7 +758,7 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "That's enough questions for now, don't worry you'll be fine. Or maybe you won't, only one way to know for sure. We will speak again soon Jack, very soon...",
-            faction: 'First Survey',
+            faction: '???',
             textLeft: "I'm not done yet, I still have more questions.",
             textRight: "My questions aren't going anywhere, see you soon \"Jude\".",
             actionLeft: {
@@ -748,16 +779,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Fantastic, question number 1. Did you recognize anyone in the village?",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "Hmmm... not really.",
             textRight: "Of course not, It's not like I've met them before.",
             actionLeft: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             actionRight: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             location: 'survey'
         },
@@ -766,16 +797,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Suppose that makes sense... did you notice anything odd about any of the villagers?",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "Actually, most of them seem to be dealing with a case of sudden amnesia as well.",
             textRight: 'I think I was more focused on trying to escape than anything.',
             actionLeft: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             location: 'survey'
         },
@@ -784,16 +815,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Yes well, truth be told most people who enter that village wander in, lost. Did you remember anything while you were there?",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "It might please you to learn that I, along with the rest of the villagers, still do not remember a thing.",
             textRight: "Still nothing but blanks, when will my memory return?",
             actionLeft: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             location: 'survey'
         },
@@ -802,16 +833,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "I've told you before that trying to escape is pointless. The best way to leave is to remember, did you remember anything when you were there?",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "All I've managed to remember is how much I must've forgotten.",
             textRight: "Can't blame me for trying, and unfortunately no... Still completely in the dark.",
             actionLeft: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             actionRight: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             location: 'survey'
         },
@@ -820,16 +851,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Well, you should start to remember soon, most likely by the next time we talk you'll have remembered something important.",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "That's very suspicious, it almost sounds as if you have something planned.",
             textRight: "Why can't I remember now?",
             actionLeft: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             location: 'survey'
         },
@@ -838,16 +869,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Well whether or not there's a plan for you is at your discretion. But if you want to remember, it's only a matter of time.",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "You act as if I don't want to remember, but I do... it's not just happening yet.",
             textRight: "If I want to remember?",
             actionLeft: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             actionRight: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             location: 'survey'
         },
@@ -856,16 +887,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "To rush it would mean to lose it, these things take time. Trust me, trust the process.",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "Forgive me if I have a hard time doing that.",
             textRight: "I can't lose what I've already lost.",
             actionLeft: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             location: 'survey'
         },
@@ -874,16 +905,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "We should get back to the survey, although all of our interactions help me better understand you better. Do me a favor and pick one would you?",
-            faction: 'Surveys',
-            textLeft: "Brain",
-            textRight: "Mouth",
+            faction: '???',
+            textLeft: "Green",
+            textRight: "Yellow",
             actionLeft: {
-                brain: 2,
-                smiley: 0
+                greenAura: 2,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 2
+                greenAura: 0,
+                yellowAura: 2
             },
             location: 'survey'
         },
@@ -892,16 +923,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Yes of course, that makes sense. We're almost done here just a few more. Which describes you more?",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "I like my quiet time, where I can be alone and pursue my passions and hobbies.",
             textRight: "I like to be around others, being the sun that shines on their rainy day.",
             actionLeft: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             location: 'survey'
         },
@@ -910,16 +941,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Yes, you strike me as a bit of a recluse. It seems perhaps you do know yourself after all. Next question, pick your favorite of the two.",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "Warm tea in a remote winter village.",
             textRight: "A morning cup of coffee in the backyard.",
             actionLeft: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             location: 'survey'
         },
@@ -928,16 +959,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "Really, the sun? Seems a bit pretentious but no matter. Which of the two appeals more to you?",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "A cold drink in the middle of a desert.",
             textRight: "The calm before the storm.",
             actionLeft: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             location: 'survey'
         },
@@ -946,16 +977,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "I see... Last question now, and this one's an important one. Do you think you're dead?",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "To be honest, yes I do.",
             textRight: "The thought's crossed my mind, but I don't want to assume the worst.",
             actionLeft: {
-                brain: 1,
-                smiley: 0
+                greenAura: 1,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 1
+                greenAura: 0,
+                yellowAura: 1
             },
             location: 'survey'
         },
@@ -964,16 +995,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "hehe, whether you're dead or alive you won't make any progress until your memories return. I'm going to leave you for now, but I'll be thinking about our conversations. Until next time Jack...",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "Wait! I still have questions I want to ask!",
             textRight: "Going to abandon me again? Please, just tell me if I'm alive.",
             actionLeft: {
-                brain: 0,
-                smiley: 0
+                greenAura: 0,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 0
+                greenAura: 0,
+                yellowAura: 0
             },
             location: 'survey'
         },
@@ -982,16 +1013,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white.png',
             title:'Jude',
             text: "More questions? No matter how many I answer, only you can answer the important ones. You should focus on protecting your mementos for now.",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "Fine, but I still don't understand what you mean.",
             textRight: "Answering some questions is better than none.",
             actionLeft: {
-                brain: 0,
-                smiley: 0
+                greenAura: 0,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 0
+                greenAura: 0,
+                yellowAura: 0
             },
             location: 'survey'
         },
@@ -1000,16 +1031,16 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Abandon you? What ever gave you the impression I was gone. Don't worry about life and death, just focus on guarding the mementos and you'll be... fine.",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "Wait, have you been watching me the entire time?",
             textRight: "Memento this, memento that. What's so important about them anyways?",
             actionLeft: {
-                brain: 0,
-                smiley: 0
+                greenAura: 0,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 0
+                greenAura: 0,
+                yellowAura: 0
             },
             location: 'survey'
         },
@@ -1018,32 +1049,31 @@ export const allDecks = writable({
             imgUrl: '/decks/tutorial/judicator-white-smile.png',
             title:'Jude',
             text: "Looks like that's all the time we have for now, see you soon Jack...",
-            faction: 'Surveys',
+            faction: '???',
             textLeft: "But I-",
             textRight: "...",
             actionLeft: {
-                brain: 0,
-                smiley: 0
+                greenAura: 0,
+                yellowAura: 0
             },
             actionRight: {
-                brain: 0,
-                smiley: 0
+                greenAura: 0,
+                yellowAura: 0
             },
             location: 'survey'
         },
         
     ],
 
-    // TODO:
     survey3: [
         {
-            id: 'survey2-1',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'survey3-1',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "Fantastic, question number 1. Did you recognize anyone in the village?",
-            faction: 'Surveys',
-            textLeft: "Hmmm... not really.",
-            textRight: "Of course not, It's not like I've met them before.",
+            text: "Fantastic, question number 1. How good do I look in purple?",
+            faction: '???',
+            textLeft: "Hmmm... not really.", // ->survey3-2a
+            textRight: "I'm more interested on why you're purple.", // ->survey3-2b
             actionLeft: {
                 brain: 0,
                 smiley: 1
@@ -1055,49 +1085,13 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-2',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'survey3-2a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "Suppose that makes sense... did you notice anything odd about any of the villagers?",
-            faction: 'Surveys',
-            textLeft: "Actually, most of them seem to be dealing with a case of sudden amnesia as well.",
-            textRight: 'I think I was more focused on trying to escape than anything.',
-            actionLeft: {
-                brain: 1,
-                smiley: 0
-            },
-            actionRight: {
-                brain: 0,
-                smiley: 1
-            },
-            location: 'survey'
-        },
-        {
-            id: 'survey2-3a',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Jude',
-            text: "Yes well, truth be told most people who enter that village wander in, lost. Did you remember anything while you were there?",
-            faction: 'Surveys',
-            textLeft: "It might please you to learn that I, along with the rest of the villagers, still do not remember a thing.",
-            textRight: "Still nothing but blanks, when will my memory return?",
-            actionLeft: {
-                brain: 1,
-                smiley: 0
-            },
-            actionRight: {
-                brain: 0,
-                smiley: 1
-            },
-            location: 'survey'
-        },
-        {
-            id: 'survey2-3b',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Jude',
-            text: "I've told you before that trying to escape is pointless. The best way to leave is to remember, did you remember anything when you were there?",
-            faction: 'Surveys',
-            textLeft: "All I've managed to remember is how much I must've forgotten.",
-            textRight: "Can't blame me for trying, and unfortunately no... Still completely in the dark.",
+            text: "Oh, ok. Ouch. You hear screaming, you realize your daughter and niece are both caught in a strong current and might be swept out to sea. Your niece is a weak swimmer and won't last as long as your daughter, although you're a strong swimmer, you might not have time to save both. Which do you save?",
+            faction: '???',
+            textLeft: "Save my daughter, I can't stand the thought of losing her.", // ->survey3-3
+            textRight: "Save my niece and hope my daughter can hold on long enough.", // ->survey3-3
             actionLeft: {
                 brain: 0,
                 smiley: 1
@@ -1109,31 +1103,13 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-4',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'survey3-2b',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "Well, you should start to remember soon, most likely by the next time we talk you'll have remembered something important.",
-            faction: 'Surveys',
-            textLeft: "That's very suspicious, it almost sounds as if you have something planned.",
-            textRight: "Why can't I remember now?",
-            actionLeft: {
-                brain: 1,
-                smiley: 0
-            },
-            actionRight: {
-                brain: 0,
-                smiley: 1
-            },
-            location: 'survey'
-        },
-        {
-            id: 'survey2-5a',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Jude',
-            text: "Well whether or not there's a plan for you is at your discretion. But if you want to remember, it's only a matter of time.",
-            faction: 'Surveys',
-            textLeft: "You act as if I don't want to remember, but I do... it's not just happening yet.",
-            textRight: "If I want to remember?",
+            text: "Why thank you. You hear screaming, you realize your daughter and niece are both caught in a strong current and might be swept out to sea. Your niece is a weak swimmer and won't last as long as your daughter, although you're a strong swimmer, you might not have time to save both. Which do you save?",
+            faction: '???',
+            textLeft: "Save my daughter, I can't stand the thought of losing her.", // ->survey3-3
+            textRight: "Save my niece and hope my daughter can hold on long enough.", // ->survey3-3
             actionLeft: {
                 brain: 0,
                 smiley: 1
@@ -1145,31 +1121,49 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-5b',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'survey3-3a',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
             title:'Jude',
-            text: "To rush it would mean to lose it, these things take time. Trust me, trust the process.",
-            faction: 'Surveys',
-            textLeft: "Forgive me if I have a hard time doing that.",
-            textRight: "I can't lose what I've already lost.",
+            text: "Really? You won't even try to save your niece? Very interesting. What if your close friend asked for an investment of $500 but wouldn't tell you why. They might be doing something illegal, but you'll safely make a profit without any risk.",
+            faction: '???',
+            textLeft: "It seems sketchy, but I would give it to them and hope that they knows what they're doing.", // ->survey3-4
+            textRight: "It would be tempting, but I would refuse. I don't want to get involved in shady deals.", // ->survey3-4
             actionLeft: {
-                brain: 1,
-                smiley: 0
-            },
-            actionRight: {
                 brain: 0,
                 smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
             },
             location: 'survey'
         },
         {
-            id: 'survey2-6',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'survey3-3a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "We should get back to the survey, although all of our interactions help me better understand you better. Do me a favor and pick one would you?",
-            faction: 'Surveys',
-            textLeft: "Brain",
-            textRight: "Mouth",
+            text: "You'd abandon your own daughter simply because she's a stronger swimmer? Very interesting. What if your close friend asked for an investment of $500 but wouldn't tell you why. They might be doing something illegal, but you'll safely make a profit without any risk.",
+            faction: '???',
+            textLeft: "It seems sketchy, but I would give it to them and hope that they knows what they're doing.", // ->survey3-4a
+            textRight: "It would be tempting, but I would refuse. I don't want to get involved in shady deals.", // ->survey3-4b
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey3-4a',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
+            title:'Jude',
+            text: "Risk it all for a quick buck is that right? I'm learning so much about you Jack. Next, pick one.",
+            faction: '???',
+            textLeft: "Brain", // ->survey3-5
+            textRight: "Mouth", // ->survey3-5
             actionLeft: {
                 brain: 2,
                 smiley: 0
@@ -1181,13 +1175,121 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-7',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'survey3-4b',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
             title:'Jude',
-            text: "Yes of course, that makes sense. We're almost done here just a few more. Which describes you more?",
-            faction: 'Surveys',
-            textLeft: "I like my quiet time, where I can be alone and pursue my passions and hobbies.",
-            textRight: "I like to be around others, being the sun that shines on their rainy day.",
+            text: "Afraid to take a leap of faith? I'm starting to understand you now Jack. Next, pick one.",
+            faction: '???',
+            textLeft: "Brain", // ->survey3-5
+            textRight: "Mouth", // ->survey3-5
+            actionLeft: {
+                brain: 2,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 2
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey3-5',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
+            title:'Jude',
+            text: "I figured you'd pick that, here's another.",
+            faction: '???',
+            textLeft: "Beauty", // ->survey3-6a
+            textRight: "Books", // ->survey3-6b
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey3-6a',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
+            title:'Jude',
+            text: "Haha exactly, who needs books! Lets keep rolling.",
+            faction: '???',
+            textLeft: "Sanity", // ->survey3-7
+            textRight: "Insanity", // ->survey3-7
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey3-6b',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
+            title:'Jude',
+            text: "Nerd. Lets keep rolling.",
+            faction: '???',
+            textLeft: "Sanity", // ->survey3-7a
+            textRight: "Insanity", // ->survey3-7b
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey3-7a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
+            title:'Jude',
+            text: "The obvious answer; basic choice for a basic person. One more quickie for you.",
+            faction: '???',
+            textLeft: "Life", // ->survey3-8a
+            textRight: "Death", // ->survey3-8b
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey3-7b',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
+            title:'Jude',
+            text: "Chaos deserves company every once in a while, right? One more quickie for you.",
+            faction: '???',
+            textLeft: "Life", // ->survey3-8a
+            textRight: "Death", // ->survey3-8b
+            actionLeft: {
+                brain: 0,
+                smiley: 1
+            },
+            actionRight: {
+                brain: 1,
+                smiley: 0
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey3-8a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
+            title:'Jude',
+            text: "You would choose life wouldn't you. Here's a fun one, which super power would you prefer?",
+            faction: '???',
+            textLeft: "Control Time", // ->survey3-9a
+            textRight: "Control people", // ->survey3-9b
             actionLeft: {
                 brain: 1,
                 smiley: 0
@@ -1199,31 +1301,13 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-8a',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'survey3-8b',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
             title:'Jude',
-            text: "Yes, you strike me as a bit of a recluse. It seems perhaps you do know yourself after all. Next question, pick your favorite of the two.",
-            faction: 'Surveys',
-            textLeft: "Warm tea in a remote winter village.",
-            textRight: "A morning cup of coffee in the backyard.",
-            actionLeft: {
-                brain: 1,
-                smiley: 0
-            },
-            actionRight: {
-                brain: 1,
-                smiley: 0
-            },
-            location: 'survey'
-        },
-        {
-            id: 'survey2-8b',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Jude',
-            text: "Really, the sun? Seems a bit pretentious but no matter. Which of the two appeals more to you?",
-            faction: 'Surveys',
-            textLeft: "A cold drink in the middle of a desert.",
-            textRight: "The calm before the storm.",
+            text: "You would choose death wouldn't you. Here's a fun one, which super power would you prefer?",
+            faction: '???',
+            textLeft: "Control Time", // ->survey3-9a
+            textRight: "Control people", // ->survey3-9b
             actionLeft: {
                 brain: 1,
                 smiley: 0
@@ -1235,13 +1319,13 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-9',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'survey3-9a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "I see... Last question now, and this one's an important one. Do you think you're dead?",
-            faction: 'Surveys',
-            textLeft: "To be honest, yes I do.",
-            textRight: "The thought's crossed my mind, but I don't want to assume the worst.",
+            text: "I wonder what you would do with all of that extra time? Here's the final question, would you like to take a look yourself?",
+            faction: '???',
+            textLeft: "Yes", // ->survey3-10a
+            textRight: "No", // ->survey3-10b
             actionLeft: {
                 brain: 1,
                 smiley: 0
@@ -1253,13 +1337,31 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-10',
-            imgUrl: '/decks/tutorial/judicator-white.png',
+            id: 'survey3-9b',
+            imgUrl: '/decks/tutorial/judicator-purple-smile.png',
             title:'Jude',
-            text: "hehe, whether you're dead or alive you won't make any progress until your memories return. I'm going to leave you for now, but I'll be thinking about our conversations. Until next time Jack...",
-            faction: 'Surveys',
-            textLeft: "Wait! I still have questions I want to ask!",
-            textRight: "Going to abandon me again? Please, just tell me if I'm alive.",
+            text: "What questionably ominous plans do you have in store for a power like that? Here's the final question, would you like to take a look yourself?",
+            faction: '???',
+            textLeft: "Yes", // ->survey3-10a
+            textRight: "No", // ->survey3-10b
+            actionLeft: {
+                brain: 1,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 1
+            },
+            location: 'survey'
+        },
+        {
+            id: 'survey3-10a',
+            imgUrl: '/characters/jack-judicator.png',
+            title:'Jack',
+            text: "This is what you currently look like, are you shocked? When we speak you'll have the option to look at yourself and see how you've changed since you've been here. Full disclosure, you're still looking at me. I'm just showing you the current state of your soul.",
+            faction: '???',
+            textLeft: "I don't recognize this at all.", // ->survey3-11a
+            textRight: "Is that... really me?", // ->survey3-11a
             actionLeft: {
                 brain: 0,
                 smiley: 0
@@ -1271,13 +1373,13 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-11a',
-            imgUrl: '/decks/tutorial/judicator-white.png',
-            title:'Jude',
-            text: "More questions? No matter how many I answer, only you can answer the important ones. You should focus on protecting your mementos for now.",
-            faction: 'Surveys',
-            textLeft: "Fine, but I still don't understand what you mean.",
-            textRight: "Answering some questions is better than none.",
+            id: 'survey3-10b',
+            imgUrl: '/characters/kaz.png',
+            title:'Kaz',
+            text: "Hey there! This is basically an easter egg since why would anyone not want to see themselves? Hope you're enjoying the game so far and the story is starting to intrigue you. It's going to get a little darker moving forward. Anyway, enjoy and thanks for playing ^_^!",
+            faction: '???',
+            textLeft: "The game is awesome.", // ->survey3-11a
+            textRight: "The game sucks tbh.", // ->survey3-10b-pt2
             actionLeft: {
                 brain: 0,
                 smiley: 0
@@ -1289,13 +1391,13 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-11b',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
-            title:'Jude',
-            text: "Abandon you? What ever gave you the impression I was gone. Don't worry about life and death, just focus on guarding the mementos and you'll be... fine.",
-            faction: 'Surveys',
-            textLeft: "Wait, have you been watching me the entire time?",
-            textRight: "Memento this, memento that. What's so important about them anyways?",
+            id: 'survey3-10b-pt2',
+            imgUrl: '/characters/kaz-fu.png',
+            title:'Kaz',
+            text: "( ° ͜ʖ͡°)╭∩╮",
+            faction: 'You suck tbh',
+            textLeft: "Actually I take it back, I'm the one who sucks.", // ->survey3-11a
+            textRight: "Actually I take it back, I'm the one who sucks a lot.", // ->survey3-11a
             actionLeft: {
                 brain: 0,
                 smiley: 0
@@ -1307,13 +1409,13 @@ export const allDecks = writable({
             location: 'survey'
         },
         {
-            id: 'survey2-12',
-            imgUrl: '/decks/tutorial/judicator-white-smile.png',
+            id: 'survey3-11a',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
             title:'Jude',
-            text: "Looks like that's all the time we have for now, see you soon Jack...",
-            faction: 'Surveys',
-            textLeft: "But I-",
-            textRight: "...",
+            text: "It's alright if you don't recognize yourself yet, it will take some time before you get used to it.",
+            faction: 'Psst, welcome back to those who found the easter egg.',
+            textLeft: "If you say so.", // ->survey3-12
+            textRight: "I hope so.", // ->survey3-12
             actionLeft: {
                 brain: 0,
                 smiley: 0
@@ -1324,8 +1426,27 @@ export const allDecks = writable({
             },
             location: 'survey'
         },
-        
+        {
+            id: 'survey3-12',
+            imgUrl: '/decks/tutorial/judicator-purple.png',
+            title:'Jude',
+            text: "It's time for me to disappear again, but I'll be back later. Remember to keep an eye on your mementos and don't worry too much about the whole being dead thing.",
+            faction: '???',
+            textLeft: "Not much I can do about it anyways", // ->chapter4-1
+            textRight: "Advice of the year, gee thanks.", // ->chapter4-1
+            actionLeft: {
+                brain: 0,
+                smiley: 0
+            },
+            actionRight: {
+                brain: 0,
+                smiley: 0
+            },
+            location: 'survey'
+        },
     ],
+
+    survey4: [],
 
     chapter1: [
         {
@@ -4096,6 +4217,10 @@ export const allDecks = writable({
 
     // TODO:
     chapter3Goblins: [],
+
+    chapter4: [],
+
+    // chapter4ToBeDecidedDeck: [],
 });
 
 // For resetting the game

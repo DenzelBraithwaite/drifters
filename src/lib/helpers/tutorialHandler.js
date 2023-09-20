@@ -3,13 +3,17 @@ import { allDecks } from '../stores/allDecks';
 //TODO: Do i need to declare first?
 let tutorial1Deck;
 let tutorial2Deck;
+let tutorial3Deck;
 let survey1Deck;
 let survey2Deck;
+let survey3Deck;
 allDecks.subscribe(decks => {
     tutorial1Deck = [...decks.tutorial1];
     tutorial2Deck = [...decks.tutorial2];
+    tutorial3Deck = [...decks.tutorial3];
     survey1Deck = [...decks.survey1];
     survey2Deck = [...decks.survey2];
+    survey3Deck = [...decks.survey3];
 });
 
 export function tutorialHandler(event, card) {
@@ -173,7 +177,45 @@ export function tutorialHandler(event, card) {
             case 'survey2-12':
                 nextCard = survey2Deck.find(card => card.id === 'survey2-12');
                 break;
-
+                
+            // Tutorial / Survey 3
+            case 'tutorial3-1':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-2a');
+                break;
+            case 'tutorial3-2a':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-3-a');
+                break;
+            case 'tutorial3-2b':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-3a');
+                break;
+            case 'tutorial3-3a':
+                    nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-4a-a');
+                    break;
+            case 'tutorial3-3-a':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-4-a');
+                break;
+            case 'tutorial3-4a-a':
+            case 'tutorial3-4a-b':
+            case 'tutorial3-4-a':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-5');
+                break;
+            case 'tutorial3-5':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-6a');
+                break;
+            case 'tutorial3-6a':
+            case 'tutorial3-6b':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-7');
+                break;
+            case 'tutorial3-7':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-8a');
+                break;
+            case 'tutorial3-8a':
+            case 'tutorial3-8b':
+            case 'tutorial3-9':
+            case 'tutorial3-10':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-1');
+                break;
+// TODO: Add survey 3
             default:
                 console.log('No card matched...');
             
@@ -339,6 +381,52 @@ export function tutorialHandler(event, card) {
             case 'survey2-12':
                 nextCard = survey2Deck.find(card => card.id === 'survey2-12');
                 break;
+
+            // Tutorial / Survey 3
+            case 'tutorial3-1':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-2b');
+                break;
+            case 'tutorial3-2a':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-3-a');
+                break;
+            case 'tutorial3-2b':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-3a');
+                break;
+            case 'tutorial3-3-a':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-4-a');
+                break;
+            case 'tutorial3-3a':
+                    nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-4a-b');
+                    break;
+            case 'tutorial3-4a-a':
+            case 'tutorial3-4a-b':
+            case 'tutorial3-4-a':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-5');
+                break;
+            case 'tutorial3-5':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-6b');
+                break;
+            case 'tutorial3-6a':
+            case 'tutorial3-6b':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-7');
+                break;
+            case 'tutorial3-7':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-8b');
+                break;
+            case 'tutorial3-8a':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-9');
+                break;
+            case 'tutorial3-8b':
+            case 'tutorial3-10':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-1');
+                break;
+            case 'tutorial3-9':
+                nextCard = tutorial3Deck.find(card => card.id === 'tutorial3-10');
+                break;
+            case 'tutorial3-10':
+                    nextCard = survey3Deck.find(card => card.id === 'survey3-1');
+                    break;
+                    // TODO: Add survey 3
 
             default:
                 console.log('No card matched...');

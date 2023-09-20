@@ -19,12 +19,13 @@ const player = writable({
         chapter2: false,
         chapter2Elves: false,
         chapter3: false,
+        chapter3Goblins: false,
         chapter4: false,
 
     },
     displayDecks: [
         {
-            title: 'Tutorial1/Survey1',
+            title: 'Tutorial1 / Survey1',
             img: '/public/decks/tutorial/judicator-white.png'
         }
     ],
