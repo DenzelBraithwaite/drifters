@@ -2,8 +2,37 @@
 ### A Card based decision making story survival game.
 
 <br>
+<br>
 
-More info coming soon...
+**What is Drifters?**
+
+In Drifters, you play as a nameless person with amnesia who's in an unknown world confronted by a mysterious being called Jude. Jude forces you to answer a series of questions where your decisions will change the overall impact of the game. Much of the story is shrouded in mystery and the goal is to survive long enough until you recover your memories and discover where you are. The game has a dark and mysterious feel to it and isn't intended for children. The game is currently in development but can be accessed using this link -> [Drifters](www.denzelbraithwaite.website) which will be available from Oct/2023 until Sept/2024. That site will hold stable beta versions of the game.
+
+<br>
+
+**What's the gameplay like?**
+
+The gameplay is very simplistic, you have the main game client which will display all cards that you interact with during the game. Each card will have some sort of dialogue and you'll be able to decide between 2 different replies. Different replies will give you different dialogue, and different decisions will have an impact on your gameplay. For instance, the game consists of you trying to keep your 'stats' in good condition. Kind of like the sims, if you never go to the bathroom, you will pee on the floor. In this game however, there's no fear of peeing but you will die if any of your stats hit 0 (_with the exception of 2 stats_). The stats are revealed as you play and are determined based on your decisions.
+
+For example, your first stat is health! But your icon that represents your health depends on your answers. Why is that important? You'll find out near the end of the game! Each decision you make will either raise or lower certain stats, so you must balance them and try to progress as far as you can. Currently, the penalty for dying has not been decided and no endings have been released, but dying will likely restart the current chapter you're on. To progress, you need to collect 'memory', which you'll gather as you continue to interact with different people. At certain levels of memory, you unlock new decks, new dialogue, and progress to further chapters.
+
+These details are subject to change, but overall that should give you a good feel of what kind of game this is. A decision based story driven card game with an ominous setting.
+
+<br>
+
+**What about mobile?**
+
+Currently, the game is unplayable on mobile because of how I handle the decisions (hover and click). But I will release a mobile version since the game was inspired by mobile games such as 'Reign'. You can however, play the game on very small computer moniters since you'd still be using a mouse. In fact, if you're feeling a little ambitious, you could try using a mouse with your phone lol, but I'm not too sure how that would go... let me know!
+
+<br>
+
+**Contact info**
+
+If you want to contact me to discuss a PR or a bug or simply some ideas, you can email me using braithwaite.de@gmail.com.
+
+<br>
+
+**P.S.** I always appreciate those who take the time to read these, since I rarely take the time to type them! Thanks for popping in, stay awesome 😎.
 
 <br>
 <br>
