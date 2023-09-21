@@ -6,7 +6,7 @@
 
 **What is Drifters?**
 
-In Drifters, you play as a nameless person with amnesia who's in an unknown world confronted by a mysterious being called Jude. Jude forces you to answer a series of questions where your decisions will change the overall impact of the game. Much of the story is shrouded in mystery and the goal is to survive long enough until you recover your memories and discover where you are. The game has a dark and mysterious feel to it and isn't intended for children. The game is currently in development but can be accessed using this link -> [Drifters](https://drifters.website) which will be available from Oct/2023 until Sept/2024. That site will hold stable beta versions of the game.
+In Drifters, you play as a nameless person with amnesia who's in an unknown world confronted by a mysterious being called Jude. Jude forces you to answer a series of questions where your decisions will change the overall impact of the game. Much of the story is shrouded in mystery and the goal is to survive long enough until you recover your memories and discover where you are. The game has a dark and mysterious feel to it and isn't intended for children. The game is currently in development but can be accessed using this link -> [Drifters Beta](http://drifters.website) which will be available from Oct/2023 until Sept/2024. That site will hold stable beta versions of the game.
 
 <br>
 
