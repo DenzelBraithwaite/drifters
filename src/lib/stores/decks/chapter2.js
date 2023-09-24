@@ -12,13 +12,13 @@ const chapter2 = writable([
         textRight: "I don't think I'm ready to hear it yet, but I'll give it a try.",
         actionLeft: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         actionRight: {
             health: -1,
             memory: 1,
-            aura: -2,
+            aura: -1,
         },
         location: 'Magical Forest'
     },
@@ -32,7 +32,7 @@ const chapter2 = writable([
         textRight: "I never could meditate like that.",
         actionLeft: {
             health: -1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         actionRight: {
@@ -51,7 +51,7 @@ const chapter2 = writable([
         textLeft: "When I look within, I see nothing.",
         textRight: "I'm not quite sure how to do that.",
         actionLeft: {
-            health: 2,
+            health: 1,
             memory: 1,
             aura: -1,
         },
@@ -72,12 +72,12 @@ const chapter2 = writable([
         textRight: "Why don't you focus within yourself instead.",
         actionLeft: {
             health: -1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         actionRight: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         location: 'Magical Forest'
@@ -113,8 +113,8 @@ const chapter2 = writable([
         textLeft: "You both seem to be good hearted people, I feel at peace around you.",
         textRight: "I don't see it that way.",
         actionLeft: {
-            health: -2,
-            aura: 2,
+            health: -1,
+            aura: 1,
             memory: 0,
         },
         actionRight: {
@@ -134,12 +134,12 @@ const chapter2 = writable([
         textRight: "I don't care what happens to animals.",
         actionLeft: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         actionRight: {
-            health: 2,
-            aura: 2,
+            health: 1,
+            aura: 1,
             memory: 1,
         },
         location: 'Magical Forest'
@@ -154,12 +154,12 @@ const chapter2 = writable([
         textRight: "You seem like someone who should mind their own business.",
         actionLeft: {
             health: -1,
-            aura: 2,
+            aura: 1,
             memory: 1,
         },
         actionRight: {
-            health: 2,
-            aura: -2,
+            health: 1,
+            aura: -1,
             memory: 0,
         },
         location: 'Magical Forest'
@@ -199,7 +199,7 @@ const chapter2 = writable([
         },
         actionRight: {
             health: -1,
-            aura: -2,
+            aura: -1,
             memory: 0,
         },
         location: 'Magical Forest'
@@ -219,9 +219,9 @@ const chapter2 = writable([
             memory: 1,
         },
         actionRight: {
-            health: 2,
+            health: 1,
             memory: 1,
-            aura: 2,
+            aura: 1,
         },
         location: 'Magical Forest'
     },
@@ -254,13 +254,13 @@ const chapter2 = writable([
         textLeft: "Hi Spinkle, I'm... I'm Jack?",
         textRight: "A real fairy, wow.",
         actionLeft: {
-            health: -2,
+            health: -1,
             memory: 0,
             aura: -1,
         },
         actionRight: {
             health: -1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         location: 'Magical Forest'
@@ -274,7 +274,7 @@ const chapter2 = writable([
         textLeft: "It's normal to worry when you're the eldest.",
         textRight: "You should let them live and learn, you're worrying for nothing.",
         actionLeft: {
-            health: -2,
+            health: -1,
             aura: -1,
             memory: 0,
         },
@@ -458,13 +458,13 @@ const chapter2 = writable([
         textLeft: "You don't even know me...",
         textRight: "Humans are the worst, you won't hear any arguments here.",
         actionLeft: {
-            health: -2,
+            health: -1,
             aura: -1,
             memory: 0,
         },
         actionRight: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 1,
         },
         location: 'Magical Forest'
@@ -581,7 +581,7 @@ const chapter2 = writable([
         textRight: "I'm sorry did you say druid?",
         actionLeft: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         actionRight: {
@@ -600,8 +600,8 @@ const chapter2 = writable([
         textLeft: "I'll think about you the next time I eat a salad.",
         textRight: "Is that a threat?",
         actionLeft: {
-            health: 2,
-            aura: 2,
+            health: 1,
+            aura: 1,
             memory: 0,
         },
         actionRight: {
@@ -642,12 +642,12 @@ const chapter2 = writable([
         textLeft: "UNPAW ME YOU WASCALLY WABBIT!",
         textRight: "AHHHHHHHHHHHH!!!!",
         actionLeft: {
-            health: 2,
+            health: 1,
             aura: -1,
             memory: 1,
         },
         actionRight: {
-            health: -2,
+            health: -1,
             aura: -1,
             memory: 0,
         },
@@ -688,7 +688,7 @@ const chapter2 = writable([
         },
         actionRight: {
             health: -1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         location: 'Magical Forest'
@@ -708,7 +708,7 @@ const chapter2 = writable([
         },
         actionRight: {
             health: -1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         location: 'Magical Forest'
@@ -745,7 +745,7 @@ const chapter2 = writable([
         textRight: "Something tells me there's bad \"sssss\"ecrets about your shop.",
         actionLeft: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 1,
         },
         actionRight: {
@@ -785,11 +785,11 @@ const chapter2 = writable([
         textRight: "You couldn't be any creepier.",
         actionLeft: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 1,
         },
         actionRight: {
-            health: -2,
+            health: -1,
             aura: -1,
             memory: 0,
         },
@@ -810,7 +810,7 @@ const chapter2 = writable([
         },
         actionRight: {
             health: -1,
-            aura: 2,
+            aura: 1,
             memory: 1,
         },
         location: 'Magical Forest'
@@ -872,7 +872,7 @@ const chapter2 = writable([
         },
         actionRight: {
             health: -1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         location: 'Magical Forest'
@@ -892,7 +892,7 @@ const chapter2 = writable([
         },
         actionRight: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 1,
         },
         location: 'Magical Forest'
@@ -912,7 +912,7 @@ const chapter2 = writable([
         },
         actionRight: {
             health: -1,
-            aura: 2,
+            aura: 1,
             memory: 1,
         },
         location: 'Magical Forest'
@@ -929,12 +929,12 @@ const chapter2 = writable([
         textRight: "Guess it wasn't important.",
         actionLeft: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         actionRight: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 0,
         },
         location: 'Magical Forest'
@@ -968,13 +968,13 @@ const chapter2 = writable([
         textLeft: "I want to help, but I kind of also want to watch.",
         textRight: "You'll get there eventually.",
         actionLeft: {
-            health: 2,
-            aura: 2,
+            health: 1,
+            aura: 1,
             memory: 1,
         },
         actionRight: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 1,
         },
         location: 'Magical Forest'
@@ -1009,7 +1009,7 @@ const chapter2 = writable([
         textRight: "One day you'll find each other, one day...",
         actionLeft: {
             health: 1,
-            aura: 2,
+            aura: 1,
             memory: 1,
         },
         actionRight: {

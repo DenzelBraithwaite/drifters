@@ -72,13 +72,13 @@ const elves = writable([
         textRight: "And you elves have such repulsive, pointy looking ears.",
         actionLeft: {
             health: 0,
-            aura: 1,
+            aura: 2,
             memory: 0,
         },
         actionRight: {
             health: 2,
-            memory: 1,
-            aura: 1,
+            memory: 2,
+            aura: 2,
         },
         location: 'Magical Forest'
     },
@@ -98,12 +98,12 @@ const elves = writable([
         actionRight: {
             health: 2,
             memory: 2,
-            aura: 1,
+            aura: 2,
         },
         location: 'Magical Forest'
     },
 
-    // Eldia Villager
+    // Eldia
     {
         id: 'chapter2-e-2a',
         imgUrl: '/decks/chapter2/elves/elf-villager.png',
@@ -210,19 +210,59 @@ const elves = writable([
         id: 'chapter2-e-3a',
         imgUrl: '/decks/chapter2/elves/elf-angry.png',
         title:'Fenris',
-        text: "I'm an elf.",
+        text: "It's my duty to watch out for hostiles that may pose a threat to the Inquious tribe, and I DO NOT LIKE HUMANS, so BEAT IT!",
         faction: 'Elf',
-        textLeft: "So elves are jerks after all, well I'm not going anywhere.",
-        textRight: "Well I was excited to meet an elf until now.",
+        textLeft: "I never knew elves were accustomed to having conversations WHILE YELLING!",
+        textRight: "You need to take a whole bottle of chill pills.",
         actionLeft: {
-            health: 1,
-            aura: -1,
+            health: 2,
+            aura: -2,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            health: 2,
             memory: 0,
-            aura: -1,
+            aura: 2,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-3b',
+        imgUrl: '/decks/chapter2/elves/elf-angry.png',
+        title:'Fenris',
+        text: "Us Inquious elves used to be regarded as nobles even amongst the highest of elves! But, then jealous struck amongst some of the others.",
+        faction: 'Elf',
+        textLeft: "So I've heard, sounds like you might've deserved it.",
+        textRight: "Stay strong, the elves are a proud people.",
+        actionLeft: {
+            health: 2,
+            aura: 0,
+            memory: 0,
+        },
+        actionRight: {
+            health: -2,
+            memory: 0,
+            aura: 2,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-3c',
+        imgUrl: '/decks/chapter2/elves/elf-angry.png',
+        title:'Fenris',
+        text: "Those cowards, they came during the night when we couldn't defend ourselves. To add insult to injury, they paid you filthy humans to do it. You'll do anything for money, won't you.",
+        faction: 'Elf',
+        textLeft: "No all humans are the same, just like not all elves are the same.",
+        textRight: "They wouldn't have to pay me to set you straight.",
+        actionLeft: {
+            health: 0,
+            aura: 2,
+            memory: 0,
+        },
+        actionRight: {
+            health: 2,
+            memory: 2,
+            aura: -2,
         },
         location: 'Magical Forest'
     },
@@ -230,63 +270,243 @@ const elves = writable([
         id: 'chapter2-e-3d',
         imgUrl: '/decks/chapter2/elves/elf-angry2.png',
         title:'Fenris',
-        text: "I'm an elf.",
+        text: "My name is Fenris, I don't much care to know yours.",
         faction: 'Elf',
-        textLeft: "So elves are jerks after all, well I'm not going anywhere.",
-        textRight: "Well I was excited to meet an elf until now.",
+        textLeft: "Well jokes on you, I don't even know my name.",
+        textRight: "The names Jack, and it was not a pleasure to meet you.",
         actionLeft: {
-            health: 1,
-            aura: -1,
+            health: -2,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            health: -2,
+            memory: 2,
+            aura: 2,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-3e',
+        imgUrl: '/decks/chapter2/elves/elf-angry2.png',
+        title:'Fenris',
+        text: "*mutters* Filthy human...",
+        faction: 'Elf',
+        textLeft: "*roll eyes*",
+        textRight: "Filthy elf...",
+        actionLeft: {
+            health: -2,
+            aura: 2,
             memory: 0,
-            aura: -1,
+        },
+        actionRight: {
+            health: 2,
+            memory: 0,
+            aura: 0,
         },
         location: 'Magical Forest'
     },
 
-    // Elf Archer Green
+    // Estelle
     {
         id: 'chapter2-e-4a',
         imgUrl: '/decks/chapter2/elves/elf-archer-green.png',
         title:'Estelle',
-        text: "I'm an elf.",
+        text: "You see this yellow bow? Isn't it pretty? I could probably trade it for at least 2 small human slaves.",
         faction: 'Elf',
-        textLeft: "So elves are jerks after all, well I'm not going anywhere.",
-        textRight: "Well I was excited to meet an elf until now.",
+        textLeft: "That's awful.",
+        textRight: "That's an ugly bow you got there.",
         actionLeft: {
-            health: 1,
-            aura: -1,
+            health: -2,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            health: 2,
+            aura: 0,
             memory: 0,
-            aura: -1,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-4b',
+        imgUrl: '/decks/chapter2/elves/elf-archer-green.png',
+        title:'Estelle',
+        text: "My tribe has been on edge ever since... the incident. I can't even go out hunting without them getting on my case.",
+        faction: 'Elf',
+        textLeft: "You should show them that you can take care of yourself.",
+        textRight: "Don't let them stop you, sneak out if you have to.",
+        actionLeft: {
+            health: 0,
+            aura: -2,
+            memory: 2,
+        },
+        actionRight: {
+            health: 2,
+            aura: -2,
+            memory: 2,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-4c',
+        imgUrl: '/decks/chapter2/elves/elf-archer-green.png',
+        title:'Estelle',
+        text: "Most of the elves dislike humans, but I don't mind them. They're weak and uneducated, plus they're short and have weird ears. They're harmless and easier to hunt than wild animals.",
+        faction: 'Elf',
+        textLeft: "... I'm sorry what?",
+        textRight: "I hope your tribe dies out in this forest.",
+        actionLeft: {
+            health: 0,
+            aura: 0,
+            memory: 0,
+        },
+        actionRight: {
+            health: 2,
+            aura: 2,
+            memory: 2,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-4d',
+        imgUrl: '/decks/chapter2/elves/elf-archer-green.png',
+        title:'Estelle',
+        text: "Hello human, the name's Estelle. I'm one of the surviving Inquious elves! Would you like to pledge your fealty to us?",
+        faction: 'Elf',
+        textLeft: "I think I'll pass.",
+        textRight: "Aren't you the elves that got killed by a bunch of humans? Sounds like you should be pledging your fealty to us.",
+        actionLeft: {
+            health: 2,
+            aura: 2,
+            memory: 0,
+        },
+        actionRight: {
+            health: 2,
+            aura: 2,
+            memory: 2,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-4e',
+        imgUrl: '/decks/chapter2/elves/elf-archer-green.png',
+        title:'Estelle',
+        text: "People are excited to see the fairies and magical creatures in this forest, do they not realize there are elves here as well? They should be lining up to meet us.",
+        faction: 'Elf',
+        textLeft: "Elves may feel superior, but in reality you're just taller humans with pointy ears and a dash of magic.",
+        textRight: "At least the fairies are kind to other creatures.",
+        actionLeft: {
+            health: 2,
+            aura: 0,
+            memory: 0,
+        },
+        actionRight: {
+            health: -2,
+            aura: 0,
+            memory: 0,
         },
         location: 'Magical Forest'
     },
 
-    // Elf Archer White
+    // Aradora
     {
         id: 'chapter2-e-5a',
         imgUrl: '/decks/chapter2/elves/elf-archer-white.png',
         title:'Aradora',
-        text: "I'm an elf.",
+        text: "I hate it when humans can't get my name right, it's A-r-a-d-o-r-a not 'Arador'. That's a male elf's name! *hmph*",
         faction: 'Elf',
-        textLeft: "So elves are jerks after all, well I'm not going anywhere.",
-        textRight: "Well I was excited to meet an elf until now.",
+        textLeft: "Pleasure to make your acquaintance Aradora",
+        textRight: "Nice to meet you Arador.",
         actionLeft: {
-            health: 1,
-            aura: -1,
+            health: -2,
+            aura: 2,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            health: 2,
+            aura: 2,
             memory: 0,
-            aura: -1,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-5b',
+        imgUrl: '/decks/chapter2/elves/elf-archer-white.png',
+        title:'Aradora',
+        text: "Estelle thinks she's the best hunter amongst the Inquious, but I usually let her win to keep her spirits high. She needs that now more than ever...",
+        faction: 'Elf',
+        textLeft: "That's very kind of you, for an elf.",
+        textRight: "That's very kind of you.",
+        actionLeft: {
+            health: 2,
+            aura: -2,
+            memory: 0,
+        },
+        actionRight: {
+            health: -2,
+            aura: -2,
+            memory: 0,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-5c',
+        imgUrl: '/decks/chapter2/elves/elf-archer-white.png',
+        title:'Aradora',
+        text: "Where has Aradora gone now? You, human, have you seen a green elf with a yellow bow?",
+        faction: 'Elf',
+        textLeft: "I'd really prefer if you just ask my name instead of referring to me as 'human'.",
+        textRight: "Nope, no idea where she could be.",
+        actionLeft: {
+            health: 2,
+            aura: 0,
+            memory: 0,
+        },
+        actionRight: {
+            health: 2,
+            aura: 2,
+            memory: 0,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-5d',
+        imgUrl: '/decks/chapter2/elves/elf-archer-white.png',
+        title:'Aradora',
+        text: "Don't worry, I won't give you a hard time for being a human like the other elves do. It's not your fault after all.",
+        faction: 'Elf',
+        textLeft: "Thank you?",
+        textRight: "Wow, that felt a bit back handed.",
+        actionLeft: {
+            health: -2,
+            aura: -2,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 0,
+            memory: 0,
+        },
+        location: 'Magical Forest'
+    },
+    {
+        id: 'chapter2-e-5e',
+        imgUrl: '/decks/chapter2/elves/elf-archer-white.png',
+        title:'Aradora',
+        text: "Have the other Inquious elves mentioned an attack on our tribe, orchestrated by elves but realised by humans? The thing is... that never happened. I'm not sure why they all think that, but we were somewhere else before this forest, I just can't remember where... you probably think I'm delusional.",
+        faction: 'Elf',
+        textLeft: "I believe you, but if I were you I'd try to remind the other elves before it's too late.",
+        textRight: "I don't think you're delusional, many of us have memory loss and false memories. Yet, many seem to have accepted this world as their own. I wonder what's different between them and us?",
+        actionLeft: {
+            health: -2,
+            aura: -2,
+            memory: 2,
+        },
+        actionRight: {
+            health: 2,
+            aura: 0,
+            memory: 2,
         },
         location: 'Magical Forest'
     },

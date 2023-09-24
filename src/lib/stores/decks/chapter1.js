@@ -477,7 +477,7 @@ const chapter1 = writable([
         },
         actionRight: {
             health: -1,
-            memory: 2,
+            memory: 1,
         },
         location: 'Town of Beginning'
     },
