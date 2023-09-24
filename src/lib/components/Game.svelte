@@ -9,7 +9,7 @@
 </script>
 
 <header>
-    <p class="version">Version: Beta 1.1</p>
+    <p class="version">Version: Beta 1.2</p>
 </header>
 
 <main class="{bgImg}">
@@ -64,13 +64,6 @@
         background-position: center;
     }
 
-    .bg__dark-forest {
-        background: url('/backgrounds/dark-forest.png');
-        background-repeat: no-repeat;
-        background-size:cover;
-        background-position: center;
-    }
-
     .bg__space {
         background: url('/backgrounds/space.gif');
         background-repeat: no-repeat;
@@ -78,15 +71,15 @@
         background-position: center;
     }
 
-    .bg__cherry-blossom {
-        background: url('/backgrounds/cherry-blossom.gif');
+    .bg__magical-forest {
+        background: url('/backgrounds/magical_forest.gif');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }
 
-    .bg__magical-forest {
-        background: url('/backgrounds/magical-forest.gif');
+    .bg__river {
+        background: url('/backgrounds/river.gif');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

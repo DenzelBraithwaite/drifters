@@ -4,7 +4,7 @@ const player = writable({
     name: 'Jack',
     timesReborn: 0,
     unlockedCards: [],
-    activeDeck: 'tutorial',
+    activeDeck: 'survey',
     unlockedDeck: {
         tutorial1: true,
         tutorial2: false,
@@ -26,7 +26,7 @@ const player = writable({
     displayDecks: [
         {
             title: 'Tutorial1 / Survey1',
-            img: '/public/decks/tutorial/judicator-white.png'
+            img: '/decks/tutorial/judicator-white.png'
         }
     ],
     health: 10,

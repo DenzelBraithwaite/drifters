@@ -2,47 +2,52 @@
     // Helpers
     import { tutorialHandler } from '../helpers/tutorialHandler';
 
-    import { draw } from 'svelte/transition';
     import Card from './Card.svelte';
-    import Game from './Game.svelte';
     import Button from './Button.svelte';
     import MenuDeck from './MenuDeck.svelte';
 
     // Stores
-    import { allDecks, newDeck } from '../stores/allDecks';
+    import decks from '../stores/decks.js';
     import backgrounds from '../stores/backgroundImgs';
-
     import player from '../stores/player.js';
 
     // Decks
-    const tutorial1Deck = $allDecks.tutorial1;
-    const tutorial2Deck = $allDecks.tutorial2;
-    const tutorial3Deck = $allDecks.tutorial3;
-    const tutorial4Deck = $allDecks.tutorial4;
-    const survey1Deck = $allDecks.survey1;
-    const survey2Deck = $allDecks.survey2;
-    const survey3Deck = $allDecks.survey3;
-    const survey4Deck = $allDecks.survey4;
-    const chapter1Deck = $allDecks.chapter1;
-    const chapter1SoldiersDeck = $allDecks.chapter1Soldiers;
-    const chapter2Deck = $allDecks.chapter2;
-    const chapter2ElvesDeck = $allDecks.chapter2Elves;
-    const chapter3Deck = $allDecks.chapter3;
-    const chapter3GoblinsDeck = $allDecks.chapter3Goblins;
-    // const chapter4ToBeDecidedDeck = $allDecks.chapter4ToBeDecidedDeck;
-    const chapter4Deck = $allDecks.chapter4;
+    const tutorial1Deck = $decks.tutorial1;
+    const tutorial2Deck = $decks.tutorial2;
+    const tutorial3Deck = $decks.tutorial3;
+    const tutorial4Deck = $decks.tutorial4;
+    const survey1Deck = $decks.survey1;
+    const survey2Deck = $decks.survey2;
+    const survey3Deck = $decks.survey3;
+    const survey4Deck = $decks.survey4;
+    const chapter1Deck = $decks.chapter1;
+    const chapter1SoldiersDeck = $decks.soldiers;
+    const chapter2Deck = $decks.chapter2;
+    const chapter2ElvesDeck = $decks.elves;
+    const chapter3Deck = $decks.chapter3;
+    const chapter3GoblinsDeck = $decks.goblins;
+    // const chapter4ToBeDecidedDeck = $decks.chapter4ToBeDecidedDeck;
+    // const chapter4Deck = $decks.chapter4;
 
     $player.unlockedCards = [...tutorial1Deck];
-    let newDeckAlert = false;
-    let newDeckAlertText = 'DECK_NAME_HERE';
     let gameOver = false;
     let currentCard = $player.unlockedCards[0];
     let menuOpen = false;
-    $: hpMessage = $player.health <= 3 ? 'HP: Low!' : `HP:${$player.health}`;
-    $: auraMessage = $player.aura <= 3 ? 'Aura: Low!' : `Aura:${$player.aura}`;
-    $: sanityMessage = $player.sanity <= 3 ? 'Sanity: Low!' : `Sanity:${$player.sanity}`;
-    $: impulseMessage = $player.impulse >= 7 ? 'Impulse: High!' : `Impulse:${$player.impulse}`;
-    $: memMessage = $player.memory < 1 ? 'No memory' : `MEM:${$player.memory}`;
+    
+    // Animations
+    let newDeckAlert = false;
+    let newDeckAlertText = 'DECK_NAME_HERE';
+    let blurCard = false;
+    let flashHealth = false;
+    let flashAura = false;
+    let flashSanity = false;
+    let flashImpulse = false;
+    let flashMemory = false;
+    $: hpMessage = $player.health <= 3 ? 'Low!' : `${$player.health}`;
+    $: auraMessage = $player.aura <= 3 ? 'Low!' : `${$player.aura}`;
+    $: sanityMessage = $player.sanity <= 3 ? 'Low!' : `${$player.sanity}`;
+    $: impulseMessage = $player.impulse >= 7 ? 'High!' : `${$player.impulse}`;
+    $: memMessage = $player.memory < 1 ? '0' : `${$player.memory}`;
 
     function controlStats() {
         player.update(p => {
@@ -54,34 +59,102 @@
         })
     }
 
+    function statHandler(choice) {
+        // Handles stat change and stat flash
+        if (choice === 'left') {
+            player.update(p => {
+                if (currentCard.actionLeft.health) {
+                    p.health += currentCard.actionLeft.health;
+                    statFlashHandler('health');
+                };
+                if (currentCard.actionLeft.aura) {
+                    statFlashHandler('aura');   
+                    p.aura += currentCard.actionLeft.aura;
+                }
+                if (currentCard.actionLeft.sanity) {
+                    statFlashHandler('sanity');   
+                    p.sanity += currentCard.actionLeft.sanity;
+                }
+                if (currentCard.actionLeft.impulse) {
+                    statFlashHandler('impulse');   
+                    p.impulse += currentCard.actionLeft.impulse;
+                }
+                if (currentCard.actionLeft.memory) {
+                    statFlashHandler('memory');   
+                    p.memory += currentCard.actionLeft.memory;
+                }
+            return p;
+        });
+        } else if (choice === 'right') {
+            player.update(p => {
+                if (currentCard.actionRight.health) {
+                    statFlashHandler('health');
+                    p.health += currentCard.actionRight.health;
+                }
+                if (currentCard.actionRight.aura) {
+                    statFlashHandler('aura');
+                    p.aura += currentCard.actionRight.aura
+                };
+                if (currentCard.actionRight.sanity) {
+                    statFlashHandler('sanity');
+                    p.sanity += currentCard.actionRight.sanity
+                };
+                if (currentCard.actionRight.impulse) {
+                    statFlashHandler('impulse');
+                    p.impulse += currentCard.actionRight.impulse
+                };
+                if (currentCard.actionRight.memory) {
+                    statFlashHandler('memory');
+                    p.memory += currentCard.actionRight.memory
+                };
+                return p;
+            });
+        }
+    }
+
     function drawRandomCard() {
         const index = Math.floor(Math.random() * $player.unlockedCards.length);
         return $player.unlockedCards[index];
     }
-    
-    // TODO: break down into smaller functions
-    function actionHandler(event) {
-        const choice = event.detail;
 
-        if (choice === 'left') {
-            player.update(p => {
-                if (currentCard.actionLeft.health) p.health += currentCard.actionLeft.health;
-                if (currentCard.actionLeft.aura) p.aura += currentCard.actionLeft.aura;
-                if (currentCard.actionLeft.sanity) p.sanity += currentCard.actionLeft.sanity;
-                if (currentCard.actionLeft.impulse) p.impulse += currentCard.actionLeft.impulse;
-                if (currentCard.actionLeft.memory) p.memory += currentCard.actionLeft.memory;
-                return p;
-            });
-        } else if (choice === 'right') {
-            player.update(p => {
-                if (currentCard.actionRight.health) p.health += currentCard.actionRight.health;
-                if (currentCard.actionRight.aura) p.aura += currentCard.actionRight.aura;
-                if (currentCard.actionRight.sanity) p.sanity += currentCard.actionRight.sanity;
-                if (currentCard.actionRight.impulse) p.impulse += currentCard.actionRight.impulse;
-                if (currentCard.actionRight.memory) p.memory += currentCard.actionRight.memory;
-                return p;
-            });
+    function toggleBlur(duration = 200) {
+        blurCard = true;
+        setTimeout(() => blurCard = false, duration);
+    }
+
+    function statFlashHandler(stat) {
+        switch (stat) {
+            case 'health':
+                flashHealth = true;
+                setTimeout(() => flashHealth = false, 400);
+            break;
+            case 'aura':
+                flashAura = true;
+                setTimeout(() => flashAura = false, 400);
+            break;
+            case 'sanity':
+                flashSanity = true;
+                setTimeout(() => flashSanity = false, 400);
+            break;
+            case 'impulse':
+                flashImpulse = true;
+                setTimeout(() => flashImpulse = false, 400);
+            break;
+            case 'memory':
+                flashMemory = true;
+                setTimeout(() => flashMemory = false, 400);
+            break;
+            default:
+                console.log('statFlashHandler did not match :(');
         }
+
+    }
+
+    // TODO: break down into smaller functions
+    function actionHandler(event, card) {
+        const choice = event.detail;
+        toggleBlur();
+        statHandler(choice);
 
         // TODO: Finish this properly
         if (isPlayerDead()) {
@@ -92,8 +165,8 @@
         // Make sure stats have limit 10
         controlStats();
 
-        // Add Goblins deck
-        if (!$player.unlockedDeck.chapter3Goblins && $player.memory >= 50) {
+        // Add Goblins deck 50
+        if (!$player.unlockedDeck.chapter3Goblins && $player.memory >= 16) {
             newDeckAlertText = 'Goblins'
             newDeckAlert = true;
 
@@ -104,7 +177,7 @@
                         ...p.displayDecks,
                         {
                             title: 'Chapter3 / Goblins',
-                            img: '/decks/chapter3/goblins/goblin-blade.png'
+                            img: '/decks/chapter3/goblins/goblin-woman.png'
                         }
                     ]
                 }
@@ -117,8 +190,8 @@
             }, 4500);
         }
 
-        // Add Elves deck
-        if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 25) {
+        // Add Elves deck 35
+        if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 10) {
             newDeckAlertText = 'Elves'
             newDeckAlert = true;
 
@@ -142,8 +215,8 @@
             }, 4500);
         }
 
-        // Add soldier deck
-        if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 7) {
+        // Add soldier deck 7
+        if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 2) {
             newDeckAlertText = 'Soldiers'
             newDeckAlert = true;
 
@@ -167,10 +240,10 @@
             }, 4500);
         }
 
-        // Move on to chapter 3 if enough memory.
-        if (!$player.unlockedDeck.tutorial3 && $player.memory >= 40) { 
+        // Move on to chapter 3 if enough memory. 40
+        if (!$player.unlockedDeck.tutorial3 && $player.memory >= 13) { 
             player.update(p => {
-                    p.activeDeck = 'tutorial';
+                    p.activeDeck = 'survey';
                     p.unlockedCards = [...tutorial3Deck];
                     currentCard = p.unlockedCards[0];
 
@@ -196,10 +269,10 @@
             return;
         }
 
-        // Move on to chapter 4 if enough memory.
+        // Move on to chapter 4 if enough memory. 65
         if (!$player.unlockedDeck.tutorial4 && $player.memory >= 65) { 
             player.update(p => {
-                p.activeDeck = 'tutorial';
+                p.activeDeck = 'survey';
                 p.unlockedCards = [...tutorial4Deck];
                 currentCard = p.unlockedCards[0];
 
@@ -225,10 +298,10 @@
             return;
         }
 
-        // Move on to chapter 2 if enough memory.
-        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 15) { 
+        // Move on to chapter 2 if enough memory. 15
+        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 5) { 
             player.update(p => {
-                p.activeDeck = 'tutorial';
+                p.activeDeck = 'survey';
                 p.unlockedCards = [...tutorial2Deck];
                 currentCard = p.unlockedCards[0];
 
@@ -261,13 +334,49 @@
         currentCard = newCard;
     }
 
-    function playTutorial(event) {
+    function surveyHandler(event) {
         currentCard = tutorialHandler(event, currentCard);
+        toggleBlur();
 
         // Checks if current card is final survey card
+        if (currentCard.id === 'survey3-12') {
+            setTimeout(() => {
+                player.update(p => {
+                    p.health = 10;
+                    p.aura = 10;
+                    p.activeDeck = 'chapter';
+                    p.unlockedCards = [...chapter3Deck];
+                    if (!p.unlockedDeck.chapter3) {
+                        p.displayDecks = [
+                            ...p.displayDecks,
+                            {
+                                title: 'Chapter3',
+                                img: '/decks/chapter3/temptress.png'
+                            }
+                        ]
+                    }
+
+                    p.unlockedDeck.survey3 = true;
+                    p.unlockedDeck.chapter3 = true;
+                    return p;
+                });
+                
+                // Change background
+                backgrounds.update(bg => {
+                    $backgrounds.active = $backgrounds.river;
+                    return bg;
+                });
+                
+                const index = Math.floor(Math.random() * $player.unlockedCards.length);
+                const cardDrawn = $player.unlockedCards[index];
+                currentCard = cardDrawn;
+            }, 4000);
+        }
+
         if (currentCard.id === 'survey2-12') {
             setTimeout(() => {
                 player.update(p => {
+                    p.health = 10;
                     p.activeDeck = 'chapter';
                     p.unlockedCards = [...chapter2Deck];
                     if (!p.unlockedDeck.chapter2) {
@@ -378,23 +487,22 @@
         </div>
     {/if}
         <div class="stats-wrapper">
-            <p class="red-icon">{$player.unlockedDeck.chapter1 ? hpMessage : '?'}</p>
-            <p class="green-icon">{$player.unlockedDeck.chapter2 ? auraMessage : '?'}</p>
-            <p class="pink-icon">{$player.unlockedDeck.chapter3 ? sanityMessage : '?'}</p>
-            <p class="yellow-icon">{$player.unlockedDeck.chapter4 ? impulseMessage : '?'}</p>
-            <p class="white-icon">{$player.unlockedDeck.chapter1 ? memMessage : '?'}</p>
+            <p class="stat-icon red-icon" class:flash={flashHealth}>{$player.unlockedDeck.chapter1 ? hpMessage : '?'}</p>
+            <p class="stat-icon green-icon" class:flash={flashAura}>{$player.unlockedDeck.chapter2 ? auraMessage : '?'}</p>
+            <p class="stat-icon pink-icon" class:flash={flashSanity}>{$player.unlockedDeck.chapter3 ? sanityMessage : '?'}</p>
+            <p class="stat-icon yellow-icon" class:flash={flashImpulse}>{$player.unlockedDeck.chapter4 ? impulseMessage : '?'}</p>
+            <p class="stat-icon grey-icon" class:flash={flashMemory}>{$player.unlockedDeck.chapter1 ? memMessage : '?'}</p>
         </div>
         <div class="container">
-            <div class="card-text">
+            <div class="card-text" class:cardBlurred={blurCard}>
                 <p class:show={newDeckAlert} class="new-card-alert">New deck unlocked: {newDeckAlertText}!</p>
                 <p>{currentCard.text}</p>
             </div>
-            <div class="card-wrapper">
-                <!-- TODO: different conditions? active? -->
+            <div class="card-wrapper" class:cardBlurred={blurCard}>
                 <!-- Tutorials -->
-                {#if $player.activeDeck === 'tutorial' || $player.activeDeck === 'survey'}
+                {#if $player.activeDeck === 'survey'}
                     <Card img={currentCard.imgUrl}
-                     on:decision={event => playTutorial(event)}>
+                     on:decision={event => surveyHandler(event)}>
                         <span slot="text-left">{currentCard.textLeft}</span>
                         <span slot="text-right">{currentCard.textRight}</span>
                     </Card>
@@ -499,6 +607,7 @@
     .card-wrapper {
         position: relative;
         margin-bottom: 1rem;
+        transition: filter 0.1s ease-in;
     }
 
     .card-text {
@@ -513,6 +622,7 @@
         font-size: 1.125rem;
         border-radius: 0.5rem;
         overflow-y: scroll;
+        transition: filter 0.1s ease-in;
 
             &::-webkit-scrollbar {
                 width: 0.5rem;
@@ -557,6 +667,7 @@
         stroke-width: 1.5;
         stroke: #a49a9a;
         width: 4rem;
+        transition: color 0.5s ease-in-out;
     }
 
     .red-icon {
@@ -579,9 +690,9 @@
         color: #b5b559;
     }
     
-    .white-icon {
-        stroke: #fff;
-        color: #fff;
+    .grey-icon {
+        stroke: #444;
+        color: #444;
     }
 
     .bottom-text-wrapper {
@@ -601,8 +712,17 @@
         top: 0rem;
     }
 
+    /* Utility */
     .show {
         display: block;
         opacity: 100%;
+    }
+
+    .cardBlurred {
+        filter: blur(10px);
+    }
+
+    .flash {
+        color: #fff;
     }
 </style>

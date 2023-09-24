@@ -1,13 +1,13 @@
-import { allDecks } from '../stores/allDecks';
+import decks from '../stores/decks.js';
 
-//TODO: Do i need to declare first?
 let tutorial1Deck;
 let tutorial2Deck;
 let tutorial3Deck;
 let survey1Deck;
 let survey2Deck;
 let survey3Deck;
-allDecks.subscribe(decks => {
+
+decks.subscribe(decks => {
     tutorial1Deck = [...decks.tutorial1];
     tutorial2Deck = [...decks.tutorial2];
     tutorial3Deck = [...decks.tutorial3];
@@ -215,7 +215,52 @@ export function tutorialHandler(event, card) {
             case 'tutorial3-10':
                 nextCard = survey3Deck.find(card => card.id === 'survey3-1');
                 break;
-// TODO: Add survey 3
+            case 'survey3-1':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-2a');
+                break;
+            case 'survey3-2a':
+            case 'survey3-2b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-3a');
+                break;
+            case 'survey3-3a':
+            case 'survey3-3b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-4a');
+                break;
+            case 'survey3-4a':
+            case 'survey3-4b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-5');
+                break;
+            case 'survey3-5':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-6a');
+                break;
+            case 'survey3-6a':
+            case 'survey3-6b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-7a');
+                break;
+            case 'survey3-7a':
+            case 'survey3-7b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-8a');
+                break;
+            case 'survey3-8a':
+            case 'survey3-8b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-9a');
+                break;
+            case 'survey3-9a':
+            case 'survey3-9b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-10a');
+                break;
+            case 'survey3-10a':
+            case 'survey3-10b':
+            case 'survey3-10b-pt2':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-11');
+                break;
+            case 'survey3-11':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-12');
+                break;
+            case 'survey3-12':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-12');
+                break;
+            
             default:
                 console.log('No card matched...');
             
@@ -426,7 +471,53 @@ export function tutorialHandler(event, card) {
             case 'tutorial3-10':
                     nextCard = survey3Deck.find(card => card.id === 'survey3-1');
                     break;
-                    // TODO: Add survey 3
+            case 'survey3-1':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-2b');
+                break;
+            case 'survey3-2a':
+            case 'survey3-2b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-3b');
+                break;
+            case 'survey3-3a':
+            case 'survey3-3b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-4b');
+                break;
+            case 'survey3-4a':
+            case 'survey3-4b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-5');
+                break;
+            case 'survey3-5':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-6b');
+                break;
+            case 'survey3-6a':
+            case 'survey3-6b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-7b');
+                break;
+            case 'survey3-7a':
+            case 'survey3-7b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-8b');
+                break;
+            case 'survey3-8a':
+            case 'survey3-8b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-9b');
+                break;
+            case 'survey3-9a':
+            case 'survey3-9b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-10b');
+                break;
+            case 'survey3-10a':
+            case 'survey3-10b-pt2':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-11');
+                break;
+            case 'survey3-10b':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-10b-pt2');
+                break;
+            case 'survey3-11':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-12');
+                break;
+            case 'survey3-12':
+                nextCard = survey3Deck.find(card => card.id === 'survey3-12');
+                break;
 
             default:
                 console.log('No card matched...');
