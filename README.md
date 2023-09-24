@@ -1,7 +1,7 @@
 # Drifters
 ### A Card based decision making story survival game.
 
-![Drifters screenshot](src/assets/drifters_1.png)
+![Drifters screenshot](./src/assets/drifters_1.png)
 
 <br>
 <br>
