@@ -1,6 +1,8 @@
 # Drifters
 ### A Card based decision making story survival game.
 
+![Drifters screenshot](./src/assets/driftesr_1.png)
+
 <br>
 <br>
 
@@ -18,6 +20,9 @@ For example, your first stat is health! But your icon that represents your healt
 
 These details are subject to change, but overall that should give you a good feel of what kind of game this is. A decision based story driven card game with an ominous setting.
 
+![Drifters screenshot](./src/assets/drifters_3.png)
+![Drifters screenshot](./src/assets/drifters_4.png)
+
 <br>
 
 **What about mobile?**
@@ -31,6 +36,8 @@ Currently, the game is unplayable on mobile because of how I handle the decision
 If you want to contact me to discuss a PR or a bug or simply some ideas, you can email me using braithwaite.de@gmail.com.
 
 <br>
+
+![Drifters screenshot](./src/assets/drifters_2.png)
 
 **P.S.** I always appreciate those who take the time to read these, since I rarely take the time to type them! Thanks for popping in, stay awesome 😎.
 
