@@ -165,8 +165,8 @@
         // Make sure stats have limit 10
         controlStats();
 
-        // Add Goblins deck 50
-        if (!$player.unlockedDeck.chapter3Goblins && $player.memory >= 16) {
+        // Add Goblins deck (short: 16, long: 50)
+        if (!$player.unlockedDeck.chapter3Goblins && $player.memory >= 50) {
             newDeckAlertText = 'Goblins'
             newDeckAlert = true;
 
@@ -190,8 +190,8 @@
             }, 4500);
         }
 
-        // Add Elves deck 35
-        if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 10) {
+        // Add Elves deck (short: 22, long: 10)
+        if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 22) {
             newDeckAlertText = 'Elves'
             newDeckAlert = true;
 
@@ -215,8 +215,8 @@
             }, 4500);
         }
 
-        // Add soldier deck 7
-        if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 2) {
+        // Add soldier deck (short: 2, long: 7)
+        if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 7) {
             newDeckAlertText = 'Soldiers'
             newDeckAlert = true;
 
@@ -240,8 +240,8 @@
             }, 4500);
         }
 
-        // Move on to chapter 3 if enough memory. 40
-        if (!$player.unlockedDeck.tutorial3 && $player.memory >= 13) { 
+        // Move on to chapter 3 if enough memory. (short: 13, long: 40)
+        if (!$player.unlockedDeck.tutorial3 && $player.memory >= 30) { 
             player.update(p => {
                     p.activeDeck = 'survey';
                     p.unlockedCards = [...tutorial3Deck];
@@ -269,7 +269,7 @@
             return;
         }
 
-        // Move on to chapter 4 if enough memory. 65
+        // Move on to chapter 4 if enough memory. (short: 20?, long: 65)
         if (!$player.unlockedDeck.tutorial4 && $player.memory >= 65) { 
             player.update(p => {
                 p.activeDeck = 'survey';
@@ -298,8 +298,8 @@
             return;
         }
 
-        // Move on to chapter 2 if enough memory. 15
-        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 5) { 
+        // Move on to chapter 2 if enough memory. (short: 5, long: 15)
+        if (!$player.unlockedDeck.tutorial2 && $player.memory >= 15) { 
             player.update(p => {
                 p.activeDeck = 'survey';
                 p.unlockedCards = [...tutorial2Deck];

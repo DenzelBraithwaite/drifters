@@ -5,10 +5,10 @@ const tutorial1 = writable([
         id: 'tutorial1-1',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'???',
-        text: 'Welcome drifter, would you like to play the tutorial?',
+        text: "Oh good, looks like you're finally awake. Welcome drifter, how do you feel?",
         faction: '???',
-        textLeft: "Nah, I know what I'm doing.", // ->tutorial1-2a
-        textRight: 'Yes please!', // ->tutorial-2b
+        textLeft: "Where am I?", // ->tutorial1-2
+        textRight: '...', // ->tutorial1-2
         location: 'tutorial',
         actionLeft: {
             good: 0,
@@ -20,31 +20,13 @@ const tutorial1 = writable([
         }
     },
     {
-        id: 'tutorial1-2a',
+        id: 'tutorial1-2',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'???',
-        text: "Well aren't you something special, that's good because there wasn't a tutorial anyway...",
+        text: "Don't worry, it's perfectly natural for you to have forgotten everything. In time, you will remember.",
         faction: '???',
-        textLeft: "Then why even bother asking?", // ->tutorial-3
-        textRight: "...", // ->tutorial-3
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
-    },
-    {
-        id: 'tutorial1-2b',
-        imgUrl: '/decks/tutorial/judicator-white-smile.png',
-        title:'???',
-        text: "Hahahaha.... did you really think there was a tutorial? Do you think you're playing a game right now?",
-        faction: '???',
-        textLeft: "What...", // ->tutorial-3
-        textRight: "I'm not sure what this is or where I am.", // ->tutorial-3
+        textLeft: "Remember?", // ->tutorial1-3
+        textRight: "I don't understand", // ->tutorial-3
         location: 'tutorial',
         actionLeft: {
             good: 0,
@@ -57,12 +39,12 @@ const tutorial1 = writable([
     },
     {
         id: 'tutorial1-3',
-        imgUrl: '/decks/tutorial/judicator-white-smile.png',
+        imgUrl: '/decks/tutorial/judicator-white.png',
         title:'???',
-        text: "Ha, don't worry, it's normal to be confused, it's all part of the process.",
+        text: "Forcing it now would be a wasted effort. Don't worry if you're still confused, it's all part of the process.",
         faction: '???',
         textLeft: "What process?", // ->tutorial-4a
-        textRight: 'I think I want to leave now.', // ->tutorial-4b
+        textRight: "I don't want to be here anymore, please let me leave.", // ->tutorial-4b
         location: 'tutorial',
         actionLeft: {
             good: 0,
@@ -93,7 +75,7 @@ const tutorial1 = writable([
     },
     {
         id: 'tutorial1-4b',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        imgUrl: '/decks/tutorial/judicator-white-smile.png',
         title:'???',
         text: "Don't worry you'll be out of here in no time, but first things first, you'll need to make a lot of decisions. You've made decisions before... right?",
         faction: '???',
@@ -185,7 +167,7 @@ const tutorial1 = writable([
         id: 'tutorial1-8a',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'???',
-        text: "Someone doesn't like surprises, it's just a quick harmless survey that's all. Really, don't read too much into it.",
+        text: "Someone doesn't like surprises, it's just a few quick harmless questions that's all. Really, don't read too much into it.",
         faction: '???',
         textLeft: "I wasn't until you said that.", // ->tutorial-9
         textRight: 'Fine, if it will help me get out of here.', // ->tutorial-9
@@ -203,9 +185,9 @@ const tutorial1 = writable([
         id: 'tutorial1-8b',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'???',
-        text: "Are you really sure you want to do that? Come now, it's just a quick and harmless survey, you'll be fine.",
+        text: "Are you really sure you want to do that? Come now, it's just a few quick and harmless questions, you'll be fine.",
         faction: '???',
-        textLeft: "I'm no stranger to threats, fine I'll do the stupid survey.", // ->tutorial-9
+        textLeft: "I'm no stranger to threats, fine I'll answer your stupid questions.", // ->tutorial-9
         textRight: "Let's just get this over with.", // ->tutorial-9
         location: 'tutorial',
         actionLeft: {

@@ -23,10 +23,9 @@ export function tutorialHandler(event, card) {
     if (choice === 'left') {
         switch (card.id) {
             case 'tutorial1-1':
-                nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-2a');
+                nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-2');
                 break;
-            case 'tutorial1-2a':
-            case 'tutorial1-2b':
+            case 'tutorial1-2':
                 nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-3');
                 break;
             case 'tutorial1-3':
@@ -269,10 +268,9 @@ export function tutorialHandler(event, card) {
     } else if (choice === 'right') {
         switch (card.id) {
             case 'tutorial1-1':
-                nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-2b');
+                nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-2');
                 break;
-            case 'tutorial1-2a':
-            case 'tutorial1-2b':
+            case 'tutorial1-2':
                 nextCard = tutorial1Deck.find(card => card.id === 'tutorial1-3');
                 break;
             case 'tutorial1-3':

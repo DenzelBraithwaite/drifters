@@ -651,7 +651,7 @@ const chapter1 = writable([
         id: 'chapter1-8a',
         imgUrl: '/decks/chapter1/villager-brother.png',
         title:'Alexander',
-        text: "My beauty is renown far and wide, my sister isn't too bad herself, but her beauty could simply never compare.",
+        text: "My beauty is reknown far and wide, my sister isn't too bad herself, but her beauty could simply never compare.",
         faction: 'Villager',
         textLeft: "Ugh",
         textRight: "Yes yes, you're very handsome.",

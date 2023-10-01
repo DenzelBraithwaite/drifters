@@ -44,7 +44,7 @@ const tutorial2 = writable([
         text: "As I've said before, that's to be expected and you shouldn't go searching your brain for memories, instead let the memories come to you. Now, I have a few more questions for you if you'd be so kind as to indulge me.",
         faction: '???',
         textLeft: "Lovely, more confusing questions. Let's get this over with.", // ->tutorial2-3
-        textRight: "I'm sick and tired of your games, I don't want to take your stupid survey.", // ->tutorial2-3
+        textRight: "I'm sick and tired of your games, I don't want to answer your stupid questions.", // ->tutorial2-3
         location: 'tutorial',
         actionLeft: {
             good: 0,
@@ -185,7 +185,7 @@ const tutorial2 = writable([
         id: 'tutorial2-9a',
         imgUrl: '/decks/tutorial/judicator-white-smile.png',
         title:'Jude',
-        text: "You think you're asking the right questions, but finding that out won't help you any. Now then, it's time for the survey.",
+        text: "You think you're asking the right questions, but finding that out won't help you any. Now then, it's time for more questions.",
         faction: '???',
         textLeft: "I hope I don't live to regret this.", // ->tutorial2-10
         textRight: "Any answer worth seeking is a question worth asking.", // ->tutorial2-10
@@ -221,7 +221,7 @@ const tutorial2 = writable([
         id: 'tutorial2-10',
         imgUrl: '/decks/tutorial/judicator-white-smile.png',
         title:'Jude',
-        text: "Haha right... anyway, the survey will begin now but don't overthink it. Remember to just answer HONESTLY, ok?",
+        text: "Haha right... anyway, the questions will begin now but don't overthink it. Remember to just answer HONESTLY, ok?",
         faction: '???',
         textLeft: "Fine, but we will meet again.", // ->survey2-1
         textRight: "Let's get on with it then.", // ->survey2-1

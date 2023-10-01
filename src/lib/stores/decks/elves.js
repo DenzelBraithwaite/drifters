@@ -230,7 +230,7 @@ const elves = writable([
         id: 'chapter2-e-3b',
         imgUrl: '/decks/chapter2/elves/elf-angry.png',
         title:'Fenris',
-        text: "Us Inquious elves used to be regarded as nobles even amongst the highest of elves! But, then jealous struck amongst some of the others.",
+        text: "Us Inquious elves used to be regarded as nobles even amongst the highest of elves! But, then jealousy struck amongst some of the others.",
         faction: 'Elf',
         textLeft: "So I've heard, sounds like you might've deserved it.",
         textRight: "Stay strong, the elves are a proud people.",
