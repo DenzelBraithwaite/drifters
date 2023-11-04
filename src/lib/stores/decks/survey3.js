@@ -73,7 +73,7 @@ const survey3 = writable([
         title:'Jude',
         text: "Really? You won't even try to save your niece? Very interesting. What if your close friend asked for an investment of $500 but wouldn't tell you why. They might be doing something illegal, but you'll safely make a profit without any risk.",
         faction: '???',
-        textLeft: "It seems sketchy, but I would give it to them and hope that they knows what they're doing.", // ->survey3-4a
+        textLeft: "It seems sketchy, but I would give it to them and hope that they know what they're doing.", // ->survey3-4a
         textRight: "It would be tempting, but I would refuse. I don't want to get involved in shady deals.", // ->survey3-4b
         actionLeft: {
             brain: 0,
@@ -95,7 +95,7 @@ const survey3 = writable([
         title:'Jude',
         text: "You'd abandon your own daughter simply because she's a stronger swimmer? Very interesting. What if your close friend asked for an investment of $500 but wouldn't tell you why. They might be doing something illegal, but you'll safely make a profit without any risk.",
         faction: '???',
-        textLeft: "It seems sketchy, but I would give it to them and hope that they knows what they're doing.", // ->survey3-4a
+        textLeft: "It seems sketchy, but I would give it to them and hope that they know what they're doing.", // ->survey3-4a
         textRight: "It would be tempting, but I would refuse. I don't want to get involved in shady deals.", // ->survey3-4b
         actionLeft: {
             brain: 0,
@@ -217,7 +217,7 @@ const survey3 = writable([
         id: 'survey3-7a',
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "The obvious answer, the bare minimum to function in society. It's been said life and death are two sides of the same tale. Which tale do you prefer?",
+        text: "The obvious answer, the bare minimum to function in society. It's been said life and death are two sides of the same coin. Which side do you prefer?",
         faction: '???',
         textLeft: "Life", // ->survey3-8a
         textRight: "Death", // ->survey3-8b
@@ -239,7 +239,7 @@ const survey3 = writable([
         id: 'survey3-7b',
         imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
-        text: "Chaos deserves company every once in a while, right? It's been said life and death are two sides of the same tale. Which tale do you prefer?",
+        text: "Chaos deserves company every once in a while, right? It's been said life and death are two sides of the same coin. Which side do you prefer?",
         faction: '???',
         textLeft: "Life", // ->survey3-8a
         textRight: "Death", // ->survey3-8b

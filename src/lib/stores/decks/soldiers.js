@@ -319,7 +319,7 @@ const soldiers = writable([
         id: 'chapter1-s-4c',
         imgUrl: '/decks/chapter1/soldiers/captain.png',
         title:'Hugo',
-        text: "I keep having this dream, one of my men is bleeding out, but I can never reach them on time... what do you think it means?",
+        text: "I keep having this dream, one of my men is bleeding out, but I can never reach them in time... what do you think it means?",
         faction: 'Soldier',
         textLeft: 'Maybe you worry too much about the safety of your men?',
         textRight: "Perhaps that's a question only you could answer.",

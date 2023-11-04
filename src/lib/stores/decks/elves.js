@@ -252,7 +252,7 @@ const elves = writable([
         title:'Fenris',
         text: "Those cowards, they came during the night when we couldn't defend ourselves. To add insult to injury, they paid you filthy humans to do it. You'll do anything for money, won't you.",
         faction: 'Elf',
-        textLeft: "No all humans are the same, just like not all elves are the same.",
+        textLeft: "Not all humans are the same, just like not all elves are the same.",
         textRight: "They wouldn't have to pay me to set you straight.",
         actionLeft: {
             health: 0,

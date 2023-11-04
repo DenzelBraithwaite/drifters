@@ -418,14 +418,14 @@ const chapter2 = writable([
         textLeft: "Nice to mean you winklewinkle",
         textRight: "How are you confused about your own name?",
         actionLeft: {
-            health: 1,
-            aura: -1,
+            health: -1,
+            aura: 1,
             memory: 0,
         },
         actionRight: {
             health: 1,
             aura: -1,
-            memory: 0,
+            memory: 1,
         },
         location: 'Magical Forest'
     },

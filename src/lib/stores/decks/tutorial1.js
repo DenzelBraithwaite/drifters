@@ -205,7 +205,7 @@ const tutorial1 = writable([
         title:'Jude',
         text: "By the way, not that you asked... but you can call me Jude. Do you remember your name?",
         faction: '???',
-        textLeft: "Jude? that's not what I was expecting... No, I don't remember my name...", // ->tutorial-10
+        textLeft: "Jude? that's not what I was expecting. No, I don't remember my name...", // ->tutorial-10
         textRight: "Hey Jude, I ca- I can't seem to...", // ->tutorial-10
         location: 'tutorial',
         actionLeft: {

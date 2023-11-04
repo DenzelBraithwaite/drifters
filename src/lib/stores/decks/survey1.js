@@ -249,7 +249,7 @@ const survey1 = writable([
         title:'Jude',
         text: "Who are you?",
         faction: '???',
-        textLeft: "I don- I don't remember...", // Survey1-10
+        textLeft: "I don't remember...", // Survey1-10
         textRight: "I am who I am... whoever that is.", // Survey1-10
         actionLeft: {
             heart: 1,

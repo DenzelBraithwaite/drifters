@@ -63,7 +63,7 @@ const tutorial3 = writable([
         text: "Deep down you know the truth, but you aren't ready to face it. You are dead Jack, and this world is your creation.",
         faction: '???',
         textLeft: "My... creation?", // ->tutorial3-5
-        textRight: "You mean I- I really am...", // ->tutorial3-5
+        textRight: "You mean I really am...", // ->tutorial3-5
         location: 'tutorial',
         actionLeft: {
             good: 0,

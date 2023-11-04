@@ -539,7 +539,7 @@ const chapter1 = writable([
         id: 'chapter1-6e',
         imgUrl: '/decks/chapter1/cowheard.png',
         title:'Bernard',
-        text: "Animals are simple creatures; they eat, sleep and poop. We could learn a lot from animals.",
+        text: "Animals are simple creatures, they eat, sleep and defecate. We could learn a lot from animals.",
         faction: 'Cowheard',
         textLeft: "We never give animals enough credit.",
         textRight: "You sound like a crazy person, you know that right?",
@@ -554,7 +554,7 @@ const chapter1 = writable([
         location: 'Town of Beginning'
     },
 
-    // Felix
+    // Felix TODO:He is one of the 8 special chars that will be revealed as a victim (child).
     {
         id: 'chapter1-7a',
         imgUrl: '/decks/chapter1/peasant.png',
