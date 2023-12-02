@@ -1,10 +1,14 @@
 <script>
+    // @ts no-check
+
+    // Hooks
+    import { fly, fade } from 'svelte/transition';
+
     // Helpers
     import { tutorialHandler } from '../helpers/tutorialHandler';
 
-    import Card from './Card.svelte';
-    import Button from './Button.svelte';
-    import MenuDeck from './MenuDeck.svelte';
+    // Components
+    import { Button, Card, Circle, MenuButton, MenuDeck } from './index.js';
 
     // Stores
     import decks from '../stores/decks.js';
@@ -472,7 +476,7 @@
         </div>
     {:else}
     {#if menuOpen}
-        <div class="menu">
+        <div class="menu" in:fly={{y: 100}} out:fade>
             <h2 class="main-menu-title">Main Menu</h2>
             <main class="menu-content">
                 <h3 class="menu-header">Times died: <span class="menu-deaths">{$player.timesReborn}</span></h3>
@@ -494,10 +498,6 @@
             <p class="stat-icon grey-icon" class:flash={flashMemory}>{$player.unlockedDeck.chapter1 ? memMessage : '?'}</p>
         </div>
         <div class="container">
-            <div class="card-text" class:cardBlurred={blurCard}>
-                <p class:show={newDeckAlert} class="new-card-alert">New deck unlocked: {newDeckAlertText}!</p>
-                <p>{currentCard.text}</p>
-            </div>
             <div class="card-wrapper" class:cardBlurred={blurCard}>
                 <!-- Tutorials -->
                 {#if $player.activeDeck === 'survey'}
@@ -515,19 +515,37 @@
                         <span slot="text-right">{currentCard.textRight}</span>
                     </Card>
                 {/if}
+                <!-- TODO: move under card -->
+                <div class="bottom-text-wrapper">
+                    <p>{currentCard.title}</p>
+                    <p>{currentCard.faction}</p>
+                </div>
             </div>
-            <div class="bottom-text-wrapper">
-                <p>{currentCard.title}</p>
-                <p>{currentCard.faction}</p>
+            <!-- TODO: Make dedicated component -->
+            <div class="card-text" class:cardBlurred={blurCard}>
+                <p class:show={newDeckAlert} class="new-card-alert">New deck unlocked: {newDeckAlertText}!</p>
+                <p>{currentCard.text}</p>
             </div>
         </div>
     {/if}
-    <div class="menu-wrapper">
-        <Button on:click={() => menuOpen = !menuOpen} bgColor={"bg-black"}>Menu</Button>
-    </div>
+
+    <!-- Circle shapes -->
+    {#if $player.activeDeck === 'survey'}
+        <span class="circle__left-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="left"/></span>
+        <span class="circle__right-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="right" /></span>
+      {:else if $player.activeDeck === 'chapter'}
+        <span class="circle__left-wrapper"><Circle on:decision={event => actionHandler(event)} leftOrRight="left"/></span>
+        <span class="circle__right-wrapper"><Circle on:decision={event => actionHandler(event)} leftOrRight="right" /></span>
+      {/if}
+
+    <!-- Menu section -->
+    <section class="menu-wrapper">
+        <span class="btn-menu-wrapper"><MenuButton on:click={() => menuOpen = !menuOpen}>Menu</MenuButton></span>
+    </section>
 </div>
 
 <style lang="scss">
+    /* Menu */
     .menu-wrapper {
         background-color: #0000003b;
         border-radius: 5rem 5rem 0 0;
@@ -548,7 +566,7 @@
     .menu {
         z-index: 1000;
         background-color: #090909f9;
-        border-radius: 5rem 1rem 5rem 1rem;
+        border-radius: 18px 18px 18px 18px;
         height: 100%;
         width: 100%;
         padding: 1rem;
@@ -563,7 +581,8 @@
 
     .menu-content {
         background-color: #00000090;
-        border-radius: 5rem 1rem 5rem 1rem;
+        border-radius: 18px 18px 18px 18px;
+
         height: 85%;
         padding: 2rem 1.5rem 1rem;
         text-align: left;
@@ -572,6 +591,12 @@
         &::-webkit-scrollbar {
             display: none;
         }
+    }
+
+    /* Bottom design, looks like cartridge slot, also keeps menu button in right spot */
+    .btn-menu-wrapper {
+        position: absolute;
+        bottom: 32px;
     }
 
     .menu-header {
@@ -584,41 +609,46 @@
         font-size: 1.5rem;
     }
 
+    /* Game Client */
     .game-client {
         position: relative;
-        padding: 5rem 1rem;
-        width: 30%;
-        min-width: 475px;
-        max-width: 700px;
-        min-height: 825px;
+        background: linear-gradient(to top, #ada9a7, #a8a4a2, #b5b1ae);
+        padding: 1rem 0.5rem 8.5rem;
+        width: 35%;
+        min-width: 300px;
+        max-width: 400px;
+        max-height: 850px;
         margin: 0 auto;
-        border: 4px solid #00000079;
-        border-radius: 5rem 1rem 5rem 1rem;
-        background-color: #000000df;
-        background: linear-gradient(to right, #000000, #090218e4, #000000);
-        box-shadow: 0 0.5rem 2rem 0.5rem #0c00387e;
+        border-top: 2px solid #0000001a;
+        border-right: 2px solid #0000001a;
+        border-left: 3px solid #0000001a;
+        border-bottom: 12px solid #00000079;
+        border-radius: 18px 18px 18px 18px;
     }
 
     .container {
         width: 90%;
         margin: 0 auto;
     }
-
+    
+    /* Card text */
     .card-wrapper {
         position: relative;
-        margin-bottom: 1rem;
         transition: filter 0.1s ease-in;
+        font-size: 0.9rem;
+        color: #ececec;
+        font-weight: bold;
     }
 
     .card-text {
         position: relative;
-        background-color: #0f0f0f53;
+        background-color: #00000083;
         box-shadow: 0 0.125rem 0.5rem #0000004e;
         width: 100%;
         padding: 0.75rem;
-        line-height: 1.4;
-        height: 7rem;
-        margin: 1rem auto;
+        line-height: 1.15;
+        height: 7.5rem;
+        margin: 0 auto;
         font-size: 1.125rem;
         border-radius: 0.5rem;
         overflow-y: scroll;
@@ -642,19 +672,17 @@
 
     }
 
+    /* Stats */
     .stats-wrapper {
-        background-color: #0000007f;
-        background: linear-gradient(to top, #000000e6, #0f0228ab, #000000e6);
-        border-radius: 5rem 1rem 0 0;
-        margin-bottom: 1rem;
-        padding: 2rem;
-        width: 100%;
-        box-shadow: 0 0.5rem 0.5rem #0000004e;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        z-index: 1;
 
         position: absolute;
-        top: 0;
+        top: 25px;
         right: 50%;
-        transform: translate(50%);
+        transform: translateX(50%);
 
 
         display: flex;
@@ -667,16 +695,44 @@
         stroke-width: 1.5;
         stroke: #a49a9a;
         width: 4rem;
+        font-weight: bold;
         transition: color 0.5s ease-in-out;
     }
 
+    /* Circle buttons */
+    .circle__right-wrapper {
+        position: absolute;
+        right: 20px;
+        bottom: 75px;
+    }
+
+    .circle__left-wrapper {
+        position: absolute;
+        left: 20px;
+        bottom: 75px;
+    }
+
+    .new-card-alert {
+        opacity: 0;
+        color: #3ce976;
+        font-size: 1.5rem;
+        line-height: 1;
+        font-weight: bold;
+        text-shadow: 0 2px 6px #4cb6ad;
+        transition: opacity 0.5s ease-out;
+
+        position: absolute;
+        top: 0rem;
+    }
+
+    // Icon colors
     .red-icon {
         stroke: #8c2323;
         color: #8c2323;
     }
     
     .green-icon {
-        stroke: #509150;
+        stroke: #123312;
         color: #509150;
     }
     
@@ -696,20 +752,16 @@
     }
 
     .bottom-text-wrapper {
-        text-align: center;
-    }
+      width: 100%;
+      gap: 1rem;
+      z-index: 1;
 
-    .new-card-alert {
-        opacity: 0;
-        color: #3ce976;
-        font-size: 1.5rem;
-        line-height: 1;
-        font-weight: bold;
-        text-shadow: 0 2px 6px #4cb6ad;
-        transition: opacity 0.5s ease-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-        position: absolute;
-        top: 0rem;
+      position: absolute;
+      bottom: 0;
     }
 
     /* Utility */

@@ -9,7 +9,7 @@
 </script>
 
 <header>
-    <p class="version">Version: Beta 1.2</p>
+    <p class="version">Version: Beta 1.3</p>
 </header>
 
 <main class="{bgImg}">
