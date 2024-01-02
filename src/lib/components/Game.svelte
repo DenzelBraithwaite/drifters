@@ -78,8 +78,8 @@
     background-position: center;
   }
 
-  .bg__river {
-    background: url('/backgrounds/river.gif');
+  .bg__kingdom {
+    background: url('/backgrounds/kingdom.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
