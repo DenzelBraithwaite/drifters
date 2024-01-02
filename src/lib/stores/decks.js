@@ -12,6 +12,7 @@ import soldiers from './decks/soldiers';
 import elves from './decks/elves';
 import goblins from './decks/goblins';
 
+// Combines all smaller decks into one master deck.
 const decks = writable({
     tutorial1: get(tutorial1),
     tutorial2: get(tutorial2),

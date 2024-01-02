@@ -1,11 +1,11 @@
 import { writable } from "svelte/store";
 
 const backgrounds = writable({
-    active: 'bg__space', // default
-    space: 'bg__space',
-    adventure: 'bg__adventure',
+    active: 'bg__dark', // default
+    dark: 'bg__dark',
+    village: 'bg__village',
     magicalForest: 'bg__magical-forest',
-    river: 'bg__river',
+    kingdom: 'bg__kingdom',
 });
 
 export default backgrounds;

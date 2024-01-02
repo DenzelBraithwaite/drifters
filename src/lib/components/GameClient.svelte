@@ -267,7 +267,7 @@
                 });
                 
             backgrounds.update(bg => {
-                $backgrounds.active = $backgrounds.space;
+                $backgrounds.active = $backgrounds.dark;
                 return bg;
             });
             return;
@@ -296,7 +296,7 @@
             });
                 
             backgrounds.update(bg => {
-                $backgrounds.active = $backgrounds.space;
+                $backgrounds.active = $backgrounds.dark;
                 return bg;
             });
             return;
@@ -324,7 +324,7 @@
             });
                 
             backgrounds.update(bg => {
-                $backgrounds.active = $backgrounds.space;
+                $backgrounds.active = $backgrounds.dark;
                 return bg;
             });
             return;
@@ -432,7 +432,7 @@
             });
                 
                 backgrounds.update(bg => {
-                    $backgrounds.active = $backgrounds.adventure;
+                    $backgrounds.active = $backgrounds.village;
                     return bg;
                 });
                 
@@ -545,236 +545,236 @@
 </div>
 
 <style lang="scss">
-    /* Menu */
-    .menu-wrapper {
-        background-color: #0000003b;
-        border-radius: 5rem 5rem 0 0;
-        padding: 0.25rem;
-        width: 80%;
-        margin: 0 auto; 
+  /* Menu */
+  .menu-wrapper {
+    background-color: #0000003b;
+    border-radius: 5rem 5rem 0 0;
+    padding: 0.25rem;
+    width: 80%;
+    margin: 0 auto; 
 
-        position: absolute;
-        bottom: 0;
-        right: 50%;
-        transform: translateX(50%);
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
 
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .menu {
+    z-index: 1000;
+    background-color: #090909f9;
+    border-radius: 18px 18px 18px 18px;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease-out;
+
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .menu-content {
+    background-color: #00000090;
+    border-radius: 18px 18px 18px 18px;
+
+    height: 85%;
+    padding: 2rem 1.5rem 1rem;
+    text-align: left;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
     }
-    
-    .menu {
-        z-index: 1000;
-        background-color: #090909f9;
-        border-radius: 18px 18px 18px 18px;
-        height: 100%;
-        width: 100%;
-        padding: 1rem;
-        text-align: center;
-        transition: all 0.3s ease-out;
+  }
 
-        position: absolute;
-        top: 0;
-        right: 50%;
-        transform: translateX(50%);
+  /* Bottom design, looks like cartridge slot, also keeps menu button in right spot */
+  .btn-menu-wrapper {
+    position: absolute;
+    bottom: 32px;
+  }
+
+  .menu-header {
+    margin-bottom: 1rem;
+  }
+
+  .menu-deaths {
+    color: #500c0c;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  /* Game Client */
+  .game-client {
+    position: relative;
+    background: linear-gradient(to top, #ada9a7, #a8a4a2, #b5b1ae);
+    background: linear-gradient(to top, #ada9a7, #413747da, #456B73ca, #413747da, #b5b1ae);
+    padding: 1rem 0.5rem 8.5rem;
+    width: 35%;
+    min-width: 300px;
+    max-width: 400px;
+    max-height: 850px;
+    margin: 0 auto;
+    border-top: 2px solid #0000001a;
+    border-right: 2px solid #0000001a;
+    border-left: 3px solid #0000001a;
+    border-bottom: 12px solid #00000079;
+    border-radius: 18px 18px 18px 18px;
+    box-shadow: 0 0 100px #456B73ca;
+    outline: 1px solid #a8a4a227; /* adds a bit of visual depth*/
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  /* Card text */
+  .card-wrapper {
+    position: relative;
+    transition: filter 0.1s ease-in;
+    font-size: 0.9rem;
+    color: #ececec;
+    font-weight: bold;
+  }
+
+  .card-text {
+    position: relative;
+    background-color: #00000083;
+    box-shadow: 0 0.125rem 0.5rem #0000004e;
+    width: 100%;
+    padding: 0.75rem;
+    line-height: 1.15;
+    height: 7.5rem;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    border-radius: 0.5rem;
+    overflow-y: scroll;
+    transition: filter 0.1s ease-in;
+
+      &::-webkit-scrollbar {
+        width: 0.5rem;
     }
+  }
 
-    .menu-content {
-        background-color: #00000090;
-        border-radius: 18px 18px 18px 18px;
+  .card-text::-webkit-scrollbar-track {
+    background-color: #000;
+    border-radius: 0.25rem;
+  }
 
-        height: 85%;
-        padding: 2rem 1.5rem 1rem;
-        text-align: left;
-        overflow-y: scroll;
+  .card-text::-webkit-scrollbar-thumb {
+    background-color: #151515;
+    border-radius: 0.25rem;
+  }
 
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
+  /* Stats */
+  .stats-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
 
-    /* Bottom design, looks like cartridge slot, also keeps menu button in right spot */
-    .btn-menu-wrapper {
-        position: absolute;
-        bottom: 32px;
-    }
-
-    .menu-header {
-        margin-bottom: 1rem;
-    }
-
-    .menu-deaths {
-        color: #500c0c;
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
-
-    /* Game Client */
-    .game-client {
-        position: relative;
-        background: linear-gradient(to top, #ada9a7, #a8a4a2, #b5b1ae);
-        padding: 1rem 0.5rem 8.5rem;
-        width: 35%;
-        min-width: 300px;
-        max-width: 400px;
-        max-height: 850px;
-        margin: 0 auto;
-        border-top: 2px solid #0000001a;
-        border-right: 2px solid #0000001a;
-        border-left: 3px solid #0000001a;
-        border-bottom: 12px solid #00000079;
-        border-radius: 18px 18px 18px 18px;
-    }
-
-    .container {
-        width: 90%;
-        margin: 0 auto;
-    }
-    
-    /* Card text */
-    .card-wrapper {
-        position: relative;
-        transition: filter 0.1s ease-in;
-        font-size: 0.9rem;
-        color: #ececec;
-        font-weight: bold;
-    }
-
-    .card-text {
-        position: relative;
-        background-color: #00000083;
-        box-shadow: 0 0.125rem 0.5rem #0000004e;
-        width: 100%;
-        padding: 0.75rem;
-        line-height: 1.15;
-        height: 7.5rem;
-        margin: 0 auto;
-        font-size: 1.125rem;
-        border-radius: 0.5rem;
-        overflow-y: scroll;
-        transition: filter 0.1s ease-in;
-
-            &::-webkit-scrollbar {
-                width: 0.5rem;
-        }
-
-    }
-
-    .card-text::-webkit-scrollbar-track {
-        background-color: #000;
-        border-radius: 0.25rem;
-
-    }
-
-    .card-text::-webkit-scrollbar-thumb {
-        background-color: #151515;
-        border-radius: 0.25rem;
-
-    }
-
-    /* Stats */
-    .stats-wrapper {
-        width: 80%;
-        margin: 0 auto;
-        text-align: center;
-        z-index: 1;
-
-        position: absolute;
-        top: 25px;
-        right: 50%;
-        transform: translateX(50%);
+    position: absolute;
+    top: 25px;
+    right: 50%;
+    transform: translateX(50%);
 
 
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-    .stat-icon {
-        fill: none;
-        stroke-width: 1.5;
-        stroke: #a49a9a;
-        width: 4rem;
-        font-weight: bold;
-        transition: color 0.5s ease-in-out;
-    }
+  .stat-icon {
+    fill: none;
+    stroke-width: 1.5;
+    stroke: #a49a9a;
+    width: 4rem;
+    font-weight: bold;
+    transition: color 0.5s ease-in-out;
+  }
 
-    /* Circle buttons */
-    .circle__right-wrapper {
-        position: absolute;
-        right: 20px;
-        bottom: 75px;
-    }
+  /* Circle buttons */
+  .circle__right-wrapper {
+    position: absolute;
+    right: 20px;
+    bottom: 75px;
+  }
 
-    .circle__left-wrapper {
-        position: absolute;
-        left: 20px;
-        bottom: 75px;
-    }
+  .circle__left-wrapper {
+    position: absolute;
+    left: 20px;
+    bottom: 75px;
+  }
 
-    .new-card-alert {
-        opacity: 0;
-        color: #3ce976;
-        font-size: 1.5rem;
-        line-height: 1;
-        font-weight: bold;
-        text-shadow: 0 2px 6px #4cb6ad;
-        transition: opacity 0.5s ease-out;
+  .new-card-alert {
+    opacity: 0;
+    color: #3ce976;
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: bold;
+    text-shadow: 0 2px 6px #4cb6ad;
+    transition: opacity 0.5s ease-out;
 
-        position: absolute;
-        top: 0rem;
-    }
+    position: absolute;
+    top: 0rem;
+  }
 
-    // Icon colors
-    .red-icon {
-        stroke: #8c2323;
-        color: #8c2323;
-    }
-    
-    .green-icon {
-        stroke: #123312;
-        color: #509150;
-    }
-    
-    .pink-icon {
-        stroke: #b07680;
-        color: #b07680;
-    }
-    
-    .yellow-icon {
-        stroke: #b5b559;
-        color: #b5b559;
-    }
-    
-    .grey-icon {
-        stroke: #444;
-        color: #444;
-    }
+  // Icon colors
+  .red-icon {
+    stroke: #8c2323;
+    color: #8c2323;
+  }
+  
+  .green-icon {
+    stroke: #123312;
+    color: #509150;
+  }
+  
+  .pink-icon {
+    stroke: #b07680;
+    color: #b07680;
+  }
+  
+  .yellow-icon {
+    stroke: #b5b559;
+    color: #b5b559;
+  }
+  
+  .grey-icon {
+    stroke: #444;
+    color: #444;
+  }
 
-    .bottom-text-wrapper {
-      width: 100%;
-      gap: 1rem;
-      z-index: 1;
+  .bottom-text-wrapper {
+    width: 100%;
+    gap: 1rem;
+    z-index: 1;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      position: absolute;
-      bottom: 0;
-    }
+    position: absolute;
+    bottom: 0;
+  }
 
-    /* Utility */
-    .show {
-        display: block;
-        opacity: 100%;
-    }
+  /* Utility */
+  .show {
+    display: block;
+    opacity: 100%;
+  }
 
-    .cardBlurred {
-        filter: blur(10px);
-    }
+  .cardBlurred {
+    filter: blur(10px);
+  }
 
-    .flash {
-        color: #fff;
-    }
+  .flash {
+    color: #fff;
+  }
 </style>

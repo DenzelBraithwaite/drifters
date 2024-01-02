@@ -5,10 +5,10 @@ const tutorial1 = writable([
         id: 'tutorial1-1',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'???',
-        text: "Oh good, looks like you're finally awake. Welcome drifter, how do you feel?",
+        text: "You're awake... Welcome drifter, how do you feel?",
         faction: '???',
         textLeft: "Where am I?", // ->tutorial1-2
-        textRight: '...', // ->tutorial1-2
+        textRight: 'What is this?', // ->tutorial1-2
         location: 'tutorial',
         actionLeft: {
             good: 0,
@@ -59,7 +59,7 @@ const tutorial1 = writable([
         id: 'tutorial1-4a',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'???',
-        text: "Don't worry about the process, let the process worry about you and you'll be out of here in no time! But first things first, you'll need to make a lot of decisions. You've made decisions before right?",
+        text: "Don't worry about the process, let the process worry about you and you'll be out of here in no time. But first things first, you'll need to make a lot of decisions. You've made decisions before right?",
         faction: '???',
         textLeft: "I never decided to be here.", // ->tutorial-5
         textRight: 'What kind of question is that, everyone has made a decision before.', // ->tutorial-5
@@ -203,10 +203,10 @@ const tutorial1 = writable([
         id: 'tutorial1-9',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "By the way, not that you asked... but you can call me Jude. Do you remember your name?",
+        text: "Oh, and not that you asked... but you can call me Jude. Do you remember your name?",
         faction: '???',
-        textLeft: "Jude? that's not what I was expecting. No, I don't remember my name...", // ->tutorial-10
-        textRight: "Hey Jude, I ca- I can't seem to...", // ->tutorial-10
+        textLeft: "Jude, really? And no, I'm trying but I can't seem to remember.", // ->tutorial-10
+        textRight: "...", // ->tutorial-10
         location: 'tutorial',
         actionLeft: {
             good: 0,
@@ -223,7 +223,7 @@ const tutorial1 = writable([
         title:'Jude',
         text: "Fantastic... Don't worry that's normal. For now let's just keep it simple and call you Jack, unless there's another name you'd prefer?",
         faction: '???',
-        textLeft: "Jack? Doesn't really seem to suit me but I guess I'll go by Jack until I can remember my actual name.", // ->survey-1
+        textLeft: "Jack? Doesn't really seem to suit me but I guess that's fine until I can remember my actual name.", // ->survey-1
         textRight: "I may not know my name but it certainly isn't Jack.", // ->survey-1
         location: 'tutorial',
         actionLeft: {

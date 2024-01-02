@@ -95,8 +95,8 @@ const survey1 = writable([
         title:'Jude',
         text: "Naturally, what's next now... here we go. You only have time for one, which do you choose?",
         faction: '???',
-        textLeft: "Save a stranger from a fire, but he won't show any gratitude.", // Survey1-5a
-        textRight: "Steal a stranger's wallet filled with cash with no chance of being caught. He wouldn't even miss it.", // Survey1-5b
+        textLeft: "Save a stranger from a fire, but they won't show any gratitude.", // Survey1-5a
+        textRight: "Steal a rich stranger's wallet filled with cash with no chance of being caught.", // Survey1-5b
         actionLeft: {
             heart: 1,
             diamond: 0,
@@ -225,7 +225,7 @@ const survey1 = writable([
         id: 'survey1-8',
         imgUrl: '/decks/tutorial/judicator-white-smile.png',
         title:'Jude',
-        text: "So many questions as always, and here I thought I was the one asking the questions. Here's the final one, get ready.",
+        text: "So many questions as always, and here I thought I was the one asking the questions. Okay here's the final one, get ready.",
         faction: '???',
         textLeft: "...", // Survey1-9
         textRight: "Ready whenever.", // Survey1-9
@@ -250,7 +250,7 @@ const survey1 = writable([
         text: "Who are you?",
         faction: '???',
         textLeft: "I don't remember...", // Survey1-10
-        textRight: "I am who I am... whoever that is.", // Survey1-10
+        textRight: "Still \"Jack\" for now.", // Survey1-10
         actionLeft: {
             heart: 1,
             diamond: 0,
