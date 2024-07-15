@@ -614,7 +614,7 @@ const chapter1 = writable([
         imgUrl: '/decks/chapter1/peasant.png',
         title:'Felix',
         text: "It's not fair, why can't I eat as much as everyone else gets to. What did I do wrong?",
-        faction: '...',
+        faction: 'Peasant',
         textLeft: "You can complain about it or you can do something about it.",
         textRight: "It's not your fault, you just got unlucky.",
         actionLeft: {
@@ -632,7 +632,7 @@ const chapter1 = writable([
         imgUrl: '/decks/chapter1/peasant.png',
         title:'Felix',
         text: "I might not have much, but I have my health. That's worth more than any amount of money.",
-        faction: '...',
+        faction: 'Peasant',
         textLeft: "Yeah yeah, whatever helps you sleep at night.",
         textRight: "I couldn't agree more.",
         actionLeft: {

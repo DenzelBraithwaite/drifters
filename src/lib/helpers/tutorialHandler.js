@@ -3,13 +3,24 @@ import { get } from 'svelte/store';
 
 // Stores 
 import decks from '../stores/decks.js';
+import player from '../stores/player.js';
 
 export function tutorialHandler(event, card) {
-  const choice = event.detail;
   let nextCard;
+  const choice = event.detail;
 
   // Handles all left actions
     if (choice === 'left') {
+      player.update(p => {
+        if (card.actionLeft.heart) p.iconPoints.heart += card.actionLeft.heart;
+        if (card.actionLeft.diamond) p.iconPoints.diamond += card.actionLeft.diamond;
+        if (card.actionLeft.greenAura) p.iconPoints.greenAura += card.actionLeft.greenAura;
+        if (card.actionLeft.yellowAura) p.iconPoints.yellowAura += card.actionLeft.yellowAura;
+        if (card.actionLeft.brain) p.iconPoints.brain += card.actionLeft.brain;
+        if (card.actionLeft.smiley) p.iconPoints.smiley += card.actionLeft.smiley;
+        return p;
+      });
+
       switch (card.id) {
         // Tutorial 1
         case 'tutorial1-1':
@@ -259,9 +270,18 @@ export function tutorialHandler(event, card) {
         default:
           console.log('No card matched...');
       }
-
     // Handles all right actions
     } else if (choice === 'right') {
+      player.update(p => {
+        if (card.actionRight.heart) p.iconPoints.heart += card.actionRight.heart;
+        if (card.actionRight.diamond) p.iconPoints.diamond += card.actionRight.diamond;
+        if (card.actionRight.greenAura) p.iconPoints.greenAura += card.actionRight.greenAura;
+        if (card.actionRight.yellowAura) p.iconPoints.yellowAura += card.actionRight.yellowAura;
+        if (card.actionRight.brain) p.iconPoints.brain += card.actionRight.brain;
+        if (card.actionRight.smiley) p.iconPoints.smiley += card.actionRight.smiley;
+        return p;
+      });
+
       switch (card.id) {
         case 'tutorial1-1':
           nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');

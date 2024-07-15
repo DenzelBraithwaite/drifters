@@ -37,7 +37,7 @@
 
   main {
     height: 100dvh;
-    transition: background 2s ease-in-out;
+    transition: background 3s ease-in-out;
 
     display: flex;
     justify-content: center;

@@ -8,7 +8,7 @@ const tutorial1 = writable([
         text: "You're awake... Welcome drifter, how do you feel?",
         faction: '???',
         textLeft: "Where am I?", // ->tutorial1-2
-        textRight: 'What is this?', // ->tutorial1-2
+        textRight: 'Tired, what is this place?', // ->tutorial1-2
         location: 'tutorial',
         actionLeft: {
             good: 0,

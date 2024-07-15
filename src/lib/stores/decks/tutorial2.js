@@ -149,10 +149,10 @@ const tutorial2 = writable([
         id: 'tutorial2-7',
         imgUrl: '/decks/tutorial/judicator-white-smile.png',
         title:'Jude',
-        text: "You really don't remember anything do you?",
+        text: "I almost feel sorry for you, but then again, we wouldn't be in this mess if it wasn't for you.",
         faction: '???',
-        textLeft: "That's what I've been trying to tell you!", // ->tutorial2-8
-        textRight: "Nothing at all...", // ->tutorial2-8
+        textLeft: "Me?", // ->tutorial2-8
+        textRight: "What?", // ->tutorial2-8
         location: 'tutorial',
         actionLeft: {
             good: 0,

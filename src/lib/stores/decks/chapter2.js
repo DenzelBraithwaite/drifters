@@ -205,6 +205,7 @@ const chapter2 = writable([
         location: 'Magical Forest'
     },
 
+    // Fairy-blue
     {
         id: 'chapter2-3a',
         imgUrl: '/decks/chapter2/fairy-blue.png',
@@ -415,7 +416,7 @@ const chapter2 = writable([
         title:'Winkle',
         text: "Winkle here, not winkle, WRINKLE. Wait, no I mean not wrinkle it's winkle, WINKLE!",
         faction: 'Fairy',
-        textLeft: "Nice to mean you winklewinkle",
+        textLeft: "Nice to meet you winklewinkle",
         textRight: "How are you confused about your own name?",
         actionLeft: {
             health: -1,

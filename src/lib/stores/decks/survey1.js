@@ -121,12 +121,12 @@ const survey1 = writable([
         textRight: "Right", // Survey1-6
         actionLeft: {
             heart: 0,
-            diamond: 0,
+            diamond: 1,
             good: 0,
             evil: 0
         },
         actionRight: {
-            heart: 0,
+            heart: 1,
             diamond: 0,
             good: 0,
             evil: 0
@@ -143,12 +143,12 @@ const survey1 = writable([
         textRight: "Right", // Survey1-6
         actionLeft: {
             heart: 0,
-            diamond: 0,
+            diamond: 1,
             good: 0,
             evil: 0
         },
         actionRight: {
-            heart: 0,
+            heart: 1,
             diamond: 0,
             good: 0,
             evil: 0
@@ -203,7 +203,7 @@ const survey1 = writable([
         id: 'survey1-7b',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "Bit of a Debbie downer aren't we? Little Sassy Susan wants to go out and play. You won't last very long with an attitude like that you know.",
+        text: "Bit of a Debbie downer aren't we? You won't last very long with an attitude like that you know.",
         faction: '???',
         textLeft: "Whatever, are we done yet?", // Survey1-8
         textRight: "Don't lecture me when you won't even answer a simple question. What is going on here??", // Survey1-8

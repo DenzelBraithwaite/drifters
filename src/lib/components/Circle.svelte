@@ -54,47 +54,47 @@
 {/if}
 
 <style>
-    .circle{
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        transition: all 0.2s ease-out;
+  .circle{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
 
-        &:hover {
-            cursor: var(--pointer);
-            transform: translateY(1px);
-        }
-
-        &:active {
-            transform: translateY(5px);
-        }
+    &:hover {
+      cursor: var(--pointer);
+      transform: translateY(1px);
     }
 
-    .bg-purple {
-      background-color: #413747;
-      box-shadow: 0 6px 0 #2a242e;
+    &:active {
+      transform: translateY(5px);
+    }
+  }
 
-      &:hover {
-            box-shadow: 0 5px 0 #2a242e;
-        }
+  .bg-purple {
+    background-color: #413747;
+    box-shadow: 0 6px 0 #2a242e;
 
-        &:active {
-          box-shadow: none;
-          border: 1px solid #2a242e;
-        }
+    &:hover {
+      box-shadow: 0 5px 0 #2a242e;
     }
 
-    .bg-blue {
-      background-color: #456b73;
-      box-shadow: 0 6px 0 #2f494e;
-        
-      &:hover {
-          box-shadow: 0 5px 0 #2f494e;
-        }
+    &:active {
+      box-shadow: none;
+      border: 1px solid #2a242e;
+    }
+  }
 
-      &:active {
-        box-shadow: none;
-        border: 1px solid #2f494e;
+  .bg-blue {
+    background-color: #456b73;
+    box-shadow: 0 6px 0 #2f494e;
+      
+    &:hover {
+        box-shadow: 0 5px 0 #2f494e;
       }
+
+    &:active {
+      box-shadow: none;
+      border: 1px solid #2f494e;
     }
+  }
 </style>
