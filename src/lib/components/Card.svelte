@@ -6,7 +6,7 @@
   import cardHovered from '../stores/hoverStatus';
 
   // props
-  export let img = '/public/decks/tutorial/question-mark.png';
+  export let img = '/stats/puzzle.svg';
   export let blurImg = false;
 
 </script>
