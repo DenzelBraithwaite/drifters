@@ -5,22 +5,13 @@ import { get } from 'svelte/store';
 import decks from '../stores/decks.js';
 import player from '../stores/player.js';
 
-export function tutorialHandler(event, card) {
+export function surveyDecisionHandler(event, card) {
   let nextCard;
   const choice = event.detail;
+  iconPointsHandler(choice, card);
 
   // Handles all left actions
     if (choice === 'left') {
-      player.update(p => {
-        if (card.actionLeft.heart) p.iconPoints.heart += card.actionLeft.heart;
-        if (card.actionLeft.diamond) p.iconPoints.diamond += card.actionLeft.diamond;
-        if (card.actionLeft.greenAura) p.iconPoints.greenAura += card.actionLeft.greenAura;
-        if (card.actionLeft.yellowAura) p.iconPoints.yellowAura += card.actionLeft.yellowAura;
-        if (card.actionLeft.brain) p.iconPoints.brain += card.actionLeft.brain;
-        if (card.actionLeft.smiley) p.iconPoints.smiley += card.actionLeft.smiley;
-        return p;
-      });
-
       switch (card.id) {
         // Tutorial 1
         case 'tutorial1-1':
@@ -253,6 +244,16 @@ export function tutorialHandler(event, card) {
           break;
         case 'survey3-9a':
         case 'survey3-9b':
+          player.update(p => {
+            p.displayDecks = [
+              ...p.displayDecks,
+              {
+                title: 'You',
+                img: '/characters/jack-judicator.png'
+              }
+            ]
+              return p;
+          });
           nextCard = get(decks).survey3.find(card => card.id === 'survey3-10a');
           break;
         case 'survey3-10a':
@@ -272,16 +273,6 @@ export function tutorialHandler(event, card) {
       }
     // Handles all right actions
     } else if (choice === 'right') {
-      player.update(p => {
-        if (card.actionRight.heart) p.iconPoints.heart += card.actionRight.heart;
-        if (card.actionRight.diamond) p.iconPoints.diamond += card.actionRight.diamond;
-        if (card.actionRight.greenAura) p.iconPoints.greenAura += card.actionRight.greenAura;
-        if (card.actionRight.yellowAura) p.iconPoints.yellowAura += card.actionRight.yellowAura;
-        if (card.actionRight.brain) p.iconPoints.brain += card.actionRight.brain;
-        if (card.actionRight.smiley) p.iconPoints.smiley += card.actionRight.smiley;
-        return p;
-      });
-
       switch (card.id) {
         case 'tutorial1-1':
           nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
@@ -517,6 +508,16 @@ export function tutorialHandler(event, card) {
           break;
         case 'survey3-9a':
         case 'survey3-9b':
+          player.update(p => {
+            p.displayDecks = [
+              ...p.displayDecks,
+              {
+                title: 'Kaz',
+                img: '/characters/kaz.png'
+              }
+            ]
+              return p;
+          });
           nextCard = get(decks).survey3.find(card => card.id === 'survey3-10b');
           break;
         case 'survey3-10a':
@@ -539,4 +540,34 @@ export function tutorialHandler(event, card) {
     }
 
     return nextCard;
+}
+
+function iconPointsHandler(choice, card) {
+  if (choice === 'left') {
+    player.update(p => {
+      if (card.actionLeft.heart) p.iconPoints.heart += card.actionLeft.heart;
+      if (card.actionLeft.diamond) p.iconPoints.diamond += card.actionLeft.diamond;
+      if (card.actionLeft.greenAura) p.iconPoints.greenAura += card.actionLeft.greenAura;
+      if (card.actionLeft.yellowAura) p.iconPoints.yellowAura += card.actionLeft.yellowAura;
+      if (card.actionLeft.brain) p.iconPoints.brain += card.actionLeft.brain;
+      if (card.actionLeft.smiley) p.iconPoints.smiley += card.actionLeft.smiley;
+      if (card.actionLeft.knife) p.iconPoints.knife += card.actionLeft.knife;
+      if (card.actionLeft.cleaver) p.iconPoints.cleaver += card.actionLeft.cleaver;
+      return p;
+    });
+  }
+
+  if (choice === 'right') {
+    player.update(p => {
+      if (card.actionRight.heart) p.iconPoints.heart += card.actionRight.heart;
+      if (card.actionRight.diamond) p.iconPoints.diamond += card.actionRight.diamond;
+      if (card.actionRight.greenAura) p.iconPoints.greenAura += card.actionRight.greenAura;
+      if (card.actionRight.yellowAura) p.iconPoints.yellowAura += card.actionRight.yellowAura;
+      if (card.actionRight.brain) p.iconPoints.brain += card.actionRight.brain;
+      if (card.actionRight.smiley) p.iconPoints.smiley += card.actionRight.smiley;
+      if (card.actionRight.knife) p.iconPoints.knife += card.actionRight.knife;
+      if (card.actionRight.cleaver) p.iconPoints.cleaver += card.actionRight.cleaver;
+      return p;
+    });
+  }
 }
