@@ -5,7 +5,8 @@
   import { fly, fade } from 'svelte/transition';
 
   // Helpers
-  import { tutorialHandler } from '../helpers/tutorialHandler';
+  import { surveyDecisionHandler } from '../helpers/surveyDecisionHandler';
+  import { updateStatCard } from '../helpers/stats';
 
   // Components
   import { Button, Card, Circle, MenuButton, MenuDeck } from './index.js';
@@ -20,20 +21,22 @@
   const tutorial2Deck = $decks.tutorial2;
   const tutorial3Deck = $decks.tutorial3;
   const tutorial4Deck = $decks.tutorial4;
-  const survey1Deck = $decks.survey1;
-  const survey2Deck = $decks.survey2;
-  const survey3Deck = $decks.survey3;
-  const survey4Deck = $decks.survey4;
   const chapter1Deck = $decks.chapter1;
   const chapter1SoldiersDeck = $decks.soldiers;
   const chapter2Deck = $decks.chapter2;
   const chapter2ElvesDeck = $decks.elves;
   const chapter3Deck = $decks.chapter3;
   const chapter3GoblinsDeck = $decks.goblins;
-  // const chapter4ToBeDecidedDeck = $decks.chapter4ToBeDecidedDeck;
-  // const chapter4Deck = $decks.chapter4;
+  const chapter4Deck = $decks.chapter4;
+  const chapter4BeingsDeck = $decks.beings;
+  const statDeck = {
+    health: $decks.health,
+    aura: $decks.aura,
+    sanity: $decks.sanity,
+    impulse: $decks.impulse,
+  }
 
-  $player.unlockedCards = [...tutorial3Deck];
+  $player.unlockedCards = [...tutorial1Deck];
   let gameOver = false;
   let currentCard = $player.unlockedCards[0];
   let menuOpen = false;
@@ -63,8 +66,6 @@
     positive: false,
     negative: false
   };
-  // TODO: remove after impulse icon is complete
-  $: impulseMessage = $player.impulse >= 7 ? 'High!' : `${$player.impulse}`;
 
   function controlStats() {
       player.update(p => {
@@ -233,6 +234,23 @@
           if (stat === 0) return '/stats/smiley/smiley_0.png';
         } else return '/stats/puzzle.svg';
 
+        case 'impulse':
+        if ($player.icons.impulse === 'knife') {
+          if (stat >= 9) return '/stats/knife/knife_100.png';
+          if (stat >= 7) return '/stats/knife/knife_75.png';
+          if (stat >= 5) return '/stats/knife/knife_50.png';
+          if (stat >= 3) return '/stats/knife/knife_25.png';
+          if (stat >= 1) return '/stats/knife/knife_1.png';
+          if (stat === 0) return '/stats/knife/knife_0.png';
+        } else if ($player.icons.impulse === 'cleaver') {
+          if (stat >= 9) return '/stats/cleaver/cleaver_100.png';
+          if (stat >= 7) return '/stats/cleaver/cleaver_75.png';
+          if (stat >= 5) return '/stats/cleaver/cleaver_50.png';
+          if (stat >= 3) return '/stats/cleaver/cleaver_25.png';
+          if (stat >= 1) return '/stats/cleaver/cleaver_1.png';
+          if (stat === 0) return '/stats/cleaver/cleaver_0.png';
+        } else return '/stats/puzzle.svg';
+
       default:
         return '/stats/puzzle.svg';
     }
@@ -242,7 +260,7 @@
     if (statName === 'health') return $player.icons.health === 'heart' ? 'Heart icon representing health.' : 'Diamond icon representing health.';
     if (statName === 'aura') return $player.icons.aura === 'green' ? 'green lightning bolt representing aura.' : 'yellow lightning bolt representing aura.';
     if (statName === 'sanity') return $player.icons.sanity === 'brain' ? 'Brain icon representing sanity.' : 'Smiley icon representing sanity.';
-    if (statName === 'impulse') return 'Lightning bolt icon representing impulse.';
+    if (statName === 'impulse') return $player.icons.impulse === 'knife' ? 'Knife icon representing impulse.' : 'Cleaver icon representing impulse.';
     if (statName === 'memory') return 'Memory icon representing memory.';
     return 'Icon representing a stat.';
   }
@@ -266,41 +284,68 @@
       toggleBlur();
       statHandler(choice);
 
-      // TODO: Finish this properly
       if (isPlayerDead()) {
-          gameOver = true;
-          resetDecks();
+        if ($player.memory < 15) $player.memory = 0;
+        else if ($player.memory < 30) $player.memory = 15;
+        else if ($player.memory < 45) $player.memory = 30;
+        else if ($player.memory < 60) $player.memory = 45;
+        gameOver = true;
       }
 
-      // Make sure stats have limit 10
+      // Make sure stats have a limit of 10
       controlStats();
 
-      // Add Goblins deck (short: 16, long: 50)
-      if (!$player.unlockedDeck.chapter3Goblins && $player.memory >= 50) {
-          newDeckAlertText = 'Goblins'
+      // Add Beings deck
+      if (!$player.unlockedDeck.chapter4Beings && $player.memory >= 52) {
+          newDeckAlertText = 'Beings'
           newDeckAlert = true;
 
           player.update(p => {
-              p.unlockedCards = [...chapter3GoblinsDeck, ...p.unlockedCards];
-              if (!p.unlockedDeck.chapter3GoblinsDeck) {
-                  p.displayDecks = [
-                      ...p.displayDecks,
-                      {
-                          title: 'Chapter3 / Goblins',
-                          img: '/decks/chapter3/goblins/goblin-woman.png'
-                      }
-                  ]
-              }
-              p.unlockedDeck.chapter3Goblins = true;
-              return p;
+            p.unlockedCards = [...chapter4BeingsDeck, ...p.unlockedCards];
+            if (!p.unlockedDeck.chapter4Beings) {
+              p.displayDecks = [
+                ...p.displayDecks,
+                {
+                  title: 'Chapter4 / Beings',
+                  img: '/decks/chapter4/beings/purple/glasses.png'
+                }
+              ]
+            }
+            p.unlockedDeck.chapter4Beings = true;
+            return p;
           });
 
           setTimeout(() => {
-              newDeckAlert = false;
+            newDeckAlert = false;
           }, 4500);
       }
 
-      // Add Elves deck (short: 22, long: 10)
+      // Add Goblins deck
+      if (!$player.unlockedDeck.chapter3Goblins && $player.memory >= 37) {
+        newDeckAlertText = 'Goblins'
+        newDeckAlert = true;
+
+        player.update(p => {
+            p.unlockedCards = [...chapter3GoblinsDeck, ...p.unlockedCards];
+            if (!p.unlockedDeck.chapter3GoblinsDeck) {
+                p.displayDecks = [
+                    ...p.displayDecks,
+                    {
+                        title: 'Chapter3 / Goblins',
+                        img: '/decks/chapter3/goblins/goblin-woman.png'
+                    }
+                ]
+            }
+            p.unlockedDeck.chapter3Goblins = true;
+            return p;
+        });
+
+        setTimeout(() => {
+            newDeckAlert = false;
+        }, 4500);
+      }
+
+      // Add Elves deck
       if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 22) {
           newDeckAlertText = 'Elves'
           newDeckAlert = true;
@@ -325,7 +370,7 @@
           }, 4500);
       }
 
-      // Add soldier deck (short: 2, long: 7)
+      // Add soldier deck
       if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 7) {
           newDeckAlertText = 'Soldiers'
           newDeckAlert = true;
@@ -350,7 +395,36 @@
           }, 4500);
       }
 
-      // Move on to chapter 3 if enough memory. (short: 13, long: 40)
+      // Move on to chapter 4 if enough memory.
+      if (!$player.unlockedDeck.tutorial4 && $player.memory >= 45) { 
+        player.update(p => {
+          p.activeDeck = 'survey';
+          p.unlockedCards = [...tutorial4Deck];
+          currentCard = p.unlockedCards[0];
+
+          // TODO: Confirm why this is here, I believe it's to avoid user's extra clicks to create multiple deck images.
+          if (!p.unlockedDeck.tutorial4) {
+            p.displayDecks = [
+              ...p.displayDecks,
+              {
+                title: 'Tutorial4 / Survey4',
+                img: '/decks/tutorial/judicator-purple-smile.png'
+              }
+            ]
+          }
+
+          p.unlockedDeck.tutorial4 = true;
+          return p;
+        });
+            
+        backgrounds.update(bg => {
+          $backgrounds.active = $backgrounds.dark;
+          return bg;
+        });
+        return;
+      }
+
+      // Move on to chapter 3 if enough memory.
       if (!$player.unlockedDeck.tutorial3 && $player.memory >= 30) { 
           player.update(p => {
                   p.activeDeck = 'survey';
@@ -379,36 +453,7 @@
           return;
       }
 
-      // Move on to chapter 4 if enough memory. (short: 20?, long: 65)
-      if (!$player.unlockedDeck.tutorial4 && $player.memory >= 65) { 
-          player.update(p => {
-              p.activeDeck = 'survey';
-              p.unlockedCards = [...tutorial4Deck];
-              currentCard = p.unlockedCards[0];
-
-              // TODO: Confirm why this is here, I believe it's to avoid user's extra clicks to create multiple deck images.
-              if (!p.unlockedDeck.tutorial4) {
-                  p.displayDecks = [
-                      ...p.displayDecks,
-                      {
-                          title: 'Tutorial4 / Survey4',
-                          img: '/decks/tutorial/judicator-purple-smile.png'
-                      }
-                  ]
-              }
-
-              p.unlockedDeck.tutorial4 = true;
-              return p;
-          });
-              
-          backgrounds.update(bg => {
-              $backgrounds.active = $backgrounds.dark;
-              return bg;
-          });
-          return;
-      }
-
-      // Move on to chapter 2 if enough memory. (short: 5, long: 15)
+      // Move on to chapter 2 if enough memory.
       if (!$player.unlockedDeck.tutorial2 && $player.memory >= 15) { 
           player.update(p => {
               p.activeDeck = 'survey';
@@ -442,19 +487,16 @@
   
       while (currentCard.id === newCard.id) newCard = drawRandomCard();
       currentCard = newCard;
-  }
 
-  function isButtonOnCooldown() {
-      if (buttonOnCooldown) return true;
-
-      buttonOnCooldown = true;
-      setTimeout(() => buttonOnCooldown = false, 750);
+      if (['stat-health', 'stat-aura', 'stat-sanity', 'stat-impulse'].includes(currentCard.id)) {
+        currentCard = updateStatCard(currentCard.id);
+      }
   }
 
   function surveyHandler(event) {
     if (isButtonOnCooldown()) return;
 
-    currentCard = tutorialHandler(event, currentCard);
+    currentCard = surveyDecisionHandler(event, currentCard);
     toggleBlur();
 
     // Checks if current card is final survey card
@@ -474,7 +516,11 @@
               ...p.displayDecks,
               {
                 title: 'Chapter3',
-                img: '/decks/chapter3/temptress.png'
+                img: p.icons.sanity === 'brain' ? '/decks/chapter3/bullisia.png' : '/decks/chapter3/temptress.png'
+              },
+              {
+                title: 'Sanity',
+                img: '/decks/beings/sanity_being.png'
               }
             ]
           }
@@ -511,7 +557,11 @@
               ...p.displayDecks,
               {
                 title: 'Chapter2',
-                img: '/decks/chapter2/druid.png'
+                img: p.icons.aura === 'green' ? '/decks/chapter2/rabbit.png' : '/decks/chapter2/hippy-boy.png'
+              },
+              {
+                title: 'Aura',
+                img: '/decks/beings/aura_being.png'
               }
             ]
           }
@@ -537,7 +587,7 @@
       setTimeout(() => {
         player.update(p => {
           p.activeDeck = 'chapter';
-          p.unlockedCards = [...chapter1Deck];
+          p.unlockedCards = [...chapter1Deck, statDeck.health];
 
           // Choose stat icon based on answers
           p.icons.health = p.iconPoints.heart >= p.iconPoints.diamond ? 'heart' : 'diamond';
@@ -548,7 +598,11 @@
               ...p.displayDecks,
               {
                 title: 'Chapter1',
-                img: '/decks/chapter1/peasant.png'
+                img: p.icons.health === 'heart' ? '/decks/chapter1/peasant.png' : '/decks/chapter1/villager.png'
+              },
+              {
+                title: 'Health',
+                img: '/decks/beings/health_being.png'
               }
             ]
           }
@@ -570,10 +624,10 @@
   }
 
   function isPlayerDead() {
-      if ($player.health <= 0 || $player.aura <= 0 || $player.sanity <= 0 || $player.impulse >= 10) {
-          resetPlayer();
-          return true;
-      }
+    if ($player.health <= 0 || $player.aura <= 0 || $player.sanity <= 0 || $player.impulse >= 10) {
+      resetPlayer();
+      return true;
+    }
   }
 
   function resetPlayer() {
@@ -589,8 +643,12 @@
       })
   }
 
-  function resetDecks() {
-      // allDecks.set({...$newDeck});
+  function isButtonOnCooldown() {
+    if (buttonOnCooldown) return true;
+
+    buttonOnCooldown = true;
+    // TODO: remember to put back to 750
+    setTimeout(() => buttonOnCooldown = false, 0);
   }
 </script>
 
@@ -621,7 +679,7 @@
       <img src={statImgHandler('health', $player.health)} alt={statImgAltTextHandler('health')} class="stat-icon" class:flash-green={flashHealth.positive} class:flash-red={flashHealth.negative}>
       <img src={statImgHandler('aura', $player.aura)} alt={statImgAltTextHandler('aura')} class="stat-icon" class:flash-green={flashAura.positive} class:flash-red={flashAura.negative}>
       <img src={statImgHandler('sanity', $player.sanity)} alt={statImgAltTextHandler('sanity')} class="stat-icon" class:flash-green={flashSanity.positive} class:flash-red={flashSanity.negative}>
-      <p class="stat-icon yellow-icon" class:flash={flashImpulse}>{$player.unlockedDeck.chapter4 ? impulseMessage : '?'}</p>
+      <img src={statImgHandler('impulse', $player.impulse)} alt={statImgAltTextHandler('impulse')} class="stat-icon" class:flash-green={flashImpulse.positive} class:flash-red={flashImpulse.negative}>
       <p class="memory-stat">
         {$player.unlockedDeck.chapter1 ? $player.memory : '?'}
         <svg class:flash-green={flashMemory.positive} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon memory-icon">
@@ -633,16 +691,14 @@
       <div class="card-wrapper">
         <!-- Tutorials -->
         {#if $player.activeDeck === 'survey'}
-          <Card img={currentCard.imgUrl} blurImg={blurCard}
-            on:decision={event => surveyHandler(event)}>
+          <Card img={currentCard.imgUrl} blurImg={blurCard}>
             <span slot="text-left">{currentCard.textLeft}</span>
             <span slot="text-right">{currentCard.textRight}</span>
           </Card>
 
         <!-- Chapters -->
         {:else if $player.activeDeck === 'chapter'}
-          <Card img={currentCard.imgUrl} blurImg={blurCard}
-            on:decision={event => actionHandler(event, currentCard)}>
+          <Card img={currentCard.imgUrl} blurImg={blurCard}>
             <span slot="text-left">{currentCard.textLeft}</span>
             <span slot="text-right">{currentCard.textRight}</span>
           </Card>
