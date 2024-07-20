@@ -1,414 +1,1180 @@
 import { writable } from 'svelte/store';
 
 const chapter3 = writable([
-        // Wizard (twins irl with dark wizard)
-        {
-            id: 'chapter3-1a',
-            imgUrl: '/decks/chapter3/wizard.png',
-            title:'Geldahn',
-            text: "You ever get the feeling you're being followed? I can't shake the feeling that someone's watching me...",
-            faction: 'Wizard',
-            textLeft: "Isn't there some kind of spell you could cast to find out?",
-            textRight: "I'll keep my eye open for you.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+    // Wizard - ALL (twins irl with dark wizard)
+    {
+        id: 'chapter3-1a',
+        imgUrl: '/decks/chapter3/wizard.png',
+        title: 'Geldahn',
+        text: "You ever get the feeling you're being followed? I can't shake the feeling that someone's watching me...",
+        faction: 'Wizard',
+        textLeft: "Isn't there some kind of spell you could cast to find out?",
+        textRight: "I'll keep my eye open for you.",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-1b',
-            imgUrl: '/decks/chapter3/wizard.png',
-            title:'Geldahn',
-            text: "Sometimes, I wonder if I should have become something other than a wizard. Maybe a farmer?",
-            faction: 'Wizard',
-            textLeft: "I think being a wizard is a lot more badass than being some farmer.",
-            textRight: "I respect those who tend to animals, perhaps there's a way for you to do both.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        actionRight: {
+            health: -1,
+            aura: -1,
+            sanity: 0,
+            memory: 0,
         },
-        {
-            id: 'chapter3-1c',
-            imgUrl: '/decks/chapter3/wizard.png',
-            title:'Geldahn',
-            text: "I feel connected to someone in Arcana kingdom, I feel them searching for me. Should I avoid them or let them find me?",
-            faction: 'Wizard',
-            textLeft: "Go with your gut feeling, if you think they mean you harm then fight back. If you're afraid then run. If you're unsure then wait.",
-            textRight: "Perhaps you can find them before they can find you.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-1b',
+        imgUrl: '/decks/chapter3/wizard.png',
+        title: 'Geldahn',
+        text: "Sometimes, I wonder if I should have become something other than a wizard. Maybe a farmer?",
+        faction: 'Wizard',
+        textLeft: "I think being a wizard is a lot cooler than being some farmer.",
+        textRight: "I respect those who tend to animals, perhaps there's a way for you to do both.",
+        actionLeft: {
+            health: -1,
+            aura: 0,
+            sanity: 0,
+            memory: 0,
         },
-        {
-            id: 'chapter3-1d',
-            imgUrl: '/decks/chapter3/wizard.png',
-            title:'Geldahn',
-            text: "I call myself a wizard, but I don't know if I've ever cast a spell before. Am I truly a wizard?",
-            faction: 'Wizard',
-            textLeft: "Probably not, most people aren't who they seem in this world. We're all just struggling to remember.",
-            textRight: "As long as nobody else knows.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        actionRight: {
+            health: -1,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-1e',
-            imgUrl: '/decks/chapter3/wizard.png',
-            title:'Geldahn',
-            text: "I feel him... He's been searching for me since we arrived. We arrived here together didn't we?",
-            faction: 'Wizard',
-            textLeft: "I don't know.",
-            textRight: "Go to him.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-1c',
+        imgUrl: '/decks/chapter3/wizard.png',
+        title: 'Geldahn',
+        text: "I feel connected to someone in Arcana kingdom, I feel them searching for me. Should I avoid them or let them find me?",
+        faction: 'Wizard',
+        textLeft: "Go with your gut feeling, if you think they mean you harm then fight back. If you're afraid then run. If you're unsure then wait.",
+        textRight: "Perhaps you can find them before they can find you.",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: 1,
+            memory: 1,
         },
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: 0,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-1d',
+        imgUrl: '/decks/chapter3/wizard.png',
+        title: 'Geldahn',
+        text: "I call myself a wizard, but I don't know if I've ever cast a spell before. Am I truly a wizard?",
+        faction: 'Wizard',
+        textLeft: "Probably not, most people aren't who they seem in this world. We're all just struggling to remember.",
+        textRight: "As long as nobody else knows.",
+        actionLeft: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 1,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-1e',
+        imgUrl: '/decks/chapter3/wizard.png',
+        title: 'Geldahn',
+        text: "I feel him... He's been searching for me since we arrived. We arrived here together didn't we?",
+        faction: 'Wizard',
+        textLeft: "I don't know.",
+        textRight: "Go to him.",
+        actionLeft: {
+            health: 0,
+            aura: 0,
+            sanity: 0,
+            memory: 0,
+        },
+        actionRight: {
+            health: -1,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
 
-        // Dark wizard (twins irl with wizard)
-        {
-            id: 'chapter3-2a',
-            imgUrl: '/decks/chapter3/dark_wizard.png',
-            title:'Gahndel',
-            text: "You might have met an older wizard who resembles me, I'd appreciate it if you kept our little interaction a secret.",
-            faction: 'Wizard',
-            textLeft: "Your secret is safe with me.",
-            textRight: "You seem like you're up to no good.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+    // Dark wizard - ALL (twins irl with wizard)
+    {
+        id: 'chapter3-2a',
+        imgUrl: '/decks/chapter3/dark_wizard.png',
+        title: 'Gahndel',
+        text: "You might have met an older wizard who resembles me, I'd appreciate it if you kept our little interaction a secret.",
+        faction: 'Wizard',
+        textLeft: "Your secret is safe with me.",
+        textRight: "You seem like you're up to no good.",
+        actionLeft: {
+            health: -1,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-2b',
-            imgUrl: '/decks/chapter3/dark_wizard.png',
-            title:'Gahndel',
-            text: "The wizard who resembles me, I don't want to frighten him. But I feel as if I must watch over him.",
-            faction: 'Wizard',
-            textLeft: "Perhaps you should simply go talk to him.",
-            textRight: "Yeah stalking from afar can't possibly end poorly.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-2c',
-            imgUrl: '/decks/chapter3/dark_wizard.png',
-            title:'Gahndel',
-            text: "I've been called Gahndel, but something feels wrong with that name. The other wizard is Geldahn isn't he? Why do I know that?",
-            faction: 'Wizard',
-            textLeft: "Perhaps you two are one soul divided.",
-            textRight: "Maybe he's family?",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-2b',
+        imgUrl: '/decks/chapter3/dark_wizard.png',
+        title: 'Gahndel',
+        text: "The wizard who resembles me, I don't want to frighten him. But I feel as if I must watch over him.",
+        faction: 'Wizard',
+        textLeft: "Perhaps you should simply go talk to him.",
+        textRight: "Yeah stalking from afar can't possibly end poorly.",
+        actionLeft: {
+            health: -1,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-2d',
-            imgUrl: '/decks/chapter3/dark_wizard.png',
-            title:'Gahndel',
-            text: "There are times I feel as if I've always been a wizard, but I can't seem to case a single spell. Perhaps you could teach me?",
-            faction: 'Wizard',
-            textLeft: "Time and reality are very strange here, but I'm pretty sure I can't teach you magic.",
-            textRight: "Grip your staff and focus inward on your anger festering in your stomach, then release it all at once to create a fireball.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        actionRight: {
+            health: 1,
+            aura: 0,
+            sanity: 0,
+            memory: 0,
         },
-        {
-            id: 'chapter3-2e',
-            imgUrl: '/decks/chapter3/dark_wizard.png',
-            title:'Gahndel',
-            text: "I'm Gahndel the wizard, I specialize in the fireball. Truth is, it's the only spell I've ever known. To cast fire, focus inward on your anger festering in your stomach, then release it all at once to create a fireball!",
-            faction: 'Wizard',
-            textLeft: "This is weird, you don't remember me? Didn't I teach you that, or are you teaching me now?",
-            textRight: "That's impressive, I'll have to give it a try one day.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-2c',
+        imgUrl: '/decks/chapter3/dark_wizard.png',
+        title: 'Gahndel',
+        text: "I've been called Gahndel, but something feels wrong with that name. The other wizard is Geldahn isn't he? Why do I know that?",
+        faction: 'Wizard',
+        textLeft: "Perhaps you two are one soul divided.",
+        textRight: "Maybe he's family?",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
         },
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-2d',
+        imgUrl: '/decks/chapter3/dark_wizard.png',
+        title: 'Gahndel',
+        text: "There are times I feel as if I've always been a wizard, but I can't seem to case a single spell. Perhaps you could teach me?",
+        faction: 'Wizard',
+        textLeft: "Time and reality are very strange here, but I'm pretty sure I can't teach you magic.",
+        textRight: "Grip your staff and focus inward on your anger festering in your stomach, then release it all at once to create a fireball.",
+        actionLeft: {
+            health: 0,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: -1,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-2e',
+        imgUrl: '/decks/chapter3/dark_wizard.png',
+        title: 'Gahndel',
+        text: "I'm Gahndel the wizard, I specialize in the fireball. Truth is, it's the only spell I've ever known. To cast fire, focus inward on your anger festering in your stomach, then release it all at once to create a fireball!",
+        faction: 'Wizard',
+        textLeft: "This is weird, you don't remember me? Didn't I teach you that, or are you teaching me now?",
+        textRight: "That's impressive, I'll have to give it a try one day.",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 1,
+        },
+        actionRight: {
+            health: -1,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
 
-        // Temptress TODO: DIAMOND - She is one of the 8 special chars that will be revealed as a victim. She was a hooker / prostitute
-        {
-            id: 'chapter3-3a',
-            imgUrl: '/decks/chapter3/temptress.png',
-            title:'Luna',
-            text: "Hey there, what's a nice strong looking man like you doing in a kingdom like this?",
-            faction: 'Witch',
-            textLeft: "Oh um, I'm not really sure. I kind of just got used to jumping around at this point.",
-            textRight: "Looking for somebody like you.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+    // Temptress - SMILEY, she is one of the 8 special chars that will be revealed as a victim. She was a lady of the night.
+    {
+        id: 'chapter3-3a',
+        imgUrl: '/decks/chapter3/temptress.png',
+        title: 'Luna',
+        text: "Hey there, what's a nice strong looking man like you doing in a kingdom like this?",
+        faction: 'Witch',
+        textLeft: "Oh um, I'm not really sure. I kind of just got used to jumping around at this point.",
+        textRight: "Looking for somebody like you.",
+        actionLeft: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-3b',
-            imgUrl: '/decks/chapter3/temptress.png',
-            title:'Luna',
-            text: "You look like someone who could use someone like me.",
-            faction: 'Witch',
-            textLeft: "Very smooth, but I think I better not.",
-            textRight: "I don't think I could trust myself alone with you.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-3c',
-            imgUrl: '/decks/chapter3/temptress.png',
-            title:'Luna',
-            text: "You looking for answers? Come with me, I don't bite.",
-            faction: 'Witch',
-            textLeft: "Sorry, something about you is too shady.",
-            textRight: "Something tells me you have the answer to a question I'm not asking.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-3b',
+        imgUrl: '/decks/chapter3/temptress.png',
+        title: 'Luna',
+        text: "You look like someone who could use someone like me.",
+        faction: 'Witch',
+        textLeft: "Very smooth, but I think I better not.",
+        textRight: "I don't think I could trust myself alone with you.",
+        actionLeft: {
+            health: 0,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-3d',
-            imgUrl: '/decks/chapter3/temptress.png',
-            title:'Luna',
-            text: "They call me Luna the temptress witch, just because I enjoy a good night of company. You should know more than anyone that I'm not a witch.",
-            faction: 'Witch',
-            textLeft: "Me? It's true that you don't seem like a witch, but you never know.",
-            textRight: "A temptress maybe, but a witch? No, I don't think so.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: -1,
+            memory: 1,
         },
-        {
-            id: 'chapter3-3e',
-            imgUrl: '/decks/chapter3/temptress.png',
-            title:'Luna',
-            text: "There's something about this kingdom that feels like a home away from home, you know?",
-            faction: 'Witch',
-            textLeft: "This place feels like home? Maybe you had a similar life in your old town.",
-            textRight: "Feels more like a nightmare away from home to me.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-3c',
+        imgUrl: '/decks/chapter3/temptress.png',
+        title: 'Luna',
+        text: "You looking for answers? Come with me, I don't bite.",
+        faction: 'Witch',
+        textLeft: "Sorry, something about you is too shady.",
+        textRight: "Something tells me you have the answer to a question I'm not asking.",
+        actionLeft: {
+            health: -1,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
         },
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-3d',
+        imgUrl: '/decks/chapter3/temptress.png',
+        title: 'Luna',
+        text: "They call me Luna the temptress witch, just because I enjoy a good night of company. You should know more than anyone that I'm not a witch.",
+        faction: 'Witch',
+        textLeft: "Me? It's true that you don't seem like a witch, but you never know.",
+        textRight: "A temptress maybe, but a witch? No, I don't think so.",
+        actionLeft: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 1,
+        },
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-3e',
+        imgUrl: '/decks/chapter3/temptress.png',
+        title: 'Luna',
+        text: "There's something about this kingdom that feels like a home away from home, you know?",
+        faction: 'Witch',
+        textLeft: "This place feels like home? Maybe you had a similar life in your old town.",
+        textRight: "Feels more like a nightmare away from home to me.",
+        actionLeft: {
+            health: 0,
+            aura: 0,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
 
-        // Blacksmith's wife TODO: HEART - She is one of the 8 special chars that will be revealed as a victim. She was Jack's ex.
-        {
-            id: 'chapter3-4a',
-            imgUrl: '/decks/chapter3/bullisia.png',
-            title:'Bullisia',
-            text: "The name's Bullisia, my husband and I are blacksmiths who run a shop in the outskirts of the kingdom. You should pass by sometime.",
-            faction: 'Blacksmith',
-            textLeft: "Will do, except I don't have any weapons. Maybe I can buy one, although I'm not sure if I need one.",
-            textRight: "You look... so familiar.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+    // Bullisia - BRAIN, she is one of the 8 special chars that will be revealed as a victim. She was Jack's ex (symbolized as a smiley with varying emotions representing their relationship).
+    {
+        id: 'chapter3-4a',
+        imgUrl: '/decks/chapter3/bullisia.png',
+        title: 'Bullisia',
+        text: "The name's Bullisia, my husband and I are blacksmiths who run a shop in the outskirts of the kingdom. You should pass by sometime.",
+        faction: 'Blacksmith',
+        textLeft: "Will do, except I don't have any weapons. Maybe I can buy one, although I'm not sure if I need one.",
+        textRight: "You look... so familiar.",
+        actionLeft: {
+            health: -1,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-4b',
-            imgUrl: '/decks/chapter3/bullisia.png',
-            title:'Bullisia',
-            text: "Why do you prolong your gaze when looking at me? If there's something you wish to get off your mind, speak.",
-            faction: 'Blacksmith',
-            textLeft: "I know you, your name isn't Bullisia and you aren't a blacksmith. I just can't remember where I know you from.",
-            textRight: "I'm sorry, it's probably nothing.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 1,
         },
-        {
-            id: 'chapter3-4c',
-            imgUrl: '/decks/chapter3/bullisia.png',
-            title:'Bullisia',
-            text: "Looking at you now, you do seem familiar. Your eyes seem kind but... I don't know. There's something about you.",
-            faction: 'Blacksmith',
-            textLeft: "I feel the same. As if you are one of the things I'm meant to remember.",
-            textRight: "I'm starting to question if my eyes reflect my soul, or if they hide the truth.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-4b',
+        imgUrl: '/decks/chapter3/bullisia.png',
+        title: 'Bullisia',
+        text: "Why do you prolong your gaze when looking at me? If there's something you wish to get off your mind, speak.",
+        faction: 'Blacksmith',
+        textLeft: "I know you, your name isn't Bullisia and you aren't a blacksmith. I just can't remember where I know you from.",
+        textRight: "I'm sorry, it's probably nothing.",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: 1,
+            memory: 1,
         },
-        {
-            id: 'chapter3-4d',
-            imgUrl: '/decks/chapter3/bullisia.png',
-            title:'Bullisia',
-            text: "I don't want to be here anymore... please help me.",
-            faction: 'Blacksmith',
-            textLeft: "I'm trying to escape but I don't know how...",
-            textRight: "I won't leave without you!",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
         },
-        {
-            id: 'chapter3-4e',
-            imgUrl: '/decks/chapter3/bullisia.png',
-            title:'Bullisia',
-            text: "Everything is jumbled in my head, am I a blacksmith who lives here? Am I a prisoner held against her will? I just don't know anymore.",
-            faction: 'Blacksmith',
-            textLeft: "I will find the answers to all of this and put a stop to Jude's sick game.",
-            textRight: "Once I get my memory back, things will be different.",
-            actionLeft: {
-                health: 0,
-                aura: 0,
-                memory: 0,
-            },
-            actionRight: {
-                health: 0,
-                memory: 0,
-                aura: 0,
-            },
-            location: 'Arcana Kingdom'
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-4c',
+        imgUrl: '/decks/chapter3/bullisia.png',
+        title: 'Bullisia',
+        text: "Looking at you now, you do seem familiar. Your eyes seem kind but... I don't know. There's something about you.",
+        faction: 'Blacksmith',
+        textLeft: "I feel the same. As if you are one of the things I'm meant to remember.",
+        textRight: "I'm starting to question if my eyes reflect my soul, or if they hide the truth.",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: 1,
+            memory: 1,
         },
-        
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-4d',
+        imgUrl: '/decks/chapter3/bullisia.png',
+        title: 'Bullisia',
+        text: "I don't want to be here anymore... please help me.",
+        faction: 'Blacksmith',
+        textLeft: "I'm trying to escape but I don't know how...",
+        textRight: "I won't leave without you!",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: -1,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-4e',
+        imgUrl: '/decks/chapter3/bullisia.png',
+        title: 'Bullisia',
+        text: "Everything is jumbled in my head, am I a blacksmith who lives here? Am I a prisoner held against her will? I just don't know anymore.",
+        faction: 'Blacksmith',
+        textLeft: "I will find the answers to all of this and put a stop to Jude's sick game.",
+        textRight: "Once I get my memory back, things will be different.",
+        actionLeft: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+
+    // Jason - ALL
+    {
+        id: 'chapter3-5a',
+        imgUrl: '/decks/chapter3/jason.png',
+        title: 'Jason',
+        text: "I finally remember my name, it's Jason! I'm a butcher, it's in my blood, I never want to lose that part of me.",
+        faction: 'Butcher',
+        textLeft: "Good for you, I wish I could remember my name, or anything else for that matter.",
+        textRight: "A butcher, you're proud about that?",
+        actionLeft: {
+            health: -1,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 1,
+            aura: 0,
+            sanity: 0,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-5b',
+        imgUrl: '/decks/chapter3/jason.png',
+        title: 'Jason',
+        text: "There are two kinds of people in this world, those who are butchers and those who are not. The name's Jason and as you can tell, I'm a proud butcher!",
+        faction: 'Butcher',
+        textLeft: "Hi Jason, I'm a \"those who are not\" and proud of it!",
+        textRight: "Those who are sane and those who are not...", // TODO: make this a call back?
+        actionLeft: {
+            health: 1,
+            aura: 1,
+            sanity: -1, // because he is a butcher
+            memory: 0,
+        },
+        actionRight: {
+            health: 1,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-5c',
+        imgUrl: '/decks/chapter3/jason.png',
+        title: 'Jason',
+        text: "Are you like me? Or are you one of the many still drifting without knowing.",
+        faction: 'Butcher',
+        textLeft: "I fear I'm one of the many.",
+        textRight: "I feel as if I'm finally starting to swim.",
+        actionLeft: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: 1,
+            memory: 1,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-5d',
+        imgUrl: '/decks/chapter3/jason.png',
+        title: 'Jason',
+        text: "I wonder if I will be forced to leave now that I remember my life.",
+        faction: 'Butcher',
+        textLeft: "I wonder if it's better to remember or to forget.",
+        textRight: "I would stay for as long as I could.",
+        actionLeft: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 1,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-5e',
+        imgUrl: '/decks/chapter3/jason.png',
+        title: 'Jason',
+        text: "Why are you idling? Haven't you heard, those who stay too long will drift forever.",
+        faction: 'Butcher',
+        textLeft: "I'm not wasting time I just don't know what to do.",
+        textRight: "I'm not sure what you mean by drifting, but I'll keep that in mind.",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+
+    // Marge - ALL
+    {
+        id: 'chapter3-6a',
+        imgUrl: '/decks/chapter3/marge.png',
+        title: 'Marge',
+        text: "This right here is a falcon, not a hawk. And I'm a falconer, not a falcon. I'm Marge, put her here!",
+        faction: 'Falconer',
+        textLeft: "Put what where and why would I think you're a falcon? Is it because you look like a bird?",
+        textRight: "Falcon or hawk, keep that thing away from me.",
+        actionLeft: {
+            health: 1,
+            aura: 0,
+            sanity: 0,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-6b',
+        imgUrl: '/decks/chapter3/marge.png',
+        title: 'Marge',
+        text: "It was my father who taught me about birds, as a child I dreamed of flying often.",
+        faction: 'Falconer',
+        textLeft: "Everyone wishes they could fly, but that doesn't mean they should live their life among birds.",
+        textRight: "I hope you found a new dream worth chasing.",
+        actionLeft: {
+            health: 1,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: -1,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-6c',
+        imgUrl: '/decks/chapter3/marge.png',
+        title: 'Marge',
+        text: "Sometimes I feel like we're all prey to someone or something watching us from up above.",
+        faction: 'Falconer',
+        textLeft: "That's the feeling I get when I speak with a certain someone.",
+        textRight: "Sometimes the prey can become the predator.",
+        actionLeft: {
+            health: 0,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-6d',
+        imgUrl: '/decks/chapter3/marge.png',
+        title: 'Marge',
+        text: "Sometimes this place feels like a birdcage with no wiring, can't seem to spread my wings.",
+        faction: 'Falconer',
+        textLeft: "If there's a way in there's a way out.",
+        textRight: "Maybe it's all in your head, because of the whole bird thing.",
+        actionLeft: {
+            health: -1,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 1,
+            aura: 1,
+            sanity: 0,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-6e',
+        imgUrl: '/decks/chapter3/marge.png',
+        title: 'Marge',
+        text: "I've noticed that many people have forgotten their name, but not everyone. Why only those people?",
+        faction: 'Falconer',
+        textLeft: "I wish I could tell you, it might help me understand why I'm one of them.",
+        textRight: "I think it's random, I don't think there's a reason some forgot and others didn't.",
+        actionLeft: {
+            health: -1,
+            aura: 0,
+            sanity: 1,
+            memory: 1,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+
+    // Desmond - ALL
+    {
+        id: 'chapter3-7a',
+        imgUrl: '/decks/chapter3/desmond.png',
+        title: 'Desmond',
+        text: "Yo, the name's Desmond. I'm a demon but don't be scared, I'm one of the \"good\" ones.",
+        faction: 'Demon',
+        textLeft: "Those quotes around \"good\" don't make me feel very good at all.",
+        textRight: "No, I'm pretty sure all demons are the bad kind.",
+        actionLeft: {
+            health: 0,
+            aura: 0,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 1,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-7b',
+        imgUrl: '/decks/chapter3/desmond.png',
+        title: 'Desmond',
+        text: "You're curious about the mouth on my neck aren't you? Don't sweat it, it's just a tattoo.",
+        faction: 'Demon',
+        textLeft: "Surprisingly, I wasn't curious about that at all. The rest of your body however...",
+        textRight: "I guess now my question is, why tatto a mouth on your neck?",
+        actionLeft: {
+            health: 1,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-7c',
+        imgUrl: '/decks/chapter3/desmond.png',
+        title: 'Desmond',
+        text: "ROARRRR!!! Just kidding, I'm not that kind of demon. I'm more of a \"let's talk about our feelings\" kind of demon.",
+        faction: 'Demon',
+        textLeft: "I'd rather not share my feelings with a demon, that sounds like a strange trap.",
+        textRight: "Where do I begin, first I wake up with this weird dude with no face named Jude, and then...",
+        actionLeft: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: -1,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-7d',
+        imgUrl: '/decks/chapter3/desmond.png',
+        title: 'Desmond',
+        text: "Nobody stays anywhere forever, some change worlds more frequently. For instance, this is the third world I've come to know.",
+        faction: 'Demon',
+        textLeft: "I feel like there was a life before this one, which would make this my second world.",
+        textRight: "Maybe that's more of a demon thing, we humans usually stick to one world called earth.",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 1,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-7e',
+        imgUrl: '/decks/chapter3/desmond.png',
+        title: 'Desmond',
+        text: "They call me Desmond the demon, why? Because my name is Desmond and I'm a demon, I thought that was obvious.",
+        faction: 'Demon',
+        textLeft: "I didn't know demons had names, I figured you'd all get a number or a different sounding scream.",
+        textRight: "Nice to meet you Desmond, is it true that demons like to hang out in closets?",
+        actionLeft: {
+            health: 1,
+            aura: 0,
+            sanity: 0,
+            memory: 0,
+        },
+        actionRight: {
+            health: -1,
+            aura: -1,
+            sanity: 0,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    
+    // #8 Flyn - ALL
+    {
+        id: 'chapter3-8a',
+        imgUrl: '/decks/chapter3/flyn.png',
+        title: 'Flyn',
+        text: "*Bubble* Blub blub bloob *Bubble* blub?",
+        faction: 'Merfolk',
+        textLeft: "I'm sorry fish but I don't speak waternese. Bloob blub blub?",
+        textRight: "Shouldn't you be in the magical forest or a pond or something? How did you get out here?",
+        actionLeft: {
+            health: -1,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: 0,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-8b',
+        imgUrl: '/decks/chapter3/flyn.png',
+        title: 'Flyn',
+        text: "It's hard to find people around here who speak merfolk, most just end up spitting at me. I'm Flyn, how's it swimming?",
+        faction: 'Merfolk',
+        textLeft: "Had you come at me speaking in bubbles I might've spat on you too.",
+        textRight: "Before today I would never have guessed so many creatures existed. I've never even heard of a merfolk.",
+        actionLeft: {
+            health: 1,
+            aura: 0,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-8c',
+        imgUrl: '/decks/chapter3/flyn.png',
+        title: 'Flyn',
+        text: "I'm not crying, some species of merfolk constantly produce salt water from their aquious glands below their eyes.",
+        faction: 'Merfolk',
+        textLeft: "The fact that you felt the need to say that makes me pretty positive you were crying.",
+        textRight: "That's very interesting, tell me more about your weird gross fish body.",
+        actionLeft: {
+            health: 1,
+            aura: 0,
+            sanity: 0,
+            memory: 0,
+        },
+        actionRight: {
+            health: 1,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-8d',
+        imgUrl: '/decks/chapter3/flyn.png',
+        title: 'Flyn',
+        text: "How's it swimming, legs? I'm Flyn, a merfolk. I'm not sure how I got here, but I'm sure I'll find my way back to the ocean eventually.",
+        faction: 'Merfolk',
+        textLeft: "Just because your name sounds like fin, doesn't mean you have to call me legs.",
+        textRight: "If I were a merfolk, I would spend my days drifting in the ocean.",
+        actionLeft: {
+            health: 1,
+            aura: 0,
+            sanity: 0,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-8e',
+        imgUrl: '/decks/chapter3/flyn.png',
+        title: 'Flyn',
+        text: "Bloob blub blub, *bubble**bubble**bubble*.",
+        faction: 'Merfolk',
+        textLeft: "Talking to you is like drowning, I can't understand a word you're saying.",
+        textRight: "If I start a conversation with a fish I will have truly lost my mind.",
+        actionLeft: {
+            health: 1,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+
+    // #9 Keret - ALL
+    {
+        id: 'chapter3-9a',
+        imgUrl: '/decks/chapter3/keret.png',
+        title: 'Keret',
+        text: "Yahoo! There's nothing like alchemy I tell you, other than travelling. The travelling alchemist Keret at your service!",
+        faction: 'Alchemist',
+        textLeft: "Travelling is better than alchemy.",
+        textRight: "Alchemy is better than travelling.",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-9b',
+        imgUrl: '/decks/chapter3/keret.png',
+        title: 'Keret',
+        text: "I'm the greatest alchemist to ever live! I can turn lead into gold, water into wine, and a smile into a frown.",
+        faction: 'Alchemist',
+        textLeft: "Well that last one didn't sound much like alchemy, but I'll admit you seem talented for a travelling magician.",
+        textRight: "Wow, if only you could use your alchemy to turn this conversation into a useful one.",
+        actionLeft: {
+            health: -1,
+            aura: 0,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 1,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-9c',
+        imgUrl: '/decks/chapter3/keret.png',
+        title: 'Keret',
+        text: "Everyone's content with the life they have but not me! I live in the future, looking for new ways to change the world.",
+        faction: 'Alchemist',
+        textLeft: "I wish I shared your attitude.",
+        textRight: "You can't change the world, it will only change you.",
+        actionLeft: {
+            health: -1,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 1,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-9d',
+        imgUrl: '/decks/chapter3/keret.png',
+        title: 'Keret',
+        text: "Heya kiddo, the name's Karet and I'm an alchemist. You see that #1 star on me? That's because I'm the best at what I do!",
+        faction: 'Alchemist',
+        textLeft: "To be stuck here like the rest of us, you must not be as good as you think.",
+        textRight: "Who you calling kiddo carrot?",
+        actionLeft: {
+            health: 1,
+            aura: 0,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 1,
+            aura: -1,
+            sanity: 0,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-9e',
+        imgUrl: '/decks/chapter3/keret.png',
+        title: 'Keret',
+        text: "Want in on a secret? I come from a world where alchemists are a dime a dozen, but I made a mistake and my soul got trapped here as equal exchange. I haven't practiced alchemy since, I'm more of a travelling magician than an alchemist these days...",
+        faction: 'Alchemist',
+        textLeft: "You don't need to pretend, if you're no longer an alchemist than stop acting like one.",
+        textRight: "So you're a fraud? I may not remember who I am but I don't go around lying about it.",
+        actionLeft: {
+            health: -1,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 1,
+            aura: 0,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+
+    // #10 Bones - ALL
+    {
+        id: 'chapter3-10a',
+        imgUrl: '/decks/chapter3/bones.png',
+        title: 'Bones',
+        text: "",
+        faction: 'Dead',
+        textLeft: "Pray for the corpse.",
+        textRight: "Pray for yourself.",
+        actionLeft: {
+            health: -1,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-10b',
+        imgUrl: '/decks/chapter3/bones.png',
+        title: 'Bones',
+        text: "",
+        faction: 'Dead',
+        textLeft: "Touch the corpse.",
+        textRight: "Leave the corpse.",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-10c',
+        imgUrl: '/decks/chapter3/bones.png',
+        title: 'Bones',
+        text: "",
+        faction: 'Dead',
+        textLeft: "Admire",
+        textRight: "Vomit",
+        actionLeft: {
+            health: 0,
+            aura: 1,
+            sanity: -1,
+            memory: 1,
+        },
+        actionRight: {
+            health: 0,
+            aura: 0,
+            sanity: -1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-10d',
+        imgUrl: '/decks/chapter3/bones.png',
+        title: 'Bones',
+        text: "",
+        faction: 'Dead',
+        textLeft: "Stare",
+        textRight: "Ignore",
+        actionLeft: {
+            health: 0,
+            aura: -1,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: 1,
+            sanity: 1,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter3-10e',
+        imgUrl: '/decks/chapter3/bones.png',
+        title: 'Bones',
+        text: "...",
+        faction: 'Dead',
+        textLeft: "Did you just say something?",
+        textRight: "Are you sleeping or dead?",
+        actionLeft: {
+            health: 0,
+            aura: 0,
+            sanity: -1,
+            memory: 0,
+        },
+        actionRight: {
+            health: 0,
+            aura: -1,
+            sanity: 0,
+            memory: 0,
+        },
+        location: 'Arcana Kingdom',
+        appearsWithIcon: ''
+    },
+
+    // #11Geneveve - BRAIN TODO: I HAVE IMG (1/2 EXTRA CARDS)
+
+      
+    // TODO: Add 4 chars, 2 for brain aura 2 for smiley.
 ]);
 
 export default chapter3;

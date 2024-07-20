@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 const chapter2 = writable([
-    // Monk-white
+    // White monk - ALL
     {
         id: 'chapter2-1a',
         imgUrl: '/decks/chapter2/monk-white-1.png',
@@ -17,10 +17,11 @@ const chapter2 = writable([
         },
         actionRight: {
             health: -1,
-            memory: 1,
             aura: -1,
+            memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-1b',
@@ -31,7 +32,7 @@ const chapter2 = writable([
         textLeft: "OooohhhhMMMmmMMmmMmmmmmm...",
         textRight: "I never could meditate like that.",
         actionLeft: {
-            health: -1,
+            health: 0,
             aura: 1,
             memory: 0,
         },
@@ -40,7 +41,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-1c',
@@ -49,18 +51,19 @@ const chapter2 = writable([
         text: "If you're looking for answers, you must seek within",
         faction: 'Monk',
         textLeft: "When I look within, I see nothing.",
-        textRight: "I'm not quite sure how to do that.",
+        textRight: "Why don't you focus within yourself instead.",
         actionLeft: {
-            health: 1,
-            memory: 1,
+            health: 0,
             aura: -1,
+            memory: 1,
         },
         actionRight: {
-            health: 0,
+            health: 1,
+            aura: 0,
             memory: 0,
-            aura: -1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-1d',
@@ -68,19 +71,20 @@ const chapter2 = writable([
         title:'Hayden',
         text: "I sense a great disturbance within you.",
         faction: 'Monk',
-        textLeft: "I don't feel disturbed.",
-        textRight: "Why don't you focus within yourself instead.",
+        textLeft: "Yeah, it started when you started talking to me.",
+        textRight: "I will make an effort to be more at peace.",
         actionLeft: {
-            health: -1,
-            aura: 1,
+            health: 1,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
-            health: 1,
-            aura: 1,
+            health: -1,
+            aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-1e',
@@ -91,24 +95,25 @@ const chapter2 = writable([
         textLeft: "I'll be sure to keep an eye out.",
         textRight: "Actually I have met him, it's like talking to the same person.",
         actionLeft: {
-            health: -1,
+            health: 0,
             aura: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
-            aura: -1,
+            health: 0,
+            aura: 0,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
 
-    // Monk-brown
+    // Brown monk - ALL
     {
         id: 'chapter2-2a',
         imgUrl: '/decks/chapter2/monk-brown.png',
         title:'Moses',
-        text: "Sometimes Hayden can come off as a bit preachy, but he's got a good heart.",
+        text: "Sometimes Hayden can come off as a bit preachy, but he's got a good heart, mind and soul.",
         faction: 'Moses',
         textLeft: "You both seem to be good hearted people, I feel at peace around you.",
         textRight: "I don't see it that way.",
@@ -119,10 +124,11 @@ const chapter2 = writable([
         },
         actionRight: {
             health: -1,
+            aura: 0,
             memory: 0,
-            aura: -1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-2b',
@@ -142,7 +148,8 @@ const chapter2 = writable([
             aura: 1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-2c',
@@ -153,16 +160,17 @@ const chapter2 = writable([
         textLeft: "You're right, I haven't had a moment to catch my breath since I got here.",
         textRight: "You seem like someone who should mind their own business.",
         actionLeft: {
-            health: -1,
+            health: 0,
             aura: 1,
             memory: 1,
         },
         actionRight: {
             health: 1,
-            aura: -1,
+            aura: 0,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-2d',
@@ -173,16 +181,17 @@ const chapter2 = writable([
         textLeft: "A surprise is nice every now and then.",
         textRight: "I'm not sure if I can trust those beasts.",
         actionLeft: {
-            health: 1,
-            aura: -1,
+            health: 0,
+            aura: 0,
             memory: 1,
         },
         actionRight: {
             health: 1,
-            aura: -1,
+            aura: 0,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-2e',
@@ -190,41 +199,43 @@ const chapter2 = writable([
         title:'Moses',
         text: "As much as I sit in thought, I cannot remember if I was always a monk. Where was I before I came to this forest?",
         faction: 'Moses',
-        textLeft: "Nobody seems to remember anything.",
+        textLeft: "Nobody seems to remember anything, it's exhausting trying to figure it all out.",
         textRight: "Perhaps you've always been here, and you always will be.",
         actionLeft: {
-            health: -1,
+            health: 0,
             aura: -1,
-            memory: 0,
+            memory: 1,
         },
         actionRight: {
-            health: -1,
-            aura: -1,
+            health: 1,
+            aura: 0,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
 
-    // Fairy-blue
+    // Blue Fairy - ALL
     {
         id: 'chapter2-3a',
         imgUrl: '/decks/chapter2/fairy-blue.png',
         title:'Spinkle',
         text: "Humans confuse me, why do they run when faced with unfamiliar beings?",
         faction: 'Fairy',
-        textLeft: "Because unfamiliarity leads to danger.",
-        textRight: "Aren't you the least bit frightened to meet strangers like me?",
+        textLeft: "Because unfamiliarity leads to danger, maybe you've been lucky and haven't met the wrong people yet.",
+        textRight: "Aren't you the least bit frightened to meet a stranger like me?",
         actionLeft: {
-            health: 1,
-            aura: -1,
-            memory: 1,
+            health: -1,
+            aura: 0,
+            memory: 0,
         },
         actionRight: {
             health: 1,
+            aura: 0,
             memory: 1,
-            aura: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-3b',
@@ -233,7 +244,7 @@ const chapter2 = writable([
         text: "I live in this forest with my 2 sisters, but recently there have been a lot of visitors.",
         faction: 'Fairy',
         textLeft: "I don't think any of us meant to show up here, but here we are.",
-        textRight: "So everyone showed up here around the same time... Interesting.",
+        textRight: "I wonder why everyone showed up here around the same time?",
         actionLeft: {
             health: 0,
             aura: -1,
@@ -244,7 +255,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-3c',
@@ -252,19 +264,20 @@ const chapter2 = writable([
         title:'Spinkle',
         text: "Hey there, I'm Spinkle! I'm a fairy and you seem to be human, nice to meet you!",
         faction: 'Fairy',
-        textLeft: "Hi Spinkle, I'm... I'm Jack?",
+        textLeft: "Hi Spinkle, I'm... Jack, I guess?",
         textRight: "A real fairy, wow.",
         actionLeft: {
             health: -1,
-            memory: 0,
             aura: -1,
+            memory: 1,
         },
         actionRight: {
-            health: -1,
-            aura: 1,
+            health: 0,
+            aura: 0,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-3d',
@@ -280,11 +293,12 @@ const chapter2 = writable([
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            health: -1,
             aura: 1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-3e',
@@ -293,7 +307,7 @@ const chapter2 = writable([
         text: "My sisters and I are actually magical triplets, meaning we were all born from the same ingredients. Still, they refer to me as their \" big sister\".",
         faction: 'Fairy',
         textLeft: "I have no idea what that meant.",
-        textRight: "Maybe because you're the most mature.",
+        textRight: "Maybe because they trust you the most.",
         actionLeft: {
             health: 0,
             aura: -1,
@@ -301,32 +315,34 @@ const chapter2 = writable([
         },
         actionRight: {
             health: -1,
-            aura: -1,
+            aura: 0,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
 
-    // Fairy-purple
+    // Purple Fairy - ALL
     {
         id: 'chapter2-4a',
         imgUrl: '/decks/chapter2/fairy-purple.png',
         title:'Tinkle',
         text: "Woah a human, want to be best friends?",
         faction: 'Fairy',
-        textLeft: "That was fast.",
+        textLeft: "Not particularly, no.",
         textRight: "And you are?",
         actionLeft: {
+            health: 1,
+            aura: 1,
+            memory: 0,
+        },
+        actionRight: {
             health: -1,
             aura: -1,
             memory: 0,
         },
-        actionRight: {
-            health: 1,
-            aura: -1,
-            memory: 0,
-        },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-4b',
@@ -338,15 +354,16 @@ const chapter2 = writable([
         textRight: "Thank you?",
         actionLeft: {
             health: -1,
-            aura: 1,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            health: -1,
             aura: -1,
-            memory: 1,
+            memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-4c',
@@ -358,15 +375,16 @@ const chapter2 = writable([
         textRight: "Maybe she's met the wrong people.",
         actionLeft: {
             health: 1,
-            aura: 1,
+            aura: 0,
             memory: 1,
         },
         actionRight: {
             health: -1,
-            aura: -1,
+            aura: 0,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-4d',
@@ -378,15 +396,16 @@ const chapter2 = writable([
         textRight: "Spinkle, winky and tink what? Can you repeat that.",
         actionLeft: {
             health: 0,
-            aura: -1,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            health: 0,
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-4e',
@@ -397,38 +416,40 @@ const chapter2 = writable([
         textLeft: "Yes, not even that long ago.",
         textRight: "If we have I don't remember.",
         actionLeft: {
-            health: 1,
-            aura: -1,
+            health: 0,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
             health: 1,
-            aura: -1,
-            memory: 1,
+            aura: 0,
+            memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
 
-    // Fairy-green
+    // Green Fairy - ALL
     {
         id: 'chapter2-4a',
         imgUrl: '/decks/chapter2/fairy-green.png',
         title:'Winkle',
         text: "Winkle here, not winkle, WRINKLE. Wait, no I mean not wrinkle it's winkle, WINKLE!",
         faction: 'Fairy',
-        textLeft: "Nice to meet you winklewinkle",
-        textRight: "How are you confused about your own name?",
+        textLeft: "A winklewinkle fairy confused about her name, this forest is full of surprises.",
+        textRight: "Nice to meet you wrinkle.",
         actionLeft: {
-            health: -1,
-            aura: 1,
+            health: 1,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
-            health: 1,
-            aura: -1,
-            memory: 1,
+            health: -1,
+            aura: 0,
+            memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-4b',
@@ -440,15 +461,16 @@ const chapter2 = writable([
         textRight: "Well I can't seem to picture a giant fairy.",
         actionLeft: {
             health: -1,
-            aura: -1,
+            aura: 0,
             memory: 1,
         },
         actionRight: {
-            health: 1,
+            health: 0,
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-4c',
@@ -456,10 +478,10 @@ const chapter2 = writable([
         title:'Winkle',
         text: "You're probably like all the other humans, greedy and rude.",
         faction: 'Fairy',
-        textLeft: "You don't even know me...",
+        textLeft: "I hope all the other fairies aren't like you, rude and a waste of my time.",
         textRight: "Humans are the worst, you won't hear any arguments here.",
         actionLeft: {
-            health: -1,
+            health: 1,
             aura: -1,
             memory: 0,
         },
@@ -468,7 +490,8 @@ const chapter2 = writable([
             aura: 1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-4d',
@@ -477,18 +500,19 @@ const chapter2 = writable([
         text: "I bet you wish you could fly too.",
         faction: 'Fairy',
         textLeft: "I bet you wish you weren't green.",
-        textRight: "Sure, rub it in my face.",
+        textRight: "Flapping my wings all day would surely tire me out.",
         actionLeft: {
             health: 1,
-            aura: -1,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
-            health: -1,
-            aura: -1,
+            health: 0,
+            aura: 1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-4e',
@@ -496,22 +520,23 @@ const chapter2 = writable([
         title:'Winkle',
         text: "My sisters seem to think we've always lived here... but I don't know. Part of me feels like there was something before all of this.",
         faction: 'Fairy',
-        textLeft: "You too?",
-        textRight: "Since most people arrived here, you probably did too.",
+        textLeft: "Whether you started here or not doesn't change the fact that you can find a way out.",
+        textRight: "Most people arrived here unexpectedly, you probably did too.",
         actionLeft: {
-            health: 0,
+            health: -1,
             aura: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
-            aura: -1,
+            health: 0,
+            aura: 0,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
 
-    // Druid
+    // Druid  - ALL
     {
         id: 'chapter2-5a',
         imgUrl: '/decks/chapter2/druid.png',
@@ -522,15 +547,16 @@ const chapter2 = writable([
         textRight: "Believe me, I would love to.",
         actionLeft: {
             health: 1,
-            aura: -1,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            health: 0,
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-5b',
@@ -539,27 +565,7 @@ const chapter2 = writable([
         text: "...",
         faction: 'Druid',
         textLeft: "Can I help you?",
-        textRight: "Staring is rude.",
-        actionLeft: {
-            health: -1,
-            aura: -1,
-            memory: 0,
-        },
-        actionRight: {
-            health: -1,
-            aura: -1,
-            memory: 0,
-        },
-        location: 'Magical Forest'
-    },
-    {
-        id: 'chapter2-5c',
-        imgUrl: '/decks/chapter2/druid.png',
-        title:'Deku',
-        text: "Who are you people?",
-        faction: 'Druid',
-        textLeft: "I don't mean to trespass, I'm looking for my way home.",
-        textRight: "Who are you?",
+        textRight: "...",
         actionLeft: {
             health: -1,
             aura: -1,
@@ -567,10 +573,32 @@ const chapter2 = writable([
         },
         actionRight: {
             health: 0,
+            aura: 1,
+            memory: 0,
+        },
+        location: 'Magical Forest',
+        appearsWithIcon: ''
+    },
+    {
+        id: 'chapter2-5c',
+        imgUrl: '/decks/chapter2/druid.png',
+        title: 'Deku',
+        text: "Who are you people?",
+        faction: 'Druid',
+        textLeft: "I don't mean to trespass, I'm looking for my way home.",
+        textRight: "Woah a talking tree.",
+        actionLeft: {
+            health: -1,
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        actionRight: {
+            health: 1,
+            aura: 0,
+            memory: 0,
+        },
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-5d',
@@ -578,19 +606,20 @@ const chapter2 = writable([
         title:'Deku',
         text: "I guard this forest alone, I don't know what became of the other druids.",
         faction: 'Druid',
-        textLeft: "Maybe they all died?",
-        textRight: "I'm sorry did you say druid?",
+        textLeft: "Maybe they all died, maybe you will too?",
+        textRight: "Are you sure the forest even needs to be guarded?",
         actionLeft: {
             health: 1,
             aura: 1,
             memory: 0,
         },
         actionRight: {
-            health: 0,
-            aura: -1,
-            memory: 0,
+            health: 1,
+            aura: 1,
+            memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-5e',
@@ -602,7 +631,7 @@ const chapter2 = writable([
         textRight: "Is that a threat?",
         actionLeft: {
             health: 1,
-            aura: 1,
+            aura: 0,
             memory: 0,
         },
         actionRight: {
@@ -610,29 +639,31 @@ const chapter2 = writable([
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
 
-    // Rabbit
+    // Rabbit - GREEN AURA, the rabbit is one of the 8 special chars that will be revealed as a victim (this was a rabbit jack killed as a child, represented by GREEN aura for nature).
     {
         id: 'chapter2-6a',
         imgUrl: '/decks/chapter2/rabbit.png',
         title:'Bounder',
         text: "*Sniff* *Sniff*",
         faction: 'Lapin',
-        textLeft: "Do I smell like food or something?",
-        textRight: "I don't have any food strange bunny.",
+        textLeft: "Hey there little hare, come to hang for a bit?",
+        textRight: "Come closer, see what happens.",
         actionLeft: {
             health: -1,
-            aura: -1,
-            memory: 0,
+            aura: 1,
+            memory: 1,
         },
         actionRight: {
-            health: -1,
+            health: 1,
             aura: -1,
-            memory: 0,
+            memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-6b',
@@ -645,14 +676,15 @@ const chapter2 = writable([
         actionLeft: {
             health: 1,
             aura: -1,
-            memory: 1,
+            memory: 0,
         },
         actionRight: {
-            health: -1,
+            health: 0,
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-6c',
@@ -672,7 +704,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-6d',
@@ -692,7 +725,8 @@ const chapter2 = writable([
             aura: 1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-6e',
@@ -712,10 +746,11 @@ const chapter2 = writable([
             aura: 1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
 
-    // Snake
+    // Snake - ALL
     {
         id: 'chapter2-7a',
         imgUrl: '/decks/chapter2/snake.png',
@@ -734,7 +769,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-7b',
@@ -754,7 +790,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-7c',
@@ -774,7 +811,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-7d',
@@ -794,7 +832,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-7e',
@@ -814,10 +853,11 @@ const chapter2 = writable([
             aura: 1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
 
-    // Hippy-boy
+    // Hippy-boy - YELLOW AURA, Ziggy is one of the 8 special chars that will be revealed as a victim (he and jack grew up together, YELLOW aura symbolizes their friendship and sunny days.).
     {
         id: 'chapter2-8a',
         imgUrl: '/decks/chapter2/hippy-boy.png',
@@ -836,7 +876,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-8b',
@@ -856,7 +897,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-8c',
@@ -876,7 +918,8 @@ const chapter2 = writable([
             aura: 1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-8d',
@@ -896,7 +939,8 @@ const chapter2 = writable([
             aura: 1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-8e',
@@ -916,10 +960,11 @@ const chapter2 = writable([
             aura: 1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
 
-    // Hippy-girl
+    // Hippy-girl - ALL
     {
         id: 'chapter2-8a',
         imgUrl: '/decks/chapter2/hippy-girl.png',
@@ -938,7 +983,8 @@ const chapter2 = writable([
             aura: 1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-8b',
@@ -958,7 +1004,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-8c',
@@ -978,7 +1025,8 @@ const chapter2 = writable([
             aura: 1,
             memory: 1,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-8d',
@@ -998,7 +1046,8 @@ const chapter2 = writable([
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter2-8e',
@@ -1018,8 +1067,11 @@ const chapter2 = writable([
             aura: -1,
             memory: 0,
         },
-        location: 'Magical Forest'
+        location: 'Magical Forest',
+        appearsWithIcon: ''
     },
+
+    // TODO: Add 4 chars, 2 for yellow aura 2 for green aura.
 ]);
 
 export default chapter2;

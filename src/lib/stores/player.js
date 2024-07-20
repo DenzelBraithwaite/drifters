@@ -21,6 +21,7 @@ const player = writable({
     chapter3: false,
     chapter3Goblins: false,
     chapter4: false,
+    chapter4Beings: false,
 
   },
   displayDecks: [
@@ -29,15 +30,16 @@ const player = writable({
       img: '/decks/tutorial/judicator-white.png'
     }
   ],
-  health: 10,
-  sanity: 10,
-  aura: 10,
-  impulse: 0,
+  health: 10, // choices that are mean increase this, nice choices decrease this
+  aura: 10, // choices that are relaxing/lazy increase this, effort and confusion decreases this
+  sanity: 10, // choices that are logical increase this, choices that are emotional decrease this
+  impulse: 0, // choices that are violent increase this, choices that are peaceful decrease this
   memory: 0,
+  // icons determined as game progresses, memory is always a puzzle
   icons: {
-    health: '',
-    sanity: '',
-    aura: '',
+    health: '', 
+    aura: '', 
+    sanity: '', 
     impulse: '',
     memory: 'puzzle',
   },
@@ -52,8 +54,8 @@ const player = writable({
     brain: 0,
     smiley: 0,
     // impulse
-    star: 0,
-    pentagram: 0,
+    knife: 0,
+    cleaver: 0,
   },
 });
 

@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 const chapter1 = writable([
-    // Mr. Gallock
+    // Mr. Gallock - ALL
     {
         id: 'chapter1-1a',
         imgUrl: '/decks/chapter1/angry-cowboy.png',
@@ -18,7 +18,8 @@ const chapter1 = writable([
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-1b',
@@ -26,8 +27,8 @@ const chapter1 = writable([
         title:'Mr. Gallock',
         text: 'Those damn Jamison boys are ruining this village, either talk to their parents or I will.',
         faction: 'Farmer',
-        textLeft: "Why would I be the one to talk to their parents?",
-        textRight: "Sure, but I'm not sure how I'll be able to help..",
+        textLeft: "Why should I be the one to talk to their parents?",
+        textRight: "Sure, but I'm not that I'll be of any help.",
         actionLeft: {
             health: 1,
             memory: 0,
@@ -36,7 +37,8 @@ const chapter1 = writable([
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-1c',
@@ -44,17 +46,18 @@ const chapter1 = writable([
         title:'Mr. Gallock',
         text: "I can't seem to remember what I was doing last...",
         faction: 'Farmer',
-        textLeft: "Don't worry, neither can I...",
+        textLeft: "That happens when you get old.",
         textRight: "Try retracing your steps, see if that helps.",
         actionLeft: {
-            health: 0,
+            health: 1,
             memory: 1,
         },
         actionRight: {
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-1d',
@@ -72,7 +75,8 @@ const chapter1 = writable([
             health: 1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-1e',
@@ -80,37 +84,39 @@ const chapter1 = writable([
         title:'Mr. Gallock',
         text: "I can't stand this village I tell you! The first chance I get, I'm gone like the wind.",
         faction: 'Farmer',
-        textLeft: "I hear you.",
-        textRight: "Be patient, maybe it'll get better.",
+        textLeft: "Be patient, maybe it'll get better.",
+        textRight: "I hear you.",
         actionLeft: {
             health: -1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            health: 0,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
 
-    // Shelly
+    // Shelly - ALL
     {
         id: 'chapter1-2a',
         imgUrl: '/decks/chapter1/archer.png',
         title:'Shelly',
-        text: 'The wild animals have been frightened lately, can you do something about it?',
+        text: 'The wild animals have been frightened lately, do you have any idea as to why?',
         faction: 'Hunter',
-        textLeft: "What animals? How can I help?",
-        textRight: "Shouldn't you do something about it?",
+        textLeft: "What animals, I haven't seen any animals?",
+        textRight: "No, but maybe you can do something about it?",
         actionLeft: {
-            health: -1,
-            memory: 0,
+            health: 0,
+            memory: 1,
         },
         actionRight: {
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-2b',
@@ -128,7 +134,8 @@ const chapter1 = writable([
             health: 0,
             memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-2c',
@@ -139,14 +146,15 @@ const chapter1 = writable([
         textLeft: "Maybe you decided to camp under the stars?",
         textRight: "Keep trying, you'll remember something eventually.",
         actionLeft: {
-            health: -1,
+            health: 0,
             memory: 0,
         },
         actionRight: {
             health: 0,
             memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-2d',
@@ -164,7 +172,8 @@ const chapter1 = writable([
             health: 1,
             memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-2e',
@@ -172,37 +181,39 @@ const chapter1 = writable([
         title:'Shelly',
         text: "It's easy to get lost in the woods if you aren't careful, especially come dark. Best to leave a trail so you know where you've been.",
         faction: 'Hunter',
-        textLeft: "Yeah I'll remember that the next time I wander into the woods blindly.",
+        textLeft: "Yeah, I'll remember that the next time I wander into the woods blindly.",
         textRight: "Maybe you should avoid the woods altogether in the future.",
         actionLeft: {
             health: 1,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            health: -1,
             memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
 
-    // Krystina
+    // Krystina - ALL
     {
         id: 'chapter1-3a',
         imgUrl: '/decks/chapter1/gatherer.png',
         title:'Krystina',
         text: "People are like flowers, we bud, bloom and wither away. Some of us are cynical roses and some are easy going lilies. What type of flower are you?",
         faction: 'Villager',
-        textLeft: "Maybe a lotus flower, strong and resilient. ",
+        textLeft: "Maybe a lotus flower, strong and resilient.",
         textRight: "A moonflower for sure, I like to make my own path in life.",
         actionLeft: {
-            health: 1,
-            memory: 0,
+            health: 0,
+            memory: 1,
         },
         actionRight: {
             health: 0,
             memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-3b',
@@ -211,16 +222,17 @@ const chapter1 = writable([
         text: "Have you ever heard of snowdrops? They remind me of home, we used to grow plenty there. These flowers may look like snowdrops, but they actually aren't. Truth is, I don't know what these are or why I have them.",
         faction: 'Villager',
         textLeft: "Maybe you picked them in your sleep?",
-        textRight: "I've never heard of snowdrops, and those just look like normal flowers to me.",
+        textRight: "I've never heard of snowdrops, those just look like normal flowers to me.",
         actionLeft: {
             health: -1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            health: 0,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-3c',
@@ -231,14 +243,15 @@ const chapter1 = writable([
         textLeft: "Maybe they mean something to you, remind you of someone special?",
         textRight: "They are very pretty, you have a good eye.",
         actionLeft: {
-            health: 0,
+            health: -1,
             memory: 1,
         },
         actionRight: {
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-3d',
@@ -246,17 +259,18 @@ const chapter1 = writable([
         title:'Krystina',
         text: "Flowers bring joy, comfort the sad and excite the romantic. Flowers are amazing, wouldn't you agree?",
         faction: 'Villager',
-        textLeft: "Umm... yeah sure.",
-        textRight: "I never thought about it like that before.",
+        textLeft: "Flowers are just flowers.",
+        textRight: "I've never thought about it like that before, I guess you're right.",
         actionLeft: {
-            health: 0,
+            health: 1,
             memory: 0,
         },
         actionRight: {
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-3e',
@@ -264,21 +278,22 @@ const chapter1 = writable([
         title:'Krystina',
         text: "There are many houses in the village, but I don't know of anyone living in any of them. Isn't that strange?",
         faction: 'Villager',
-        textLeft: "That means you don't have a house either. I guess, neither do I. Doesn't anybody sleep here?",
+        textLeft: "That means you don't have a house either, I guess, neither do I. Doesn't anybody sleep here?",
         textRight: "That means they're up for grabs, I would keep it a secret.",
         actionLeft: {
-            health: -1,
+            health: 0,
             memory: 1,
         },
         actionRight: {
             health: 1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     
 
-    // Melody
+    // Melody - Diamond, she is one of the 8 special chars that will be revealed as a victim (for her vanity she represents DIAMOND).
     {
         id: 'chapter1-4a',
         imgUrl: '/decks/chapter1/villager.png',
@@ -288,14 +303,15 @@ const chapter1 = writable([
         textLeft: "She sounds like an incredible person, I hope to meet her someday.",
         textRight: "I'm afraid not, I only just got here myself and I don't plan on staying.",
         actionLeft: {
-            health: 0,
-            memory: 0,
-        },
-        actionRight: {
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        actionRight: {
+            health: 0,
+            memory: 0,
+        },
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-4b',
@@ -303,17 +319,18 @@ const chapter1 = writable([
         title:'Meoldy',
         text: "Do you find me beautiful? Everyone finds me beautiful, everyone.",
         faction: 'Villager',
-        textLeft: "You're very pretty, on the outside.",
+        textLeft: "You're very pretty, from a distance.",
         textRight: 'Not everyone.',
         actionLeft: {
             health: 1,
-            memory: 0,
+            memory: 1,
         },
         actionRight: {
-            health: 0,
+            health: 1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-4c',
@@ -322,7 +339,7 @@ const chapter1 = writable([
         text: "I remember him watching me... following me... What did he do to me?",
         faction: 'Villager',
         textLeft: 'What did who do? Why was he following you?',
-        textRight: "Do you remember something? I don't remember that, I don't remember anything.",
+        textRight: "Probably what you deserved.",
         actionLeft: {
             health: -1,
             memory: 0,
@@ -331,7 +348,8 @@ const chapter1 = writable([
             health: 1,
             memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-4d',
@@ -349,7 +367,8 @@ const chapter1 = writable([
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-4e',
@@ -357,20 +376,21 @@ const chapter1 = writable([
         title:'Melody',
         text: "I've heard there are fairies and other magical creatures in a forest nearby.",
         faction: 'Villager',
-        textLeft: "Yeah, I'll believe it when I see it.",
-        textRight: "That can't be possible.",
+        textLeft: "Is that true? I hope to meet them one day.",
+        textRight: "Oh yeah? Maybe there are dinosaurs in the sky too.",
         actionLeft: {
-            health: 0,
-            memory: 0,
-        },
-        actionRight: {
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        actionRight: {
+            health: 1,
+            memory: 0,
+        },
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
 
-    // Rowelda
+    // Rowelda - ALL
     {
         id: 'chapter1-5a',
         imgUrl: '/decks/chapter1/villager-old.png',
@@ -385,9 +405,10 @@ const chapter1 = writable([
         },
         actionRight: {
             health: 1,
-            memory: 1,
+            memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-5b',
@@ -403,9 +424,10 @@ const chapter1 = writable([
         },
         actionRight: {
             health: 1,
-            memory: 0,
+            memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-5c',
@@ -420,10 +442,11 @@ const chapter1 = writable([
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            health: -1,
             memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-5d',
@@ -431,17 +454,18 @@ const chapter1 = writable([
         title:'Rowelda',
         text: "Those Jamison boys aren't the problem, they lack discipline and parenting. Why if I raised those boys, things would be different I tell you.",
         faction: 'Villager',
-        textLeft: "I feel inclined to believe you.",
-        textRight: "Yes well, I'll let you see to it then.",
+        textLeft: "It's not too late to try.",
+        textRight: "And maybe if someone actually raised you, you'd be different too.",
         actionLeft: {
             health: -1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            health: 1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-5e',
@@ -450,7 +474,7 @@ const chapter1 = writable([
         text: "Sometimes I sit and wonder, am I the oldest person in the village? There's so much I wish I'd done sooner... Don't waste your life boy!",
         faction: 'Villager',
         textLeft: "Don't worry, you still have plenty of years left.",
-        textRight: "Thanks for the advice, but I don't plan on wasting my years.",
+        textRight: "Unlike you I plan on living my life, not wasting it.",
         actionLeft: {
             health: -1,
             memory: 0,
@@ -459,10 +483,11 @@ const chapter1 = writable([
             health: 1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
 
-    // Bernard
+    // Bernard - ALL
     {
         id: 'chapter1-6a',
         imgUrl: '/decks/chapter1/cowheard.png',
@@ -472,14 +497,15 @@ const chapter1 = writable([
         textLeft: "Perhaps you're being a little paranoid mister.",
         textRight: "I don't even trust myself.",
         actionLeft: {
-            health: -1,
+            health: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            health: 0,
             memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-6b',
@@ -487,23 +513,24 @@ const chapter1 = writable([
         title:'Bernard',
         text: "Have you run into that miserable farmer Gallock? Don't pay him any mind, that's just how he is.",
         faction: 'Cowheard',
-        textLeft: "Yeah I suspected as much, thanks for the advice.",
+        textLeft: "Yeah I figured as much, thanks for the advice.",
         textRight: "Someone ought to knock him down a peg or two.",
         actionLeft: {
-            health: 1,
+            health: -1,
             memory: 0,
         },
         actionRight: {
             health: 1,
             memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-6c',
         imgUrl: '/decks/chapter1/cowheard.png',
         title:'Bernard',
-        text: "Life is simple, it's the people that complicate it. Sometimes, a lonely road is the path you want to take.",
+        text: "Life is simple, it's the people that complicate it. Sometimes, a lonely road is the only road you need.",
         faction: 'Cowheard',
         textLeft: "Maybe you just don't see the good in people.",
         textRight: "What's the point of living if there's no one else to share the experience?",
@@ -513,9 +540,10 @@ const chapter1 = writable([
         },
         actionRight: {
             health: -1,
-            memory: 0,
+            memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-6d',
@@ -524,16 +552,17 @@ const chapter1 = writable([
         text: "One day, my time will come. I need to make sure the cattle are properly taken care of.",
         faction: 'Cowheard',
         textLeft: "Your life is more important than cattle.",
-        textRight: "You are a man of devotion, I can appreciate that.",
+        textRight: "I can appreciate a man of devotion.",
         actionLeft: {
             health: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
-            memory: 0,
+            health: -1,
+            memory: 1,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-6e',
@@ -551,10 +580,11 @@ const chapter1 = writable([
             health: 1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
 
-    // Felix TODO: He is one of the 8 special chars that will be revealed as a victim (child).
+    // Felix - HEART, he is one of the 8 special chars that will be revealed as a victim (for his purity he represents HEART).
     {
         id: 'chapter1-7a',
         imgUrl: '/decks/chapter1/peasant.png',
@@ -571,7 +601,8 @@ const chapter1 = writable([
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-7b',
@@ -579,35 +610,37 @@ const chapter1 = writable([
         title:'Felix',
         text: "I can't go on like this anymore, please help me.",
         faction: 'Peasant',
-        textLeft: "No.",
+        textLeft: "Then stop hanging on and give up already.",
         textRight: "I wish I could.",
         actionLeft: {
-            health: 0,
-            memory: 1,
+            health: 1,
+            memory: 0,
         },
         actionRight: {
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-7c',
         imgUrl: '/decks/chapter1/peasant.png',
         title:'Felix',
-        text: "My mom is sick see, so if you have anything you could give me... I don't mean to beg, but if you care to spare.",
+        text: "My mom is sick, if you have anything you could give me... I don't mean to beg, but if you care to spare.",
         faction: 'Peasant',
-        textLeft: "Nobody likes a begger boy, remove yourself from me.",
-        textRight: "Good things come to those who wait, your time will come, be patient.",
+        textLeft: "Good things come to those who wait, your time will come, be patient.",
+        textRight: "Nobody likes a begger boy, remove yourself from me.",
         actionLeft: {
-            health: 1,
+            health: -1,
             memory: 1,
         },
         actionRight: {
-            health: -1,
+            health: 1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-7d',
@@ -616,7 +649,7 @@ const chapter1 = writable([
         text: "It's not fair, why can't I eat as much as everyone else gets to. What did I do wrong?",
         faction: 'Peasant',
         textLeft: "You can complain about it or you can do something about it.",
-        textRight: "It's not your fault, you just got unlucky.",
+        textRight: "It's not your fault, luck simply didn't favor you as it did others.",
         actionLeft: {
             health: 1,
             memory: 0,
@@ -625,7 +658,8 @@ const chapter1 = writable([
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-7e',
@@ -637,21 +671,22 @@ const chapter1 = writable([
         textRight: "I couldn't agree more.",
         actionLeft: {
             health: 1,
-            memory: 1,
+            memory: 0,
         },
         actionRight: {
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
 
-    // Alexander
+    // Alexander - ALL
     {
         id: 'chapter1-8a',
         imgUrl: '/decks/chapter1/villager-brother.png',
         title:'Alexander',
-        text: "My beauty is reknown far and wide, my sister isn't too bad herself, but her beauty could simply never compare.",
+        text: "My beauty is renown far and wide, my sister isn't too bad herself, but her beauty could simply never compare.",
         faction: 'Villager',
         textLeft: "Ugh",
         textRight: "Yes yes, you're very handsome.",
@@ -663,25 +698,27 @@ const chapter1 = writable([
             health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-8b',
         imgUrl: '/decks/chapter1/villager-brother.png',
         title:'Alexander',
-        text: "Why if I were one of the king's royal guards, the wars would be over by nightfall! Sadly I've no time for such trivial things.",
+        text: "Why if I were one of the king's royal guards, the wars would be over by nightfall! Sadly, I've no time for such trivial things.",
         faction: 'Villager',
-        textLeft: "Yeah I'm sure the king's army could use a knight like you.",
-        textRight: "Ahahahaa, you'd probably make a better jester than soldier.",
+        textLeft: "Yeah, I'm sure the king's army could use a knight like you.",
+        textRight: "Trivial? Is the upkeep of your appearance too demanding to spare time to fight for a cause?",
         actionLeft: {
             health: 0,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            health: -1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-8c',
@@ -689,17 +726,18 @@ const chapter1 = writable([
         title:'Alexander',
         text: "Everybody loves me, you don't have to be shy about it. If you'd like, I can help you be more popular.",
         faction: 'Villager',
-        textLeft: "I hate your kind the most, no thank you.",
+        textLeft: "I think you need help more than I do.",
         textRight: "I'll take my chances.",
         actionLeft: {
             health: 1,
-            memory: 1,
-        },
-        actionRight: {
-            health: 0,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        actionRight: {
+            health: 1,
+            memory: 0,
+        },
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-8d',
@@ -710,14 +748,15 @@ const chapter1 = writable([
         textLeft: "These things are destined to happen eventually.",
         textRight: "You used to glow?",
         actionLeft: {
-            health: 0,
+            health: -1,
             memory: 1,
         },
         actionRight: {
-            health: -1,
+            health: 1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
     {
         id: 'chapter1-8e',
@@ -725,7 +764,7 @@ const chapter1 = writable([
         title:'Alexander',
         text: "If only someone understood the hardships of being so amazing and talented, I truly am alone at the top.",
         faction: 'Villager',
-        textLeft: "You're alone but it's not because you're \"at the top\" that's for sure.",
+        textLeft: "You're alone but it's not because you're \"at the top\".",
         textRight: "The next time you go to speak, don't.",
         actionLeft: {
             health: 1,
@@ -735,8 +774,11 @@ const chapter1 = writable([
             health: 1,
             memory: 0,
         },
-        location: 'Town of Beginning'
+        location: 'Town of Beginning',
+        appearsWithIcon: ''
     },
+
+    // TODO: Add 4 chars, 2 for heart 2 for diamond.
 ]);
 
 export default chapter1;

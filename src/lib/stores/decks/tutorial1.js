@@ -204,7 +204,7 @@ const tutorial1 = writable([
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
         text: "Oh, and not that you asked... but you can call me Jude. Do you remember your name?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Jude, really? And no, I'm trying but I can't seem to remember.", // ->tutorial-10
         textRight: "...", // ->tutorial-10
         location: 'tutorial',
@@ -222,7 +222,7 @@ const tutorial1 = writable([
         imgUrl: '/decks/tutorial/judicator-white-smile.png',
         title:'Jude',
         text: "Fantastic... Don't worry that's normal. For now let's just keep it simple and call you Jack, unless there's another name you'd prefer?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Jack? Doesn't really seem to suit me but I guess that's fine until I can remember my actual name.", // ->survey-1
         textRight: "I may not know my name but it certainly isn't Jack.", // ->survey-1
         location: 'tutorial',

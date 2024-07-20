@@ -6,7 +6,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
         text: "Fantastic, question number 1. How good do I look in purple?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Hmmm... not really.", // ->survey3-2a
         textRight: "I'm more interested in why you're purple.", // ->survey3-2b
         actionLeft: {
@@ -28,7 +28,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
         text: "Oh, ok. Ouch. Imagine you hear screaming, you realize your daughter and niece are both caught in a strong current and might be swept out to sea. Your niece is a weak swimmer and won't last as long as your daughter. Although you're a strong swimmer, you might not have time to save both. Which do you save?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Save my daughter, I can't stand the thought of losing her.", // ->survey3-3a
         textRight: "Save my niece and hope my daughter can hold on long enough.", // ->survey3-3b
         actionLeft: {
@@ -50,7 +50,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
         text: "Why indeed. Imagine you hear screaming, you realize your daughter and niece are both caught in a strong current and might be swept out to sea. Your niece is a weak swimmer and won't last as long as your daughter. Although you're a strong swimmer, you might not have time to save both. Which do you save?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Save my daughter, I can't stand the thought of losing her.", // ->survey3-3a
         textRight: "Save my niece and hope my daughter can hold on long enough.", // ->survey3-3b
         actionLeft: {
@@ -72,7 +72,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
         text: "Really? You won't even try to save your niece? Very interesting. What if your close friend asked for an investment of $500 but wouldn't tell you why. They might be doing something illegal, but you'll safely make a profit without any risk.",
-        faction: '???',
+        faction: 'Being',
         textLeft: "It seems sketchy, but I would give it to them and hope that they know what they're doing.", // ->survey3-4a
         textRight: "It would be tempting, but I would refuse. I don't want to get involved in shady deals.", // ->survey3-4b
         actionLeft: {
@@ -94,7 +94,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
         text: "You'd abandon your own daughter simply because she's a stronger swimmer? Very interesting. What if your close friend asked for an investment of $500 but wouldn't tell you why. They might be doing something illegal, but you'll safely make a profit without any risk.",
-        faction: '???',
+        faction: 'Being',
         textLeft: "It seems sketchy, but I would give it to them and hope that they know what they're doing.", // ->survey3-4a
         textRight: "It would be tempting, but I would refuse. I don't want to get involved in shady deals.", // ->survey3-4b
         actionLeft: {
@@ -112,7 +112,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
         text: "Risk it all for a quick buck is that right? I'm learning so much about you Jack. Next, pick one.",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Brain", // ->survey3-5
         textRight: "Mouth", // ->survey3-5
         actionLeft: {
@@ -134,7 +134,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
         text: "Afraid to take a leap of faith? I'm starting to understand you now Jack. Next, pick one.",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Brain", // ->survey3-5
         textRight: "Mouth", // ->survey3-5
         actionLeft: {
@@ -152,7 +152,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
         text: "I figured you'd pick that, here's another.",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Beauty", // ->survey3-6a
         textRight: "Books", // ->survey3-6b
         actionLeft: {
@@ -174,7 +174,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
         text: "To lure and dazzle those surrounding you, what a dream. They say some of the most attractive people are sometimes the most irrational. What do you think about that?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Sanity over insanity of course.", // ->survey3-7a
         textRight: "Sometimes, insanity is the sane decision.", // ->survey3-7b
         actionLeft: {
@@ -196,7 +196,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
         text: "Fancy yourself a scholar do you? They say some of the brightest minds are the most detached from reality. What do you think about that?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Sanity over insanity of course.", // ->survey3-7a
         textRight: "Sometimes, insanity is the sane decision.", // ->survey3-7b
         actionLeft: {
@@ -218,7 +218,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
         text: "The obvious answer, the bare minimum to function in society. It's been said life and death are two sides of the same coin. Which side do you prefer?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Life", // ->survey3-8a
         textRight: "Death", // ->survey3-8b
         actionLeft: {
@@ -240,7 +240,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
         text: "Chaos deserves company every once in a while, right? It's been said life and death are two sides of the same coin. Which side do you prefer?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Life", // ->survey3-8a
         textRight: "Death", // ->survey3-8b
         actionLeft: {
@@ -262,7 +262,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
         text: "You would choose life wouldn't you. Here's a fun one, which super power would you prefer?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Control Time", // ->survey3-9a
         textRight: "Control people", // ->survey3-9b
         actionLeft: {
@@ -284,7 +284,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
         text: "You would choose death wouldn't you. Here's a fun one, which super power would you prefer?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Control Time", // ->survey3-9a
         textRight: "Control people", // ->survey3-9b
         actionLeft: {
@@ -306,7 +306,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
         text: "I wonder what you would do with all of that extra time? Here's the final question, would you like to take a look at yourself and see what you look like?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Yes", // ->survey3-10a
         textRight: "No", // ->survey3-10b
         actionLeft: {
@@ -328,7 +328,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
         text: "What questionably ominous plans do you have in store for a power like that? Here's the final question, would you like to take a look at yourself and see what you look like?",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Yes", // ->survey3-10a
         textRight: "No", // ->survey3-10b
         actionLeft: {
@@ -350,7 +350,7 @@ const survey3 = writable([
         imgUrl: '/characters/jack-judicator.png',
         title:'Jack',
         text: "This is what you currently look like, are you shocked? When we speak you'll have the option to look at yourself and see how you've changed since you've been here. Full disclosure, you're still looking at me. I'm just showing you the current state of your soul.",
-        faction: '???',
+        faction: 'Being',
         textLeft: "I don't recognize this at all.", // ->survey3-11
         textRight: "Is that... really me?", // ->survey3-11
         actionLeft: {
@@ -438,7 +438,7 @@ const survey3 = writable([
         imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
         text: "It's time for me to disappear again, but I'll be back later. Remember to keep an eye on your mementos and don't worry too much about the whole being dead thing.",
-        faction: '???',
+        faction: 'Being',
         textLeft: "Not much I can do about it anyways", // ->chapter4-1
         textRight: "Advice of the year, gee thanks.", // ->chapter4-1
         actionLeft: {
