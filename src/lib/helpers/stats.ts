@@ -6,45 +6,27 @@ type PartialCard = {
   textLeft: string;
   textRight: string;
   actionLeft: {
-    health?: number;
-    aura?: number;
-    sanity?: number;
-    impulse?: number;
+    heart?: number;
+    diamond?: number;
+    greenAura?: number;
+    yellowAura?: number;
+    brain?: number;
+    smiley?: number;
+    knife?: number;
+    cleaver?: number;
     memory: number;
   },
   actionRight: {
-    health?: number;
-    aura?: number;
-    sanity?: number;
-    impulse?: number;
+    heart?: number;
+    diamond?: number;
+    greenAura?: number;
+    yellowAura?: number;
+    brain?: number;
+    smiley?: number;
+    knife?: number;
+    cleaver?: number;
     memory: number;
   },
-}
-
-type CompleteCard = {
-  id?: string;
-  imgUrl?: string;
-  title?: string;
-  faction?: string;
-  location?: string;
-  text?: string;
-  textLeft?: string;
-  textRight?: string;
-  actionLeft?: {
-    health?: number;
-    aura?: number;
-    sanity?: number;
-    impulse?: number;
-    memory?: number;
-  },
-  actionRight?: {
-    health?: number;
-    aura?: number;
-    sanity?: number;
-    impulse?: number;
-    memory?: number;
-  },
-  appearsWithIcon?: string;
 }
 
 const defaultReturnCard: PartialCard = {
@@ -52,17 +34,25 @@ const defaultReturnCard: PartialCard = {
   textLeft: 'Oh well',
   textRight: 'It happens',
   actionLeft: {
-    health: 0,
-    aura: 0,
-    sanity: 0,
-    impulse: 0,
+    heart: 0,
+    diamond: 0,
+    greenAura: 0,
+    yellowAura: 0,
+    brain: 0,
+    smiley: 0,
+    knife: 0,
+    cleaver: 0,
     memory: 0,
   },
   actionRight: {
-    health: 0,
-    aura: 0,
-    sanity: 0,
-    impulse: 0,
+    heart: 0,
+    diamond: 0,
+    greenAura: 0,
+    yellowAura: 0,
+    brain: 0,
+    smiley: 0,
+    knife: 0,
+    cleaver: 0,
     memory: 0,
   },
 }
@@ -76,11 +66,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Heads",
         textRight: "Tails",
         actionLeft: {
-          health: coinFlip === 0 ? 0 : -4,
+          heart: coinFlip === 0 ? 0 : -4,
+          diamond: coinFlip === 0 ? 0 : -4,
           memory: 0,
         },
         actionRight: {
-          health: coinFlip === 0 ? -4 : 0,
+          heart: coinFlip === 0 ? -4 : 0,
+          diamond: coinFlip === 0 ? -4 : 0,
           memory: 0,
         },
       };
@@ -90,11 +82,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
-          health: -2,
+          heart: -2,
+          diamond: -2,
           memory: 0,
         },
         actionRight: {
-          health: 10,
+          heart: 10,
+          diamond: 10,
           memory: 0,
         },
       };
@@ -104,11 +98,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
-          health: 0,
+          heart: 0,
+          diamond: 0,
           memory: 0,
         },
         actionRight: {
-          health: 10,
+          heart: 10,
+          diamond: 10,
           memory: 0,
         },
       };
@@ -118,11 +114,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Blue",
         textRight: "Red",
         actionLeft: {
-          health: 0,
+          heart: 0,
+          diamond: 0,
           memory: 0,
         },
         actionRight: {
-          health: 10,
+          heart: 10,
+          diamond: 10,
           memory: 0,
         },
       };
@@ -132,11 +130,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
-          health: 10,
+          heart: 10,
+          diamond: 10,
           memory: 0,
         },
         actionRight: {
-          health: 0,
+          heart: 0,
+          diamond: 0,
           memory: 0,
         },
       };
@@ -149,11 +149,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Coffee",
         textRight: "Tea",
         actionLeft: {
-          aura: -4,
+          greenAura: -4,
+          yellowAura: -4,
           memory: 0,
         },
         actionRight: {
-          aura: 0,
+          greenAura: 0,
+          yellowAura: 0,
           memory: 0,
         },
       };
@@ -163,11 +165,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "I really shouldn't be wasting time.",
         textRight: "A few minutes wouldn't hurt.",
         actionLeft: {
-          aura: -2,
+          greenAura: -2,
+          yellowAura: -2,
           memory: 0,
         },
         actionRight: {
-          aura: 10,
+          greenAura: 10,
+          yellowAura: 10,
           memory: 0,
         },
       };
@@ -177,11 +181,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
-          aura: 10,
+          greenAura: 10,
+          yellowAura: 10,
           memory: 0,
         },
         actionRight: {
-          aura: 0,
+          greenAura: 0,
+          yellowAura: 0,
           memory: 0,
         },
       };
@@ -191,11 +197,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Turtoise",
         textRight: "Hare",
         actionLeft: {
-          aura: 10,
+          greenAura: 10,
+          yellowAura: 10,
           memory: 0,
         },
         actionRight: {
-          aura: 0,
+          greenAura: 0,
+          yellowAura: 0,
           memory: 0,
         },
       };
@@ -205,11 +213,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
-          aura: 10,
+          greenAura: 10,
+          yellowAura: 10,
           memory: 0,
         },
         actionRight: {
-          aura: 0,
+          greenAura: 0,
+          yellowAura: 0,
           memory: 0,
         },
       };
@@ -222,11 +232,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Knowledge",
         textRight: "Happiness",
         actionLeft: {
-          sanity: -4,
+          brain: -4,
+          smiley: -4,
           memory: 0,
         },
         actionRight: {
-          sanity: 0,
+          brain: 0,
+          smiley: 0,
           memory: 0,
         },
       };
@@ -236,11 +248,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "I suppose I am.",
         textRight: "No, that's not true.",
         actionLeft: {
-          sanity: 10,
+          brain: 10,
+          smiley: 10,
           memory: 0,
         },
         actionRight: {
-          sanity: -2,
+          brain: -2,
+          smiley: -2,
           memory: 0,
         },
       };
@@ -250,11 +264,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Sure!",
         textRight: "Sure?",
         actionLeft: {
-          sanity: 10,
+          brain: 10,
+          smiley: 10,
           memory: 0,
         },
         actionRight: {
-          sanity: 0,
+          brain: 0,
+          smiley: 0,
           memory: 0,
         },
       };
@@ -264,11 +280,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Biting",
         textRight: "Smiling",
         actionLeft: {
-          sanity: 0,
+          brain: 0,
+          smiley: 0,
           memory: 0,
         },
         actionRight: {
-          sanity: 10,
+          brain: 10,
+          smiley: 10,
           memory: 0,
         },
       };
@@ -278,84 +296,96 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
-          sanity: 10,
+          brain: 10,
+          smiley: 10,
           memory: 0,
         },
         actionRight: {
-          sanity: 0,
+          brain: 0,
+          smiley: 0,
           memory: 0,
         },
       };
     }
     return defaultReturnCard;
   } else if (cardId === 'stat-impulse') {
-    if (get(player).impulse >= 9) {
+    if (get(player).impulse <= 1) {
       return {
         text: "You've been showing restraint for far too long, wouldn't it be nice to just let loose?",
         textLeft: "I'd love to.",
         textRight: "I'm afraid to.",
         actionLeft: {
-          impulse: -4,
+          knife: -4,
+          cleaver: -4,
           memory: 0,
         },
         actionRight: {
-          impulse: 0,
+          knife: 0,
+          cleaver: 0,
           memory: 0,
         },
       };
-    } else if (get(player).impulse >= 7) {
+    } else if (get(player).impulse <= 3) {
       return {
         text: "You're a curious one aren't you, do you know the tale of the cat?",
         textLeft: "Curiosity killed it.",
         textRight: "Satisfaction brought it back.",
         actionLeft: {
-          impulse: 10,
+          knife: 10,
+          cleaver: 10,
           memory: 0,
         },
         actionRight: {
-          impulse: -2,
+          knife: -2,
+          cleaver: -2,
           memory: 0,
         },
       };
-    } else if (get(player).impulse >= 5) {
+    } else if (get(player).impulse <= 5) {
       return {
         text: "You've dipped your toes for too long, crossing the point of no return.",
         textLeft: "I think I'm lost.",
         textRight: "I know my way back.",
         actionLeft: {
-          impulse: 0,
+          knife: 0,
+          cleaver: 0,
           memory: 0,
         },
         actionRight: {
-          impulse: 10,
+          knife: 10,
+          cleaver: 10,
           memory: 0,
         },
       };
-    } else if (get(player).impulse >= 3) {
+    } else if (get(player).impulse <= 7) {
       return {
         text: "When the need to sleep and breathe come second to the need to feed, what is there to do?",
         textLeft: "Feed",
         textRight: "Fight",
         actionLeft: {
-          impulse: 0,
+          knife: 0,
+          cleaver: 0,
           memory: 0,
         },
         actionRight: {
-          impulse: 10,
+          knife: 10,
+          cleaver: 10,
           memory: 0,
         },
       };
-    } else if (get(player).impulse >= 1) {
+    } else if (get(player).impulse <= 9) {
       return {
         text: "Your hunger claws at you from within, every fiber of your being wants to submit to your urges. Allow me to teach you restraint.",
         textLeft: "Teach me.",
         textRight: "Leave me.",
         actionLeft: {
-          impulse: 10,
+          knife: 10,
+          cleaver: 10,
           memory: 0,
         },
         actionRight: {
-          impulse: 0,
+          knife: 0,
+          cleaver: 0,
           memory: 0,
         },
       };
@@ -368,12 +398,47 @@ function determineCardProperties(cardId: string): PartialCard {
   return defaultReturnCard;
 }
 
+// Exports
+export type CompleteCard = {
+  id?: string;
+  imgUrl?: string;
+  title?: string;
+  faction?: string;
+  location?: string;
+  text?: string;
+  textLeft?: string;
+  textRight?: string;
+  actionLeft?: {
+    heart?: number;
+    diamond?: number;
+    greenAura?: number;
+    yellowAura?: number;
+    brain?: number;
+    smiley?: number;
+    knife?: number;
+    cleaver?: number;
+    memory?: number;
+  },
+  actionRight?: {
+    heart?: number;
+    diamond?: number;
+    greenAura?: number;
+    yellowAura?: number;
+    brain?: number;
+    smiley?: number;
+    knife?: number;
+    cleaver?: number;
+    memory?: number;
+  },
+  appearsWithIcon?: string;
+}
+
 export let healthCard: CompleteCard = {
   id: 'stat-health',
   imgUrl: '/decks/beings/health_being.png',
   title:'Health being',
   faction: 'Being',
-  location: '???',
+  location: 'Decision',
   appearsWithIcon: '',
   ...determineCardProperties('stat-health')
 };
@@ -382,7 +447,7 @@ export let auraCard: CompleteCard = {
   imgUrl: '/decks/beings/aura_being.png',
   title:'Aura being',
   faction: 'Being',
-  location: '???',
+  location: 'Decision',
   appearsWithIcon: '',
   ...determineCardProperties('stat-aura')
 };
@@ -391,7 +456,7 @@ export let sanityCard: CompleteCard = {
   imgUrl: '/decks/beings/sanity_being.png',
   title:'Sanity being',
   faction: 'Being',
-  location: '???',
+  location: 'Decision',
   appearsWithIcon: '',
   ...determineCardProperties('stat-sanity')
 };
@@ -400,7 +465,7 @@ export let impulseCard: CompleteCard = {
   imgUrl: '/decks/beings/impulse_being.png',
   title:'Impulse being',
   faction: 'Being',
-  location: '???',
+  location: 'Decision',
   appearsWithIcon: '',
   ...determineCardProperties('stat-impulse')
 };

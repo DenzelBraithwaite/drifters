@@ -6,6 +6,7 @@ import tutorial4 from './decks/tutorial4';
 import survey1 from './decks/survey1';
 import survey2 from './decks/survey2';
 import survey3 from './decks/survey3';
+import survey4 from './decks/survey4';
 import chapter1 from './decks/chapter1';
 import chapter2 from './decks/chapter2';
 import chapter3 from './decks/chapter3';
@@ -14,6 +15,7 @@ import elves from './decks/elves';
 import goblins from './decks/goblins';
 import beings from './decks/beings';
 import { healthCard, auraCard, sanityCard, impulseCard } from '../helpers/stats';
+import chapter4 from './decks/chapter4';
 
 // TODO: Why in the world are these all svelte stores when I only read from them? Just make them regular Arrays.
 // Combines all smaller decks into one master deck.
@@ -25,11 +27,11 @@ const decks = writable({
     survey1: get(survey1),
     survey2: get(survey2),
     survey3: get(survey3),
-    survey4: [],
+    survey4: get(survey4),
     chapter1: get(chapter1),
     chapter2: get(chapter2),
     chapter3: get(chapter3),
-    chapter4: [],
+    chapter4: get(chapter4),
     soldiers: get(soldiers),
     elves: get(elves),
     goblins: get(goblins),

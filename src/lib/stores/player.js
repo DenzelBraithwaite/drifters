@@ -26,15 +26,23 @@ const player = writable({
   },
   displayDecks: [
     {
-      title: 'Tutorial1 / Survey1',
+      title: 'Jude',
+      description: 'Chatter',
       img: '/decks/tutorial/judicator-white.png'
-    }
+    },
+    // {
+    //   title: 'Jude',
+    //   description: 'Answer',
+    //   img: '/decks/tutorial/judicator-purple-smile.png'
+    // },
   ],
   health: 10, // choices that are mean increase this, nice choices decrease this
   aura: 10, // choices that are relaxing/lazy increase this, effort and confusion decreases this
   sanity: 10, // choices that are logical increase this, choices that are emotional decrease this
   impulse: 0, // choices that are violent increase this, choices that are peaceful decrease this
   memory: 0,
+  goodPoints: 0,
+  evilPoints: 0,
   // icons determined as game progresses, memory is always a puzzle
   icons: {
     health: '', 

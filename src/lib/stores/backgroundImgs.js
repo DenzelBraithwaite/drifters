@@ -6,6 +6,7 @@ const backgrounds = writable({
     village: 'bg__village',
     magicalForest: 'bg__magical-forest',
     kingdom: 'bg__kingdom',
+    cosmic: 'bg__cosmic',
 });
 
 export default backgrounds;

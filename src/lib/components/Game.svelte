@@ -9,10 +9,10 @@
 </script>
 
 <header>
-  <p class="version">Version: Beta 1.3</p>
+  <p class="version">Version: Beta 2.3.0</p>
 </header>
 
-<main class="{bgImg}">
+<main class="bg {bgImg}">
   <div class="game">
     <GameClient />
   </div>
@@ -56,32 +56,30 @@
     justify-content: space-between;
   }
 
+  .bg {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
   /* background images */
   .bg__village {
     background: url('/backgrounds/village.png');
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center;
   }
 
   .bg__dark {
     background: url('/backgrounds/dark_2.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
   }
 
   .bg__magical-forest {
     background: url('/backgrounds/forest.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
   }
 
   .bg__kingdom {
-    background: url('/backgrounds/kingdom.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url('/backgrounds/magic_forest.png');
+  }
+
+  .bg__cosmic {
+    background: url('/backgrounds/cosmic.png');
   }
 </style>

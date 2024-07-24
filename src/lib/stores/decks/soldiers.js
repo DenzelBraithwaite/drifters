@@ -10,15 +10,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "We're in the same boat then soldier, but stay strong.",
         textRight: "A life of violence is a wasted one.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 2,
         },
         actionRight: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-1b',
@@ -28,15 +31,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "You need to learn to relax before your face stays like that permanently.",
         textRight: "Yeah it must be really hard to pull your own weight.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: 2,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-1c',
@@ -46,15 +52,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "You'd think you'd be the captain then, wouldn't you.",
         textRight: "I'm sure you'd love to go to war alone then.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-1d',
@@ -64,15 +73,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "Maybe you should do something about it instead of complaining.",
         textRight: "Your hard work is recognized, thank you for your service.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 2,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
         actionRight: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-1e',
@@ -82,15 +94,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "Sorry to bother you.",
         textRight: "Yes you probably do.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: 2,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
 
     // August
@@ -102,15 +117,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "I do seem to be having a hard time relaxing my guard around here.",
         textRight: "I bet you sleep with one eye open.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 2,
+            heart: 2,
+            diamond: -2,
             memory: 2,
         },
         actionRight: {
-            health: -2,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-2b',
@@ -120,15 +138,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "You never know what tomorrow holds in store for you.",
         textRight: "Probably better to stay here where it's safe anyway.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 2,
         },
         actionRight: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-2c',
@@ -138,15 +159,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "It's important to rest, but the key is not to rest for too long.",
         textRight: "Would staying be so bad?",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: -2,
+            heart: 0,
+            diamond: 0,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-2d',
@@ -156,15 +180,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "I'm surprised you managed to stay alive this long.",
         textRight: "You could always fake your death and run away.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 2,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
         actionRight: {
-            health: 0,
-            memory: 2,
+            heart: 2,
+            diamond: -2,
+            memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-2e',
@@ -173,16 +200,19 @@ const soldiers = writable([
         text: "If I run away from the army, do you think they'll have me hanged?",
         faction: 'Soldier',
         textLeft: "It's a strong possibility.",
-        textRight: "You'll be fine, won't know unless you try.",
+        textRight: "You'll be fine, just don't look back.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: -2,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
         actionRight: {
-            health: 2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
 
     // Dedu
@@ -192,17 +222,20 @@ const soldiers = writable([
         title:'Dedu',
         text: "I've come a long way from my home village, the people here do not know war like my people do.",
         faction: 'Soldier',
-        textLeft: "Don't judge people before getting to know them, you might be surprised..",
+        textLeft: "Don't judge people before getting to know them.",
         textRight: "I'm sorry you have to live through that.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 2,
-            memory: 0,
+            heart: -2,
+            diamond: 2,
+            memory: 2,
         },
         actionRight: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-3b',
@@ -212,15 +245,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "Perhaps one day.",
         textRight: "I play with my own deck.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: 2,
+            heart: -2,
+            diamond: 2,
             memory: 2,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-3c',
@@ -230,15 +266,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "He seems to have something on his mind, maybe I should leave him alone.",
         textRight: "...",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-3d',
@@ -248,15 +287,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "I couldn't tell you.",
         textRight: "Let me know if you remember.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 2,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-3e',
@@ -266,15 +308,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "I suppose you're right, but I don't want to hurt anyone.",
         textRight: "If push comes to shove, I can defend myself just fine.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: 2,
+            heart: -2,
+            diamond: 2,
             memory: 2,
         },
-        location: 'Town of Beginning'
     },
     
 
@@ -287,15 +332,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "They seem to be more interested on taking it easy than helping me.",
         textRight: "Thank you, I appreciate the comforting words.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 2,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
         actionRight: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-4b',
@@ -305,15 +353,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "I wish I could serve under you.",
         textRight: "One can only hope they'd do the same for you.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-4c',
@@ -323,15 +374,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: 'Maybe you worry too much about the safety of your men?',
         textRight: "Perhaps that's a question only you could answer.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
         actionRight: {
-            health: 2,
-            memory: 2,
+            heart: 0,
+            diamond: 0,
+            memory: 0,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-4d',
@@ -341,15 +395,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "You don't need to brag to me, I can already see you're a brave warrior.",
         textRight: "Fear exists in all living beings, perhaps you've just suppressed it.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: -2,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
         actionRight: {
-            health: -2,
-            memory: 0,
+            heart: 2,
+            diamond: -2,
+            memory: 2,
         },
-        location: 'Town of Beginning'
     },
     {
         id: 'chapter1-s-4e',
@@ -359,15 +416,18 @@ const soldiers = writable([
         faction: 'Soldier',
         textLeft: "Making hard decisions, even if it means abandoning one of your men.",
         textRight: "Listening to your people and allowing everyone to have a say.",
+        location: 'Choice',
+        appearsWithIcon: '',
         actionLeft: {
-            health: 2,
+            heart: -2,
+            diamond: 2,
             memory: 0,
         },
         actionRight: {
-            health: -2,
+            heart: 2,
+            diamond: -2,
             memory: 0,
         },
-        location: 'Town of Beginning'
     },
 ]);
 

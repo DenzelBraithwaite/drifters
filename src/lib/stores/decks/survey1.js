@@ -3,166 +3,167 @@ import { writable } from 'svelte/store';
 const survey1 = writable([
     {
         id: 'survey1-1',
-        imgUrl: '/decks/tutorial/judicator-white-smile.png',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "Fantastic Jack! Yes Jack it is and Jack it must be. Now again, these are just a couple of random questions, just answer honestly alright? And away we go!",
-        faction: 'Being',
-        textLeft: "Comply", // Survey1-2a
-        textRight: 'Refuse', // Survey1-2b
+        text: "Let's begin, do you prefer status or influence?",
+        faction: '???',
+        textLeft: "Status", // Survey1-2a
+        textRight: 'Influence', // Survey1-2b
+        location: 'Answer',
         actionLeft: {
-            heart: 1,
-            diamond: 0,
-            good: 0,
-            evil: 0
-        },
-        actionRight: {
             heart: 0,
             diamond: 1,
             good: 0,
-            evil: 0
+            evil: 1
         },
-        location: 'survey'
+        actionRight: {
+            heart: 1,
+            diamond: 0,
+            good: 1,
+            evil: 1
+        }
     },
     {
         id: 'survey1-2a',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "Thank you for your willing cooperation. Moving on, what's more important to you?",
-        faction: 'Being',
-        textLeft: "Comfort", // Survey1-3
-        textRight: 'Sacrifice', // Survey1-3
+        text: "You must like attention, do you prefer comfort or sacrifice?",
+        faction: '???',
+        textLeft: "Comfort", // ->survey1-3a
+        textRight: "Sacrifice", // ->survey1-3b
+        location: 'Answer',
         actionLeft: {
             heart: 0,
             diamond: 1,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
             heart: 1,
             diamond: 0,
-            good: 0,
+            good: 1,
             evil: 0
-        },
-        location: 'survey'
+        }
     },
     {
         id: 'survey1-2b',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "Hmm... interesting, your decision has been noted. Moving on, what's more important to you?",
-        faction: 'Being',
-        textLeft: "Comfort", // Survey1-3
-        textRight: 'Sacrifice', // Survey1-3
+        text: "You must like power, do you prefer comfort or sacrifice?",
+        faction: '???',
+        textLeft: "Comfort", // ->survey1-3a
+        textRight: "Sacrifice", // ->survey1-3b
+        location: 'Answer',
         actionLeft: {
             heart: 0,
             diamond: 1,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
+            heart: 1,
+            diamond: 0,
+            good: 1,
+            evil: 0
+        }
+    },
+    {
+        id: 'survey1-3a',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
+        title:'Jude',
+        text: "You must put yourself before others. Would you rather a tattoo of a heart or diamond?",
+        faction: '???',
+        textLeft: "Heart", // ->survey1-4
+        textRight: "Diamond", // ->survey1-4
+        location: 'Answer',
+        actionLeft: {
             heart: 1,
             diamond: 0,
             good: 0,
             evil: 0
         },
-        location: 'survey'
+        actionRight: {
+            heart: 0,
+            diamond: 1,
+            good: 0,
+            evil: 0
+        }
     },
     {
-        id: 'survey1-3',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        id: 'survey1-3b',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "Really? I suppose I should've guessed as much. Alright on to the next one; which do you prefer?",
-        faction: 'Being',
-        textLeft: "Hearts", // Survey1-4
-        textRight: 'Diamonds', // Survey1-4
+        text: "You'd put others before yourself? Would you rather a tattoo of a heart or diamond?",
+        faction: '???',
+        textLeft: "Heart", // ->survey1-4
+        textRight: "Diamond", // ->survey1-4
+        location: 'Answer',
         actionLeft: {
-            heart: 2,
+            heart: 1,
             diamond: 0,
             good: 0,
             evil: 0
         },
         actionRight: {
             heart: 0,
-            diamond: 2,
+            diamond: 1,
             good: 0,
             evil: 0
-        },
-        location: 'survey'
+        }
     },
     {
         id: 'survey1-4',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "Naturally, what's next now... here we go. You only have time for one, which do you choose?",
-        faction: 'Being',
+        text: "Interesting, now what if you only had time for one of these two actions, which would you choose?",
+        faction: '???',
         textLeft: "Save a stranger from a fire, but they won't show any gratitude.", // Survey1-5a
-        textRight: "Steal a rich stranger's wallet filled with cash with no chance of being caught.", // Survey1-5b
+        textRight: "Steal a rich person's wallet, filled with cash and no chance of being caught.", // Survey1-5b
+        location: 'Answer',
         actionLeft: {
             heart: 1,
             diamond: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         actionRight: {
             heart: 0,
             diamond: 1,
             good: 0,
-            evil: 0
-        },
-        location: 'survey'
+            evil: 1
+        }
     },
     {
         id: 'survey1-5a',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
-        text: "How selfless of you, what a saint! Truly, you must be a gift from above. Perhaps you should answer the next one honestly though.",
-        faction: 'Being',
-        textLeft: "Left", // Survey1-6
-        textRight: "Right", // Survey1-6
+        text: "What a saint, perhaps you should start answering honestly. What's your favorite animal?",
+        faction: '???',
+        textLeft: "Dog", // ->survey1-6a
+        textRight: "Cat", // ->survey1-6b
+        location: 'Answer',
         actionLeft: {
-            heart: 0,
-            diamond: 1,
-            good: 0,
-            evil: 0
-        },
-        actionRight: {
             heart: 1,
             diamond: 0,
             good: 0,
             evil: 0
         },
-        location: 'survey'
+        actionRight: {
+            heart: 0,
+            diamond: 1,
+            good: 0,
+            evil: 0
+        }
     },
     {
         id: 'survey1-5b',
-        imgUrl: '/decks/tutorial/judicator-white-smile.png',
+        imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
-        text: "Hahahaha yes, nicely done. I'm glad you aren't a stranger to yourself. Now for the next one!",
-        faction: 'Being',
-        textLeft: "Left", // Survey1-6
-        textRight: "Right", // Survey1-6
-        actionLeft: {
-            heart: 0,
-            diamond: 1,
-            good: 0,
-            evil: 0
-        },
-        actionRight: {
-            heart: 1,
-            diamond: 0,
-            good: 0,
-            evil: 0
-        },
-        location: 'survey'
-    },
-    {
-        id: 'survey1-6',
-        imgUrl: '/decks/tutorial/judicator-white.png',
-        title:'Jude',
-        text: "Here's a question, do you think any of your answers have meant anything? Even the last one, did you think that meant something?",
-        faction: 'Being',
-        textLeft: "I'd hope so, otherwise this is just one big waste of time.", // Survey1-7a
-        textRight: "I'm not sure, probably not? I just want to get out of here.", // Survey1-7b
+        text: "How honest of you, what's your favorite animal?",
+        faction: '???',
+        textLeft: "Dog", // ->survey1-6a
+        textRight: "Cat", // ->survey1-6b
+        location: 'Answer',
         actionLeft: {
             heart: 1,
             diamond: 0,
@@ -174,83 +175,127 @@ const survey1 = writable([
             diamond: 1,
             good: 0,
             evil: 0
-        },
-        location: 'survey'
+        }
     },
     {
-        id: 'survey1-7a',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        id: 'survey1-6a',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "Well they are indeed important, except for that left or right one. Honestly I'm not even sure why that one was in there.",
-        faction: 'Being',
-        textLeft: "Are we almost done yet?", // Survey1-8
-        textRight: "Is this all a joke or something?", // Survey1-8
+        text: "I prefer cats myself. Would you rather have a pet snake or spider?",
+        faction: '???',
+        textLeft: "Snake", // ->survey1-7
+        textRight: "Spider", // ->survey1-7
+        location: 'Answer',
         actionLeft: {
             heart: 0,
+            diamond: 1,
+            good: 0,
+            evil: 1
+        },
+        actionRight: {
+            heart: 1,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        }
+    },
+    {
+        id: 'survey1-6b',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
+        title:'Jude',
+        text: "I also prefer cats, what about snakes and spiders?",
+        faction: '???',
+        textLeft: "Yes", // ->survey1-7
+        textRight: "No", // ->survey1-7
+        location: 'Answer',
+        actionLeft: {
+            heart: 0,
+            diamond: 1,
+            good: 0,
+            evil: 1
+        },
+        actionRight: {
+            heart: 1,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        }
+    },
+    {
+        id: 'survey1-7',
+        imgUrl: '/decks/tutorial/judicator-purple-smile.png',
+        title:'Jude',
+        text: "I'm starting to get to know you better, Jack. Answer time is almost over, would you rather be feared or loved?",
+        faction: '???',
+        textLeft: "Feared", // ->survey1-8a
+        textRight: "Loved", // ->survey1-8b
+        location: 'Answer',
+        actionLeft: {
+            heart: 0,
+            diamond: 1,
+            good: 0,
+            evil: 1
+        },
+        actionRight: {
+            heart: 1,
+            diamond: 0,
+            good: 1,
+            evil: 0
+        }
+    },
+    {
+        id: 'survey1-8a',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
+        title:'Jude',
+        text: "No one dare stand in your way. Choose one:",
+        faction: '???',
+        textLeft: "Love", // ->survey1-9
+        textRight: "Friendship", // ->survey1-9
+        location: 'Answer',
+        actionLeft: {
+            heart: 1,
             diamond: 0,
             good: 0,
             evil: 0
         },
         actionRight: {
             heart: 0,
-            diamond: 0,
+            diamond: 1,
             good: 0,
             evil: 0
-        },
-        location: 'survey'
+        }
     },
     {
-        id: 'survey1-7b',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        id: 'survey1-8b',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "Bit of a Debbie downer aren't we? You won't last very long with an attitude like that you know.",
-        faction: 'Being',
-        textLeft: "Whatever, are we done yet?", // Survey1-8
-        textRight: "Don't lecture me when you won't even answer a simple question. What is going on here??", // Survey1-8
+        text: "Does that mean you wish you were loved? Choose one:",
+        faction: '???',
+        textLeft: "To love", // ->survey1-9
+        textRight: "To be loved", // ->survey1-9
+        location: 'Answer',
         actionLeft: {
-            heart: 0,
+            heart: 1,
             diamond: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         actionRight: {
             heart: 0,
-            diamond: 0,
+            diamond: 1,
             good: 0,
-            evil: 0
-        },
-        location: 'survey'
-    },
-    {
-        id: 'survey1-8',
-        imgUrl: '/decks/tutorial/judicator-white-smile.png',
-        title:'Jude',
-        text: "So many questions as always, and here I thought I was the one asking the questions. Okay here's the final one, get ready.",
-        faction: 'Being',
-        textLeft: "...", // Survey1-9
-        textRight: "Ready whenever.", // Survey1-9
-        actionLeft: {
-            heart: 0,
-            diamond: 0,
-            good: 0,
-            evil: 0
-        },
-        actionRight: {
-            heart: 0,
-            diamond: 0,
-            good: 0,
-            evil: 0
-        },
-        location: 'survey'
+            evil: 1
+        }
     },
     {
         id: 'survey1-9',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "Who are you?",
-        faction: 'Being',
-        textLeft: "I don't remember...", // Survey1-10
-        textRight: "Still \"Jack\" for now.", // Survey1-10
+        text: "Is that so, what about:",
+        faction: '???',
+        textLeft: "Waking up", // ->survey1-10a
+        textRight: "Falling asleep", // ->survey1-10b
+        location: 'Answer',
         actionLeft: {
             heart: 1,
             diamond: 0,
@@ -262,61 +307,83 @@ const survey1 = writable([
             diamond: 1,
             good: 0,
             evil: 0
-        },
-        location: 'survey'
+        }
     },
     {
-        id: 'survey1-10',
-        imgUrl: '/decks/tutorial/judicator-white-smile.png',
+        id: 'survey1-10a',
+        imgUrl: '/decks/tutorial/judicator-purple-smile.png',
         title:'Jude',
-        text: "Fantastic, then it's time. Remember, your decisions have meaning. You aren't alone here, but this is your show... Good luck Jack, hahahaa...",
-        faction: 'Being',
-        textLeft: "Wait come back!", // Survey1-11
-        textRight: "Wait I'm not alone here?", // Survey1-11
+        text: "Yes, why waste the day away? Last question, are you ready?",
+        faction: '???',
+        textLeft: "Yes", // ->survey1-11
+        textRight: "No", // ->survey1-11
+        location: 'Answer',
         actionLeft: {
             heart: 0,
             diamond: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         actionRight: {
             heart: 0,
             diamond: 0,
             good: 0,
+            evil: 1
+        }
+    },
+    {
+        id: 'survey1-10b',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
+        title:'Jude',
+        text: "You rather dream than live your life? Last question, are you ready?",
+        faction: '???',
+        textLeft: "Yes", // ->survey1-11
+        textRight: "No", // ->survey1-11
+        location: 'Answer',
+        actionLeft: {
+            heart: 0,
+            diamond: 0,
+            good: 1,
             evil: 0
         },
-        location: 'survey'
+        actionRight: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 1
+        }
     },
     {
         id: 'survey1-11',
-        imgUrl: '/decks/tutorial/judicator-white.png',
+        imgUrl: '/decks/tutorial/judicator-purple.png',
         title:'Jude',
-        text: "Oh- and by the way, I probably should have mentioned this sooner... But every time we speak, you will gain a memento.",
-        faction: 'Being',
-        textLeft: "A memento?", // Survey1-12
-        textRight: "For what?", // Survey1-12
+        text: "Are you alive?",
+        faction: '???',
+        textLeft: "Of course I am.", // ->survey1-12
+        textRight: "I'm afraid to answer.", // ->survey1-12
+        location: 'Answer',
         actionLeft: {
             heart: 0,
-            diamond: 0,
+            diamond: 1,
             good: 0,
             evil: 0
         },
         actionRight: {
-            heart: 0,
+            heart: 1,
             diamond: 0,
             good: 0,
             evil: 0
-        },
-        location: 'survey'
+        }
     },
     {
         id: 'survey1-12',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "The mementos are linked to you, you must protect them. If one of them ever becomes fully damaged... Just remember it's important to keep them intact.",
-        faction: 'Being',
-        textLeft: "How would they get damaged?", // Survey1-13a
-        textRight: "Wait, what happens if one breaks?", // Survey1-13b
+        text: "Trust me, whether you're alive or dead isn't important. All that's important is that you regain your memories before it's too late.",
+        faction: '???',
+        textLeft: "It's important to me", // ->survey1-13a
+        textRight: "What happens if I wait too long?", // ->survey1-13b
+        location: 'Chatter',
         actionLeft: {
             heart: 0,
             diamond: 0,
@@ -328,17 +395,17 @@ const survey1 = writable([
             diamond: 0,
             good: 0,
             evil: 0
-        },
-        location: 'survey'
+        }
     },
     {
         id: 'survey1-13a',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "It depends on your actions, who you talk to, what you decide to say. Right now you only have one memento to worry about, but soon you will have more... very soon.",
-        faction: 'Being',
-        textLeft: "How could me talking to other people damage my mementos?", // Survey1-14
-        textRight: "What should I avoid saying then?", // Survey1-14
+        text: "What seemed important before may no longer be, I urge you to focus on the mementos Jack, collect them all and everything will reveal itself.",
+        faction: '???',
+        textLeft: "Mementos, got it.", // ->survey1-14
+        textRight: "I guess I'm dead after all.", // ->survey1-14
+        location: 'Chatter',
         actionLeft: {
             heart: 0,
             diamond: 0,
@@ -350,17 +417,17 @@ const survey1 = writable([
             diamond: 0,
             good: 0,
             evil: 0
-        },
-        location: 'survey'
+        }
     },
     {
         id: 'survey1-13b',
-        imgUrl: '/decks/tutorial/judicator-white-smile.png',
+        imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "Now where's the fun in telling you that...",
-        faction: 'Being',
-        textLeft: "What about this is fun period?", // Survey1-14
-        textRight: "Is this a joke to you?", // Survey1-14
+        text: "Those who don't recover their mementos, drift forever. But don't worry about fates not belonging to you, focus on the ones you can change.",
+        faction: '???',
+        textLeft: "Mementos, got it.", // ->survey1-14
+        textRight: "Drift?", // ->survey1-13b-1b
+        location: 'Chatter',
         actionLeft: {
             heart: 0,
             diamond: 0,
@@ -372,17 +439,39 @@ const survey1 = writable([
             diamond: 0,
             good: 0,
             evil: 0
+        }
+    },
+    {
+        id: 'survey1-13b-1b',
+        imgUrl: '/decks/tutorial/judicator-white.png',
+        title:'Jude',
+        text: "There are many drifters, Jack. Lost souls who never recovered their sense of self and abandoned all memories. Protect the mementos and you have nothing to fear.",
+        faction: '???',
+        textLeft: "Mementos, got it.", // ->survey1-14
+        textRight: "I guess I'm dead after all.", // ->survey1-14
+        location: 'Chatter',
+        actionLeft: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
         },
-        location: 'survey'
+        actionRight: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        }
     },
     {
         id: 'survey1-14',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "That's enough questions for now, don't worry you'll be fine. Or maybe you won't, only one way to know for sure. We will speak again soon Jack, very soon...",
-        faction: 'Being',
-        textLeft: "I'm not done yet, I still have more questions.", // Chapter 1
-        textRight: "My questions aren't going anywhere, see you soon \"Jude\".", // Chapter 1
+        text: "One last thing Jack, I mentioned that you will have many experiences and only when you relive them all will you truly regain your memories. However, I can perceive your deviating paths all at once.",
+        faction: '???',
+        textLeft: "I don't understand.", // ->survey1-15a
+        textRight: "Makes perfect sense to me.", // ->survey1-15b
+        location: 'Chatter',
         actionLeft: {
             heart: 0,
             diamond: 0,
@@ -394,9 +483,119 @@ const survey1 = writable([
             diamond: 0,
             good: 0,
             evil: 0
+        }
+    },
+    {
+        id: 'survey1-15a',
+        imgUrl: '/decks/tutorial/judicator-white.png',
+        title:'Jude',
+        text: "Allow me to explain the best I can. Perhaps you feel as if you just woke up in a strange place, but it's possible this isn't your first time being here. I'm able to see all the decisions you've ever and will ever make.",
+        faction: '???',
+        textLeft: "Are you a god?", // ->survey1-15a-1a
+        textRight: "So you can see the future?", // ->survey1-15a-1b
+        location: 'Chatter',
+        actionLeft: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
         },
-        location: 'survey'
-    }
+        actionRight: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        }
+    },
+    {
+        id: 'survey1-15a-1a',
+        imgUrl: '/decks/tutorial/judicator-white-smile.png',
+        title:'Jude',
+        text: "A god? No, nothing like that. We're a lot more alike than you realize, Jack. I'm just a guide, a witness to your journey.",
+        faction: '???',
+        textLeft: "Sounds like a god to me.", // ->survey1-16
+        textRight: "A witness, okay then.", // ->survey1-16
+        location: 'Chatter',
+        actionLeft: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        },
+        actionRight: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        }
+    },
+    {
+        id: 'survey1-15a-1b',
+        imgUrl: '/decks/tutorial/judicator-white.png',
+        title:'Jude',
+        text: "Not quite, more like I'm talking to all of you at once.",
+        faction: '???',
+        textLeft: "Oh, okay then.", // ->survey1-16
+        textRight: "...", // ->survey1-16
+        location: 'Chatter',
+        actionLeft: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        },
+        actionRight: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        }
+    },
+    {
+        id: 'survey1-15b',
+        imgUrl: '/decks/tutorial/judicator-white.png',
+        title:'Jude',
+        text: "Oh, it does? Well then, I won't bore you with the explanation then.",
+        faction: '???',
+        textLeft: "No wait, I was joking!", // ->survey1-15a
+        textRight: "Sure, sounds good.", // ->survey1-16
+        location: 'Chatter',
+        actionLeft: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        },
+        actionRight: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        }
+    },
+    {
+        id: 'survey1-16',
+        imgUrl: '/decks/tutorial/judicator-white-smile.png',
+        title:'Jude',
+        text: "Oh, looks like it's choice time! Good luck, I'll be watching.",
+        faction: '???',
+        textLeft: "Wait, where are you going?", // ->chapter1
+        textRight: "Oh, ok bye!", // ->chapter1
+        location: 'Chatter',
+        actionLeft: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        },
+        actionRight: {
+            heart: 0,
+            diamond: 0,
+            good: 0,
+            evil: 0
+        }
+    },
+
 ]);
 
 export default survey1;

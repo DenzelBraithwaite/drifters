@@ -8,14 +8,16 @@
   // props
   export let img = '/stats/puzzle.svg';
   export let blurImg = false;
+  export let location = '';
 
 </script>
 
 <div class="card-wrapper">
   <div class="card" class:card-hover={$cardHovered.hovered}>
+    <p class="location">{location}</p>
     {#if $cardHovered.hovered}
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span class="text" class:cardBlurred={blurImg} transition:slide={{duration: 75}}>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <span class="text" class:cardBlurred={blurImg} transition:slide={{duration: 75}}>
         {#if $cardHovered.left}
           <p><slot name="text-left" /></p>
         {/if}
@@ -56,7 +58,7 @@
     object-fit: cover;
     object-position: center;
     border-radius: 1rem;
-    border: 4px solid #00000076;
+    border: 8px solid #00000076;
   }
 
   .text {
@@ -64,7 +66,7 @@
     text-shadow: 0 2px 4px #000000e5;
     background-color: #00000090;
     border-radius: 1rem;
-    height: 82%;
+    height: 75%;
     width: 90%;
     padding: 0.5rem;
     line-height: 1.15;
@@ -73,6 +75,17 @@
     transition: all 0.3s ease-out;
 
     position: absolute;
+    transform: translateY(12px);
+  }
+
+  .location {
+    color: #8a8a8a;
+    text-shadow: 1px 1px #456b73;
+    line-height: 1;
+    background-color: #00000076;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px 4px 0 0;
+
   }
 
   .cardBlurred {

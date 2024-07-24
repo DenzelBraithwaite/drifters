@@ -16,6 +16,10 @@
   import backgrounds from '../stores/backgroundImgs';
   import player from '../stores/player.js';
 
+  // Types
+  import type { CompleteCard } from '../helpers/stats';
+
+
   // Decks
   const tutorial1Deck = $decks.tutorial1;
   const tutorial2Deck = $decks.tutorial2;
@@ -38,7 +42,7 @@
 
   $player.unlockedCards = [...tutorial1Deck];
   let gameOver = false;
-  let currentCard = $player.unlockedCards[0];
+  let currentCard: CompleteCard = $player.unlockedCards[0];
   let menuOpen = false;
   let buttonOnCooldown = false;
   
@@ -72,7 +76,7 @@
           if (p.health >= 10) p.health = 10;
           if (p.aura >= 10) p.aura = 10;
           if (p.sanity >= 10) p.sanity = 10;
-          if (p.health <= 0) p.impulse = 0;
+          if (p.impulse <= 0) p.impulse = 0;
           return p;
       })
   }
@@ -87,22 +91,22 @@
       // Handles stat change and stat flash
       if (choice === 'left') {
         player.update(p => {
-          if (currentCard.actionLeft.health) {
-            p.health += currentCard.actionLeft.health;
-            statFlashHandler('health', setFlashEffect(currentCard.actionLeft.health));
+          if (currentCard.actionLeft.heart || currentCard.actionLeft.diamond) {
+            p.icons.health === 'heart' ? p.health += currentCard.actionLeft.heart : p.health += currentCard.actionLeft.diamond;
+            statFlashHandler('health', setFlashEffect(p.icons.health === 'heart' ? currentCard.actionLeft.heart : currentCard.actionLeft.diamond));
           };
-          if (currentCard.actionLeft.aura) {
-            p.aura += currentCard.actionLeft.aura;
-            statFlashHandler('aura', setFlashEffect(currentCard.actionLeft.aura));
-          }
-          if (currentCard.actionLeft.sanity) {
-            p.sanity += currentCard.actionLeft.sanity;
-            statFlashHandler('sanity', setFlashEffect(currentCard.actionLeft.sanity));
-          }
-          if (currentCard.actionLeft.impulse) {
-            statFlashHandler('impulse');   
-            p.impulse += currentCard.actionLeft.impulse;
-          }
+          if (currentCard.actionLeft.greenAura || currentCard.actionLeft.yellowAura) {
+            p.icons.aura === 'green' ? p.aura += currentCard.actionLeft.greenAura : p.aura += currentCard.actionLeft.yellowAura;
+            statFlashHandler('aura', setFlashEffect(p.icons.aura === 'green' ? currentCard.actionLeft.greenAura : currentCard.actionLeft.yellowAura));
+          };
+          if (currentCard.actionLeft.brain || currentCard.actionLeft.smiley) {
+            p.icons.sanity === 'brain' ? p.sanity += currentCard.actionLeft.brain : p.sanity += currentCard.actionLeft.smiley;
+            statFlashHandler('sanity', setFlashEffect(p.icons.sanity === 'brain' ? currentCard.actionLeft.brain : currentCard.actionLeft.smiley));
+          };
+          if (currentCard.actionLeft.knife || currentCard.actionLeft.cleaver) {
+            p.icons.impulse === 'knife' ? p.impulse -= currentCard.actionLeft.knife : p.impulse -= currentCard.actionLeft.cleaver;
+            statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionLeft.knife : currentCard.actionLeft.smiley));
+          };
           if (currentCard.actionLeft.memory) {
             statFlashHandler('memory');   
             p.memory += currentCard.actionLeft.memory;
@@ -111,21 +115,21 @@
         });
       } else if (choice === 'right') {
         player.update(p => {
-          if (currentCard.actionRight.health) {
-            p.health += currentCard.actionRight.health;
-            statFlashHandler('health', setFlashEffect(currentCard.actionRight.health));
-          }
-          if (currentCard.actionRight.aura) {
-            p.aura += currentCard.actionRight.aura;
-            statFlashHandler('aura', setFlashEffect(currentCard.actionRight.aura));
+          if (currentCard.actionRight.heart || currentCard.actionRight.diamond) {
+            p.icons.health === 'heart' ? p.health += currentCard.actionRight.heart : p.health += currentCard.actionRight.diamond;
+            statFlashHandler('health', setFlashEffect(p.icons.health === 'heart' ? currentCard.actionRight.heart : currentCard.actionRight.diamond));
           };
-          if (currentCard.actionRight.sanity) {
-            p.sanity += currentCard.actionRight.sanity;
-            statFlashHandler('sanity', setFlashEffect(currentCard.actionRight.sanity));
+          if (currentCard.actionRight.greenAura || currentCard.actionRight.yellowAura) {
+            p.icons.aura === 'green' ? p.aura += currentCard.actionRight.greenAura : p.aura += currentCard.actionRight.yellowAura;
+            statFlashHandler('aura', setFlashEffect(p.icons.aura === 'green' ? currentCard.actionRight.greenAura : currentCard.actionRight.yellowAura));
           };
-          if (currentCard.actionRight.impulse) {
-              statFlashHandler('impulse');
-              p.impulse += currentCard.actionRight.impulse
+          if (currentCard.actionRight.brain || currentCard.actionRight.smiley) {
+            p.icons.sanity === 'brain' ? p.sanity += currentCard.actionRight.brain : p.sanity += currentCard.actionRight.smiley;
+            statFlashHandler('sanity', setFlashEffect(p.icons.sanity === 'brain' ? currentCard.actionRight.brain : currentCard.actionRight.smiley));
+          };
+          if (currentCard.actionRight.knife || currentCard.actionRight.cleaver) {
+            p.icons.impulse === 'knife' ? p.impulse -= currentCard.actionRight.knife : p.impulse -= currentCard.actionRight.cleaver;
+            statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionRight.knife : currentCard.actionRight.smiley));
           };
           if (currentCard.actionRight.memory) {
               statFlashHandler('memory');
@@ -297,27 +301,28 @@
 
       // Add Beings deck
       if (!$player.unlockedDeck.chapter4Beings && $player.memory >= 52) {
-          newDeckAlertText = 'Beings'
-          newDeckAlert = true;
+        newDeckAlertText = 'Beings'
+        newDeckAlert = true;
 
-          player.update(p => {
-            p.unlockedCards = [...chapter4BeingsDeck, ...p.unlockedCards];
-            if (!p.unlockedDeck.chapter4Beings) {
-              p.displayDecks = [
-                ...p.displayDecks,
-                {
-                  title: 'Chapter4 / Beings',
-                  img: '/decks/chapter4/beings/purple/glasses.png'
-                }
-              ]
-            }
-            p.unlockedDeck.chapter4Beings = true;
-            return p;
-          });
+        player.update(p => {
+          p.unlockedCards = [...chapter4BeingsDeck, ...p.unlockedCards];
+          if (!p.unlockedDeck.chapter4Beings) {
+            p.displayDecks = [
+              ...p.displayDecks,
+              {
+                title: 'Beings',
+                description: 'Special bonus deck',
+                img: '/decks/chapter4/beings/purple/glasses.png'
+              }
+            ]
+          }
+          p.unlockedDeck.chapter4Beings = true;
+          return p;
+        });
 
-          setTimeout(() => {
-            newDeckAlert = false;
-          }, 4500);
+        setTimeout(() => {
+          newDeckAlert = false;
+        }, 4500);
       }
 
       // Add Goblins deck
@@ -326,48 +331,50 @@
         newDeckAlert = true;
 
         player.update(p => {
-            p.unlockedCards = [...chapter3GoblinsDeck, ...p.unlockedCards];
-            if (!p.unlockedDeck.chapter3GoblinsDeck) {
-                p.displayDecks = [
-                    ...p.displayDecks,
-                    {
-                        title: 'Chapter3 / Goblins',
-                        img: '/decks/chapter3/goblins/goblin-woman.png'
-                    }
-                ]
-            }
-            p.unlockedDeck.chapter3Goblins = true;
-            return p;
+          p.unlockedCards = [...chapter3GoblinsDeck, ...p.unlockedCards];
+          if (!p.unlockedDeck.chapter3GoblinsDeck) {
+            p.displayDecks = [
+              ...p.displayDecks,
+              {
+                title: 'Goblins',
+                description: 'Bonus deck',
+                img: '/decks/chapter3/goblins/goblin-woman.png'
+              }
+            ]
+          }
+          p.unlockedDeck.chapter3Goblins = true;
+          return p;
         });
 
         setTimeout(() => {
-            newDeckAlert = false;
+          newDeckAlert = false;
         }, 4500);
       }
 
       // Add Elves deck
       if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 22) {
-          newDeckAlertText = 'Elves'
-          newDeckAlert = true;
+        newDeckAlertText = 'Elves'
+        newDeckAlert = true;
 
-          player.update(p => {
-              p.unlockedCards = [...chapter2ElvesDeck, ...p.unlockedCards];
-              if (!p.unlockedDeck.chapter2Elves) {
-                  p.displayDecks = [
-                      ...p.displayDecks,
-                      {
-                          title: 'Chapter2 / Elves',
-                          img: '/decks/chapter2/elves/elf-archer-white.png'
-                      }
-                  ]
+        player.update(p => {
+          p.unlockedCards = [...chapter2ElvesDeck, ...p.unlockedCards];
+          if (!p.unlockedDeck.chapter2Elves) {
+            p.displayDecks = [
+              ...p.displayDecks,
+              {
+                title: 'Elves',
+                description: 'Bonus deck',
+                img: '/decks/chapter2/elves/elf-archer-white.png'
               }
-              p.unlockedDeck.chapter2Elves = true;
-              return p;
-          });
+            ]
+          }
+          p.unlockedDeck.chapter2Elves = true;
+          return p;
+        });
 
-          setTimeout(() => {
-              newDeckAlert = false;
-          }, 4500);
+        setTimeout(() => {
+          newDeckAlert = false;
+        }, 4500);
       }
 
       // Add soldier deck
@@ -381,7 +388,8 @@
                   p.displayDecks = [
                       ...p.displayDecks,
                       {
-                          title: 'Chapter1 / Soldiers',
+                          title: 'Soldiers',
+                          description: 'Bonus deck',
                           img: '/decks/chapter1/soldiers/captain.png'
                       }
                   ]
@@ -402,17 +410,6 @@
           p.unlockedCards = [...tutorial4Deck];
           currentCard = p.unlockedCards[0];
 
-          // TODO: Confirm why this is here, I believe it's to avoid user's extra clicks to create multiple deck images.
-          if (!p.unlockedDeck.tutorial4) {
-            p.displayDecks = [
-              ...p.displayDecks,
-              {
-                title: 'Tutorial4 / Survey4',
-                img: '/decks/tutorial/judicator-purple-smile.png'
-              }
-            ]
-          }
-
           p.unlockedDeck.tutorial4 = true;
           return p;
         });
@@ -430,18 +427,6 @@
                   p.activeDeck = 'survey';
                   p.unlockedCards = [...tutorial3Deck];
                   currentCard = p.unlockedCards[0];
-
-                  // TODO: Confirm why this is here, I believe it's to avoid user's extra clicks to create multiple deck images.
-                  if (!p.unlockedDeck.tutorial3) {
-                      p.displayDecks = [
-                          ...p.displayDecks,
-                          {
-                              title: 'Tutorial3 / Survey3',
-                              img: '/decks/tutorial/judicator-purple.png'
-                          }
-                      ]
-                  }
-
                   p.unlockedDeck.tutorial3 = true;
                   return p;
               });
@@ -464,8 +449,9 @@
                   p.displayDecks = [
                       ...p.displayDecks,
                       {
-                          title: 'Tutorial2 / Survey2',
-                          img: '/decks/tutorial/judicator-white-smile.png'
+                          title: 'Jude',
+                          description: 'Question',
+                          img: '/decks/tutorial/judicator-blue.png'
                       }
                   ]
               }
@@ -500,13 +486,65 @@
     toggleBlur();
 
     // Checks if current card is final survey card
+    if (currentCard.id === 'survey4-12') {
+      setTimeout(() => {
+        player.update(p => {
+          p.health = 10;
+          p.aura = 10;
+          p.sanity = 10;
+          p.activeDeck = 'chapter';
+          p.unlockedCards = [...chapter4Deck, statDeck.impulse];
+
+          // Choose stat icon based on answers
+          p.icons.impulse = p.iconPoints.knife >= p.iconPoints.cleaver ? 'knife' : 'cleaver';
+
+          if (!p.unlockedDeck.chapter4) {
+            p.displayDecks = [
+              ...p.displayDecks,
+              {
+                // TODO: fix knife img size AND update impulse img when victim chosen 
+                title: p.icons.impulse === 'knife' ? 'Knife' : 'Cleaver',
+                description: 'Impulse momento',
+                img: p.icons.impulse === 'knife' ? '/decks/chapter4/jessy.png' : '/decks/chapter4/jessy.png'
+              },
+              {
+                title: 'Impulse Being',
+                description: 'Special impulse card',
+                img: '/decks/beings/impulse_being.png'
+              },
+              {
+                title: 'Jude',
+                description: 'Choice',
+                img: '/decks/tutorial/judicator-red-smile.png'
+              }
+            ]
+          }
+
+          p.unlockedDeck.survey4 = true;
+          p.unlockedDeck.chapter4 = true;
+          return p;
+        });
+          
+        // Change background
+        // TODO: get chapter 4 bg
+        backgrounds.update(bg => {
+          $backgrounds.active = $backgrounds.dark;
+          return bg;
+        });
+          
+        const index = Math.floor(Math.random() * $player.unlockedCards.length);
+        const cardDrawn = $player.unlockedCards[index];
+        currentCard = cardDrawn;
+      }, 4000);
+    }
+
     if (currentCard.id === 'survey3-12') {
       setTimeout(() => {
         player.update(p => {
           p.health = 10;
           p.aura = 10;
           p.activeDeck = 'chapter';
-          p.unlockedCards = [...chapter3Deck];
+          p.unlockedCards = [...chapter3Deck, statDeck.sanity];
 
           // Choose stat icon based on answers
           p.icons.sanity = p.iconPoints.brain >= p.iconPoints.smiley ? 'brain' : 'smiley';
@@ -515,11 +553,13 @@
             p.displayDecks = [
               ...p.displayDecks,
               {
-                title: 'Chapter3',
+                title: p.icons.sanity === 'brain' ? 'Brain' : 'Smiley',
+                description: 'Sanity momento',
                 img: p.icons.sanity === 'brain' ? '/decks/chapter3/bullisia.png' : '/decks/chapter3/temptress.png'
               },
               {
-                title: 'Sanity',
+                title: 'Sanity Being',
+                description: 'Special sanity card',
                 img: '/decks/beings/sanity_being.png'
               }
             ]
@@ -542,12 +582,12 @@
       }, 4000);
     }
 
-    if (currentCard.id === 'survey2-12') {
+    if (currentCard.id === 'survey2-14') {
       setTimeout(() => {
         player.update(p => {
           p.health = 10;
           p.activeDeck = 'chapter';
-          p.unlockedCards = [...chapter2Deck];
+          p.unlockedCards = [...chapter2Deck, statDeck.aura];
 
           // Choose stat icon based on answers
           p.icons.aura = p.iconPoints.yellowAura >= p.iconPoints.greenAura ? 'yellow' : 'green';
@@ -556,11 +596,13 @@
             p.displayDecks = [
               ...p.displayDecks,
               {
-                title: 'Chapter2',
+                title: p.icons.aura === 'green' ? 'Green Aura' : 'Yellow Aura',
+                description: 'Aura memento',
                 img: p.icons.aura === 'green' ? '/decks/chapter2/rabbit.png' : '/decks/chapter2/hippy-boy.png'
               },
               {
-                title: 'Aura',
+                title: 'Aura Being',
+                description: 'Special aura card',
                 img: '/decks/beings/aura_being.png'
               }
             ]
@@ -583,7 +625,7 @@
       }, 4000);
     }
 
-    if (currentCard.id === 'survey1-14') {
+    if (currentCard.id === 'survey1-16') {
       setTimeout(() => {
         player.update(p => {
           p.activeDeck = 'chapter';
@@ -597,11 +639,18 @@
             p.displayDecks = [
               ...p.displayDecks,
               {
-                title: 'Chapter1',
+                title: 'Jude',
+                description: 'Answer',
+                img: '/decks/tutorial/judicator-purple-smile.png'
+              },
+              {
+                title: p.icons.health === 'heart' ? 'Heart' : 'Diamond',
+                description: 'Health momento',
                 img: p.icons.health === 'heart' ? '/decks/chapter1/peasant.png' : '/decks/chapter1/villager.png'
               },
               {
-                title: 'Health',
+                title: 'Health Being',
+                description: 'Special health card',
                 img: '/decks/beings/health_being.png'
               }
             ]
@@ -648,7 +697,13 @@
 
     buttonOnCooldown = true;
     // TODO: remember to put back to 750
-    setTimeout(() => buttonOnCooldown = false, 0);
+    setTimeout(() => buttonOnCooldown = false, 50);
+  }
+
+  function displayPlayerAlignment(): string {
+    if ($player.goodPoints - $player.evilPoints > 0) return 'Good';
+    else if ($player.evilPoints - $player.goodPoints > 0) return 'Evil';
+    else return 'Neutral';
   }
 </script>
 
@@ -663,10 +718,11 @@
     <div class="menu" in:fly={{y: 100}} out:fade>
       <h2 class="main-menu-title">Main Menu</h2>
       <main class="menu-content">
-        <h3 class="menu-header">Times died: <span class="menu-deaths">{$player.timesReborn}</span></h3>
-        <h3 class="menu-header">Decks Unlocked:</h3>
+        <h3 class="menu-header">Mementos repaired: <span class="menu-text__red">{$player.timesReborn}</span></h3>
+        <h3 class="menu-header">Alignment: <span class="menu-text__blue">{displayPlayerAlignment()}</span></h3>
+        <h3 class="menu-header">Cards:</h3>
         {#each $player.displayDecks as deck}
-          <MenuDeck title={deck.title} img={deck.img}/>
+          <MenuDeck title={deck.title} img={deck.img} description={deck.description}/>
         {/each}
       </main>
       <div class="menu-bottom-section">
@@ -679,7 +735,7 @@
       <img src={statImgHandler('health', $player.health)} alt={statImgAltTextHandler('health')} class="stat-icon" class:flash-green={flashHealth.positive} class:flash-red={flashHealth.negative}>
       <img src={statImgHandler('aura', $player.aura)} alt={statImgAltTextHandler('aura')} class="stat-icon" class:flash-green={flashAura.positive} class:flash-red={flashAura.negative}>
       <img src={statImgHandler('sanity', $player.sanity)} alt={statImgAltTextHandler('sanity')} class="stat-icon" class:flash-green={flashSanity.positive} class:flash-red={flashSanity.negative}>
-      <img src={statImgHandler('impulse', $player.impulse)} alt={statImgAltTextHandler('impulse')} class="stat-icon" class:flash-green={flashImpulse.positive} class:flash-red={flashImpulse.negative}>
+      <img src={statImgHandler('impulse', $player.impulse)} alt={statImgAltTextHandler('impulse')} class="stat-icon {$player.icons.impulse === 'knife' ? 'knife-icon' : 'cleaver-icon'}" class:flash-green={flashImpulse.positive} class:flash-red={flashImpulse.negative}>
       <p class="memory-stat">
         {$player.unlockedDeck.chapter1 ? $player.memory : '?'}
         <svg class:flash-green={flashMemory.positive} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon memory-icon">
@@ -691,14 +747,14 @@
       <div class="card-wrapper">
         <!-- Tutorials -->
         {#if $player.activeDeck === 'survey'}
-          <Card img={currentCard.imgUrl} blurImg={blurCard}>
+          <Card img={currentCard.imgUrl} blurImg={blurCard} location={currentCard.location}>
             <span slot="text-left">{currentCard.textLeft}</span>
             <span slot="text-right">{currentCard.textRight}</span>
           </Card>
 
         <!-- Chapters -->
         {:else if $player.activeDeck === 'chapter'}
-          <Card img={currentCard.imgUrl} blurImg={blurCard}>
+          <Card img={currentCard.imgUrl} blurImg={blurCard} location={currentCard.location}>
             <span slot="text-left">{currentCard.textLeft}</span>
             <span slot="text-right">{currentCard.textRight}</span>
           </Card>
@@ -706,14 +762,14 @@
         <!-- TODO: move under card -->
         <div class="bottom-text-wrapper">
           <p>{currentCard.title}</p>
-          <p>•</p>
+          <p>/-|-\</p>
           <p>{currentCard.faction}</p>
         </div>
       </div>
       <!-- TODO: Make dedicated component -->
       <div class="card-text" class:cardBlurred={blurCard}>
         <p class:show={newDeckAlert} class="new-card-alert">New deck unlocked: {newDeckAlertText}!</p>
-        <p>{currentCard.text}</p>
+        <p>{@html currentCard.text}</p>
       </div>
     </div>
   {/if}
@@ -789,13 +845,19 @@
   }
 
   .menu-header {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
-  .menu-deaths {
+  .menu-text__red {
     color: #500c0c;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .menu-text__blue {
+    color: #0c1c50;
+    font-weight: bold;
+    font-size: 1.25rem;
   }
 
   /* Game Client */
@@ -819,10 +881,12 @@
 
   .container {
     width: 90%;
+    background: linear-gradient(to top, #413747da, #456B73ca, #413747da);
+    padding: 6px;
     margin: 0 auto;
     border: 2px solid #5c585e5d;
-    padding: 6px;
     border-radius: 8px;
+    box-shadow: 0 2px 16px 10px #2d0e4242;
   }
   
   /* Card text */
@@ -836,12 +900,12 @@
 
   .card-text {
     position: relative;
-    background-color: #00000083;
+    background-color: #170d1d82;
     box-shadow: 0 0.125rem 0.5rem #0000004e;
     width: 100%;
     padding: 0.75rem;
     line-height: 1.15;
-    height: 7.5rem;
+    height: 10rem;
     margin: 0 auto;
     font-size: 1.125rem;
     border-radius: 8px;
@@ -854,12 +918,12 @@
   }
 
   .card-text::-webkit-scrollbar-track {
-    background-color: #000;
+    background-color: #456b7323;
     border-radius: 0.25rem;
   }
 
   .card-text::-webkit-scrollbar-thumb {
-    background-color: #151515;
+    background-color: #456b73;
     border-radius: 0.25rem;
   }
 
@@ -887,6 +951,14 @@
     padding: 2px; 
     border-radius: 50px;
     transition: background-color 0.5s ease-in-out;
+  }
+
+  .knife-icon {
+    width: 17px;
+  }
+
+  .cleaver-icon {
+    width: 20px;
   }
 
   // So that double digit numbers fit neatly inside puzzle icon
@@ -965,6 +1037,16 @@
 
     position: absolute;
     bottom: 0;
+    color: #8a8a8a;
+    text-shadow: 1px 1px #456b73;
+
+    p:nth-of-type(odd) {
+      background-color: #00000076;
+      padding: 0.3rem 0.3rem 0.1rem 0.3rem;
+      border-radius: 0 0 4px 4px;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
   }
 
   /* Utility */

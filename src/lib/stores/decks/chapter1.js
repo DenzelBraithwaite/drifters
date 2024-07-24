@@ -10,15 +10,17 @@ const chapter1 = writable([
         faction: 'Farmer',
         textLeft: "I have no time for that!",
         textRight: "Sure, I guess I'm not in a rush",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -27,17 +29,19 @@ const chapter1 = writable([
         title:'Mr. Gallock',
         text: 'Those damn Jamison boys are ruining this village, either talk to their parents or I will.',
         faction: 'Farmer',
-        textLeft: "Why should I be the one to talk to their parents?",
-        textRight: "Sure, but I'm not that I'll be of any help.",
+        textLeft: "Why is that my responsibility?",
+        textRight: "Sure, but I'm not sure that I'll be of any help.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -48,15 +52,17 @@ const chapter1 = writable([
         faction: 'Farmer',
         textLeft: "That happens when you get old.",
         textRight: "Try retracing your steps, see if that helps.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 1,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -67,15 +73,17 @@ const chapter1 = writable([
         faction: 'Farmer',
         textLeft: "Don't worry, I won't be of any trouble.",
         textRight: "Maybe you're the one getting in everyone else's way.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -86,15 +94,17 @@ const chapter1 = writable([
         faction: 'Farmer',
         textLeft: "Be patient, maybe it'll get better.",
         textRight: "I hear you.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
 
@@ -107,15 +117,17 @@ const chapter1 = writable([
         faction: 'Hunter',
         textLeft: "What animals, I haven't seen any animals?",
         textRight: "No, but maybe you can do something about it?",
+        location: 'Choice',
         actionLeft: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 1,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -126,15 +138,17 @@ const chapter1 = writable([
         faction: 'Hunter',
         textLeft: "Perhaps you'll find the right ones if you keep looking.",
         textRight: "You don't need arrows in a place like this.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -145,15 +159,17 @@ const chapter1 = writable([
         faction: 'Hunter',
         textLeft: "Maybe you decided to camp under the stars?",
         textRight: "Keep trying, you'll remember something eventually.",
+        location: 'Choice',
         actionLeft: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -164,15 +180,17 @@ const chapter1 = writable([
         faction: 'Hunter',
         textLeft: "Before what? You don't have to talk about it if you don't want to.",
         textRight: "Did you kill him?",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -181,17 +199,19 @@ const chapter1 = writable([
         title:'Shelly',
         text: "It's easy to get lost in the woods if you aren't careful, especially come dark. Best to leave a trail so you know where you've been.",
         faction: 'Hunter',
-        textLeft: "Yeah, I'll remember that the next time I wander into the woods blindly.",
+        textLeft: "I'll remember that the next time I wander into the woods blindly.",
         textRight: "Maybe you should avoid the woods altogether in the future.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
 
@@ -204,15 +224,17 @@ const chapter1 = writable([
         faction: 'Villager',
         textLeft: "Maybe a lotus flower, strong and resilient.",
         textRight: "A moonflower for sure, I like to make my own path in life.",
+        location: 'Choice',
         actionLeft: {
-            health: 0,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
         actionRight: {
-            health: 0,
+            heart: -1,
+            diamond: 1,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -222,16 +244,18 @@ const chapter1 = writable([
         text: "Have you ever heard of snowdrops? They remind me of home, we used to grow plenty there. These flowers may look like snowdrops, but they actually aren't. Truth is, I don't know what these are or why I have them.",
         faction: 'Villager',
         textLeft: "Maybe you picked them in your sleep?",
-        textRight: "I've never heard of snowdrops, those just look like normal flowers to me.",
+        textRight: "Those look like normal flowers to me.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 0,
+            diamond: 0,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -240,17 +264,19 @@ const chapter1 = writable([
         title:'Krystina',
         text: "These flowers... what is it about these flowers...",
         faction: 'Villager',
-        textLeft: "Maybe they mean something to you, remind you of someone special?",
+        textLeft: "Maybe they mean something to you, a reminder of someone special?",
         textRight: "They are very pretty, you have a good eye.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 0,
+            diamond: 0,
             memory: 1,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -260,16 +286,18 @@ const chapter1 = writable([
         text: "Flowers bring joy, comfort the sad and excite the romantic. Flowers are amazing, wouldn't you agree?",
         faction: 'Villager',
         textLeft: "Flowers are just flowers.",
-        textRight: "I've never thought about it like that before, I guess you're right.",
+        textRight: "I've never thought about it like that before.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -278,17 +306,19 @@ const chapter1 = writable([
         title:'Krystina',
         text: "There are many houses in the village, but I don't know of anyone living in any of them. Isn't that strange?",
         faction: 'Villager',
-        textLeft: "That means you don't have a house either, I guess, neither do I. Doesn't anybody sleep here?",
-        textRight: "That means they're up for grabs, I would keep it a secret.",
+        textLeft: "Doesn't anybody sleep here?",
+        textRight: "That means they're up for grabs.",
+        location: 'Choice',
         actionLeft: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 1,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     
@@ -300,17 +330,19 @@ const chapter1 = writable([
         title:'Melody',
         text: "Did you know there used to be a woman in this village who was beloved by all, even the animals.",
         faction: 'Villager',
-        textLeft: "She sounds like an incredible person, I hope to meet her someday.",
-        textRight: "I'm afraid not, I only just got here myself and I don't plan on staying.",
+        textLeft: "She sounds like an incredible person.",
+        textRight: "Nope, I just got here and I don't plan on staying.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -319,17 +351,19 @@ const chapter1 = writable([
         title:'Meoldy',
         text: "Do you find me beautiful? Everyone finds me beautiful, everyone.",
         faction: 'Villager',
-        textLeft: "You're very pretty, from a distance.",
+        textLeft: "You're very pretty.",
         textRight: 'Not everyone.',
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -340,15 +374,17 @@ const chapter1 = writable([
         faction: 'Villager',
         textLeft: 'What did who do? Why was he following you?',
         textRight: "Probably what you deserved.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 0,
+            diamond: 0,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -357,17 +393,19 @@ const chapter1 = writable([
         title:'Melody',
         text: "Have you met my brother? He's so full of himself, claims he's the most handsome man in the village.",
         faction: 'Villager',
-        textLeft: 'Sounds familiar...',
-        textRight: "Maybe it's a small village.",
+        textLeft: 'Sounds familiar.',
+        textRight: "Maybe, it's a small village.",
+        location: 'Choice',
         actionLeft: {
-            health: 0,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -378,15 +416,17 @@ const chapter1 = writable([
         faction: 'Villager',
         textLeft: "Is that true? I hope to meet them one day.",
         textRight: "Oh yeah? Maybe there are dinosaurs in the sky too.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
 
@@ -399,15 +439,17 @@ const chapter1 = writable([
         faction: 'Villager',
         textLeft: "Excuse you, I wasn't even doing anything.",
         textRight: 'Mind your own business you old hag.',
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -416,17 +458,19 @@ const chapter1 = writable([
         title:'Rowelda',
         text: "Why are you still here? If you've finished your business here then begone!",
         faction: 'Villager',
-        textLeft: "I know who I'll never miss when I get out of this town.",
-        textRight: "You're a mean old lady you know that? You need to watch your tone.",
+        textLeft: "I didn't choose to come here.",
+        textRight: "You need to watch your tone old lady.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
-            memory: 0,
-        },
-        actionRight: {
-            health: 1,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
-        location: 'Town of Beginning',
+        actionRight: {
+            heart: -1,
+            diamond: 1,
+            memory: 1,
+        },
         appearsWithIcon: ''
     },
     {
@@ -436,16 +480,18 @@ const chapter1 = writable([
         text: "It was so quiet before I came here, why did I ever leave... when did I leave?",
         faction: 'Villager',
         textLeft: "You can always go back the way you came, can't you?",
-        textRight: 'This place is your home now, you should try to get used to it.',
+        textRight: "This place is your home now, you should try to get used to it.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -455,16 +501,18 @@ const chapter1 = writable([
         text: "Those Jamison boys aren't the problem, they lack discipline and parenting. Why if I raised those boys, things would be different I tell you.",
         faction: 'Villager',
         textLeft: "It's not too late to try.",
-        textRight: "And maybe if someone actually raised you, you'd be different too.",
+        textRight: "I wish someone raised you properly.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -475,15 +523,17 @@ const chapter1 = writable([
         faction: 'Villager',
         textLeft: "Don't worry, you still have plenty of years left.",
         textRight: "Unlike you I plan on living my life, not wasting it.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
 
@@ -494,17 +544,19 @@ const chapter1 = writable([
         title:'Bernard',
         text: "My cattle are well mannered, but you can never fully trust a wild animal, wouldn't you agree?",
         faction: 'Cowheard',
-        textLeft: "Perhaps you're being a little paranoid mister.",
+        textLeft: "Perhaps you're being a little paranoid.",
         textRight: "I don't even trust myself.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: 0,
+            heart: 0,
+            diamond: 0,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -513,17 +565,19 @@ const chapter1 = writable([
         title:'Bernard',
         text: "Have you run into that miserable farmer Gallock? Don't pay him any mind, that's just how he is.",
         faction: 'Cowheard',
-        textLeft: "Yeah I figured as much, thanks for the advice.",
+        textLeft: "Yeah I figured, thanks for the advice.",
         textRight: "Someone ought to knock him down a peg or two.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -533,16 +587,18 @@ const chapter1 = writable([
         text: "Life is simple, it's the people that complicate it. Sometimes, a lonely road is the only road you need.",
         faction: 'Cowheard',
         textLeft: "Maybe you just don't see the good in people.",
-        textRight: "What's the point of living if there's no one else to share the experience?",
+        textRight: "What's the point of life if there's no one to share it with?",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -553,15 +609,17 @@ const chapter1 = writable([
         faction: 'Cowheard',
         textLeft: "Your life is more important than cattle.",
         textRight: "I can appreciate a man of devotion.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -571,16 +629,18 @@ const chapter1 = writable([
         text: "Animals are simple creatures, they eat, sleep and defecate. We could learn a lot from animals.",
         faction: 'Cowheard',
         textLeft: "We never give animals enough credit.",
-        textRight: "You sound like a crazy person, you know that right?",
+        textRight: "You sound like a crazy person.",
+        location: 'Choice',
         actionLeft: {
-            health: 0,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
 
@@ -593,15 +653,17 @@ const chapter1 = writable([
         faction: 'Peasant',
         textLeft: "Begone from me at once, peasant!",
         textRight: "I'm sorry kid, I don't have anything to offer you.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 1,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -612,15 +674,17 @@ const chapter1 = writable([
         faction: 'Peasant',
         textLeft: "Then stop hanging on and give up already.",
         textRight: "I wish I could.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -631,15 +695,17 @@ const chapter1 = writable([
         faction: 'Peasant',
         textLeft: "Good things come to those who wait, your time will come, be patient.",
         textRight: "Nobody likes a begger boy, remove yourself from me.",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -649,16 +715,18 @@ const chapter1 = writable([
         text: "It's not fair, why can't I eat as much as everyone else gets to. What did I do wrong?",
         faction: 'Peasant',
         textLeft: "You can complain about it or you can do something about it.",
-        textRight: "It's not your fault, luck simply didn't favor you as it did others.",
+        textRight: "It's not your fault, luck simply wasn't on your side.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -667,17 +735,19 @@ const chapter1 = writable([
         title:'Felix',
         text: "I might not have much, but I have my health. That's worth more than any amount of money.",
         faction: 'Peasant',
-        textLeft: "Yeah yeah, whatever helps you sleep at night.",
+        textLeft: "Whatever helps you sleep at night.",
         textRight: "I couldn't agree more.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
 
@@ -689,16 +759,18 @@ const chapter1 = writable([
         text: "My beauty is renown far and wide, my sister isn't too bad herself, but her beauty could simply never compare.",
         faction: 'Villager',
         textLeft: "Ugh",
-        textRight: "Yes yes, you're very handsome.",
+        textRight: "Yes, you're very handsome.",
+        location: 'Choice',
         actionLeft: {
-            health: 0,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -707,17 +779,19 @@ const chapter1 = writable([
         title:'Alexander',
         text: "Why if I were one of the king's royal guards, the wars would be over by nightfall! Sadly, I've no time for such trivial things.",
         faction: 'Villager',
-        textLeft: "Yeah, I'm sure the king's army could use a knight like you.",
-        textRight: "Trivial? Is the upkeep of your appearance too demanding to spare time to fight for a cause?",
+        textLeft: "I'm sure the king's army could use a knight like you.",
+        textRight: "Trivial? And the upkeep of your appearance is not?",
+        location: 'Choice',
         actionLeft: {
-            health: 0,
+            heart: 1,
+            diamond: -1,
             memory: 0,
         },
         actionRight: {
-            health: -1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -728,15 +802,17 @@ const chapter1 = writable([
         faction: 'Villager',
         textLeft: "I think you need help more than I do.",
         textRight: "I'll take my chances.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
+            heart: 0,
+            diamond: 0,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -747,15 +823,17 @@ const chapter1 = writable([
         faction: 'Villager',
         textLeft: "These things are destined to happen eventually.",
         textRight: "You used to glow?",
+        location: 'Choice',
         actionLeft: {
-            health: -1,
+            heart: 1,
+            diamond: -1,
             memory: 1,
         },
         actionRight: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
     {
@@ -764,17 +842,19 @@ const chapter1 = writable([
         title:'Alexander',
         text: "If only someone understood the hardships of being so amazing and talented, I truly am alone at the top.",
         faction: 'Villager',
-        textLeft: "You're alone but it's not because you're \"at the top\".",
-        textRight: "The next time you go to speak, don't.",
+        textLeft: "You're alone but not because you're \"at the top\".",
+        textRight: "We all have our struggles, you're not alone.",
+        location: 'Choice',
         actionLeft: {
-            health: 1,
+            heart: -1,
+            diamond: 1,
             memory: 0,
         },
         actionRight: {
-            health: 1,
-            memory: 0,
+            heart: 1,
+            diamond: -1,
+            memory: 1,
         },
-        location: 'Town of Beginning',
         appearsWithIcon: ''
     },
 
