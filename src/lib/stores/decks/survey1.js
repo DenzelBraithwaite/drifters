@@ -20,7 +20,7 @@ const survey1 = writable([
             heart: 1,
             diamond: 0,
             good: 1,
-            evil: 1
+            evil: 0
         }
     },
     {
@@ -190,7 +190,7 @@ const survey1 = writable([
             heart: 0,
             diamond: 1,
             good: 0,
-            evil: 1
+            evil: 0
         },
         actionRight: {
             heart: 1,
@@ -577,7 +577,7 @@ const survey1 = writable([
         id: 'survey1-16',
         imgUrl: '/decks/tutorial/judicator-white-smile.png',
         title:'Jude',
-        text: "Oh, looks like it's choice time! Good luck, I'll be watching.",
+        text: "Oh look, it's choice time! Good luck, I'll be watching.",
         faction: '???',
         textLeft: "Wait, where are you going?", // ->chapter1
         textRight: "Oh, ok bye!", // ->chapter1

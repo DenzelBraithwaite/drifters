@@ -66,13 +66,13 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Heads",
         textRight: "Tails",
         actionLeft: {
-          heart: coinFlip === 0 ? 0 : -4,
-          diamond: coinFlip === 0 ? 0 : -4,
+          heart: coinFlip === 0 ? 10 : -4,
+          diamond: coinFlip === 0 ? 10 : -4,
           memory: 0,
         },
         actionRight: {
-          heart: coinFlip === 0 ? -4 : 0,
-          diamond: coinFlip === 0 ? -4 : 0,
+          heart: coinFlip === 0 ? -4 : 10,
+          diamond: coinFlip === 0 ? -4 : 10,
           memory: 0,
         },
       };
@@ -82,8 +82,8 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
-          heart: -2,
-          diamond: -2,
+          heart: -3,
+          diamond: -3,
           memory: 0,
         },
         actionRight: {
@@ -98,8 +98,8 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
-          heart: 0,
-          diamond: 0,
+          heart: -2,
+          diamond: -2,
           memory: 0,
         },
         actionRight: {
@@ -114,8 +114,8 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Blue",
         textRight: "Red",
         actionLeft: {
-          heart: 0,
-          diamond: 0,
+          heart: -1,
+          diamond: -1,
           memory: 0,
         },
         actionRight: {
@@ -144,18 +144,19 @@ function determineCardProperties(cardId: string): PartialCard {
     return defaultReturnCard;
   } else if (cardId === 'stat-aura') {
     if (get(player).aura >= 9) {
+      const auraFlip = Math.floor(Math.random() * 2); // 0 = green, 1 = yellow
       return {
-        text: "Your aura is strong, but would it be stronger with coffee or tea?",
-        textLeft: "Coffee",
-        textRight: "Tea",
+        text: "Auras are ubiquitous and ever-changing. Can you sense my current aura?",
+        textLeft: "🟢🟢🟢",
+        textRight: "🟡🟡🟡",
         actionLeft: {
-          greenAura: -4,
-          yellowAura: -4,
+          greenAura: auraFlip === 0 ? 10 : -4,
+          yellowAura: auraFlip === 0 ? 10 : -4,
           memory: 0,
         },
         actionRight: {
-          greenAura: 0,
-          yellowAura: 0,
+          greenAura: auraFlip === 0 ? -4 : 10,
+          yellowAura: auraFlip === 0 ? -4 : 10,
           memory: 0,
         },
       };
@@ -165,8 +166,8 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "I really shouldn't be wasting time.",
         textRight: "A few minutes wouldn't hurt.",
         actionLeft: {
-          greenAura: -2,
-          yellowAura: -2,
+          greenAura: -3,
+          yellowAura: -3,
           memory: 0,
         },
         actionRight: {
@@ -186,8 +187,8 @@ function determineCardProperties(cardId: string): PartialCard {
           memory: 0,
         },
         actionRight: {
-          greenAura: 0,
-          yellowAura: 0,
+          greenAura: -2,
+          yellowAura: -2,
           memory: 0,
         },
       };
@@ -202,8 +203,8 @@ function determineCardProperties(cardId: string): PartialCard {
           memory: 0,
         },
         actionRight: {
-          greenAura: 0,
-          yellowAura: 0,
+          greenAura: -1,
+          yellowAura: -1,
           memory: 0,
         },
       };
@@ -227,34 +228,35 @@ function determineCardProperties(cardId: string): PartialCard {
     return defaultReturnCard;
   } else if (cardId === 'stat-sanity') {
     if (get(player).sanity >= 9) {
+      const emojiFlip = Math.floor(Math.random() * 2); // 0 = brain, 1 = smiley
       return {
-        text: "You've done well guarding the gates of your mind, I feel your strong will and determination, but could something be lacking?",
-        textLeft: "Knowledge",
-        textRight: "Happiness",
+        text: "Moods change like the weather, guess how I'm feeling today.",
+        textLeft: "🧠",
+        textRight: "🙂",
         actionLeft: {
-          brain: -4,
-          smiley: -4,
+          brain: emojiFlip === 0 ? 10 : -4,
+          smiley: emojiFlip === 0 ? 10 : -4,
           memory: 0,
         },
         actionRight: {
-          brain: 0,
-          smiley: 0,
+          brain: emojiFlip === 0 ? -4 : 10,
+          smiley: emojiFlip === 0 ? -4 : 10,
           memory: 0,
         },
       };
     } else if (get(player).sanity >= 7) {
       return {
-        text: "Your quick witt is impressive, I bet you're smarter than most people.",
-        textLeft: "I suppose I am.",
-        textRight: "No, that's not true.",
+        text: "You've done well guarding the gates of your mind, I feel your strong will and determination, but could something be lacking?",
+        textLeft: "Knowledge",
+        textRight: "Happiness",
         actionLeft: {
           brain: 10,
           smiley: 10,
           memory: 0,
         },
         actionRight: {
-          brain: -2,
-          smiley: -2,
+          brain: -3,
+          smiley: -3,
           memory: 0,
         },
       };
@@ -269,8 +271,8 @@ function determineCardProperties(cardId: string): PartialCard {
           memory: 0,
         },
         actionRight: {
-          brain: 0,
-          smiley: 0,
+          brain: -2,
+          smiley: -2,
           memory: 0,
         },
       };
@@ -280,8 +282,8 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Biting",
         textRight: "Smiling",
         actionLeft: {
-          brain: 0,
-          smiley: 0,
+          brain: -1,
+          smiley: -1,
           memory: 0,
         },
         actionRight: {
@@ -310,18 +312,19 @@ function determineCardProperties(cardId: string): PartialCard {
     return defaultReturnCard;
   } else if (cardId === 'stat-impulse') {
     if (get(player).impulse <= 1) {
+      const randomAttack = Math.floor(Math.random() * 2) // 0 = Run, 1 = Hide
       return {
-        text: "You've been showing restraint for far too long, wouldn't it be nice to just let loose?",
-        textLeft: "I'd love to.",
-        textRight: "I'm afraid to.",
+        text: "You've been showing restraint for far too long, let me fan the flames of your desires.",
+        textLeft: "Run",
+        textRight: "Hide",
         actionLeft: {
-          knife: -4,
-          cleaver: -4,
+          knife: randomAttack === 0 ? 10 : -4,
+          cleaver: randomAttack === 0 ? 10 : -4,
           memory: 0,
         },
         actionRight: {
-          knife: 0,
-          cleaver: 0,
+          knife: randomAttack === 0 ? -4 : 10,
+          cleaver: randomAttack === 0 ? -4 : 10,
           memory: 0,
         },
       };
@@ -336,8 +339,8 @@ function determineCardProperties(cardId: string): PartialCard {
           memory: 0,
         },
         actionRight: {
-          knife: -2,
-          cleaver: -2,
+          knife: -3,
+          cleaver: -3,
           memory: 0,
         },
       };
@@ -347,8 +350,8 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "I think I'm lost.",
         textRight: "I know my way back.",
         actionLeft: {
-          knife: 0,
-          cleaver: 0,
+          knife: -2,
+          cleaver: -2,
           memory: 0,
         },
         actionRight: {
@@ -363,8 +366,8 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Feed",
         textRight: "Fight",
         actionLeft: {
-          knife: 0,
-          cleaver: 0,
+          knife: -1,
+          cleaver: -1,
           memory: 0,
         },
         actionRight: {

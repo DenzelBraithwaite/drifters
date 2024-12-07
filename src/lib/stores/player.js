@@ -10,6 +10,7 @@ const player = writable({
     tutorial2: false,
     tutorial3: false,
     tutorial4: false,
+    tutorialFinal: false,
     survey1: true,
     survey2: false,
     survey3: false,
@@ -36,10 +37,10 @@ const player = writable({
     //   img: '/decks/tutorial/judicator-purple-smile.png'
     // },
   ],
-  health: 10, // choices that are mean increase this, nice choices decrease this
-  aura: 10, // choices that are relaxing/lazy increase this, effort and confusion decreases this
-  sanity: 10, // choices that are logical increase this, choices that are emotional decrease this
-  impulse: 0, // choices that are violent increase this, choices that are peaceful decrease this
+  health: 10, 
+  aura: 10, 
+  sanity: 10, 
+  impulse: 0, 
   memory: 0,
   goodPoints: 0,
   evilPoints: 0,
@@ -53,17 +54,17 @@ const player = writable({
   },
   iconPoints: {
     // health
-    heart: 0,
-    diamond: 0,
+    heart: 0, // + being nice | - being mean
+    diamond: 0, // + being mean | - being nice
     // aura
-    yellowAura: 0,
-    greenAura: 0,
+    yellowAura: 0, // + being energetic | - being lazy
+    greenAura: 0, // + being lazy / chill | - being energetic / excited
     // sanity
-    brain: 0,
-    smiley: 0,
+    brain: 0, // + being smart | - being stupid
+    smiley: 0, // + being carefree | - being stressed
     // impulse
-    knife: 0,
-    cleaver: 0,
+    knife: 0, // + being aggressive | - being docile
+    cleaver: 0, // + being annoyed | - being restrained
   },
 });
 

@@ -101,14 +101,14 @@ const survey2 = writable([
         actionLeft: {
             greenAura: 0,
             yellowAura: 1,
-            good: 0,
+            good: 1,
             evil: 0
         },
         actionRight: {
             greenAura: 1,
             yellowAura: 0,
             good: 0,
-            evil: 0
+            evil: 1
         }
     },
     {
@@ -123,14 +123,14 @@ const survey2 = writable([
         actionLeft: {
             greenAura: 0,
             yellowAura: 1,
-            good: 0,
+            good: 1,
             evil: 0
         },
         actionRight: {
             greenAura: 1,
             yellowAura: 0,
             good: 0,
-            evil: 0
+            evil: 1
         }
     },
     {
@@ -256,12 +256,12 @@ const survey2 = writable([
             greenAura: 1,
             yellowAura: 0,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
             greenAura: 0,
             yellowAura: 1,
-            good: 0,
+            good: 1,
             evil: 0
         }
     },
@@ -278,12 +278,12 @@ const survey2 = writable([
             greenAura: 1,
             yellowAura: 0,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
             greenAura: 0,
             yellowAura: 1,
-            good: 0,
+            good: 1,
             evil: 0
         }
     },
@@ -387,14 +387,14 @@ const survey2 = writable([
         actionLeft: {
             greenAura: 0,
             yellowAura: 1,
-            good: 0,
+            good: 1,
             evil: 0
         },
         actionRight: {
             greenAura: 1,
             yellowAura: 0,
             good: 0,
-            evil: 0
+            evil: 1
         }
     },
     {

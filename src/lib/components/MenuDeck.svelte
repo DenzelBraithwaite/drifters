@@ -2,13 +2,20 @@
   export let title = 'Deck title';
   export let description = 'Deck description';
   export let img = 'Img path';
+  export let forAlignment = false;
+  export let alignment = 'Neutral';
+  export let alignmentPoints = '0';
 </script>
 
 <div class="wrapper">
   <!-- svelte-ignore a11y-img-redundant-alt -->
   <img src="{img}" alt="Image of deck">
   <div>
-    <p class="title">{title}</p>
+    <p class="title">{title}
+      {#if forAlignment}
+        <span class="alignment__{alignment}">+{alignmentPoints}</span>
+      {/if}
+    </p>
     <p class="description">{description}</p>
   </div>
 </div>
@@ -47,5 +54,18 @@
 
   .description {
     font-size: 0.75rem;
+  }
+
+  // The alignments are uppercased cuz I'm piggybacking off the alignment title
+  .alignment__Neutral {
+    color: #f0e19e;
+  }
+
+  .alignment__Good {
+    color: #92d5f0;
+  }
+
+  .alignment__Evil {
+    color: #ee7070;
   }
 </style>

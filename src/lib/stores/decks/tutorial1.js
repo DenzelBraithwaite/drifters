@@ -48,10 +48,10 @@ const tutorial1 = writable([
         location: '???',
         actionLeft: {
             good: 0,
-            evil: 0,
+            evil: 1,
         },
         actionRight: {
-            good: 0,
+            good: 1,
             evil: 0,
         }
     },
@@ -77,7 +77,7 @@ const tutorial1 = writable([
         id: 'tutorial1-4',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'???',
-        text: "<span style=\"color: #6a5c72; font-weight: bold;\">Rule #1:</span><br>There is a time for everything; there is a time for <span style=\"color: #456b73; font-weight: bold;\">questions</span>, a time for <span style=\"color: #456b73; font-weight: bold;\">answers</span>, a time for <span style=\"color: #456b73; font-weight: bold;\">choices</span> and a time for <span style=\"color: #456b73; font-weight: bold;\">chatter</span>. You must respect and abide by these times.",
+        text: "<span style=\"display: inline-block; font-weight: bold; background-color: #6a5c72; padding: 2px 4px; border-radius: 4px; margin-bottom: 2px;\">Rule #1:</span><br>There is a time for everything; there is a time for <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">questions</span>, a time for <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">answers</span>, a time for <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">choices</span> and a time for <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">chatter</span>. You must respect and abide by these times.",
         faction: '???',
         textLeft: "I don't agree to any of this.", // ->tutorial1-5
         textRight: "Alright, I'd like to leave now.", // ->tutorial1-5
@@ -95,7 +95,7 @@ const tutorial1 = writable([
         id: 'tutorial1-5',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'???',
-        text: "Currently, it is time for chatter since I wanted to make sure you were awake and aware. Now that I have, it will soon be time for answers.",
+        text: "What you want isn't important. Currently, it is time for chatter since I wanted to make sure you were awake and aware. Now that I have, it will soon be time for answers.",
         faction: '???',
         textLeft: "Does that mean I get to ask you questions?", // ->tutorial1-6a
         textRight: "Slow down, I don't have any answers.", // ->tutorial1-6b
@@ -120,10 +120,10 @@ const tutorial1 = writable([
         location: 'Chatter',
         actionLeft: {
             good: 0,
-            evil: 0,
+            evil: 1,
         },
         actionRight: {
-            good: 0,
+            good: 1,
             evil: 0,
         }
     },
@@ -138,10 +138,10 @@ const tutorial1 = writable([
         location: 'Chatter',
         actionLeft: {
             good: 0,
-            evil: 0,
+            evil: 1,
         },
         actionRight: {
-            good: 0,
+            good: 1,
             evil: 0,
         }
     },
@@ -173,12 +173,12 @@ const tutorial1 = writable([
         textRight: "Hmm, still not really feeling it.", // ->tutorial1-7-1b-1b
         location: 'Chatter',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
@@ -188,7 +188,7 @@ const tutorial1 = writable([
         text: "Really? Well rest assured, you remain in control here, we won't start until you are absolutely brimming with readiness. Just let me know when that is, again, no rush at all.",
         faction: '???',
         textLeft: "Thanks, I'm ready now.", // ->tutorial1-8
-        textRight: "I want to be ready, but I'm just not feeling it.", // ->tutorial1-8
+        textRight: "I want to be ready, but I'm just not feeling it.", // ->tutorial1-7-1b-1b-1b
         location: 'Chatter',
         actionLeft: {
             good: 0,
@@ -199,6 +199,24 @@ const tutorial1 = writable([
             evil: 0,
         }
     },
+    {
+      id: 'tutorial1-7-1b-1b-1b',
+      imgUrl: '/decks/tutorial/judicator-white.png',
+      title:'???',
+      text: "Take your time, I'll be here waiting.",
+      faction: '???',
+      textLeft: "Okay, I think I'm ready.", // ->tutorial1-8
+      textRight: "Not ready yet, soon though.", // ->tutorial1-7-1b-1b-1b (intentional loop)
+      location: 'Chatter',
+      actionLeft: {
+          good: 0,
+          evil: 0,
+      },
+      actionRight: {
+          good: 0,
+          evil: 0,
+      }
+  },
     {
         id: 'tutorial1-8',
         imgUrl: '/decks/tutorial/judicator-white-smile.png',
@@ -221,17 +239,17 @@ const tutorial1 = writable([
         id: 'tutorial1-9',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "I'm sorry but I'm going to have to ignore everything you say for the next few minutes. I'm explaining the rest of the rules and you need to pay attention.",
+        text: "I'm sorry but I'm going to have to ignore your questions and concerns for now. I'm explaining the rest of the rules and you need to pay attention.",
         faction: '???',
         textLeft: "I'm not playing your stupid game!", // ->tutorial1-10
         textRight: "Rude", // ->tutorial1-10
         location: 'Chatter',
         actionLeft: {
             good: 0,
-            evil: 0,
+            evil: 1,
         },
         actionRight: {
-            good: 0,
+            good: 1,
             evil: 0,
         }
     },
@@ -239,61 +257,61 @@ const tutorial1 = writable([
         id: 'tutorial1-10',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "Look above my head, this will show you the current <span style=\"color: #456b73; font-weight: bold;\">time</span>. Soon you will familiarize yourself with the different <span style=\"color: #456b73; font-weight: bold;\">times</span> and what they mean.",
+        text: "Right, now then, look above my head <span style=\"font-weight: bold; background-color: #6a5c72; padding: 2px; border-radius: 4px;\">⬆⬆⬆</span> this will show you the current <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">time</span>. Soon you will familiarize yourself with the different <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">times</span> and what they mean.",
         faction: '???',
-        textLeft: "Okay", // ->tutorial1-11
+        textLeft: "Okay so it's chatter time.", // ->tutorial1-11
         textRight: "Blah blah blah", // ->tutorial1-11
         location: 'Chatter',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
         id: 'tutorial1-11',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "<span style=\"color: #6a5c72; font-weight: bold;\">Rule #2:</span><br>Above the time are your <span style=\"color: #456b73; font-weight: bold;\">mementos</span>, they're important and linked to the retrieval of your memories. You will need to collect them all to regain your past and complete your trial.",
+        text: "Right... <span style=\"display: inline-block; font-weight: bold; background-color: #6a5c72; padding: 2px 4px; border-radius: 4px; margin-bottom: 2px;\">Rule #2:</span><br>Above the time are your <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">mementos</span>, they're important and linked to the retrieval of your memories. You will need to collect them all to regain your past and complete your trial.",
         faction: '???',
         textLeft: "Interesting", // ->tutorial1-12
         textRight: "Are you done yet?", // ->tutorial1-12
         location: 'Chatter',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
         id: 'tutorial1-12',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "Each time we speak, you will leave with a new <span style=\"color: #456b73; font-weight: bold;\">memento</span> which was determined based on our conversation. Remember, all of your choices are meaningful.",
+        text: "Each time we speak, you will leave with a new <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">memento</span> which was determined based on our conversation. Remember, all of your choices are meaningful.",
         faction: '???',
         textLeft: "I understand.", // ->tutorial1-13
         textRight: "You love to talk don't you.", // ->tutorial1-13
         location: 'Chatter',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
         id: 'tutorial1-13',
         imgUrl: '/decks/tutorial/judicator-white-smile.png',
         title:'Jude',
-        text: "So even as I talk right now, your comments have been noted. Each <span style=\"color: #456b73; font-weight: bold;\">memento</span> must be protected, they are damaged and repaired through conversations during choice time.",
+        text: "So even as I talk right now, your comments have been noted. Each <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">memento</span> must be protected, they are damaged and repaired through conversations during choice time.",
         faction: '???',
         textLeft: "Fascinating", // ->tutorial1-14
         textRight: "Oh", // ->tutorial1-14
@@ -311,7 +329,7 @@ const tutorial1 = writable([
         id: 'tutorial1-14',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "Each <span style=\"color: #456b73; font-weight: bold;\">memento</span> has a unique personality, but they all thrive off interactions. Figuring out the interests of each <span style=\"color: #456b73; font-weight: bold;\">memento</span> is key to protecting them.",
+        text: "Each <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">memento</span> has a unique personality, but they all thrive off interactions. Figuring out the interests of each <span style=\"font-weight: bold; background-color: #456b73; padding: 1px; border-radius: 4px;\">memento</span> is key to protecting them.",
         faction: '???',
         textLeft: "Got it.", // ->tutorial1-15
         textRight: "*nod*.", // ->tutorial1-15
@@ -335,19 +353,19 @@ const tutorial1 = writable([
         textRight: "Will do, boss", // ->tutorial1-16
         location: 'Chatter',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
         id: 'tutorial1-16',
         imgUrl: '/decks/tutorial/judicator-white.png',
         title:'Jude',
-        text: "Each experience is different, but to truly regain all of your memories you will need to explore them all. As you progress through your trial, you will collect cards. Look down further to view these cards and understand your choices more clearly.",
+        text: "Each experience is different, but to truly regain all of your memories you will need to explore them all. As you progress through your trial, you will collect cards. Look down <span style=\"font-weight: bold; background-color: #6a5c72; padding: 2px; border-radius: 4px;\">⬇⬇⬇</span> further to view these cards and understand your choices more clearly.",
         faction: '???',
         textLeft: "I found your card.", // ->tutorial1-17
         textRight: "I'll check that out later.", // ->tutorial1-17
@@ -379,11 +397,6 @@ const tutorial1 = writable([
             evil: 0,
         }
     },
-
-
-
-
-    
 ]);
 
 export default tutorial1;

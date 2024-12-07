@@ -47,12 +47,12 @@ const tutorial2 = writable([
         textRight: "Answer", // ->tutorial2-3b
         location: 'Chatter',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
@@ -227,12 +227,12 @@ const tutorial2 = writable([
         textRight: "Keep going...", // ->tutorial2-5b-1b
         location: 'Question',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
@@ -263,12 +263,12 @@ const tutorial2 = writable([
         textRight: "Keep going...", // ->tutorial2-5b-1b-1b
         location: 'Question',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
@@ -281,12 +281,12 @@ const tutorial2 = writable([
         textRight: "Keep going...", // ->tutorial2-5b-1b-1b-1b
         location: 'Question',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
@@ -314,7 +314,7 @@ const tutorial2 = writable([
         text: "Amazing, you got it right. Later, keep an eye out for me as you might find me during choice time.",
         faction: '???',
         textLeft: "When will you show up during choice time?", // ->tutorial2-6
-        textRight: "Why haven't I see you during choice time yet?", // ->tutorial2-6
+        textRight: "Why haven't I seen you during choice time yet?", // ->tutorial2-6
         location: 'Question',
         actionLeft: {
             good: 0,
@@ -605,12 +605,12 @@ const tutorial2 = writable([
         textRight: "This game kinda sucks, I'm a little disappointed.", // ->tutorial2-easter-egg-2
         location: '🥚🥚🥚',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
@@ -623,12 +623,12 @@ const tutorial2 = writable([
         textRight: "Umm, nope? Pretty sure your game sucks, not me.", // ->tutorial2-easter-egg-3
         location: '🥚🥚🥚',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
@@ -641,12 +641,12 @@ const tutorial2 = writable([
         textRight: "Try me", // ->tutorial2-easter-egg-4
         location: '🥚🥚🥚',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
@@ -663,7 +663,7 @@ const tutorial2 = writable([
             evil: 0,
         },
         actionRight: {
-            good: 0,
+            good: 1,
             evil: 0,
         }
     },
@@ -703,9 +703,6 @@ const tutorial2 = writable([
             evil: 0,
         }
     },
-    
-
-
 ]);
 
 export default tutorial2;

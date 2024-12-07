@@ -564,7 +564,7 @@ const elves = writable([
         id: 'chapter2-e-5c',
         imgUrl: '/decks/chapter2/elves/elf-archer-white.png',
         title:'Aradora',
-        text: "Where has Aradora gone now? You, human, have you seen a green elf with a yellow bow?",
+        text: "Where has Estelle gone now? You, human, have you seen a green elf with a yellow bow?",
         faction: 'Elf',
         textLeft: "I'd really prefer if you just ask my name instead of referring to me as 'human'.",
         textRight: "Nope, no idea where she could be.",

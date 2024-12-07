@@ -71,12 +71,16 @@
     background: url('/backgrounds/dark_2.png');
   }
 
+  .bg__dark_final {
+    background: url('/backgrounds/dark.png');
+  }
+
   .bg__magical-forest {
-    background: url('/backgrounds/forest.png');
+    background: url('/backgrounds/magic_forest.png');
   }
 
   .bg__kingdom {
-    background: url('/backgrounds/magic_forest.png');
+    background: url('/backgrounds/kingdom.png');
   }
 
   .bg__cosmic {

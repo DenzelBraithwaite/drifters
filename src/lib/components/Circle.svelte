@@ -32,6 +32,16 @@
     });
   }
 
+  function showCenterText() {
+    cardHovered.update(store => {
+      return {
+        hovered: true,
+        left: false,
+        right: true
+      }
+    });
+  }
+
   function hideText() {
     cardHovered.update(store => {
       return {
@@ -42,18 +52,20 @@
     });
   }
 
-    function actionHandler(decision) {
-      createEvent('decision', decision);
-    }
+  function actionHandler(decision) {
+    createEvent('decision', decision);
+  }
 </script>
 
 {#if leftOrRight === 'left'}
-    <div on:mouseenter={showLeftText} on:mouseleave={hideText} on:click={() => actionHandler('left')} class="circle bg-blue"></div>
+  <div on:mouseenter={showLeftText} on:mouseleave={hideText} on:click={() => actionHandler('left')} class="circle bg-blue"></div>
 {:else if leftOrRight === 'right'}
-    <div on:mouseenter={showRightText} on:mouseleave={hideText} on:click={() => actionHandler('right')} class="circle bg-purple"></div>
+  <div on:mouseenter={showRightText} on:mouseleave={hideText} on:click={() => actionHandler('right')} class="circle bg-purple"></div>
+{:else if leftOrRight === 'center'}
+  <div on:mouseenter={showCenterText} on:mouseleave={hideText} on:click={() => actionHandler('center')} class="circle bg-blue-purple"></div>
 {/if}
 
-<style>
+<style lang="scss">
   .circle{
     height: 50px;
     width: 50px;
@@ -90,6 +102,21 @@
       
     &:hover {
         box-shadow: 0 5px 0 #2f494e;
+      }
+
+    &:active {
+      box-shadow: none;
+      border: 1px solid #2f494e;
+    }
+  }
+
+  .bg-blue-purple {
+    border: 1px solid #26242e;
+    background: linear-gradient(310deg, #456b73, #413747 65%);
+    box-shadow: 0 6px 0 #1d1b24;
+    
+    &:hover {
+      box-shadow: 0 6px 0 #26242e;
       }
 
     &:active {

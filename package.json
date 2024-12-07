@@ -19,6 +19,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "node": "^22.6.0",
     "sass": "^1.66.0",
     "svelte-routing": "^2.0.0",
     "svelte-transitions": "^1.2.0"

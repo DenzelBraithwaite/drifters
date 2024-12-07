@@ -2,295 +2,440 @@ import { writable } from 'svelte/store';
 
 // TODO add some dialogue at beginning, goes by fast
 const tutorial3 = writable([
-    {
-        id: 'tutorial3-1',
-        imgUrl: '/decks/tutorial/judicator-purple-smile.png',
-        title:'Jude',
-        text: "A magical forest with mythical creatures, now that's an interesting one. Hey there Jack, having fun on your adventure?",
-        faction: 'Being',
-        textLeft: "Adventure? You're the one who keeps sending me away and then reappearing out of thin air.", // ->tutorial3-2a
-        textRight: "Oh great, it's you again. To what do I owe the... pleasure?", // ->tutorial3-2b
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+  {
+    id: 'tutorial3-1',
+    imgUrl: '/decks/tutorial/judicator-white.png',
+    title: 'Jude',
+    text: "Deeper and deeper you go, first a strange town and now a magical forest.",
+    faction: '???',
+    textLeft: "Oh, it's you.", // ->tutorial3-2a
+    textRight: "You appear out of thin air.", // ->tutorial3-2b
+    location: 'Chatter',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-2a',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "Am I? I don't think I recall doing anything of the sort.",
-        faction: 'Being',
-        textLeft: "Haha very funny.", // ->tutorial3-3-a
-        textRight: "Oh yeah, if not you then who?", // ->tutorial3-3-a
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-2a',
+    imgUrl: '/decks/tutorial/judicator-white-smile.png',
+    title: 'Jude',
+    text: "It's me! You must have many questions.",
+    faction: '???',
+    textLeft: "I do, but I guess I'll wait until question time.", // ->tutorial3-3a
+    textRight: "Some, like why do you keep appearing and disapppearing.", // ->tutorial3-3b
+    location: 'Chatter',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-3-a',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "I'm being serious Jack, I'm not the one who's moving you. I'm not the one who's doing any of this, I'm simply a judicator.",
-        faction: 'Being',
-        textLeft: "A judicator? That means you must be judging me... which means I'm likely dead.", // ->tutorial3-4-a
-        textRight: "If you're not doing this than who is? Where am I?!?", // ->tutorial3-4-a
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-2b',
+    imgUrl: '/decks/tutorial/judicator-white-smile.png',
+    title: 'Jude',
+    text: "Yes, I suppose I keep it suspenseful and mysterious.",
+    faction: '???',
+    textLeft: "Right, just what I need right now.", // ->tutorial3-3b
+    textRight: "What if you didn't do that all the time?", // ->tutorial3-3b
+    location: 'Chatter',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-4-a',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "Deep down you know the truth, but you aren't ready to face it. You are dead Jack, and this world is your creation.",
-        faction: 'Being',
-        textLeft: "My... creation?", // ->tutorial3-5
-        textRight: "You mean I really am...", // ->tutorial3-5
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-3a',
+    imgUrl: '/decks/tutorial/judicator-white-smile.png',
+    title: 'Jude',
+    text: "Well good news, I only wanted to say a quick hello, it is now question time!",
+    faction: '???',
+    textLeft: "Great, I'm ready.", // ->tutorial3-4
+    textRight: "But you're still white?", // ->tutorial3-4
+    location: 'Chatter',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-2b',
-        imgUrl: '/decks/tutorial/judicator-purple-smile.png',
-        title:'Jude',
-        text: "The pleasure? Careful now, one might think you're starting to enjoy this place a little too much...",
-        faction: 'Being',
-        textLeft: "I can't tell if you can't read my sarcasm or if I can't read yours.", // ->tutorial3-3a
-        textRight: "I promise you that won't be an issue. You however, seem to be enjoying yourself quite a bit.", // ->tutorial3-3a
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-3b',
+    imgUrl: '/decks/tutorial/judicator-white-smile.png',
+    title: 'Jude',
+    text: "I'm sorry but I only wanted to say a quick hello, it's actually question time not chatter time.",
+    faction: '???',
+    textLeft: "Oh, okay then.", // ->tutorial3-4
+    textRight: "But you're still white?", // ->tutorial3-4
+    location: 'Chatter',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-3a',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "I am capable of emotions you know, I'm not some sort of celestial unfeeling robot. In fact, I'm not so different from you.",
-        faction: 'Being',
-        textLeft: "Not so different? Have you seen yourself?", // ->tutorial3-4a-a
-        textRight: "I highly doubt something like you can understand human emotions, but you do seem capable of sarcasm.", // ->tutorial3-4a-b
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-4',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "It is question time, what would you like to ask?",
+    faction: '???',
+    textLeft: "What is my role here?", // ->tutorial3-5a
+    textRight: "What is your role here?", // ->tutorial3-5b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-4a-a',
-        imgUrl: '/decks/tutorial/judicator-purple-smile.png',
-        title:'Jude',
-        text: "Have you seen yourself?",
-        faction: 'Being',
-        textLeft: "...", // ->tutorial3-5
-        textRight: "I know what I look like.", // ->tutorial3-5
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-5a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "There are 3 kinds of people here: the guests, the visitors, and the others. You are a guest, your role is to interact with other guests and visitors and regain your memories.",
+    faction: '???',
+    textLeft: "What's the difference between guests and visitors?", // ->tutorial3-5a-1a
+    textRight: "What are the others?", // ->tutorial3-5a-1b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-4a-b',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "Oh I'm capable of much more than just sarcasm...",
-        faction: 'Being',
-        textLeft: "Was that a threat?", // ->tutorial3-5
-        textRight: "...", // ->tutorial3-5
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
-    }, 
-    {
-        id: 'tutorial3-5',
-        imgUrl: '/decks/tutorial/judicator-purple-smile.png',
-        title:'Jude',
-        text: "RIGHT THEN! Ding dong ding dong, it's time for more questions!",
-        faction: 'Being',
-        textLeft: "None of this matters, I don't care about your questions, never have.", // ->tutorial3-6a
-        textRight: "Wait, can we go back to what we were talking about!", // ->tutorial3-6b
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-5a-1a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Guests are people who have been invited but forgot, while visitors are people who were forced to visit without knowing.",
+    faction: '???',
+    textLeft: "Oh, that makes sense.", // ->tutorial3-6a
+    textRight: "I'm not sure I understand but ok.", // ->tutorial3-6a
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-6a',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "Oh I assure you this does matter. Have you not been listening to me? Your choices matter.",
-        faction: 'Being',
-        textLeft: "It's kind of hard to believe that right now.", // ->tutorial3-7
-        textRight: "Maybe to you they do, but not to me.", // ->tutorial3-7
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-5a-1b',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "The others are \"Beings\", their origins are unknown but they seem to help the guests and ignore the visitors. One theory is that they are repurposed drifters.",
+    faction: '???',
+    textLeft: "Repurposed drifters?", // ->tutorial3-5a-1b-1a
+    textRight: "Does that make you an \"other\"?", // ->tutorial3-5a-1b-1b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-6b',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "Go back? There isn't a soul alive who can turn back the hands of time. Instead, you should focus on moving forward.",
-        faction: 'Being',
-        textLeft: "Excuse me if I'm feeling a bit lethargic at the moment.", // ->tutorial3-7
-        textRight: "Yeah yeah...move forward, I know.", // ->tutorial3-7
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-5a-1b-1a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Drifters are guests who never left, it's possible they finally found a purpose or were given one.",
+    faction: '???',
+    textLeft: "Oh, I see.", // ->tutorial3-6a
+    textRight: "That leads me to another question.", // ->tutorial3-6a
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-7',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "Feeling down are we? Nothing a few more fun questions can't fix! Now, as always it's important that you answer honestly and don't think too hard. Just pick the first one that speaks to you.",
-        faction: 'Being',
-        textLeft: "Let's just get this over with.", // ->tutorial3-8a
-        textRight: "You don't need to tell me that every time.", // ->tutorial3-8b
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-5a-1b-1b',
+    imgUrl: '/decks/tutorial/judicator-blue-smile.png',
+    title: 'Jude',
+    text: "I suppose that does, Jack. I am a judicator tasked with overseeing the trials of guests.",
+    faction: 'Judicator', // Now has knowledge of faction
+    textLeft: "Interesting", // ->tutorial3-6b
+    textRight: "I have another question for you.", // ->tutorial3-6b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-8a',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "Your enthusiasm is delightfully refreshing as always. Alright, it's time to begin!",
-        faction: 'Being',
-        textLeft: "Begin", // ->survey3-1
-        textRight: "Hey, before we start, can I ask you something? Is your name really 'Jude'?", // ->tutorial3-9
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-5b',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "I am a judicator, tasked with overseeing the trials of guests.",
+    faction: 'Judicator', // Now has knowledge of faction
+    textLeft: "Does that mean you're judging me?", // ->tutorial3-5b-1a
+    textRight: "Have you always been a judicator?", // ->tutorial3-5b-1b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-8b',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "And you don't need to tell me how to do my job.",
-        faction: 'Being',
-        textLeft: "Begin", // ->survey3-1
-        textRight: "Begin", // ->survey3-1
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-5b-1a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "I am watching you Jack, observing your decisions and learning who you are as a person. I however, cannot \"judge\" you directly.",
+    faction: 'Judicator', // Now has knowledge of faction
+    textLeft: "That makes me nervous.", // ->tutorial3-6b
+    textRight: "I will be on my best behaviour.", // ->tutorial3-6b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-9',
-        imgUrl: '/decks/tutorial/judicator-purple.png',
-        title:'Jude',
-        text: "About as much as your name is Jack.",
-        faction: 'Being',
-        textLeft: "Begin", // ->survey3-1
-        textRight: "What's the real purpose of these questions?", // ->tutorial3-10
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-5b-1b',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Sometimes it feels that way, but no, not always. I can tell you more about that the next time we speak, if you'd like?",
+    faction: 'Judicator', // Now has knowledge of faction
+    textLeft: "Yes, I would.", // ->tutorial3-6b
+    textRight: "No, that's okay.", // ->tutorial3-6b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    {
-        id: 'tutorial3-10',
-        imgUrl: '/decks/tutorial/judicator-purple-smile.png',
-        title:'Jude',
-        text: "Wouldn't you like to know...",
-        faction: 'Being',
-        textLeft: "Begin", // ->survey3-1
-        textRight: "Begin", // ->survey3-1
-        location: 'tutorial',
-        actionLeft: {
-            good: 0,
-            evil: 0,
-        },
-        actionRight: {
-            good: 0,
-            evil: 0,
-        }
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-6a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "What would you like to ask next?",
+    faction: '???',
+    textLeft: "Why the name Jude?", // ->tutorial3-6a-1a
+    textRight: "Why haven't I remembered anything yet?", // ->tutorial3-6a-1b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
     },
-    
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-6a-1a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "I am a judicator, or a judge if that's easier to remember. The name Jude derives from one of those.",
+    faction: '???',
+    textLeft: "So you're judging me? On what?", // ->tutorial3-7
+    textRight: "I don't understand.", // ->tutorial3-7
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-6a-1b',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Don't force it, your memories will return when you are ready. I watch over you as your judicator, I will do what's in my power to help you.",
+    faction: 'Judicator',
+    textLeft: "So you're judging me? On what?", // ->tutorial3-7
+    textRight: "What can you do to help me?", // ->tutorial3-7
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-6b',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "What would you like to ask next?",
+    faction: 'Judicator', // Now has knowledge of faction
+    textLeft: "Is your real name actually Jude?", // ->tutorial3-6b-1a
+    textRight: "Why haven't I remembered anything yet?", // ->tutorial3-6a-1b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-6b-1a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "As much as yours is \"Jack\".",
+    faction: 'Judicator', // Now has knowledge of faction
+    textLeft: "What is your real name then?", // ->tutorial3-7
+    textRight: "What is my real name then?", // ->tutorial3-7
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-7',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "I'm sorry but that's all for question time, we will now continue with the trial.",
+    faction: 'Judicator', // All paths now have knowledge of faction.
+    textLeft: "But that was even shorter than last time!", // ->tutorial3-8a
+    textRight: "You ignored my last question.", // ->tutorial3-8b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-8a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Yes, not all time is created equal. Perhaps next time you will be able to ask more questions, or perhaps you asked the wrong ones and your time was cut short.",
+    faction: 'Judicator',
+    textLeft: "That's not fair.", // ->survey3-9
+    textRight: "Whatever", // ->survey3-9
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-8b',
+    imgUrl: '/decks/tutorial/judicator-blue-smile.png',
+    title: 'Jude',
+    text: "Perhaps the answer was not worth giving, or I just wasn't listening.",
+    faction: 'Judicator',
+    textLeft: "Rude", // ->survey-3-9
+    textRight: "Awesome", // ->survey-3-9
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    // Here for the first time I change dialogue based on person's alignment (in helper fn) This message is displayed to all but 3-10 will diverge.
+    id: 'tutorial3-9',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "I understand you have many questions, but I am not the only source of answers. Perhaps I can show you how your actions have already impacted your path.",
+    faction: 'Judicator',
+    textLeft: "What do you mean?", // ->survey-3-9a
+    textRight: "My path?", // ->survey-3-9b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    // TODO: continue with diverging paths based on alignment
+    id: 'tutorial3-9a',
+    imgUrl: '/decks/tutorial/judicator-blue-smile.png',
+    title: 'Jude',
+    text: "I watch you and listen to your responses. Based on this, I set your alignment (<span style=\"font-weight: bold; background-color: #92d5f0; padding: 2px; border-radius: 4px;\">Good</span> | <span style=\"font-weight: bold; background-color: #f0e19e; padding: 2px; border-radius: 4px;\">Neutral</span> | <span style=\"font-weight: bold; background-color: #ee7070; padding: 2px; border-radius: 4px;\">Evil</span>). Take a look now and if you'd like, I can set your alignment right here and now for you, just tell me what you'd prefer.",
+    faction: 'Judicator',
+    textLeft: "Good please", // ->survey-3-9a TODO:
+    textRight: "I'm feeling mischievous", // ->survey-3-9b
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
 ]);
 
 export default tutorial3;

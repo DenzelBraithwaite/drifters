@@ -19,12 +19,12 @@
   // Types
   import type { CompleteCard } from '../helpers/stats';
 
-
   // Decks
   const tutorial1Deck = $decks.tutorial1;
   const tutorial2Deck = $decks.tutorial2;
   const tutorial3Deck = $decks.tutorial3;
   const tutorial4Deck = $decks.tutorial4;
+  const tutorialFinalDeck = $decks.tutorialFinal;
   const chapter1Deck = $decks.chapter1;
   const chapter1SoldiersDeck = $decks.soldiers;
   const chapter2Deck = $decks.chapter2;
@@ -45,6 +45,8 @@
   let currentCard: CompleteCard = $player.unlockedCards[0];
   let menuOpen = false;
   let buttonOnCooldown = false;
+  let textBox: HTMLElement;
+  let centerBtnVisible = false;
   
   // Game "Animations"
   let newDeckAlert = false;
@@ -108,7 +110,7 @@
             statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionLeft.knife : currentCard.actionLeft.smiley));
           };
           if (currentCard.actionLeft.memory) {
-            statFlashHandler('memory');   
+            statFlashHandler('memory', setFlashEffect(currentCard.actionLeft.memory));   
             p.memory += currentCard.actionLeft.memory;
           }
           return p;
@@ -132,7 +134,7 @@
             statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionRight.knife : currentCard.actionRight.smiley));
           };
           if (currentCard.actionRight.memory) {
-              statFlashHandler('memory');
+              statFlashHandler('memory', setFlashEffect(currentCard.actionRight.memory));
               p.memory += currentCard.actionRight.memory
           };
           return p;
@@ -281,219 +283,246 @@
 
   // TODO: break down into smaller functions
   function actionHandler(event) {
-      if (isButtonOnCooldown()) return;
-      buttonOnCooldown = true;
-      
-      const choice = event.detail;
-      toggleBlur();
-      statHandler(choice);
+    textBox.scrollTop = 0;
+    if (isButtonOnCooldown()) return;
+    buttonOnCooldown = true;
+    
+    const choice = event.detail;
+    toggleBlur();
+    statHandler(choice);
 
-      if (isPlayerDead()) {
-        if ($player.memory < 15) $player.memory = 0;
-        else if ($player.memory < 30) $player.memory = 15;
-        else if ($player.memory < 45) $player.memory = 30;
-        else if ($player.memory < 60) $player.memory = 45;
-        gameOver = true;
-      }
+    if (isPlayerDead()) {
+      if ($player.memory < 15) $player.memory = 0;
+      else if ($player.memory < 30) $player.memory = 15;
+      else if ($player.memory < 45) $player.memory = 30;
+      else if ($player.memory < 70) $player.memory = 45;
+      gameOver = true;
+    }
 
-      // Make sure stats have a limit of 10
-      controlStats();
+    // Make sure stats have a limit of 10
+    controlStats();
 
-      // Add Beings deck
-      if (!$player.unlockedDeck.chapter4Beings && $player.memory >= 52) {
-        newDeckAlertText = 'Beings'
-        newDeckAlert = true;
+    // Add Beings deck
+    if (!$player.unlockedDeck.chapter4Beings && $player.memory >= 52) {
+      newDeckAlertText = 'Beings'
+      newDeckAlert = true;
 
-        player.update(p => {
-          p.unlockedCards = [...chapter4BeingsDeck, ...p.unlockedCards];
-          if (!p.unlockedDeck.chapter4Beings) {
-            p.displayDecks = [
-              ...p.displayDecks,
-              {
-                title: 'Beings',
-                description: 'Special bonus deck',
-                img: '/decks/chapter4/beings/purple/glasses.png'
-              }
-            ]
+      player.update(p => {
+        p.unlockedCards = [...chapter4BeingsDeck, ...p.unlockedCards];
+        if (!p.unlockedDeck.chapter4Beings) {
+          p.displayDecks = [
+            ...p.displayDecks,
+            {
+              title: 'Beings',
+              description: 'Special bonus deck',
+              img: '/decks/chapter4/beings/purple/glasses.png'
+            }
+          ]
+        }
+        p.unlockedDeck.chapter4Beings = true;
+        return p;
+      });
+
+      setTimeout(() => {
+        newDeckAlert = false;
+      }, 4500);
+    }
+
+    // Add Goblins deck
+    if (!$player.unlockedDeck.chapter3Goblins && $player.memory >= 37) {
+      newDeckAlertText = 'Goblins'
+      newDeckAlert = true;
+
+      player.update(p => {
+        p.unlockedCards = [...chapter3GoblinsDeck, ...p.unlockedCards];
+        if (!p.unlockedDeck.chapter3GoblinsDeck) {
+          p.displayDecks = [
+            ...p.displayDecks,
+            {
+              title: 'Goblins',
+              description: 'Bonus deck',
+              img: '/decks/chapter3/goblins/goblin-woman.png'
+            }
+          ]
+        }
+        p.unlockedDeck.chapter3Goblins = true;
+        return p;
+      });
+
+      setTimeout(() => {
+        newDeckAlert = false;
+      }, 4500);
+    }
+
+    // Add Elves deck
+    if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 22) {
+      newDeckAlertText = 'Elves'
+      newDeckAlert = true;
+
+      player.update(p => {
+        p.unlockedCards = [...chapter2ElvesDeck, ...p.unlockedCards];
+        if (!p.unlockedDeck.chapter2Elves) {
+          p.displayDecks = [
+            ...p.displayDecks,
+            {
+              title: 'Elves',
+              description: 'Bonus deck',
+              img: '/decks/chapter2/elves/elf-archer-white.png'
+            }
+          ]
+        }
+        p.unlockedDeck.chapter2Elves = true;
+        return p;
+      });
+
+      setTimeout(() => {
+        newDeckAlert = false;
+      }, 4500);
+    }
+
+    // Add soldier deck
+    if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 7) {
+      newDeckAlertText = 'Soldiers'
+      newDeckAlert = true;
+
+      player.update(p => {
+        p.unlockedCards = [...chapter1SoldiersDeck, ...p.unlockedCards];
+        if (!p.unlockedDeck.chapter1Soldiers) {
+          p.displayDecks = [
+            ...p.displayDecks,
+            {
+              title: 'Soldiers',
+              description: 'Bonus deck',
+              img: '/decks/chapter1/soldiers/captain.png'
+            }
+          ]
           }
-          p.unlockedDeck.chapter4Beings = true;
+          p.unlockedDeck.chapter1Soldiers = true;
           return p;
-        });
+      });
 
-        setTimeout(() => {
-          newDeckAlert = false;
-        }, 4500);
-      }
+      setTimeout(() => {
+        newDeckAlert = false;
+      }, 4500);
+    }
 
-      // Add Goblins deck
-      if (!$player.unlockedDeck.chapter3Goblins && $player.memory >= 37) {
-        newDeckAlertText = 'Goblins'
-        newDeckAlert = true;
+    // Move on to final chapter if enough memory.
+    if (!$player.unlockedDeck.tutorialFinal && $player.memory >= 70) { 
+      player.update(p => {
+        p.activeDeck = 'survey';
+        p.unlockedCards = [...tutorialFinalDeck];
+        currentCard = p.unlockedCards[0];
 
+        p.unlockedDeck.tutorialFinal = true;
+        return p;
+      });
+          
+      backgrounds.update(bg => {
+        $backgrounds.active = $backgrounds.darkFinal;
+        return bg;
+      });
+      return;
+    }
+
+    // Move on to chapter 4 if enough memory.
+    if (!$player.unlockedDeck.tutorial4 && $player.memory >= 45) { 
+      player.update(p => {
+        p.activeDeck = 'survey';
+        p.unlockedCards = [...tutorial4Deck];
+        currentCard = p.unlockedCards[0];
+
+        p.unlockedDeck.tutorial4 = true;
+        return p;
+      });
+          
+      backgrounds.update(bg => {
+        $backgrounds.active = $backgrounds.dark;
+        return bg;
+      });
+      return;
+    }
+
+    // Move on to chapter 3 if enough memory.
+    if (!$player.unlockedDeck.tutorial3 && $player.memory >= 30) { 
         player.update(p => {
-          p.unlockedCards = [...chapter3GoblinsDeck, ...p.unlockedCards];
-          if (!p.unlockedDeck.chapter3GoblinsDeck) {
-            p.displayDecks = [
-              ...p.displayDecks,
-              {
-                title: 'Goblins',
-                description: 'Bonus deck',
-                img: '/decks/chapter3/goblins/goblin-woman.png'
-              }
-            ]
-          }
-          p.unlockedDeck.chapter3Goblins = true;
-          return p;
+                p.activeDeck = 'survey';
+                p.unlockedCards = [...tutorial3Deck];
+                currentCard = p.unlockedCards[0];
+                p.unlockedDeck.tutorial3 = true;
+                return p;
+            });
+            
+        backgrounds.update(bg => {
+            $backgrounds.active = $backgrounds.dark;
+            return bg;
         });
+        return;
+    }
 
-        setTimeout(() => {
-          newDeckAlert = false;
-        }, 4500);
-      }
-
-      // Add Elves deck
-      if (!$player.unlockedDeck.chapter2Elves && $player.memory >= 22) {
-        newDeckAlertText = 'Elves'
-        newDeckAlert = true;
-
+    // Move on to chapter 2 if enough memory.
+    if (!$player.unlockedDeck.tutorial2 && $player.memory >= 15) { 
         player.update(p => {
-          p.unlockedCards = [...chapter2ElvesDeck, ...p.unlockedCards];
-          if (!p.unlockedDeck.chapter2Elves) {
-            p.displayDecks = [
-              ...p.displayDecks,
-              {
-                title: 'Elves',
-                description: 'Bonus deck',
-                img: '/decks/chapter2/elves/elf-archer-white.png'
-              }
-            ]
-          }
-          p.unlockedDeck.chapter2Elves = true;
-          return p;
-        });
+            p.activeDeck = 'survey';
+            p.unlockedCards = [...tutorial2Deck];
+            currentCard = p.unlockedCards[0];
 
-        setTimeout(() => {
-          newDeckAlert = false;
-        }, 4500);
-      }
+            if (!p.unlockedDeck.tutorial2) {
+                p.displayDecks = [
+                    ...p.displayDecks,
+                    {
+                        title: 'Jude',
+                        description: 'Question',
+                        img: '/decks/tutorial/judicator-blue.png'
+                    }
+                ]
+            }
 
-      // Add soldier deck
-      if (!$player.unlockedDeck.chapter1Soldiers && $player.memory >= 7) {
-          newDeckAlertText = 'Soldiers'
-          newDeckAlert = true;
-
-          player.update(p => {
-              p.unlockedCards = [...chapter1SoldiersDeck, ...p.unlockedCards];
-              if (!p.unlockedDeck.chapter1Soldiers) {
-                  p.displayDecks = [
-                      ...p.displayDecks,
-                      {
-                          title: 'Soldiers',
-                          description: 'Bonus deck',
-                          img: '/decks/chapter1/soldiers/captain.png'
-                      }
-                  ]
-              }
-              p.unlockedDeck.chapter1Soldiers = true;
-              return p;
-          });
-
-          setTimeout(() => {
-              newDeckAlert = false;
-          }, 4500);
-      }
-
-      // Move on to chapter 4 if enough memory.
-      if (!$player.unlockedDeck.tutorial4 && $player.memory >= 45) { 
-        player.update(p => {
-          p.activeDeck = 'survey';
-          p.unlockedCards = [...tutorial4Deck];
-          currentCard = p.unlockedCards[0];
-
-          p.unlockedDeck.tutorial4 = true;
-          return p;
+            p.unlockedDeck.tutorial2 = true;
+            return p;
         });
             
         backgrounds.update(bg => {
-          $backgrounds.active = $backgrounds.dark;
-          return bg;
+            $backgrounds.active = $backgrounds.dark;
+            return bg;
         });
         return;
-      }
+    }
+    
+    // Make sure the same card doesn't appear twice during one playthrough
+    const index = Math.floor(Math.random() * $player.unlockedCards.length);
+    let newCard = drawRandomCard();
 
-      // Move on to chapter 3 if enough memory.
-      if (!$player.unlockedDeck.tutorial3 && $player.memory >= 30) { 
-          player.update(p => {
-                  p.activeDeck = 'survey';
-                  p.unlockedCards = [...tutorial3Deck];
-                  currentCard = p.unlockedCards[0];
-                  p.unlockedDeck.tutorial3 = true;
-                  return p;
-              });
-              
-          backgrounds.update(bg => {
-              $backgrounds.active = $backgrounds.dark;
-              return bg;
-          });
-          return;
-      }
+    while (currentCard.id === newCard.id) newCard = drawRandomCard();
+    currentCard = newCard;
 
-      // Move on to chapter 2 if enough memory.
-      if (!$player.unlockedDeck.tutorial2 && $player.memory >= 15) { 
-          player.update(p => {
-              p.activeDeck = 'survey';
-              p.unlockedCards = [...tutorial2Deck];
-              currentCard = p.unlockedCards[0];
-
-              if (!p.unlockedDeck.tutorial2) {
-                  p.displayDecks = [
-                      ...p.displayDecks,
-                      {
-                          title: 'Jude',
-                          description: 'Question',
-                          img: '/decks/tutorial/judicator-blue.png'
-                      }
-                  ]
-              }
-
-              p.unlockedDeck.tutorial2 = true;
-              return p;
-          });
-              
-          backgrounds.update(bg => {
-              $backgrounds.active = $backgrounds.dark;
-              return bg;
-          });
-          return;
-      }
-      
-      // Make sure the same card doesn't appear twice during one playthrough
-      const index = Math.floor(Math.random() * $player.unlockedCards.length);
-      let newCard = drawRandomCard();
-  
-      while (currentCard.id === newCard.id) newCard = drawRandomCard();
-      currentCard = newCard;
-
-      if (['stat-health', 'stat-aura', 'stat-sanity', 'stat-impulse'].includes(currentCard.id)) {
-        currentCard = updateStatCard(currentCard.id);
-      }
+    if (['stat-health', 'stat-aura', 'stat-sanity', 'stat-impulse'].includes(currentCard.id)) {
+      currentCard = updateStatCard(currentCard.id);
+    }
   }
 
-  function surveyHandler(event) {
+  function surveyHandler(event: {detail: 'left' | 'right' | 'center'}) {
+    const choice = event.detail;
+    textBox.scrollTop = 0;
     if (isButtonOnCooldown()) return;
 
-    currentCard = surveyDecisionHandler(event, currentCard);
+    currentCard = surveyDecisionHandler(choice, currentCard);
+    if (currentCard.id === 'tutorial3-9a' || currentCard.id === 'tutorial3-9b' || currentCard.id === 'tutorial1-2') {
+      centerBtnVisible = true;
+    } else {
+      centerBtnVisible = false;
+    }
+
     toggleBlur();
 
     // Checks if current card is final survey card
-    if (currentCard.id === 'survey4-12') {
+    if (currentCard.id === 'survey4-17') {
       setTimeout(() => {
         player.update(p => {
           p.health = 10;
           p.aura = 10;
           p.sanity = 10;
           p.activeDeck = 'chapter';
-          p.unlockedCards = [...chapter4Deck, statDeck.impulse];
+          p.unlockedCards = [...chapter4Deck, statDeck.impulse, statDeck.sanity, statDeck.aura, statDeck.health];
 
           // Choose stat icon based on answers
           p.icons.impulse = p.iconPoints.knife >= p.iconPoints.cleaver ? 'knife' : 'cleaver';
@@ -528,7 +557,7 @@
         // Change background
         // TODO: get chapter 4 bg
         backgrounds.update(bg => {
-          $backgrounds.active = $backgrounds.dark;
+          $backgrounds.active = $backgrounds.cosmic;
           return bg;
         });
           
@@ -544,7 +573,7 @@
           p.health = 10;
           p.aura = 10;
           p.activeDeck = 'chapter';
-          p.unlockedCards = [...chapter3Deck, statDeck.sanity];
+          p.unlockedCards = [...chapter3Deck, statDeck.sanity, statDeck.aura, statDeck.health];
 
           // Choose stat icon based on answers
           p.icons.sanity = p.iconPoints.brain >= p.iconPoints.smiley ? 'brain' : 'smiley';
@@ -587,7 +616,7 @@
         player.update(p => {
           p.health = 10;
           p.activeDeck = 'chapter';
-          p.unlockedCards = [...chapter2Deck, statDeck.aura];
+          p.unlockedCards = [...chapter2Deck, statDeck.aura, statDeck.health];
 
           // Choose stat icon based on answers
           p.icons.aura = p.iconPoints.yellowAura >= p.iconPoints.greenAura ? 'yellow' : 'green';
@@ -677,6 +706,7 @@
       resetPlayer();
       return true;
     }
+    return false;
   }
 
   function resetPlayer() {
@@ -696,8 +726,8 @@
     if (buttonOnCooldown) return true;
 
     buttonOnCooldown = true;
-    // TODO: remember to put back to 750
-    setTimeout(() => buttonOnCooldown = false, 50);
+    // TODO: remember to put back to 600
+    setTimeout(() => buttonOnCooldown = false, 0);
   }
 
   function displayPlayerAlignment(): string {
@@ -705,12 +735,43 @@
     else if ($player.evilPoints - $player.goodPoints > 0) return 'Evil';
     else return 'Neutral';
   }
+
+  function displayMemoryCheckpoint(): string {
+    if ($player.memory < 15) return '0';
+    if ($player.memory < 30) return '15';
+    if ($player.memory < 45) return '30';
+    if ($player.memory < 70) return '45';
+    return '0';
+  }
+
+  function playerAlignmentHandler(fieldToReturn: string): string {
+    if (fieldToReturn === 'title') {
+      if ($player.goodPoints === $player.evilPoints) return 'Neutral';
+      if ($player.goodPoints > $player.evilPoints) return 'Good';
+      if ($player.goodPoints < $player.evilPoints) return 'Evil';
+    } else if (fieldToReturn === 'img') {
+      if ($player.goodPoints === $player.evilPoints) return '/alignments/alignment_neutral.png';
+      if ($player.goodPoints > $player.evilPoints) return '/alignments/alignment_good.png';
+      if ($player.goodPoints < $player.evilPoints) return '/alignments/alignment_evil.png';
+    } else if (fieldToReturn === 'points') {
+      if ($player.goodPoints === $player.evilPoints) return '0';
+      if ($player.goodPoints > $player.evilPoints) return ($player.goodPoints - $player.evilPoints).toString();
+      if ($player.goodPoints < $player.evilPoints) return ($player.evilPoints - $player.goodPoints).toString();
+    }
+
+    // really just to silence stupid errors, this will always resolve.
+    return '';
+  }
 </script>
 
 <div class="game-client">
   {#if gameOver}
     <div class="menu">
       <h2 class="main-menu-title">Continue?</h2>
+      <p class="text-yellow">You will restart at your last checkpoint with full stats, the only think you lose is memory.</p>
+      <!-- has icon class for color -->
+      <p><strong>Current memory checkpoint:</strong> <span class="text-green">{displayMemoryCheckpoint()}</p>
+      <br>
       <Button on:click={() => gameOver = false}>Yes</Button>
     </div>
   {:else}
@@ -719,7 +780,7 @@
       <h2 class="main-menu-title">Main Menu</h2>
       <main class="menu-content">
         <h3 class="menu-header">Mementos repaired: <span class="menu-text__red">{$player.timesReborn}</span></h3>
-        <h3 class="menu-header">Alignment: <span class="menu-text__blue">{displayPlayerAlignment()}</span></h3>
+        <MenuDeck forAlignment={true} alignment={playerAlignmentHandler('title')} alignmentPoints={playerAlignmentHandler('points')} title={playerAlignmentHandler('title')} img={playerAlignmentHandler('img')} description={'Alignment'}/>
         <h3 class="menu-header">Cards:</h3>
         {#each $player.displayDecks as deck}
           <MenuDeck title={deck.title} img={deck.img} description={deck.description}/>
@@ -767,7 +828,7 @@
         </div>
       </div>
       <!-- TODO: Make dedicated component -->
-      <div class="card-text" class:cardBlurred={blurCard}>
+      <div bind:this={textBox} class="card-text" class:cardBlurred={blurCard}>
         <p class:show={newDeckAlert} class="new-card-alert">New deck unlocked: {newDeckAlertText}!</p>
         <p>{@html currentCard.text}</p>
       </div>
@@ -775,17 +836,22 @@
   {/if}
 
   <!-- Circle shapes -->
-  {#if $player.activeDeck === 'survey'}
-      <span class="circle__left-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="left"/></span>
-      <span class="circle__right-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="right" /></span>
-    {:else if $player.activeDeck === 'chapter'}
-      <span class="circle__left-wrapper"><Circle on:decision={event => actionHandler(event)} leftOrRight="left"/></span>
-      <span class="circle__right-wrapper"><Circle on:decision={event => actionHandler(event)} leftOrRight="right" /></span>
+  {#if !gameOver && $player.activeDeck === 'survey'}
+    <span class="circle__left-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="left"/></span>
+    {#if centerBtnVisible}
+      <span class="circle__center-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="center"/></span>
     {/if}
+    <span class="circle__right-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="right" /></span>
+  {:else if !gameOver && $player.activeDeck === 'chapter'}
+    <span class="circle__left-wrapper"><Circle on:decision={event => actionHandler(event)} leftOrRight="left"/></span>
+    <span class="circle__right-wrapper"><Circle on:decision={event => actionHandler(event)} leftOrRight="right" /></span>
+  {/if}
 
   <!-- Menu section -->
   <section class="menu-bottom-section">
-    <span class="btn-menu"><MenuButton on:click={() => menuOpen = !menuOpen}>Menu</MenuButton></span>
+    {#if !gameOver}
+      <span class="btn-menu"><MenuButton on:click={() => menuOpen = !menuOpen}>Menu</MenuButton></span>
+    {/if}
   </section>
 </div>
 
@@ -809,23 +875,22 @@
   }
   
   .menu {
-    background-color: #090909f9;
-    border-radius: 18px 18px 18px 18px;
-    height: 100%;
-    width: 100%;
     padding: 1rem;
+    height: 625px;
+    width: 375px;
+    box-shadow: 0 0 100px 100px #000000da;
+    outline: 1px solid #a8a4a227; /* adds a bit of visual depth*/
+    background-color: #000;
+    border-radius: 18px;
     text-align: center;
-    z-index: 2; // to be above game client and stats
-    transition: all 0.3s ease-out;
+    z-index: 2;
+    transition: all 1s ease-out;
 
     position: absolute;
-    top: 0;
-    right: 50%;
-    transform: translateX(50%);
   }
 
   .menu-content {
-    background-color: #00000090;
+    background-color: #ffffff05;
     border-radius: 18px 18px 18px 18px;
 
     height: 85%;
@@ -868,6 +933,7 @@
     width: 35%;
     min-width: 300px;
     max-width: 400px;
+    min-height: 675px;
     max-height: 850px;
     margin: 0 auto;
     border-top: 2px solid #0000001a;
@@ -911,6 +977,7 @@
     border-radius: 8px;
     overflow-y: scroll;
     transition: filter 0.1s ease-in;
+    scroll-behavior: smooth;
 
       &::-webkit-scrollbar {
         width: 0.5rem;
@@ -993,6 +1060,13 @@
     bottom: 75px;
   }
 
+  .circle__center-wrapper {
+    position: absolute;
+    right: 50%;
+    bottom: 75px;
+    transform: translateX(50%);
+  }
+
   .new-card-alert {
     opacity: 0;
     color: #3ce976;
@@ -1007,7 +1081,7 @@
   }
 
   // Icon colors
-  .green-icon {
+  .text-green {
     stroke: #123312;
     color: #509150;
   }
@@ -1017,7 +1091,7 @@
     color: #b07680;
   }
   
-  .yellow-icon {
+  .text-yellow {
     stroke: #b5b559;
     color: #b5b559;
   }
