@@ -2,7 +2,7 @@
   // @ts no-check
 
   // Hooks
-  import { fly, fade } from 'svelte/transition';
+  import { fly, fade, blur } from 'svelte/transition';
 
   // Helpers
   import { surveyDecisionHandler } from '../helpers/surveyDecisionHandler';
@@ -839,7 +839,7 @@
   {#if !gameOver && $player.activeDeck === 'survey'}
     <span class="circle__left-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="left"/></span>
     {#if centerBtnVisible}
-      <span class="circle__center-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="center"/></span>
+      <span transition:blur|local={{duration: 1000}} class="circle__center-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="center"/></span>
     {/if}
     <span class="circle__right-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="right" /></span>
   {:else if !gameOver && $player.activeDeck === 'chapter'}

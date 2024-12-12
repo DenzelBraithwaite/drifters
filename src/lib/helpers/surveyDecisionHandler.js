@@ -1055,11 +1055,12 @@ export function surveyDecisionHandler(choice, card) {
     } else if (choice === 'center') {
       // Tutorial 3 (center) - Much more rare then left and right, usually hideen
       switch (card.id) {
-        case 'tutorial3-9a':
-        case 'tutorial3-9b':
-          // TODO: handle middle button for tutorial3 extra dialogue
-          // nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial3-10');
+        case 'tutorial1-2': // TODO: remove For testing
+        case 'tutorial3-10a':
+        case 'tutorial3-10b':
+          nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-neutral');
           break;
+          // TODO: Handle new tutorial 3 routes/decisions (alignment related) for left right and center, test.
       }
     }
 
@@ -1095,6 +1096,22 @@ function iconPointsHandler(choice, card) {
       if (card.actionRight.smiley) p.iconPoints.smiley += card.actionRight.smiley;
       if (card.actionRight.knife) p.iconPoints.knife += card.actionRight.knife;
       if (card.actionRight.cleaver) p.iconPoints.cleaver += card.actionRight.cleaver;
+      return p;
+    });
+  }
+
+  if (choice === 'center' && card.actionCenter) {
+    player.update(p => {
+      if (card.actionCenter.good) p.goodPoints += card.actionCenter.good;
+      if (card.actionCenter.evil) p.evilPoints += card.actionCenter.evil;
+      if (card.actionCenter.heart) p.iconPoints.heart += card.actionCenter.heart;
+      if (card.actionCenter.diamond) p.iconPoints.diamond += card.actionCenter.diamond;
+      if (card.actionCenter.greenAura) p.iconPoints.greenAura += card.actionCenter.greenAura;
+      if (card.actionCenter.yellowAura) p.iconPoints.yellowAura += card.actionCenter.yellowAura;
+      if (card.actionCenter.brain) p.iconPoints.brain += card.actionCenter.brain;
+      if (card.actionCenter.smiley) p.iconPoints.smiley += card.actionCenter.smiley;
+      if (card.actionCenter.knife) p.iconPoints.knife += card.actionCenter.knife;
+      if (card.actionCenter.cleaver) p.iconPoints.cleaver += card.actionCenter.cleaver;
       return p;
     });
   }

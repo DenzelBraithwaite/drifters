@@ -405,8 +405,8 @@ const tutorial3 = writable([
     title: 'Jude',
     text: "I understand you have many questions, but I am not the only source of answers. Perhaps I can show you how your actions have already impacted your path.",
     faction: 'Judicator',
-    textLeft: "What do you mean?", // ->survey-3-9a
-    textRight: "My path?", // ->survey-3-9b
+    textLeft: "What do you mean?", // ->survey-3-10a
+    textRight: "My path?", // ->survey-3-10b
     location: 'Question',
     actionLeft: {
       good: 0,
@@ -418,14 +418,59 @@ const tutorial3 = writable([
     }
   },
   {
-    // TODO: continue with diverging paths based on alignment
-    id: 'tutorial3-9a',
-    imgUrl: '/decks/tutorial/judicator-blue-smile.png',
+    id: 'tutorial3-10a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
     title: 'Jude',
     text: "I watch you and listen to your responses. Based on this, I set your alignment (<span style=\"font-weight: bold; background-color: #92d5f0; padding: 2px; border-radius: 4px;\">Good</span> | <span style=\"font-weight: bold; background-color: #f0e19e; padding: 2px; border-radius: 4px;\">Neutral</span> | <span style=\"font-weight: bold; background-color: #ee7070; padding: 2px; border-radius: 4px;\">Evil</span>). Take a look now and if you'd like, I can set your alignment right here and now for you, just tell me what you'd prefer.",
     faction: 'Judicator',
-    textLeft: "Good please", // ->survey-3-9a TODO:
-    textRight: "I'm feeling mischievous", // ->survey-3-9b
+    textLeft: "Good please.", // ->tutorial3-11-good
+    textCenter: "I'll let my actions speak for themselves.", // ->tutorial3-11-neutral
+    textRight: "I'm feeling mischievous.", // ->tutorial3-11-evil
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 1,
+    },
+    actionCenter: {
+      good: 1,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 2,
+    }
+  },
+  {
+    id: 'tutorial3-10b',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Your path changes as you interact with others. Based on your actions, you might meet different people or discover unique dialogues. I'm always watching, monitoring your progress. Based on this, I set your alignment (<span style=\"font-weight: bold; background-color: #92d5f0; padding: 2px; border-radius: 4px;\">Good</span> | <span style=\"font-weight: bold; background-color: #f0e19e; padding: 2px; border-radius: 4px;\">Neutral</span> | <span style=\"font-weight: bold; background-color: #ee7070; padding: 2px; border-radius: 4px;\">Evil</span>). Take a look now and if you'd like, I can set your alignment right here and now for you, just tell me what you'd prefer.",
+    faction: 'Judicator',
+    textLeft: "Good please.", // ->tutorial3-11-good
+    textCenter: "I'll let my actions speak for themselves.", // ->tutorial3-11-neutral
+    textRight: "I'm feeling mischievous.", // ->tutorial3-11-evil
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 1,
+    },
+    actionCenter: {
+      good: 1,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 2,
+    }
+  },
+  {
+    id: 'tutorial3-11-good',
+    imgUrl: '/decks/tutorial/judicator-blue-smile.png',
+    title: 'Jude',
+    text: "You wish to be good? You should know simply wishing to be good is not enough, you must be good in your heart and in your mind. But I've taken your wishes under consideration, in this case you've actually shifted your alignment further towards evil I'm afraid.",
+    faction: 'Judicator',
+    textLeft: "So you tricked me?", // Alignment good -> tutorial3-11-good-alignment-good-1a, Alignment neutral -> tutorial3-11-good-alignment-neutral-1a, Alignment evil -> tutorial3-11-good-alignment-evil-1a
+    textRight: "And you wonder why I don't trust you.", // Alignment good -> tutorial3-11-good-alignment-good-1b, Alignment neutral -> tutorial3-11-good-alignment-neutral-1b, Alignment evil -> tutorial3-11-good-alignment-evil-1b
     location: 'Question',
     actionLeft: {
       good: 0,
@@ -436,6 +481,332 @@ const tutorial3 = writable([
       evil: 0,
     }
   },
+  {
+    id: 'tutorial3-11-neutral',
+    imgUrl: '/decks/tutorial/judicator-blue-smile.png',
+    title: 'Jude',
+    text: "Yes, this is the answer I was hoping for. To wish to be good is to cheat and to wish for evil is sinister. Only letting your actions speak will reveal what's truly in your heart. This has shifted your alignment further towards good.",
+    faction: 'Judicator',
+    textLeft: "So you were trying to trick me?", // Alignment good -> tutorial3-11-good-alignment-good-1a, Alignment neutral -> tutorial3-11-good-alignment-neutral-1a, Alignment evil -> tutorial3-11-good-alignment-evil-1a
+    textRight: "I couldn't agree more.", // // Alignment good -> tutorial3-11-good-alignment-good-1c, Alignment neutral -> tutorial3-11-good-alignment-neutral-1c, Alignment evil -> tutorial3-11-good-alignment-evil-1c
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-evil',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Is that so, you wish for chaos to thrive within? Very well, I suppose I shouldn't be surprised after all. You've now further shifted your alignment towards evil.",
+    faction: 'Judicator',
+    textLeft: "Why did you say you shouldn't be surprised?", // Alignment good -> tutorial3-11-good-alignment-good-1d, Alignment neutral -> tutorial3-11-good-alignment-neutral-1d, Alignment evil -> tutorial3-11-good-alignment-evil-1d
+    textRight: "Wow that was easy.", // Alignment good -> tutorial3-11-good-alignment-good-1e, Alignment neutral -> tutorial3-11-good-alignment-neutral-1e, Alignment evil -> tutorial3-11-good-alignment-evil-1e
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  // If they chose good and their alignment is still good after and they chose left (since choosing good puts your evil up by 1).
+  {
+    id: 'tutorial3-11-good-alignment-good-1a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Tricking you was not and is not my intention. Don't worry, I can tell your scale still leans towards honesty and purity, this is the path you must remain on if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "How can I trust you when you do things like this.", // -> tutorial3-12
+    textRight: "And if I don't stay on this path?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-neutral-1a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Tricking you was not and is not my intention. Don't worry, I can tell your scale's balanced in harmony, don't stray from this path, this is the path you must remain on while striving to lean towards good if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "How can I trust you when you do things like this.", // -> tutorial3-12
+    textRight: "And if I don't stay on this path?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-evil-1a',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Tricking you was not and is not my intention. But be wary, the path before you seems dark and gloomy. At this rate, I'm not sure if you'll ever be able to leave this place, although perhaps you can't help yourself after all.",
+    faction: 'Judicator',
+    textLeft: "How can I trust you when you do things like this.", // -> tutorial3-12
+    textRight: "And if I don't change paths?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-good-1b',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Trust is difficult but necessary, if you can't put your faith in me then at least put it in yourself. But don't worry, I can tell your scale still leans towards honesty and purity, this is the path you must remain on if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "How can I trust you when you do things like this.", // -> tutorial3-12
+    textRight: "And if I stray from this path?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-neutral-1b',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Trust is difficult but necessary, if you can't put your faith in me then at least put it in yourself. Do not fret, I can tell your scale's balanced in harmony, don't stray from this path, this is the path you must remain on while striving to lean towards good if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "How can I trust you when you do things like this.", // -> tutorial3-12
+    textRight: "And if I stray from this path?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-evil-1b',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Trust is difficult but necessary, if you can't put your faith in me then at least put it in yourself. But be wary, the path before you seems dark and gloomy. At this rate, I'm not sure if you'll ever be able to leave this place, although perhaps you can't help yourself after all.",
+    faction: 'Judicator',
+    textLeft: "How can I trust you when you do things like this.", // -> tutorial3-12
+    textRight: "What happens if I stay on this path?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-good-1c',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "I'm glad you understand, besides I can tell your scale still leans towards honesty and purity, this is the path you must remain on if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "And if I stray from this path?", // -> tutorial3-12
+    textRight: "But why make your offer so misleading?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-neutral-1c',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "I'm glad you understand, besides you have no reason to worry, I can tell your scale's balanced in harmony. Don't stray from this path, this is the path you must remain on while striving to lean towards good if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "And if I stray from this path?", // -> tutorial3-12
+    textRight: "But why make your offer so misleading?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-evil-1c',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "I'm glad you understand, but be wary, the path before you seems dark and gloomy. At this rate, I'm not sure if you'll ever be able to leave this place, although perhaps you can't help yourself after all.",
+    faction: 'Judicator',
+    textLeft: "What do you mean I can't help myself?", // -> tutorial3-12
+    textRight: "What happens if I stay on this path?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-good-1d',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Because I know the real you, one version at least. But I'm glad your scale still leans towards honesty and purity, this is the path you must remain on if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "And if I stray from this path?", // -> tutorial3-12
+    textRight: "Real me?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-neutral-1d',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Because I know the real you, one version at least. But you have no reason to worry, I can tell your scale's balanced in harmony. Don't stray from this path, this is the path you must remain on while striving to lean towards good if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "And if I stray from this path?", // -> tutorial3-12
+    textRight: "Real me?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-evil-1d',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Because I know the real you, one version at least. Be wary, the path before you seems dark and gloomy. At this rate, I'm not sure if you'll ever be able to leave this place, although perhaps you can't help yourself after all.",
+    faction: 'Judicator',
+    textLeft: "What do you mean I can't help myself?", // -> tutorial3-12
+    textRight: "What happens if I stay on this path?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-good-1e',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Easy? I'm not sure about that. But I'm glad your scale still leans towards honesty and purity, this is the path you must remain on if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "And if I stray from this path?", // -> tutorial3-12
+    textRight: "Why do you disagree that this is easy?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-neutral-1e',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Easy? I'm not sure about that. But for now at least you have no reason to worry, I can tell your scale's balanced in harmony. Don't stray from this path, this is the path you must remain on while striving to lean towards good if you wish to leave this place.",
+    faction: 'Judicator',
+    textLeft: "And if I stray from this path?", // -> tutorial3-12
+    textRight: "Why do you disagree that this is easy?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  {
+    id: 'tutorial3-11-good-alignment-evil-1e',
+    imgUrl: '/decks/tutorial/judicator-blue.png',
+    title: 'Jude',
+    text: "Easy you say? Be wary, the path before you seems dark and gloomy. At this rate, I'm not sure if you'll ever be able to leave this place, although perhaps you can't help yourself after all.",
+    faction: 'Judicator',
+    textLeft: "What do you mean I can't help myself?", // -> tutorial3-12
+    textRight: "What happens if I stay on this path?", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  },
+  // LAST OF TUROTIAL3
+  {
+    id: 'tutorial3-12',
+    imgUrl: '/decks/tutorial/judicator-blue-smile.png',
+    title: 'Jude',
+    text: "So many questions as always, but our time here truly is up now. Onwards now Jack, your memories await you.",
+    faction: 'Judicator',
+    textLeft: "I understand.", // -> tutorial3-12
+    textRight: "Wait, I'm not done.", // -> tutorial3-12
+    location: 'Question',
+    actionLeft: {
+      good: 0,
+      evil: 0,
+    },
+    actionRight: {
+      good: 0,
+      evil: 0,
+    }
+  }
 ]);
 
 export default tutorial3;
