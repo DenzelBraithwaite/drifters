@@ -314,9 +314,45 @@ export function surveyDecisionHandler(choice, card) {
           break;
         case 'tutorial3-8a':
         case 'tutorial3-8b':
+          nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-9');
+          break;
+        case 'tutorial3-9':
+          nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-10a');
+          break;
+        case 'tutorial3-10a':
+        case 'tutorial3-10b':
+          nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good');
+          break;
+        case 'tutorial3-11-good':
+          nextCard = getNextCardBasedOnAlignment('tutorial3-11-good', 'left');
+          break;
+        case 'tutorial3-11-neutral':
+          nextCard = getNextCardBasedOnAlignment('tutorial3-11-neutral', 'left');
+          break;
+        case 'tutorial3-11-evil':
+          nextCard = getNextCardBasedOnAlignment('tutorial3-11-evil', 'left');
+          break;
+        case 'tutorial3-11-good-alignment-good-1a':
+        case 'tutorial3-11-good-alignment-neutral-1a':
+        case 'tutorial3-11-good-alignment-evil-1a':
+        case 'tutorial3-11-good-alignment-good-1b':
+        case 'tutorial3-11-good-alignment-neutral-1b':
+        case 'tutorial3-11-good-alignment-evil-1b':
+        case 'tutorial3-11-good-alignment-good-1c':
+        case 'tutorial3-11-good-alignment-neutral-1c':
+        case 'tutorial3-11-good-alignment-evil-1c':
+        case 'tutorial3-11-good-alignment-good-1d':
+        case 'tutorial3-11-good-alignment-neutral-1d':
+        case 'tutorial3-11-good-alignment-evil-1d':
+        case 'tutorial3-11-good-alignment-good-1e':
+        case 'tutorial3-11-good-alignment-neutral-1e':
+        case 'tutorial3-11-good-alignment-evil-1e':
+          nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-12');
+          break;
+        case 'tutorial3-12':
           nextCard = get(decks).survey3.find(card => card.id === 'survey3-1');
           break;
-
+          
         // Survey 3 (left)
         case 'survey3-1':
           nextCard = get(decks).survey3.find(card => card.id === 'survey3-2');
@@ -846,6 +882,42 @@ export function surveyDecisionHandler(choice, card) {
             break;
           case 'tutorial3-8a':
           case 'tutorial3-8b':
+            nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-9');
+            break;
+          case 'tutorial3-9':
+            nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-10b');
+            break;
+          case 'tutorial3-10a':
+          case 'tutorial3-10b':
+            nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-evil');
+            break;
+          case 'tutorial3-11-good':
+            nextCard = getNextCardBasedOnAlignment('tutorial3-11-good', 'right');
+            break;
+          case 'tutorial3-11-neutral':
+            nextCard = getNextCardBasedOnAlignment('tutorial3-11-neutral', 'right');
+            break;
+          case 'tutorial3-11-evil':
+            nextCard = getNextCardBasedOnAlignment('tutorial3-11-evil', 'right');
+            break;
+          case 'tutorial3-11-good-alignment-good-1a':
+          case 'tutorial3-11-good-alignment-neutral-1a':
+          case 'tutorial3-11-good-alignment-evil-1a':
+          case 'tutorial3-11-good-alignment-good-1b':
+          case 'tutorial3-11-good-alignment-neutral-1b':
+          case 'tutorial3-11-good-alignment-evil-1b':
+          case 'tutorial3-11-good-alignment-good-1c':
+          case 'tutorial3-11-good-alignment-neutral-1c':
+          case 'tutorial3-11-good-alignment-evil-1c':
+          case 'tutorial3-11-good-alignment-good-1d':
+          case 'tutorial3-11-good-alignment-neutral-1d':
+          case 'tutorial3-11-good-alignment-evil-1d':
+          case 'tutorial3-11-good-alignment-good-1e':
+          case 'tutorial3-11-good-alignment-neutral-1e':
+          case 'tutorial3-11-good-alignment-evil-1e':
+            nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-12');
+            break;
+          case 'tutorial3-12':
             nextCard = get(decks).survey3.find(card => card.id === 'survey3-1');
             break;
 
@@ -1055,12 +1127,10 @@ export function surveyDecisionHandler(choice, card) {
     } else if (choice === 'center') {
       // Tutorial 3 (center) - Much more rare then left and right, usually hideen
       switch (card.id) {
-        case 'tutorial1-2': // TODO: remove For testing
         case 'tutorial3-10a':
         case 'tutorial3-10b':
           nextCard = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-neutral');
           break;
-          // TODO: Handle new tutorial 3 routes/decisions (alignment related) for left right and center, test.
       }
     }
 
@@ -1114,5 +1184,59 @@ function iconPointsHandler(choice, card) {
       if (card.actionCenter.cleaver) p.iconPoints.cleaver += card.actionCenter.cleaver;
       return p;
     });
+  }
+}
+
+// Show texted based on player's alignment.
+function getNextCardBasedOnAlignment(cardId = '', action = '') {
+  let cardToReturn;
+
+  // Player Good
+  if (get(player).goodPoints > get(player).evilPoints) {
+    switch (cardId) {
+      case 'tutorial3-11-good': 
+        action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-good-1a') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-good-1b');
+        break;
+      case 'tutorial3-11-neutral': 
+        action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-good-1a') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-good-1c');
+        break;
+      case 'tutorial3-11-evil': 
+        action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-good-1d') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-good-1e');
+        break;
+    }
+    
+    return cardToReturn;
+
+    // Player Evil
+  } else if (get(player).goodPoints < get(player).evilPoints) {
+    switch (cardId) {
+      case 'tutorial3-11-good': 
+        action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-evil-1a') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-evil-1b');
+        break;
+      case 'tutorial3-11-neutral': 
+        action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-evil-1a') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-evil-1c');
+        break;
+      case 'tutorial3-11-evil': 
+        action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-evil-1d') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-evil-1e');
+        break;
+    }
+    
+    return cardToReturn;
+
+    // Player Neutral
+  } else if (get(player).goodPoints === get(player).evilPoints) {
+    switch (cardId) {
+      case 'tutorial3-11-good': 
+        action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-neutral-1a') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-neutral-1b');
+        break;
+      case 'tutorial3-11-neutral': 
+        action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-neutral-1a') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-neutral-1c');
+        break;
+      case 'tutorial3-11-evil': 
+        action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-neutral-1d') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-neutral-1e');
+        break;
+    }
+    
+    return cardToReturn;
   }
 }

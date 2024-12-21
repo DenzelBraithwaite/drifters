@@ -17,6 +17,7 @@
       return {
         hovered: true,
         left: true,
+        center: false,
         right: false
       }
     });
@@ -27,6 +28,7 @@
       return {
         hovered: true,
         left: false,
+        center: false,
         right: true
       }
     });
@@ -37,7 +39,8 @@
       return {
         hovered: true,
         left: false,
-        right: true
+        center: true,
+        right: false
       }
     });
   }
@@ -47,6 +50,7 @@
       return {
         hovered: false,
         left: false,
+        center: false,
         right: false
       }
     });
@@ -57,6 +61,8 @@
   }
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 {#if leftOrRight === 'left'}
   <div on:mouseenter={showLeftText} on:mouseleave={hideText} on:click={() => actionHandler('left')} class="circle bg-blue"></div>
 {:else if leftOrRight === 'right'}

@@ -506,7 +506,7 @@
     if (isButtonOnCooldown()) return;
 
     currentCard = surveyDecisionHandler(choice, currentCard);
-    if (currentCard.id === 'tutorial3-9a' || currentCard.id === 'tutorial3-9b' || currentCard.id === 'tutorial1-2') {
+    if (currentCard.id === 'tutorial3-10a' || currentCard.id === 'tutorial3-10b') {
       centerBtnVisible = true;
     } else {
       centerBtnVisible = false;
@@ -810,6 +810,9 @@
         {#if $player.activeDeck === 'survey'}
           <Card img={currentCard.imgUrl} blurImg={blurCard} location={currentCard.location}>
             <span slot="text-left">{currentCard.textLeft}</span>
+            <span slot="text-center">
+              {#if centerBtnVisible}{currentCard.textCenter}{/if}
+            </span>
             <span slot="text-right">{currentCard.textRight}</span>
           </Card>
 
@@ -817,6 +820,9 @@
         {:else if $player.activeDeck === 'chapter'}
           <Card img={currentCard.imgUrl} blurImg={blurCard} location={currentCard.location}>
             <span slot="text-left">{currentCard.textLeft}</span>
+            <span slot="text-center">
+              {#if centerBtnVisible}{currentCard.textCenter}{/if}
+            </span>
             <span slot="text-right">{currentCard.textRight}</span>
           </Card>
         {/if}

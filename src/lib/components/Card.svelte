@@ -22,6 +22,10 @@
           <p><slot name="text-left" /></p>
         {/if}
 
+        {#if $cardHovered.center}
+          <p><slot name="text-center" /></p>
+        {/if}
+
         {#if $cardHovered.right}
           <p><slot name="text-right" /></p>
         {/if}

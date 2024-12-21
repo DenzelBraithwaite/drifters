@@ -368,8 +368,8 @@ const tutorial3 = writable([
     title: 'Jude',
     text: "Yes, not all time is created equal. Perhaps next time you will be able to ask more questions, or perhaps you asked the wrong ones and your time was cut short.",
     faction: 'Judicator',
-    textLeft: "That's not fair.", // ->survey3-9
-    textRight: "Whatever", // ->survey3-9
+    textLeft: "That's not fair.", // ->tutorial3-9
+    textRight: "Whatever", // ->tutorial3-9
     location: 'Question',
     actionLeft: {
       good: 0,
@@ -386,8 +386,8 @@ const tutorial3 = writable([
     title: 'Jude',
     text: "Perhaps the answer was not worth giving, or I just wasn't listening.",
     faction: 'Judicator',
-    textLeft: "Rude", // ->survey-3-9
-    textRight: "Awesome", // ->survey-3-9
+    textLeft: "Rude", // ->tutorial3-9
+    textRight: "Awesome", // ->tutorial3-9
     location: 'Question',
     actionLeft: {
       good: 0,
@@ -405,8 +405,8 @@ const tutorial3 = writable([
     title: 'Jude',
     text: "I understand you have many questions, but I am not the only source of answers. Perhaps I can show you how your actions have already impacted your path.",
     faction: 'Judicator',
-    textLeft: "What do you mean?", // ->survey-3-10a
-    textRight: "My path?", // ->survey-3-10b
+    textLeft: "What do you mean?", // ->tutorial3-10a
+    textRight: "My path?", // ->tutorial3-10b
     location: 'Question',
     actionLeft: {
       good: 0,
@@ -488,7 +488,7 @@ const tutorial3 = writable([
     text: "Yes, this is the answer I was hoping for. To wish to be good is to cheat and to wish for evil is sinister. Only letting your actions speak will reveal what's truly in your heart. This has shifted your alignment further towards good.",
     faction: 'Judicator',
     textLeft: "So you were trying to trick me?", // Alignment good -> tutorial3-11-good-alignment-good-1a, Alignment neutral -> tutorial3-11-good-alignment-neutral-1a, Alignment evil -> tutorial3-11-good-alignment-evil-1a
-    textRight: "I couldn't agree more.", // // Alignment good -> tutorial3-11-good-alignment-good-1c, Alignment neutral -> tutorial3-11-good-alignment-neutral-1c, Alignment evil -> tutorial3-11-good-alignment-evil-1c
+    textRight: "I couldn't agree more.", // Alignment good -> tutorial3-11-good-alignment-good-1c, Alignment neutral -> tutorial3-11-good-alignment-neutral-1c, Alignment evil -> tutorial3-11-good-alignment-evil-1c
     location: 'Question',
     actionLeft: {
       good: 0,
@@ -795,8 +795,8 @@ const tutorial3 = writable([
     title: 'Jude',
     text: "So many questions as always, but our time here truly is up now. Onwards now Jack, your memories await you.",
     faction: 'Judicator',
-    textLeft: "I understand.", // -> tutorial3-12
-    textRight: "Wait, I'm not done.", // -> tutorial3-12
+    textLeft: "I understand.", // -> survey-1
+    textRight: "Wait, I'm not done.", // -> survey-1
     location: 'Question',
     actionLeft: {
       good: 0,

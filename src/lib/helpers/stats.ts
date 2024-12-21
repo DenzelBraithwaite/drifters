@@ -433,6 +433,17 @@ export type CompleteCard = {
     cleaver?: number;
     memory?: number;
   },
+  actionCenter?: {
+    heart?: number;
+    diamond?: number;
+    greenAura?: number;
+    yellowAura?: number;
+    brain?: number;
+    smiley?: number;
+    knife?: number;
+    cleaver?: number;
+    memory?: number;
+  },
   appearsWithIcon?: string;
 }
 
