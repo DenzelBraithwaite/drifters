@@ -72,6 +72,12 @@
     positive: false,
     negative: false
   };
+  let previewStat = {
+    health: false,
+    aura: false,
+    sanity: false,
+    impulse: false
+  }
 
   function controlStats() {
       player.update(p => {
@@ -90,56 +96,56 @@
   }
 
   function statHandler(choice) {
-      // Handles stat change and stat flash
-      if (choice === 'left') {
-        player.update(p => {
-          if (currentCard.actionLeft.heart || currentCard.actionLeft.diamond) {
-            p.icons.health === 'heart' ? p.health += currentCard.actionLeft.heart : p.health += currentCard.actionLeft.diamond;
-            statFlashHandler('health', setFlashEffect(p.icons.health === 'heart' ? currentCard.actionLeft.heart : currentCard.actionLeft.diamond));
-          };
-          if (currentCard.actionLeft.greenAura || currentCard.actionLeft.yellowAura) {
-            p.icons.aura === 'green' ? p.aura += currentCard.actionLeft.greenAura : p.aura += currentCard.actionLeft.yellowAura;
-            statFlashHandler('aura', setFlashEffect(p.icons.aura === 'green' ? currentCard.actionLeft.greenAura : currentCard.actionLeft.yellowAura));
-          };
-          if (currentCard.actionLeft.brain || currentCard.actionLeft.smiley) {
-            p.icons.sanity === 'brain' ? p.sanity += currentCard.actionLeft.brain : p.sanity += currentCard.actionLeft.smiley;
-            statFlashHandler('sanity', setFlashEffect(p.icons.sanity === 'brain' ? currentCard.actionLeft.brain : currentCard.actionLeft.smiley));
-          };
-          if (currentCard.actionLeft.knife || currentCard.actionLeft.cleaver) {
-            p.icons.impulse === 'knife' ? p.impulse -= currentCard.actionLeft.knife : p.impulse -= currentCard.actionLeft.cleaver;
-            statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionLeft.knife : currentCard.actionLeft.smiley));
-          };
-          if (currentCard.actionLeft.memory) {
-            statFlashHandler('memory', setFlashEffect(currentCard.actionLeft.memory));   
-            p.memory += currentCard.actionLeft.memory;
-          }
-          return p;
-        });
-      } else if (choice === 'right') {
-        player.update(p => {
-          if (currentCard.actionRight.heart || currentCard.actionRight.diamond) {
-            p.icons.health === 'heart' ? p.health += currentCard.actionRight.heart : p.health += currentCard.actionRight.diamond;
-            statFlashHandler('health', setFlashEffect(p.icons.health === 'heart' ? currentCard.actionRight.heart : currentCard.actionRight.diamond));
-          };
-          if (currentCard.actionRight.greenAura || currentCard.actionRight.yellowAura) {
-            p.icons.aura === 'green' ? p.aura += currentCard.actionRight.greenAura : p.aura += currentCard.actionRight.yellowAura;
-            statFlashHandler('aura', setFlashEffect(p.icons.aura === 'green' ? currentCard.actionRight.greenAura : currentCard.actionRight.yellowAura));
-          };
-          if (currentCard.actionRight.brain || currentCard.actionRight.smiley) {
-            p.icons.sanity === 'brain' ? p.sanity += currentCard.actionRight.brain : p.sanity += currentCard.actionRight.smiley;
-            statFlashHandler('sanity', setFlashEffect(p.icons.sanity === 'brain' ? currentCard.actionRight.brain : currentCard.actionRight.smiley));
-          };
-          if (currentCard.actionRight.knife || currentCard.actionRight.cleaver) {
-            p.icons.impulse === 'knife' ? p.impulse -= currentCard.actionRight.knife : p.impulse -= currentCard.actionRight.cleaver;
-            statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionRight.knife : currentCard.actionRight.smiley));
-          };
-          if (currentCard.actionRight.memory) {
-              statFlashHandler('memory', setFlashEffect(currentCard.actionRight.memory));
-              p.memory += currentCard.actionRight.memory
-          };
-          return p;
-        });
-      }
+    // Handles stat change and stat flash
+    if (choice === 'left') {
+      player.update(p => {
+        if (currentCard.actionLeft.heart || currentCard.actionLeft.diamond) {
+          p.icons.health === 'heart' ? p.health += currentCard.actionLeft.heart : p.health += currentCard.actionLeft.diamond;
+          statFlashHandler('health', setFlashEffect(p.icons.health === 'heart' ? currentCard.actionLeft.heart : currentCard.actionLeft.diamond));
+        };
+        if (currentCard.actionLeft.greenAura || currentCard.actionLeft.yellowAura) {
+          p.icons.aura === 'green' ? p.aura += currentCard.actionLeft.greenAura : p.aura += currentCard.actionLeft.yellowAura;
+          statFlashHandler('aura', setFlashEffect(p.icons.aura === 'green' ? currentCard.actionLeft.greenAura : currentCard.actionLeft.yellowAura));
+        };
+        if (currentCard.actionLeft.brain || currentCard.actionLeft.smiley) {
+          p.icons.sanity === 'brain' ? p.sanity += currentCard.actionLeft.brain : p.sanity += currentCard.actionLeft.smiley;
+          statFlashHandler('sanity', setFlashEffect(p.icons.sanity === 'brain' ? currentCard.actionLeft.brain : currentCard.actionLeft.smiley));
+        };
+        if (currentCard.actionLeft.knife || currentCard.actionLeft.cleaver) {
+          p.icons.impulse === 'knife' ? p.impulse -= currentCard.actionLeft.knife : p.impulse -= currentCard.actionLeft.cleaver;
+          statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionLeft.knife : currentCard.actionLeft.smiley));
+        };
+        if (currentCard.actionLeft.memory) {
+          statFlashHandler('memory', setFlashEffect(currentCard.actionLeft.memory));   
+          p.memory += currentCard.actionLeft.memory;
+        }
+        return p;
+      });
+    } else if (choice === 'right') {
+      player.update(p => {
+        if (currentCard.actionRight.heart || currentCard.actionRight.diamond) {
+          p.icons.health === 'heart' ? p.health += currentCard.actionRight.heart : p.health += currentCard.actionRight.diamond;
+          statFlashHandler('health', setFlashEffect(p.icons.health === 'heart' ? currentCard.actionRight.heart : currentCard.actionRight.diamond));
+        };
+        if (currentCard.actionRight.greenAura || currentCard.actionRight.yellowAura) {
+          p.icons.aura === 'green' ? p.aura += currentCard.actionRight.greenAura : p.aura += currentCard.actionRight.yellowAura;
+          statFlashHandler('aura', setFlashEffect(p.icons.aura === 'green' ? currentCard.actionRight.greenAura : currentCard.actionRight.yellowAura));
+        };
+        if (currentCard.actionRight.brain || currentCard.actionRight.smiley) {
+          p.icons.sanity === 'brain' ? p.sanity += currentCard.actionRight.brain : p.sanity += currentCard.actionRight.smiley;
+          statFlashHandler('sanity', setFlashEffect(p.icons.sanity === 'brain' ? currentCard.actionRight.brain : currentCard.actionRight.smiley));
+        };
+        if (currentCard.actionRight.knife || currentCard.actionRight.cleaver) {
+          p.icons.impulse === 'knife' ? p.impulse -= currentCard.actionRight.knife : p.impulse -= currentCard.actionRight.cleaver;
+          statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionRight.knife : currentCard.actionRight.smiley));
+        };
+        if (currentCard.actionRight.memory) {
+            statFlashHandler('memory', setFlashEffect(currentCard.actionRight.memory));
+            p.memory += currentCard.actionRight.memory
+        };
+        return p;
+      });
+    }
   }
 
   function statFlashHandler(stat: string, statEffect = 'neutral'): void {
@@ -762,6 +768,40 @@
     // really just to silence stupid errors, this will always resolve.
     return '';
   }
+
+  // TODO: not working? not accurate.
+  function statPreviewHandler(event: {detail: string}): void {
+    if (event.detail === 'left') {
+      if ($player.icons.health === 'heart' && currentCard.actionLeft.heart !== 0) previewStat.health = true;
+      if ($player.icons.health === 'diamond' && currentCard.actionLeft.diamond !== 0) previewStat.health = true;
+      if ($player.icons.aura === 'green' && currentCard.actionLeft.greenAura !== 0) previewStat.aura = true;
+      if ($player.icons.aura === 'yellow' && currentCard.actionLeft.yellowAura !== 0) previewStat.aura = true;
+      if ($player.icons.sanity === 'brain' && currentCard.actionLeft.brain !== 0) previewStat.sanity = true;
+      if ($player.icons.sanity === 'smiley' && currentCard.actionLeft.smiley !== 0) previewStat.sanity = true;
+      if ($player.icons.impulse === 'knife' && currentCard.actionLeft.knife !== 0) previewStat.impulse = true;
+      if ($player.icons.impulse === 'cleaver' && currentCard.actionLeft.cleaver !== 0) previewStat.impulse = true;
+    }
+
+    else if (event.detail === 'right') {
+      if ($player.icons.health === 'heart' && currentCard.actionRight.heart !== 0) previewStat.health = true;
+      if ($player.icons.health === 'diamond' && currentCard.actionRight.diamond !== 0) previewStat.health = true;
+      if ($player.icons.aura === 'green' && currentCard.actionRight.greenAura !== 0) previewStat.aura = true;
+      if ($player.icons.aura === 'yellow' && currentCard.actionRight.yellowAura !== 0) previewStat.aura = true;
+      if ($player.icons.sanity === 'brain' && currentCard.actionRight.brain !== 0) previewStat.sanity = true;
+      if ($player.icons.sanity === 'smiley' && currentCard.actionRight.smiley !== 0) previewStat.sanity = true;
+      if ($player.icons.impulse === 'knife' && currentCard.actionRight.knife !== 0) previewStat.impulse = true;
+      if ($player.icons.impulse === 'cleaver' && currentCard.actionRight.cleaver !== 0) previewStat.impulse = true;
+    }
+  }
+
+  function statPreviewHider(): void {
+    previewStat = {
+      health: false,
+      aura: false,
+      sanity: false,
+      impulse: false
+    }
+  }
 </script>
 
 <div class="game-client">
@@ -793,10 +833,10 @@
   {/if}
     <div class="stats-wrapper">
       <!-- Health icons -->
-      <img src={statImgHandler('health', $player.health)} alt={statImgAltTextHandler('health')} class="stat-icon" class:flash-green={flashHealth.positive} class:flash-red={flashHealth.negative}>
-      <img src={statImgHandler('aura', $player.aura)} alt={statImgAltTextHandler('aura')} class="stat-icon" class:flash-green={flashAura.positive} class:flash-red={flashAura.negative}>
-      <img src={statImgHandler('sanity', $player.sanity)} alt={statImgAltTextHandler('sanity')} class="stat-icon" class:flash-green={flashSanity.positive} class:flash-red={flashSanity.negative}>
-      <img src={statImgHandler('impulse', $player.impulse)} alt={statImgAltTextHandler('impulse')} class="stat-icon {$player.icons.impulse === 'knife' ? 'knife-icon' : 'cleaver-icon'}" class:flash-green={flashImpulse.positive} class:flash-red={flashImpulse.negative}>
+      <img src={statImgHandler('health', $player.health)} alt={statImgAltTextHandler('health')} class="stat-icon" class:flash-green={flashHealth.positive} class:flash-red={flashHealth.negative} class:stat-icon-preview={previewStat.health}>
+      <img src={statImgHandler('aura', $player.aura)} alt={statImgAltTextHandler('aura')} class="stat-icon" class:flash-green={flashAura.positive} class:flash-red={flashAura.negative} class:stat-icon-preview={previewStat.aura}>
+      <img src={statImgHandler('sanity', $player.sanity)} alt={statImgAltTextHandler('sanity')} class="stat-icon" class:flash-green={flashSanity.positive} class:flash-red={flashSanity.negative} class:stat-icon-preview={previewStat.sanity}>
+      <img src={statImgHandler('impulse', $player.impulse)} alt={statImgAltTextHandler('impulse')} class="stat-icon {$player.icons.impulse === 'knife' ? 'knife-icon' : 'cleaver-icon'}" class:flash-green={flashImpulse.positive} class:flash-red={flashImpulse.negative} class:stat-icon-preview={previewStat.impulse}>
       <p class="memory-stat">
         {$player.unlockedDeck.chapter1 ? $player.memory : '?'}
         <svg class:flash-green={flashMemory.positive} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stat-icon memory-icon">
@@ -849,8 +889,8 @@
     {/if}
     <span class="circle__right-wrapper"><Circle on:decision={event => surveyHandler(event)} leftOrRight="right" /></span>
   {:else if !gameOver && $player.activeDeck === 'chapter'}
-    <span class="circle__left-wrapper"><Circle on:decision={event => actionHandler(event)} leftOrRight="left"/></span>
-    <span class="circle__right-wrapper"><Circle on:decision={event => actionHandler(event)} leftOrRight="right" /></span>
+    <span class="circle__left-wrapper"><Circle on:hover={statPreviewHandler} on:blur={statPreviewHider} on:decision={event => actionHandler(event)} leftOrRight="left"/></span>
+    <span class="circle__right-wrapper"><Circle on:hover={statPreviewHandler} on:blur={statPreviewHider} on:decision={event => actionHandler(event)} leftOrRight="right" /></span>
   {/if}
 
   <!-- Menu section -->
@@ -1024,6 +1064,11 @@
     padding: 2px; 
     border-radius: 50px;
     transition: background-color 0.5s ease-in-out;
+  }
+  
+  .stat-icon-preview {
+    border-bottom: 1px dotted #ae9cb9;
+    border-top: 1px dotted #ae9cb9;
   }
 
   .knife-icon {

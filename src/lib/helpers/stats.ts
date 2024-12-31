@@ -42,7 +42,7 @@ const defaultReturnCard: PartialCard = {
     smiley: 0,
     knife: 0,
     cleaver: 0,
-    memory: 0,
+    memory: 0
   },
   actionRight: {
     heart: 0,
@@ -53,7 +53,7 @@ const defaultReturnCard: PartialCard = {
     smiley: 0,
     knife: 0,
     cleaver: 0,
-    memory: 0,
+    memory: 0
   },
 }
 
@@ -68,12 +68,24 @@ function determineCardProperties(cardId: string): PartialCard {
         actionLeft: {
           heart: coinFlip === 0 ? 10 : -4,
           diamond: coinFlip === 0 ? 10 : -4,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
           heart: coinFlip === 0 ? -4 : 10,
           diamond: coinFlip === 0 ? -4 : 10,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).health >= 7) {
@@ -84,12 +96,24 @@ function determineCardProperties(cardId: string): PartialCard {
         actionLeft: {
           heart: -3,
           diamond: -3,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
           heart: 10,
           diamond: 10,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).health >= 5) {
@@ -100,12 +124,24 @@ function determineCardProperties(cardId: string): PartialCard {
         actionLeft: {
           heart: -2,
           diamond: -2,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
           heart: 10,
           diamond: 10,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).health >= 3) {
@@ -116,12 +152,24 @@ function determineCardProperties(cardId: string): PartialCard {
         actionLeft: {
           heart: -1,
           diamond: -1,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
           heart: 10,
           diamond: 10,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).health >= 1) {
@@ -132,16 +180,29 @@ function determineCardProperties(cardId: string): PartialCard {
         actionLeft: {
           heart: 10,
           diamond: 10,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
           heart: 0,
           diamond: 0,
-          memory: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     }
     return defaultReturnCard;
+
   } else if (cardId === 'stat-aura') {
     if (get(player).aura >= 9) {
       const auraFlip = Math.floor(Math.random() * 2); // 0 = green, 1 = yellow
@@ -150,30 +211,55 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "🟢🟢🟢",
         textRight: "🟡🟡🟡",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
           greenAura: auraFlip === 0 ? 10 : -4,
           yellowAura: auraFlip === 0 ? 10 : -4,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
           greenAura: auraFlip === 0 ? -4 : 10,
           yellowAura: auraFlip === 0 ? -4 : 10,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
+
     } else if (get(player).aura >= 7) {
       return {
         text: "Your spirits are high, but perhaps they could be higher. You're welcome to rest here if you'd like?",
         textLeft: "I really shouldn't be wasting time.",
         textRight: "A few minutes wouldn't hurt.",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
           greenAura: -3,
           yellowAura: -3,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
           greenAura: 10,
           yellowAura: 10,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).aura >= 5) {
@@ -182,14 +268,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
           greenAura: 10,
           yellowAura: 10,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
           greenAura: -2,
           yellowAura: -2,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).aura >= 3) {
@@ -198,14 +296,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Turtoise",
         textRight: "Hare",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
           greenAura: 10,
           yellowAura: 10,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
           greenAura: -1,
           yellowAura: -1,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).aura >= 1) {
@@ -214,18 +324,31 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
           greenAura: 10,
           yellowAura: 10,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
           greenAura: 0,
           yellowAura: 0,
-          memory: 0,
+          brain: 0,
+          smiley: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     }
     return defaultReturnCard;
+
   } else if (cardId === 'stat-sanity') {
     if (get(player).sanity >= 9) {
       const emojiFlip = Math.floor(Math.random() * 2); // 0 = brain, 1 = smiley
@@ -234,14 +357,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "🧠",
         textRight: "🙂",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: emojiFlip === 0 ? 10 : -4,
           smiley: emojiFlip === 0 ? 10 : -4,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: emojiFlip === 0 ? -4 : 10,
           smiley: emojiFlip === 0 ? -4 : 10,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).sanity >= 7) {
@@ -250,14 +385,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Knowledge",
         textRight: "Happiness",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: 10,
           smiley: 10,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: -3,
           smiley: -3,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).sanity >= 5) {
@@ -266,14 +413,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Sure!",
         textRight: "Sure?",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: 10,
           smiley: 10,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: -2,
           smiley: -2,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).sanity >= 3) {
@@ -282,14 +441,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Biting",
         textRight: "Smiling",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: -1,
           smiley: -1,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: 10,
           smiley: 10,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     } else if (get(player).sanity >= 1) {
@@ -298,14 +469,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Yes",
         textRight: "No",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: 10,
           smiley: 10,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
           brain: 0,
           smiley: 0,
-          memory: 0,
+          knife: 0,
+          cleaver: 0,
+          memory: 0
         },
       };
     }
@@ -318,14 +501,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Run",
         textRight: "Hide",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: randomAttack === 0 ? 10 : -4,
           cleaver: randomAttack === 0 ? 10 : -4,
-          memory: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: randomAttack === 0 ? -4 : 10,
           cleaver: randomAttack === 0 ? -4 : 10,
-          memory: 0,
+          memory: 0
         },
       };
     } else if (get(player).impulse <= 3) {
@@ -334,14 +529,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Curiosity killed it.",
         textRight: "Satisfaction brought it back.",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: 10,
           cleaver: 10,
-          memory: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: -3,
           cleaver: -3,
-          memory: 0,
+          memory: 0
         },
       };
     } else if (get(player).impulse <= 5) {
@@ -350,14 +557,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "I think I'm lost.",
         textRight: "I know my way back.",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: -2,
           cleaver: -2,
-          memory: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: 10,
           cleaver: 10,
-          memory: 0,
+          memory: 0
         },
       };
     } else if (get(player).impulse <= 7) {
@@ -366,14 +585,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Feed",
         textRight: "Fight",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: -1,
           cleaver: -1,
-          memory: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: 10,
           cleaver: 10,
-          memory: 0,
+          memory: 0
         },
       };
     } else if (get(player).impulse <= 9) {
@@ -382,14 +613,26 @@ function determineCardProperties(cardId: string): PartialCard {
         textLeft: "Teach me.",
         textRight: "Leave me.",
         actionLeft: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: 10,
           cleaver: 10,
-          memory: 0,
+          memory: 0
         },
         actionRight: {
+          heart: 0,
+          diamond: 0,
+          greenAura: 0,
+          yellowAura: 0,
+          brain: 0,
+          smiley: 0,
           knife: 0,
           cleaver: 0,
-          memory: 0,
+          memory: 0
         },
       };
     }

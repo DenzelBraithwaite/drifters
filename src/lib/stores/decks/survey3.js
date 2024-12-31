@@ -64,7 +64,7 @@ const survey3 = writable([
       brain: 0,
       smiley: 1,
       good: 0,
-      evil: 0
+      evil: 1
     }
   },
   {
@@ -86,7 +86,7 @@ const survey3 = writable([
       brain: 0,
       smiley: 1,
       good: 0,
-      evil: 0
+      evil: 1
     }
   },
   {
@@ -123,14 +123,14 @@ const survey3 = writable([
     actionLeft: {
       brain: 1,
       smiley: 0,
-      good: 0,
+      good: 1,
       evil: 0
     },
     actionRight: {
       brain: 0,
       smiley: 1,
       good: 0,
-      evil: 0
+      evil: 1
     }
   },
   {

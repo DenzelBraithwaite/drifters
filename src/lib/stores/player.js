@@ -6,24 +6,23 @@ const player = writable({
   unlockedCards: [],
   activeDeck: 'survey',
   unlockedDeck: {
-    tutorial1: true,
-    tutorial2: false,
-    tutorial3: false,
-    tutorial4: false,
-    tutorialFinal: false,
-    survey1: true,
-    survey2: false,
-    survey3: false,
-    survey4: false,
-    chapter1: false,
-    chapter1Soldiers: false,
-    chapter2: false,
-    chapter2Elves: false,
-    chapter3: false,
-    chapter3Goblins: false,
-    chapter4: false,
-    chapter4Beings: false,
-
+    tutorial1: true, // default to true
+    tutorial2: false, // default to false
+    tutorial3: false, // default to false
+    tutorial4: false, // default to false
+    tutorialFinal: false, // default to false
+    survey1: true, // default to true
+    survey2: false, // default to false
+    survey3: false, // default to false
+    survey4: false, // default to false
+    chapter1: false, // default to false
+    chapter1Soldiers: false, // default to false
+    chapter2: false, // default to false
+    chapter2Elves: false, // default to false
+    chapter3: false, // default to false
+    chapter3Goblins: false, // default to false
+    chapter4: false, // default to false
+    chapter4Beings: false, // default to false
   },
   displayDecks: [
     {
@@ -31,11 +30,6 @@ const player = writable({
       description: 'Chatter',
       img: '/decks/tutorial/judicator-white.png'
     },
-    // {
-    //   title: 'Jude',
-    //   description: 'Answer',
-    //   img: '/decks/tutorial/judicator-purple-smile.png'
-    // },
   ],
   health: 10, 
   aura: 10, 
@@ -44,13 +38,13 @@ const player = writable({
   memory: 0,
   goodPoints: 0,
   evilPoints: 0,
-  // icons determined as game progresses, memory is always a puzzle
+  // icons determined as game progresses, memory is always a puzzle, others default to empty string
   icons: {
-    health: '', 
-    aura: '', 
-    sanity: '', 
-    impulse: '',
-    memory: 'puzzle',
+    health: 'diamond', // heart || diamond
+    aura: 'yellow', // green || yellow
+    sanity: 'smiley', // brain || smiley
+    impulse: 'cleaver', // knife || cleaver
+    memory: 'puzzle', // Could be empty string, no need for puzzle string yet.
   },
   iconPoints: {
     // health

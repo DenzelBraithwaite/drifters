@@ -562,7 +562,9 @@ export function surveyDecisionHandler(choice, card) {
       switch (card.id) {
         // Tutorial 1 (right)
         case 'tutorial1-1':
-          nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
+          // TODO: remove comment, ffw for testing
+          nextCard = get(decks).survey4.find(card => card.id === 'survey4-17');
+          // nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
           break;
         case 'tutorial1-2':
           nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2-1b');

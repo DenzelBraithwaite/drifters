@@ -21,6 +21,7 @@
         right: false
       }
     });
+    createEvent('hover', 'left');
   }
 
   function showRightText() {
@@ -32,6 +33,7 @@
         right: true
       }
     });
+    createEvent('hover', 'right');
   }
 
   function showCenterText() {
@@ -43,6 +45,7 @@
         right: false
       }
     });
+    createEvent('hover', 'center');
   }
 
   function hideText() {
@@ -54,6 +57,7 @@
         right: false
       }
     });
+    createEvent('blur');
   }
 
   function actionHandler(decision) {
