@@ -301,7 +301,7 @@
       if ($player.memory < 15) $player.memory = 0;
       else if ($player.memory < 30) $player.memory = 15;
       else if ($player.memory < 45) $player.memory = 30;
-      else if ($player.memory < 70) $player.memory = 45;
+      else if ($player.memory < 75) $player.memory = 45;
       gameOver = true;
     }
 
@@ -413,7 +413,7 @@
     }
 
     // Move on to final chapter if enough memory.
-    if (!$player.unlockedDeck.tutorialFinal && $player.memory >= 70) { 
+    if (!$player.unlockedDeck.tutorialFinal && $player.memory >= 75) { 
       player.update(p => {
         p.activeDeck = 'survey';
         p.unlockedCards = [...tutorialFinalDeck];
@@ -746,7 +746,7 @@
     if ($player.memory < 15) return '0';
     if ($player.memory < 30) return '15';
     if ($player.memory < 45) return '30';
-    if ($player.memory < 70) return '45';
+    if ($player.memory < 75) return '45';
     return '0';
   }
 

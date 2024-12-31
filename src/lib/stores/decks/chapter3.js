@@ -1,5 +1,7 @@
 import { writable } from 'svelte/store';
 
+// I had wanted to have certain cards depending on your stats, but it would be more work than it's worth. I will make all cards available to all except the special ones for now.
+// Maybe in the future one day I'll add more cards and make them only available based on the stats you have.
 const chapter3 = writable([
     // Wizard - ALL (twins irl with dark wizard)
     {
@@ -1671,7 +1673,7 @@ const chapter3 = writable([
         appearsWithIcon: ''
     },
     
-    // #11Geneveve - BRAIN TODO: I HAVE IMG (1/2 EXTRA CARDS)
+    // #11 Geneveve - ALL (but was gonna be brain)
     {
       id: 'chapter3-11a',
       imgUrl: '/decks/chapter3/geneveve.png',
@@ -1681,26 +1683,26 @@ const chapter3 = writable([
       textLeft: "None of us are.",
       textRight: "You can find peace within.",
       actionLeft: {
-          heart: 0,
-          diamond: 0,
-          greenAura: -1,
-          yellowAura: 0,
-          brain: 1,
-          smiley: -1,
-            knife: 0,
-            cleaver: 0,
-          memory: 1,
+        heart: 0,
+        diamond: 0,
+        greenAura: -1,
+        yellowAura: 0,
+        brain: 1,
+        smiley: -1,
+        knife: 0,
+        cleaver: 0,
+        memory: 1
       },
       actionRight: {
-          heart: 1,
-          diamond: -1,
-          greenAura: 1,
-          yellowAura: 0,
-          brain: 0,
-          smiley: 1,
-            knife: 0,
-            cleaver: 0,
-          memory: 0,
+        heart: 1,
+        diamond: -1,
+        greenAura: 1,
+        yellowAura: 0,
+        brain: 0,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
       },
       location: 'Choice',
       appearsWithIcon: 'brain'
@@ -1714,131 +1716,396 @@ const chapter3 = writable([
     textLeft: "This world is filled with good and bad, looking away won't change that.",
     textRight: "Sometimes it's easier to turn a blind eye.",
     actionLeft: {
+      heart: 0,
+      diamond: 0,
+      greenAura: 0,
+      yellowAura: 0,
+      brain: 1,
+      smiley: -1,
+      knife: 0,
+      cleaver: 0,
+      memory: 1
+    },
+    actionRight: {
+      heart: 0,
+      diamond: 0,
+      greenAura: 1,
+      yellowAura: 0,
+      brain: -1,
+      smiley: 1,
+      knife: 0,
+      cleaver: 0,
+      memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
+  },
+  {
+    id: 'chapter3-11c',
+    imgUrl: '/decks/chapter3/geneveve.png',
+    title: 'Geneveve',
+    text: "You're wondering how a blind knight can defend themselves? I'm not sure I can anymore.",
+    faction: 'Knight',
+    textLeft: "Then maybe it's time to stop fighting.",
+    textRight: "I thought you had always been blind.",
+    actionLeft: {
+        heart: 1,
+        diamond: 0,
+        greenAura: 1,
+        yellowAura: 0,
+        brain: 1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    actionRight: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: 0,
+        smiley: 0,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
+  },
+  {
+    id: 'chapter3-11d',
+    imgUrl: '/decks/chapter3/geneveve.png',
+    title: 'Geneveve',
+    text: "We put more faith in our eyes than our other senses, but they don't always see the truth. Sometimes, we see more with our eyes wide shut.",
+    faction: 'Knight',
+    textLeft: "They're right more often than wrong.",
+    textRight: "Our other senses can mislead us too.",
+    actionLeft: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: -1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    actionRight: {
         heart: 0,
         diamond: 0,
         greenAura: 0,
         yellowAura: 0,
         brain: 1,
         smiley: -1,
-            knife: 0,
-            cleaver: 0,
-        memory: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
+  },
+  {
+    id: 'chapter3-11e',
+    imgUrl: '/decks/chapter3/geneveve.png',
+    title: 'Geneveve',
+    text: "The last thing I saw was nothing but darkness. Now I see nothing but light.",
+    faction: 'Knight',
+    textLeft: "But your eyes are closed.",
+    textRight: "Open your eyes.",
+    actionLeft: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: -1,
+        smiley: 0,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    actionRight: {
+        heart: -1,
+        diamond: 1,
+        greenAura: -1,
+        yellowAura: 1,
+        brain: -1,
+        smiley: 0,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
+  },
+
+  // #12 Shade - ALL (Was gonna be Smiley)
+  {
+    id: 'chapter3-12a',
+    imgUrl: '/decks/chapter3/shade.png',
+    title: 'Shade',
+    text: "There are beings in this world like myself, when you find them, they'll often want to play a game. Try to figure out what it is they want and you'll be rewarded. Make a mistake and you'll be punished.",
+    faction: 'Being',
+    textLeft: "I understand.",
+    textRight: "I don't understand.",
+    actionLeft: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: 1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
     },
     actionRight: {
         heart: 0,
         diamond: 0,
-        greenAura: 1,
+        greenAura: 0,
         yellowAura: 0,
         brain: -1,
-        smiley: 1,
-            knife: 0,
-            cleaver: 0,
-        memory: 0,
+        smiley: -1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
     },
     location: 'Choice',
     appearsWithIcon: 'brain'
-},
-{
-  id: 'chapter3-11c',
-  imgUrl: '/decks/chapter3/geneveve.png',
-  title: 'Geneveve',
-  text: "You're wondering how a blind knight can defend themselves, right? I'm not sure I can anymore.",
-  faction: 'Knight',
-  textLeft: "Then maybe it's time to stop fighting.",
-  textRight: "Oh, I thought you had always been blind.",
-  actionLeft: {
-      heart: 1,
-      diamond: 0,
-      greenAura: 1,
-      yellowAura: 0,
-      brain: 1,
-      smiley: 1,
-            knife: 0,
-            cleaver: 0,
-      memory: 0,
   },
-  actionRight: {
-      heart: 0,
-      diamond: 0,
-      greenAura: 0,
-      yellowAura: 0,
-      brain: 0,
-      smiley: 0,
-            knife: 0,
-            cleaver: 0,
-      memory: 0,
+  {
+    id: 'chapter3-12b',
+    imgUrl: '/decks/chapter3/shade.png',
+    title: 'Shade',
+    text: "I appreciate those with a good memory. I prefer left over right, red over orange, dark over light, cold over warmth, me over you and truth over lies. ",
+    faction: 'Being',
+    textLeft: "",
+    textRight: "",
+    actionLeft: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: 1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    actionRight: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: -1,
+        smiley: -1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
   },
-  location: 'Choice',
-  appearsWithIcon: 'brain'
-},
-{
-  id: 'chapter3-11d',
-  imgUrl: '/decks/chapter3/geneveve.png',
-  title: 'Geneveve',
-  text: "",
-  faction: 'Knight',
-  textLeft: "",
-  textRight: "",
-  actionLeft: {
-      heart: 0,
-      diamond: 0,
-      greenAura: 0,
-      yellowAura: 0,
-      brain: 0,
-      smiley: 0,
-            knife: 0,
-            cleaver: 0,
-      memory: 0,
+  {
+    id: 'chapter3-12c',
+    imgUrl: '/decks/chapter3/shade.png',
+    title: 'Shade',
+    text: "Which color do I prefer?",
+    faction: 'Being',
+    textLeft: "Orange",
+    textRight: "Red",
+    actionLeft: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: -1,
+        smiley: -1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    actionRight: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: 1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 1
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
   },
-  actionRight: {
-      heart: 0,
-      diamond: 0,
-      greenAura: 0,
-      yellowAura: 0,
-      brain: 0,
-      smiley: 0,
-            knife: 0,
-            cleaver: 0,
-      memory: 0,
+  {
+    id: 'chapter3-12d',
+    imgUrl: '/decks/chapter3/shade.png',
+    title: 'Shade',
+    text: "Truth or Lies?",
+    faction: 'Being',
+    textLeft: "Truth",
+    textRight: "Lies",
+    actionLeft: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: 1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 1
+    },
+    actionRight: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: -1,
+        smiley: -1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
   },
-  location: 'Choice',
-  appearsWithIcon: 'brain'
-},
-{
-  id: 'chapter3-11e',
-  imgUrl: '/decks/chapter3/geneveve.png',
-  title: 'Geneveve',
-  text: "",
-  faction: 'Knight',
-  textLeft: "",
-  textRight: "",
-  actionLeft: {
-      heart: 0,
-      diamond: 0,
-      greenAura: 0,
-      yellowAura: 0,
-      brain: 0,
-      smiley: 0,
-            knife: 0,
-            cleaver: 0,
-      memory: 0,
+  {
+    id: 'chapter3-12e',
+    imgUrl: '/decks/chapter3/shade.png',
+    title: 'Shade',
+    text: "If you don't know the answer, it's possible it's the first time I ask you. Good thing about firsts, there's only one. Try to remember for next time though.",
+    faction: 'Being',
+    textLeft: "Past",
+    textRight: "Future",
+    actionLeft: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: 1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    actionRight: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: -1,
+        smiley: -1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
   },
-  actionRight: {
-      heart: 0,
-      diamond: 0,
-      greenAura: 0,
-      yellowAura: 0,
-      brain: 0,
-      smiley: 0,
-            knife: 0,
-            cleaver: 0,
-      memory: 0,
+  {
+    id: 'chapter3-12f', // Usually do 5 per char but added a few for him so player has to remember more.
+    imgUrl: '/decks/chapter3/shade.png',
+    title: 'Shade',
+    text: "Me or you?",
+    faction: 'Being',
+    textLeft: "Me",
+    textRight: "You",
+    actionLeft: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: -1,
+        smiley: -1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    actionRight: {
+        heart: 0,
+        diamond: 0,
+        greenAura: 0,
+        yellowAura: 0,
+        brain: 1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
   },
-  location: 'Choice',
-  appearsWithIcon: 'brain'
-},
-      
-    // TODO: Add 3 chars, 1 for brain aura 2 for smiley. Finish brain (geneveve)
+  {
+    id: 'chapter3-12g', // Usually do 5 per char but added a few for him so player has to remember more.
+    imgUrl: '/decks/chapter3/shade.png',
+    title: 'Shade',
+    text: "Do I prefer cold darkness or bright warmth? Answer carefully.",
+    faction: 'Being',
+    textLeft: "Bright warmth",
+    textRight: "Cold darkness",
+    actionLeft: {
+        heart: -1,
+        diamond: -1,
+        greenAura: -1,
+        yellowAura: -1,
+        brain: -1,
+        smiley: -1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    actionRight: {
+        heart: 1,
+        diamond: 1,
+        greenAura: 1,
+        yellowAura: 1,
+        brain: 1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
+  },
+  {
+    id: 'chapter3-13h', // Usually do 5 per char but added a few for him so player has to remember more.
+    imgUrl: '/decks/chapter3/shade.png',
+    title: 'Shade',
+    text: "I'm feeling generous, you decide.",
+    faction: 'Being',
+    textLeft: "+(H|G|B) -(D|Y|S)",
+    textRight: "+(D|Y|S) -(H|G|B)",
+    actionLeft: {
+        heart: 1,
+        diamond: -1,
+        greenAura: 1,
+        yellowAura: -1,
+        brain: 1,
+        smiley: -1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    actionRight: {
+        heart: -1,
+        diamond: 1,
+        greenAura: -1,
+        yellowAura: 1,
+        brain: -1,
+        smiley: 1,
+        knife: 0,
+        cleaver: 0,
+        memory: 0
+    },
+    location: 'Choice',
+    appearsWithIcon: 'brain'
+  },
 ]);
+
 
 export default chapter3;

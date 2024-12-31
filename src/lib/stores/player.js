@@ -43,7 +43,7 @@ const player = writable({
     health: 'diamond', // heart || diamond
     aura: 'yellow', // green || yellow
     sanity: 'smiley', // brain || smiley
-    impulse: 'cleaver', // knife || cleaver
+    impulse: '', // knife || cleaver
     memory: 'puzzle', // Could be empty string, no need for puzzle string yet.
   },
   iconPoints: {
@@ -52,11 +52,11 @@ const player = writable({
     diamond: 0, // + being mean | - being nice
     // aura
     yellowAura: 0, // + being energetic | - being lazy
-    greenAura: 0, // + being lazy / chill | - being energetic / excited
+    greenAura: 0, // + being lazy / chill / in touch with self | - being energetic / excited
     // sanity
     brain: 0, // + being smart | - being stupid
     smiley: 0, // + being carefree | - being stressed
-    // impulse
+    // impulse MINUS IS GOOD, PLUS IS BAD. 0 IS GOOD, 10 IS BAD.
     knife: 0, // + being aggressive | - being docile
     cleaver: 0, // + being annoyed | - being restrained
   },

@@ -563,7 +563,7 @@ export function surveyDecisionHandler(choice, card) {
         // Tutorial 1 (right)
         case 'tutorial1-1':
           // TODO: remove comment, ffw for testing
-          nextCard = get(decks).survey4.find(card => card.id === 'survey4-17');
+          nextCard = get(decks).survey3.find(card => card.id === 'survey3-12');
           // nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
           break;
         case 'tutorial1-2':
@@ -969,13 +969,13 @@ export function surveyDecisionHandler(choice, card) {
           case 'survey3-11a':
             nextCard = get(decks).survey3.find(card => card.id === 'survey3-11a-1a');
             break;
+          case 'survey3-11b':
+            nextCard = get(decks).survey3.find(card => card.id === 'survey3-11b-1b');
+            break;
           case 'survey3-11a-1a':
           case 'survey3-11b-1b':
           case 'survey3-12':
             nextCard = get(decks).survey3.find(card => card.id === 'survey3-12');
-            break;
-          case 'survey3-11b':
-            nextCard = get(decks).survey3.find(card => card.id === 'survey3-11b-1b');
             break;
 
         // Tutorial 4 (right)
