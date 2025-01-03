@@ -712,7 +712,7 @@ const chapter3 = writable([
         text: "There are two kinds of people in this world, those who are butchers and those who are not. The name's Jason and as you can tell, I'm a proud butcher!",
         faction: 'Butcher',
         textLeft: "Hi Jason, I'm a \"those who are not\" and proud of it!",
-        textRight: "Those who are sane and those who are not...", // TODO: make this a call back?
+        textRight: "Those who are sane and those who are not...",
         actionLeft: {
             heart: -1,
             diamond: 1,

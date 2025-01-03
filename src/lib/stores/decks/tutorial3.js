@@ -1,6 +1,5 @@
 import { writable } from 'svelte/store';
 
-// TODO add some dialogue at beginning, goes by fast
 const tutorial3 = writable([
   {
     id: 'tutorial3-1',

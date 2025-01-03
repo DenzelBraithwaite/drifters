@@ -1670,8 +1670,6 @@ const chapter2 = writable([
         location: 'Choice',
         appearsWithIcon: ''
     },
-
-    // TODO: Add 4 chars, 2 for yellow aura 2 for green aura.
 ]);
 
 export default chapter2;

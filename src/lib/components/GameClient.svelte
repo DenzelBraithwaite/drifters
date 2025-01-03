@@ -520,6 +520,28 @@
 
     toggleBlur();
 
+    // for finale, flashes victims quickly. I know how bad this is lol, I don't care.
+    if (currentCard.id === 'tutorial-final-9') {
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-heart'), 0);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-diamond'), 250);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-green'), 500);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-yellow'), 750);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-brain'),1000);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-smiley'), 1250);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-knife'), 1500);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-cleaver'), 1750);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-heart'), 2000);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-diamond'), 2250);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-green'), 2500);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-yellow'), 2750);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-brain'),3000);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-smiley'), 3250);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-knife'), 3500);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-cleaver'), 3750);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-9'), 4000);
+      return;
+    }
+
     // Checks if current card is final survey card
     if (currentCard.id === 'survey4-17') {
       setTimeout(() => {
@@ -561,7 +583,6 @@
         });
           
         // Change background
-        // TODO: get chapter 4 bg
         backgrounds.update(bg => {
           $backgrounds.active = $backgrounds.cosmic;
           return bg;
@@ -736,12 +757,6 @@
     setTimeout(() => buttonOnCooldown = false, 0);
   }
 
-  function displayPlayerAlignment(): string {
-    if ($player.goodPoints - $player.evilPoints > 0) return 'Good';
-    else if ($player.evilPoints - $player.goodPoints > 0) return 'Evil';
-    else return 'Neutral';
-  }
-
   function displayMemoryCheckpoint(): string {
     if ($player.memory < 15) return '0';
     if ($player.memory < 30) return '15';
@@ -769,7 +784,6 @@
     return '';
   }
 
-  // TODO: not working? not accurate.
   function statPreviewHandler(event: {detail: string}): void {
     if (event.detail === 'left') {
       if ($player.icons.health === 'heart' && currentCard.actionLeft.heart !== 0) previewStat.health = true;

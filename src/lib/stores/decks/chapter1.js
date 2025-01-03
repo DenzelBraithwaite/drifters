@@ -168,7 +168,7 @@ const chapter1 = writable([
         appearsWithIcon: ''
     },
 
-    // Shelly - ALL
+    // Shelly - ALL, she is one of the 8 special chars that will be revealed as a victim (for her hunting skills she represents knife).
     {
         id: 'chapter1-2a',
         imgUrl: '/decks/chapter1/archer.png',
@@ -1337,8 +1337,6 @@ const chapter1 = writable([
         },
         appearsWithIcon: ''
     },
-
-    // TODO: Add 4 chars, 2 for heart 2 for diamond.
 ]);
 
 export default chapter1;

@@ -18,7 +18,6 @@ import goblins from './decks/goblins';
 import beings from './decks/beings';
 import { healthCard, auraCard, sanityCard, impulseCard } from '../helpers/stats';
 
-// TODO: Why in the world are these all svelte stores when I only read from them? Just make them regular Arrays.
 // Combines all smaller decks into one master deck.
 const decks = writable({
     tutorial1: get(tutorial1),

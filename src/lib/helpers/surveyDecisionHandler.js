@@ -553,7 +553,189 @@ export function surveyDecisionHandler(choice, card) {
         case 'survey4-17':
           nextCard = get(decks).survey4.find(card => card.id === 'survey4-17');
           break;
-        
+
+        // Tutorial FINAL (left)
+        case 'tutorial-final-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-2a');
+          break;
+        case 'tutorial-final-2a':
+        case 'tutorial-final-2b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-3a');
+          break;
+        case 'tutorial-final-3a':
+        case 'tutorial-final-3b':
+        case 'tutorial-final-3b-1b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-4');
+          break;
+        case 'tutorial-final-4':
+        case 'tutorial-final-4-1b':
+        case 'tutorial-final-4-1b-1b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-5');
+          break;
+        case 'tutorial-final-5':
+        case 'tutorial-final-5-1b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-6');
+          break;
+        case 'tutorial-final-6':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-7a');
+          break;
+        case 'tutorial-final-7a':
+        case 'tutorial-final-7b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-8a');
+          break;
+        case 'tutorial-final-8a':
+        case 'tutorial-final-8b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9');
+          break;
+        case 'tutorial-final-9':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-10');
+          break;
+        case 'tutorial-final-10':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-11');
+          break;
+        case 'tutorial-final-11':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-12');
+          break;
+        case 'tutorial-final-12':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-13');
+          break;
+        case 'tutorial-final-13':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-14');
+          break;
+        case 'tutorial-final-14':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-15a');
+          break;
+        case 'tutorial-final-15a':
+        case 'tutorial-final-15b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-16');
+          break;
+        case 'tutorial-final-16':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-17a');
+          break;
+        case 'tutorial-final-17a':
+        case 'tutorial-final-17b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-18');
+          break;
+        case 'tutorial-final-18':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-19');
+          break;
+        case 'tutorial-final-19':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-20a');
+          break;
+        case 'tutorial-final-20a':
+        case 'tutorial-final-20b':
+          if (get(player).icons.health === 'heart') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-heart-story-1');
+          if (get(player).icons.health === 'diamond') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-diamond-story-1');
+          break;
+        case 'tutorial-final-heart-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-heart-story-2');
+          break;
+        case 'tutorial-final-heart-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-heart-story-3');
+          break;
+        case 'tutorial-final-diamond-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-diamond-story-2');
+          break;
+        case 'tutorial-final-diamond-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-diamond-story-3');
+          break;
+        case 'tutorial-final-heart-story-3':
+        case 'tutorial-final-diamond-story-3':
+          if (get(player).icons.aura === 'green') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-green-story-1');
+          if (get(player).icons.aura === 'yellow') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-yellow-story-1');
+          break;
+        case 'tutorial-final-green-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-green-story-2');
+          break;
+        case 'tutorial-final-green-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-green-story-3');
+          break;
+        case 'tutorial-final-yellow-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-yellow-story-2');
+          break;
+        case 'tutorial-final-yellow-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-yellow-story-3');
+          break;
+        case 'tutorial-final-green-story-3':
+        case 'tutorial-final-yellow-story-3':
+          if (get(player).icons.sanity === 'brain') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-brain-story-1');
+          if (get(player).icons.sanity === 'smiley') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-smiley-story-1');
+          break;
+        case 'tutorial-final-brain-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-brain-story-2');
+          break;
+        case 'tutorial-final-brain-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-brain-story-3');
+          break;
+        case 'tutorial-final-smiley-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-smiley-story-2');
+          break;
+        case 'tutorial-final-smiley-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-smiley-story-3');
+          break;
+        case 'tutorial-final-brain-story-3':
+        case 'tutorial-final-smiley-story-3':
+          if (get(player).icons.impulse === 'knife') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-knife-story-1');
+          if (get(player).icons.impulse === 'cleaver') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-cleaver-story-1');
+          break;
+        case 'tutorial-final-knife-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-knife-story-2');
+          break;
+        case 'tutorial-final-knife-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-knife-story-3');
+          break;
+        case 'tutorial-final-cleaver-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-cleaver-story-2');
+          break;
+        case 'tutorial-final-cleaver-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-cleaver-story-3');
+          break;
+        case 'tutorial-final-knife-story-3':
+        case 'tutorial-final-cleaver-story-3':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment');
+          break;
+        case 'tutorial-final-alignment':
+          nextCard = getNextCardBasedOnAlignment('tutorial-final-alignment', 'left');
+          break;
+        case 'tutorial-final-alignment-good-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment-good-2');
+          break;
+        case 'tutorial-final-alignment-evil-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment-evil-2');
+          break;
+        case 'tutorial-final-alignment-neutral-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment-neutral-2');
+          break;
+        case 'tutorial-final-alignment-good-2':
+        case 'tutorial-final-alignment-evil-2':
+        case 'tutorial-final-alignment-neutral-2':
+          nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-1');
+          break;
+        case 'tutorial-final-quit-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-2');
+          break;
+        case 'tutorial-final-quit-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-3');
+          break;
+        case 'tutorial-final-quit-3':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-4');
+          break;
+        case 'tutorial-final-quit-4':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-5');
+          break;
+        case 'tutorial-final-quit-5':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-6');
+          break;
+        case 'tutorial-final-quit-6':
+            nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-7');
+            break;
+        case 'tutorial-final-quit-7':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-8');
+          break;
+        case 'tutorial-final-quit-8':
+          nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-1');
+          break;
+
         default:
           console.log('No card matched...');
       }
@@ -563,7 +745,7 @@ export function surveyDecisionHandler(choice, card) {
         // Tutorial 1 (right)
         case 'tutorial1-1':
           // TODO: remove comment, ffw for testing
-          nextCard = get(decks).survey3.find(card => card.id === 'survey3-12');
+          nextCard = get(decks).survey4.find(card => card.id === 'survey4-17');
           // nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
           break;
         case 'tutorial1-2':
@@ -1123,6 +1305,195 @@ export function surveyDecisionHandler(choice, card) {
           nextCard = get(decks).survey4.find(card => card.id === 'survey4-17');
           break;
 
+        // Tutorial FINAL (right)
+        case 'tutorial-final-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-2b');
+          break;
+        case 'tutorial-final-2a':
+        case 'tutorial-final-2b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-3b');
+          break;
+        case 'tutorial-final-3a':
+        case 'tutorial-final-3b':
+        case 'tutorial-final-3b-1b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-3b-1b');
+          break;
+        case 'tutorial-final-4':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-4-1b');
+          break;
+        case 'tutorial-final-5':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-5-1b');
+          break;
+        case 'tutorial-final-5-1b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-6');
+          break;
+        case 'tutorial-final-6':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-7b');
+          break;
+        case 'tutorial-final-7a':
+        case 'tutorial-final-7b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-8b');
+          break;
+        case 'tutorial-final-8a':
+        case 'tutorial-final-8b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9');
+          break;
+        case 'tutorial-final-9':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-10');
+          break;
+        case 'tutorial-final-10':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-11');
+          break;
+        case 'tutorial-final-11':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-12');
+          break;
+        case 'tutorial-final-12':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-13');
+          break;
+        case 'tutorial-final-13':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-14');
+          break;
+        case 'tutorial-final-14':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-15b');
+          break;
+        case 'tutorial-final-15a':
+        case 'tutorial-final-15b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-16');
+          break;
+        case 'tutorial-final-16':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-17b');
+          break;
+        case 'tutorial-final-17a':
+        case 'tutorial-final-17b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-18');
+          break;
+        case 'tutorial-final-18':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-19');
+          break;
+        case 'tutorial-final-19':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-20b');
+          break;
+        case 'tutorial-final-20a':
+        case 'tutorial-final-20b':
+          if (get(player).icons.health === 'heart') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-heart-story-1');
+          if (get(player).icons.health === 'diamond') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-diamond-story-1');
+          break;
+        case 'tutorial-final-heart-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-heart-story-2');
+          break;
+        case 'tutorial-final-heart-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-heart-story-3');
+          break;
+        case 'tutorial-final-diamond-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-diamond-story-2');
+          break;
+        case 'tutorial-final-diamond-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-diamond-story-3');
+          break;
+        case 'tutorial-final-heart-story-3':
+        case 'tutorial-final-diamond-story-3':
+          if (get(player).icons.aura === 'green') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-green-story-1');
+          if (get(player).icons.aura === 'yellow') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-yellow-story-1');
+          break;
+        case 'tutorial-final-green-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-green-story-2');
+          break;
+        case 'tutorial-final-green-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-green-story-3');
+          break;
+        case 'tutorial-final-yellow-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-yellow-story-2');
+          break;
+        case 'tutorial-final-yellow-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-yellow-story-3');
+          break;
+        case 'tutorial-final-green-story-3':
+        case 'tutorial-final-yellow-story-3':
+          if (get(player).icons.sanity === 'brain') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-brain-story-1');
+          if (get(player).icons.sanity === 'smiley') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-smiley-story-1');
+          break;
+        case 'tutorial-final-brain-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-brain-story-2');
+          break;
+        case 'tutorial-final-brain-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-brain-story-3');
+          break;
+        case 'tutorial-final-smiley-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-smiley-story-2');
+          break;
+        case 'tutorial-final-smiley-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-smiley-story-3');
+          break;
+        case 'tutorial-final-brain-story-3':
+        case 'tutorial-final-smiley-story-3':
+          if (get(player).icons.impulse === 'knife') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-knife-story-1');
+          if (get(player).icons.impulse === 'cleaver') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-cleaver-story-1');
+          break;
+        case 'tutorial-final-knife-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-knife-story-2');
+          break;
+        case 'tutorial-final-knife-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-knife-story-3');
+          break;
+        case 'tutorial-final-cleaver-story-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-cleaver-story-2');
+          break;
+        case 'tutorial-final-cleaver-story-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-cleaver-story-3');
+          break;
+        case 'tutorial-final-knife-story-3':
+        case 'tutorial-final-cleaver-story-3':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment');
+          break;
+        case 'tutorial-final-alignment':
+          nextCard = getNextCardBasedOnAlignment('tutorial-final-alignment', 'right');
+          break;
+        case 'tutorial-final-alignment-good-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment-good-2');
+          break;
+        case 'tutorial-final-alignment-evil-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment-evil-2');
+          break;
+        case 'tutorial-final-alignment-neutral-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment-neutral-2');
+          break;
+        case 'tutorial-final-alignment-good-2':
+        case 'tutorial-final-alignment-evil-2':
+        case 'tutorial-final-alignment-neutral-2':
+          nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-1');
+          break;
+
+        case 'tutorial-final-4-1b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-4-1b-1b');
+          break;
+        case 'tutorial-final-4-1b-1b':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-1');
+          break;
+        case 'tutorial-final-quit-1':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-5');
+          break;
+          case 'tutorial-final-quit-2':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-3');
+          break;
+        case 'tutorial-final-quit-3':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-4');
+          break;
+        case 'tutorial-final-quit-4':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-5');
+          break;
+        case 'tutorial-final-quit-5':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-6');
+          break;
+        case 'tutorial-final-quit-6':
+            nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-7');
+            break;
+        case 'tutorial-final-quit-7':
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-quit-8');
+          break;
+        case 'tutorial-final-quit-8':
+          nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-1');
+          break;
+
         default:
           console.log('No card matched...');
       }
@@ -1205,6 +1576,9 @@ function getNextCardBasedOnAlignment(cardId = '', action = '') {
       case 'tutorial3-11-evil': 
         action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-good-1d') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-good-1e');
         break;
+      case 'tutorial-final-alignment':
+        cardToReturn = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment-good-1');
+        break;
     }
     
     return cardToReturn;
@@ -1221,6 +1595,9 @@ function getNextCardBasedOnAlignment(cardId = '', action = '') {
       case 'tutorial3-11-evil': 
         action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-evil-1d') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-evil-1e');
         break;
+      case 'tutorial-final-alignment':
+        cardToReturn = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment-evil-1');
+        break;
     }
     
     return cardToReturn;
@@ -1236,6 +1613,9 @@ function getNextCardBasedOnAlignment(cardId = '', action = '') {
         break;
       case 'tutorial3-11-evil': 
         action === 'left' ? cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-neutral-1d') : cardToReturn = get(decks).tutorial3.find(card => card.id === 'tutorial3-11-good-alignment-neutral-1e');
+        break;
+      case 'tutorial-final-alignment':
+        cardToReturn = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-alignment-neutral-1');
         break;
     }
     

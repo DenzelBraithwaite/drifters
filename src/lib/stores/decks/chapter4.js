@@ -1,10 +1,6 @@
 import { writable } from 'svelte/store';
 
-// TODO: choose 2 special cars for knife and cleaver
 const chapter4 = writable([
-  // TODO: Add new chapter 4 chars, originals have more dialogue, others have 1.
-  // TODO: remake all chars but make them look human.
-
   // Jessy - ALL - ORIGINAL
   {
     id: 'chapter4-1a',
@@ -30,7 +26,7 @@ const chapter4 = writable([
       diamond: 0,
       greenAura: 0,
       yellowAura: 0,
-      brain: 1,
+      brain: 0,
       smiley: -1,
       knife: 1,
       cleaver: 0,
@@ -66,7 +62,7 @@ const chapter4 = writable([
       brain: 0,
       smiley: 0,
       knife: 1,
-      cleaver: 0,
+      cleaver: 1,
       memory: 0
     },
     location: 'Choice',
@@ -81,8 +77,8 @@ const chapter4 = writable([
     textLeft: "You want some sugar for your high horse?",
     textRight: "I don't want anything to do with you.",
     actionLeft: {
-      heart: -1,
-      diamond: 1,
+      heart: 0,
+      diamond: 0,
       greenAura: 0,
       yellowAura: 0,
       brain: 0,
@@ -149,7 +145,7 @@ const chapter4 = writable([
     actionLeft: {
       heart: 1,
       diamond: -1,
-      greenAura: 0,
+      greenAura: -1,
       yellowAura: 0,
       brain: 0,
       smiley: 0,
@@ -187,10 +183,10 @@ const chapter4 = writable([
       diamond: -1,
       greenAura: -1,
       yellowAura: 1,
-      brain: 1,
+      brain: 0,
       smiley: 1,
       knife: 0,
-      cleaver: 0,
+      cleaver: -1,
       memory: 1
     },
     actionRight: {
@@ -207,7 +203,7 @@ const chapter4 = writable([
     location: 'Choice',
     appearsWithIcon: ''
   },
-  // Shelly - ALL
+  // Shelly - Knife, she is one of the 8 special chars that will be revealed as a victim (for her hunting skills she represents knife).
   {
     id: 'chapter4-2',
       imgUrl: '/decks/chapter4/shelly_real.png',
@@ -228,14 +224,14 @@ const chapter4 = writable([
           memory: 1
       },
       actionRight: {
-          heart: 0,
+          heart: 1,
           diamond: 0,
           greenAura: 1,
           yellowAura: 0,
-          brain: 1,
+          brain: -1,
           smiley: -1,
           knife: 0,
-          cleaver: 0,
+          cleaver: -1,
           memory: 0
       },
       location: 'Choice',
@@ -251,8 +247,8 @@ const chapter4 = writable([
     textLeft: "Accident or not, actions have consequences.",
     textRight: "So you're a guest too...",
     actionLeft: {
-        heart: -1,
-        diamond: 1,
+        heart: 0,
+        diamond: 0,
         greenAura: 0,
         yellowAura: 0,
         brain: 1,
@@ -266,7 +262,7 @@ const chapter4 = writable([
         diamond: 0,
         greenAura: 0,
         yellowAura: 0,
-        brain: 1,
+        brain: 0,
         smiley: -1,
         knife: 0,
         cleaver: 0,
@@ -292,7 +288,7 @@ const chapter4 = writable([
           yellowAura: 0,
           brain: 0,
           smiley: 0,
-          knife: 0,
+          knife: 1,
           cleaver: 0,
           memory: 0
       },
@@ -303,8 +299,8 @@ const chapter4 = writable([
           yellowAura: -1,
           brain: 0,
           smiley: 1,
-          knife: 0,
-          cleaver: 0,
+          knife: -1,
+          cleaver: -1,
           memory: 0
       },
       location: 'Choice',
@@ -363,7 +359,7 @@ const chapter4 = writable([
           brain: -1,
           smiley: -1,
           knife: 0,
-          cleaver: 0,
+          cleaver: -1,
           memory: 0
       },
       actionRight: {
@@ -371,9 +367,9 @@ const chapter4 = writable([
           diamond: 1,
           greenAura: 0,
           yellowAura: 0,
-          brain: 1,
+          brain: -1,
           smiley: 0,
-          knife: -1,
+          knife: 1,
           cleaver: 0,
           memory: 0
       },
@@ -395,10 +391,10 @@ const chapter4 = writable([
           diamond: 1,
           greenAura: 0,
           yellowAura: 0,
-          brain: 1,
+          brain: 0,
           smiley: -1,
-          knife: -1,
-          cleaver: 0,
+          knife: 1,
+          cleaver: 1,
           memory: 1
       },
       actionRight: {
@@ -408,8 +404,8 @@ const chapter4 = writable([
           yellowAura: -1,
           brain: -1,
           smiley: 1,
-          knife: 1,
-          cleaver: 0,
+          knife: -1,
+          cleaver: -1,
           memory: 0
       },
       location: 'Choice',
@@ -426,14 +422,14 @@ const chapter4 = writable([
       textLeft: "You aren't stuck, the fact that you remember proves it.",
       textRight: "If they got you, they probably got others too, but they're gone now.",
       actionLeft: {
-          heart: 0,
+          heart: 1,
           diamond: 0,
           greenAura: 0,
           yellowAura: 0,
           brain: 1,
           smiley: 1,
-          knife: 0,
-          cleaver: 0,
+          knife: -1,
+          cleaver: -1,
           memory: 1
       },
       actionRight: {
@@ -443,8 +439,8 @@ const chapter4 = writable([
           yellowAura: 0,
           brain: -1,
           smiley: 1,
-          knife: 1,
-          cleaver: 1,
+          knife: 0,
+          cleaver: -1,
           memory: 0
       },
       location: 'Choice',
@@ -503,8 +499,8 @@ const chapter4 = writable([
           yellowAura: 0,
           brain: 1,
           smiley: -1,
-          knife: 0,
-          cleaver: 0,
+          knife: 1,
+          cleaver: 1,
           memory: 1
       },
       actionRight: {
@@ -512,10 +508,10 @@ const chapter4 = writable([
           diamond: 0,
           greenAura: 0,
           yellowAura: 1,
-          brain: 1,
+          brain: 0,
           smiley: 1,
-          knife: 1,
-          cleaver: 1,
+          knife: -1,
+          cleaver: -1,
           memory: 0
       },
       location: 'Choice',
@@ -536,7 +532,7 @@ const chapter4 = writable([
           diamond: 0,
           greenAura: 0,
           yellowAura: 0,
-          brain: 1,
+          brain: -1,
           smiley: -1,
           knife: -1,
           cleaver: -1,
@@ -617,8 +613,8 @@ const chapter4 = writable([
           diamond: 0,
           greenAura: -1,
           yellowAura: 1,
-          brain: 1,
-          smiley: 0,
+          brain: 0,
+          smiley: 1,
           knife: 0,
           cleaver: 0,
           memory: 0
@@ -654,8 +650,8 @@ const chapter4 = writable([
           yellowAura: 0,
           brain: 1,
           smiley: 0,
-          knife: 0,
-          cleaver: 1,
+          knife: -1,
+          cleaver: -1,
           memory: 0
       },
       location: 'Choice',
@@ -690,7 +686,7 @@ const chapter4 = writable([
           brain: -1,
           smiley: 0,
           knife: 0,
-          cleaver: 1,
+          cleaver: 0,
           memory: 0
       },
       location: 'Choice',
@@ -724,7 +720,7 @@ const chapter4 = writable([
           yellowAura: 0,
           brain: -1,
           smiley: 1,
-          knife: 1,
+          knife: -1,
           cleaver: 1,
           memory: 0
       },
@@ -900,7 +896,7 @@ const chapter4 = writable([
           yellowAura: 0,
           brain: 0,
           smiley: 0,
-          knife: 1,
+          knife: 0,
           cleaver: 1,
           memory: 0
       },
@@ -925,7 +921,7 @@ const chapter4 = writable([
           brain: -1,
           smiley: -1,
           knife: -1,
-          cleaver: 0,
+          cleaver: -1,
           memory: 1
       },
       actionRight: {
@@ -1027,10 +1023,10 @@ const chapter4 = writable([
           diamond: 0,
           greenAura: 0,
           yellowAura: 0,
-          brain: 1,
+          brain: -1,
           smiley: -1,
-          knife: 1,
-          cleaver: 1,
+          knife: 0,
+          cleaver: 0,
           memory: 0
       },
       actionRight: {
@@ -1041,7 +1037,7 @@ const chapter4 = writable([
           brain: 1,
           smiley: 1,
           knife: 1,
-          cleaver: 0,
+          cleaver: -1,
           memory: 0
       },
       location: 'Choice',
@@ -1072,8 +1068,8 @@ const chapter4 = writable([
           heart: 0,
           diamond: 0,
           greenAura: 0,
-          yellowAura: 0,
-          brain: 1,
+          yellowAura: 1,
+          brain: 0,
           smiley: 0,
           knife: 1,
           cleaver: 0,
@@ -1108,8 +1104,8 @@ const chapter4 = writable([
           diamond: 0,
           greenAura: 0,
           yellowAura: 0,
-          brain: 1,
-          smiley: 0,
+          brain: -1,
+          smiley: 1,
           knife: 0,
           cleaver: 1,
           memory: 0
@@ -1182,7 +1178,7 @@ const chapter4 = writable([
         brain: -1,
         smiley: 1,
         knife: 0,
-        cleaver: 0,
+        cleaver: -1,
         memory: 0
     },
     location: 'Choice',
@@ -1206,7 +1202,7 @@ const chapter4 = writable([
         brain: 1,
         smiley: -1,
         knife: 0,
-        cleaver: 0,
+        cleaver: 1,
         memory: 0
     },
     actionRight: {
@@ -1217,7 +1213,7 @@ const chapter4 = writable([
         brain: 0,
         smiley: 1,
         knife: 0,
-        cleaver: 0,
+        cleaver: -1,
         memory: 0
     },
     location: 'Choice',
@@ -1287,7 +1283,7 @@ const chapter4 = writable([
         yellowAura: 0,
         brain: 0,
         smiley: 0,
-        knife: 1,
+        knife: 0,
         cleaver: 1,
         memory: 0
     },
@@ -1345,7 +1341,7 @@ const chapter4 = writable([
         greenAura: 0,
         yellowAura: 0,
         brain: 1,
-        smiley: 0,
+        smiley: -1,
         knife: 0,
         cleaver: 1,
         memory: 0
@@ -1382,7 +1378,7 @@ const chapter4 = writable([
         brain: 1,
         smiley: 0,
         knife: 0,
-        cleaver: 0,
+        cleaver: 1,
         memory: 0
     },
     actionRight: {
@@ -1390,10 +1386,10 @@ const chapter4 = writable([
         diamond: 0,
         greenAura: 1,
         yellowAura: -1,
-        brain: 0,
-        smiley: 0,
+        brain: -1,
+        smiley: -1,
         knife: 0,
-        cleaver: 0,
+        cleaver: -1,
         memory: 0
     },
     location: 'Choice',
@@ -1518,9 +1514,9 @@ const chapter4 = writable([
       actionLeft: {
           heart: 0,
           diamond: 0,
-          greenAura: 0,
-          yellowAura: 0,
-          brain: 1,
+          greenAura: -1,
+          yellowAura: 1,
+          brain: 0,
           smiley: 1,
           knife: 0,
           cleaver: 0,
