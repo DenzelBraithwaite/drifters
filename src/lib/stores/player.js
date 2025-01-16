@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store';
 
+// TODO: restore to defaults, unlocked decks and memoryFIXME:
 const player = writable({
   name: 'Jack',
   timesReborn: 0,
@@ -10,7 +11,7 @@ const player = writable({
     tutorial2: true, // default to false
     tutorial3: true, // default to false
     tutorial4: true, // default to false
-    tutorialFinal: false, // default to false
+    tutorialFinal: true, // default to false
     survey1: true, // default to true
     survey2: true, // default to false
     survey3: true, // default to false
@@ -31,16 +32,16 @@ const player = writable({
       img: '/decks/tutorial/judicator-white.png'
     },
   ],
-  health: 10, 
+  health: 10,
   aura: 10, 
   sanity: 10, 
-  impulse: 0, 
-  memory: 75,
+  impulse: 0,
+  memory: 49,
   goodPoints: 0,
   evilPoints: 0,
   // icons determined as game progresses, memory is always a puzzle, others default to empty string
   icons: {
-    health: 'heart', // heart || diamond
+    health: '', // heart || diamond
     aura: '', // green || yellow
     sanity: '', // brain || smiley
     impulse: '', // knife || cleaver
@@ -63,3 +64,11 @@ const player = writable({
 });
 
 export default player;
+
+// TODO: add more good and evil points to all tutorials and surveys
+
+/* TODO:FIXME:
+The end mementos are broken(always blank), the issue stems from the fact that gameClient.svelte loads the decks on execution
+As the gameClient.svelte updates the player store, the tutorialFinal.js never receives this update since it's never "called" again, so it's version of get(player) is not up-to-date.
+The surveyDecisionHandler uses get(decks), the decks store that imports all decks is not up-to-date and tutorialFinalDeck.js reflects the player store when the game started.
+*/

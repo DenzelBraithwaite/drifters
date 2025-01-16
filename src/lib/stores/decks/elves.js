@@ -617,7 +617,7 @@ const elves = writable([
         text: "Have the other Inquious elves mentioned an attack on our tribe, orchestrated by elves but realised by humans? The thing is... that never happened. I'm not sure why they all think that, but we were somewhere else before this forest, I just can't remember where... you probably think I'm delusional.",
         faction: 'Elf',
         textLeft: "I believe you, but if I were you I'd try to remind the other elves before it's too late.",
-        textRight: "I don't think you're delusional, many of us have memory loss and false memories. Yet, many seem to have accepted this world as their own. I wonder what's different between them and us?",
+        textRight: "I don't think you're delusional. Yet, many seem to have accepted this world as their own. I wonder why?",
         location: 'Choice',
         appearsWithIcon: '',
         actionLeft: {

@@ -162,7 +162,7 @@ const chapter4 = writable([
       smiley: 0,
       knife: 1,
       cleaver: 1,
-      memory: 0
+      memory: 1
     },
     location: 'Choice',
     appearsWithIcon: ''
@@ -630,7 +630,7 @@ const chapter4 = writable([
       title: 'Deku',
       text: "I always loved animals, I was a veterinarian before... Before this. Even now I don't blame them, they didn't mean to harm me.",
       faction: 'Visitor',
-      textLeft: "You got too close to nature and experienced the circle of life first hand.",
+      textLeft: "You got too close to nature and experienced the circle of life firsthand.",
       textRight: "Now you pay the price for your obsession with animals, you should've admired them from a distance.",
       actionLeft: {
           heart: 0,
@@ -711,7 +711,7 @@ const chapter4 = writable([
           smiley: 0,
           knife: -1,
           cleaver: -1,
-          memory: 0
+          memory: 1
       },
       actionRight: {
           heart: 0,
@@ -728,7 +728,7 @@ const chapter4 = writable([
       appearsWithIcon: ''
   },
 
-  // Hippy-boy - YELLOW AURA, Ziggy is one of the 8 special chars that will be revealed as a victim (he and jack grew up together, YELLOW aura symbolizes their friendship and sunny days.).
+  // Hippie-boy - YELLOW AURA, Ziggy is one of the 8 special chars that will be revealed as a victim (he and jack grew up together, YELLOW aura symbolizes their friendship and sunny days.).
   {
       id: 'chapter4-17',
       imgUrl: '/decks/chapter4/ziggy_real.png',
@@ -736,7 +736,7 @@ const chapter4 = writable([
       text: "Oh man, don't you remember me? We grew up together dude, you and I were the tightest of buds. I can't believe you man, I always thought I could trust you, I looked up to you. I guess I never really knew you, even since we were kids.",
       faction: 'Visitor',
       textLeft: "Ziggy, you seem so familiar, like a distant dream. I'm sorry, I didn't mean to hurt you.",
-      textRight: "If we were that close I'd remember you. You're just a hippy stoner mistaking me for someone else.",
+      textRight: "If we were that close I'd remember you. You're just a hippie stoner mistaking me for someone else.",
       actionLeft: {
           heart: 1,
           diamond: -1,
@@ -746,7 +746,7 @@ const chapter4 = writable([
           smiley: -1,
           knife: -1,
           cleaver: 0,
-          memory: 0
+          memory: 1
       },
       actionRight: {
           heart: -1,
@@ -763,7 +763,7 @@ const chapter4 = writable([
       appearsWithIcon: ''
   },
   
-  // Hippy-girl - ALL
+  // Hippie-girl - ALL
   {
       id: 'chapter4-18',
       imgUrl: '/decks/chapter4/powder_real.png',
@@ -874,10 +874,10 @@ const chapter4 = writable([
       id: 'chapter4-21',
       imgUrl: '/decks/chapter4/luna_real.png',
       title: 'Luna',
-      text: "My life wasn't perfect, I met a lot of different men and made a lot of bad choices. But to lose my life behind closed doors, to be discarded without anyone ever knowing, to have the life choked out of me without releasing so much as a yelp that someone could hear. Why do men feel the need to take what they want without any regard for others. Why did you choose me...",
+      text: "My life wasn't perfect, I met a lot of different men and made a lot of bad choices. But to lose my life behind closed doors, to be discarded without anyone ever knowing, to have the life stabbed out of me without releasing so much as a yelp that someone could hear. Why do men feel the need to take what they want without any regard for others. Why did you choose me...",
       faction: 'Visitor',
       textLeft: "This was my fault..? Please I- I didn't mean to I- I just...",
-      textRight: "I had nothing to do with your death, you're hear because of your own decisions.",
+      textRight: "I had nothing to do with your death, you're here because of your own decisions.",
       actionLeft: {
           heart: 0,
           diamond: 0,
@@ -909,9 +909,9 @@ const chapter4 = writable([
       id: 'chapter4-22',
       imgUrl: '/decks/chapter4/bullisia_real.png',
       title: 'Eliza', // Bullisia
-      text: "I thought you loved me, the way I always loved you. But what you did to me... I don't think I can ever forgive you.",
+      text: "I thought you loved me, the way I always loved you. But what you did to me... I never thought you would actually do it.",
       faction: 'Visitor',
-      textLeft: "Eliza, why are you here? I do love you I swear, this wasn't my fault!",
+      textLeft: "Eliza, why are you here? I do love you I swear, I didn't mean to!",
       textRight: "Eliza...",
       actionLeft: {
           heart: 0,
@@ -1038,7 +1038,7 @@ const chapter4 = writable([
           smiley: 1,
           knife: 1,
           cleaver: -1,
-          memory: 0
+          memory: 1
       },
       location: 'Choice',
       appearsWithIcon: ''
@@ -1225,7 +1225,7 @@ const chapter4 = writable([
     id: 'chapter4-32',
     imgUrl: '/decks/chapter4/hugo_real.png',
     title: 'Hugo',
-    text: "Those lame ass wannabe posers thought they could step to a real gang? Those soft whimps got what was coming to them. No regrets, none.",
+    text: "Those lame-ass wannabe posers thought they could step to a real gang? Those soft wimps got what was coming to them. No regrets, none.",
     faction: 'Guest',
     textLeft: "Maybe you have no regrets, but what about your crew?",
     textRight: "That's metal.",
@@ -1296,7 +1296,7 @@ const chapter4 = writable([
     id: 'chapter4-34',
     imgUrl: '/decks/chapter4/eldia_real.png',
     title: 'Eldia',
-    text: "I'f I'm being honest, I'm a bit jealous. I still haven't remembered anything but everyone else seems to have.",
+    text: "If I'm being honest, I'm a bit jealous. I still haven't remembered anything but everyone else seems to have.",
     faction: 'Guest',
     textLeft: "Maybe this is the calm before the storm, who knows what you will remember.",
     textRight: "Jealousy in a place like this? We're all dead you know.",
@@ -1309,7 +1309,7 @@ const chapter4 = writable([
         smiley: 1,
         knife: 0,
         cleaver: 0,
-        memory: 0
+        memory: 1
     },
     actionRight: {
         heart: 0,
@@ -1331,7 +1331,7 @@ const chapter4 = writable([
     id: 'chapter4-35',
     imgUrl: '/decks/chapter4/fenris_real.png',
     title: 'Fenris',
-    text: "That idiot professor never listened to me. Just because I was his sudent he thought he was better than me? Bet he doesn't think that anymore.",
+    text: "That idiot professor never listened to me. Just because I was his student he thought he was better than me? Bet he doesn't think that anymore.",
     faction: 'Guest',
     textLeft: "Whatever you did, you both ended up here, so probably not that smart of a move.",
     textRight: "You took matters into your own hands, not bad.",
@@ -1355,7 +1355,7 @@ const chapter4 = writable([
         smiley: 1,
         knife: 1,
         cleaver: 0,
-        memory: 0
+        memory: 1
     },
     location: 'Choice',
     appearsWithIcon: ''

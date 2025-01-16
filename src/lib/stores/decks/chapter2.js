@@ -1337,10 +1337,10 @@ const chapter2 = writable([
         appearsWithIcon: ''
     },
 
-    // Hippy-boy - GREEN AURA, Ziggy is one of the 8 special chars that will be revealed as a victim (he and jack grew up together, GREEN aura symbolizes Ziggy's favorite passtime).
+    // Hippie-boy - GREEN AURA, Ziggy is one of the 8 special chars that will be revealed as a victim (he and jack grew up together, GREEN aura symbolizes Ziggy's favorite passtime).
     {
         id: 'chapter2-8a',
-        imgUrl: '/decks/chapter2/hippy-boy.png',
+        imgUrl: '/decks/chapter2/hippie-boy.png',
         title:'Ziggy',
         text: "Maaan you're totally like the first normal lookin dude I've seen here.",
         faction: 'Human',
@@ -1373,7 +1373,7 @@ const chapter2 = writable([
     },
     {
         id: 'chapter2-8b',
-        imgUrl: '/decks/chapter2/hippy-boy.png',
+        imgUrl: '/decks/chapter2/hippie-boy.png',
         title:'Ziggy',
         text: "You know, before I got here man... I was like, I was. I was totally like... um-",
         faction: 'Human',
@@ -1406,7 +1406,7 @@ const chapter2 = writable([
     },
     {
         id: 'chapter2-8c',
-        imgUrl: '/decks/chapter2/hippy-boy.png',
+        imgUrl: '/decks/chapter2/hippie-boy.png',
         title:'Ziggy',
         text: "So like, I'm walking through the forest for some reason ya know... and I'm looking for... shoot my mind's totally blank man.",
         faction: 'Human',
@@ -1439,7 +1439,7 @@ const chapter2 = writable([
     },
     {
         id: 'chapter2-8d',
-        imgUrl: '/decks/chapter2/hippy-boy.png',
+        imgUrl: '/decks/chapter2/hippie-boy.png',
         title:'Ziggy',
         text: "Woah... you know something? I think I'm here with a friend, I totally forgot hahaha. Wonder where she is now?",
         faction: 'Human',
@@ -1472,7 +1472,7 @@ const chapter2 = writable([
     },
     {
         id: 'chapter2-8e',
-        imgUrl: '/decks/chapter2/hippy-boy.png',
+        imgUrl: '/decks/chapter2/hippie-boy.png',
         title:'Ziggy',
         text: "POWDER!!! That's what I forgot, it's powder man! I need to find power!",
         faction: 'Human',
@@ -1504,10 +1504,10 @@ const chapter2 = writable([
         appearsWithIcon: ''
     },
 
-    // Hippy-girl - ALL
+    // Hippie-girl - ALL
     {
         id: 'chapter2-8a',
-        imgUrl: '/decks/chapter2/hippy-girl.png',
+        imgUrl: '/decks/chapter2/hippie-girl.png',
         title:'Powder',
         text: "Have you seen um... Have you seen... Ahhh forget it.",
         faction: 'Human',
@@ -1540,7 +1540,7 @@ const chapter2 = writable([
     },
     {
         id: 'chapter2-8b',
-        imgUrl: '/decks/chapter2/hippy-girl.png',
+        imgUrl: '/decks/chapter2/hippie-girl.png',
         title:'Powder',
         text: "Hey, the names Powder. I can't remember what I'm doing in these woods, but I know I'm doing something.",
         faction: 'Human',
@@ -1573,7 +1573,7 @@ const chapter2 = writable([
     },
     {
         id: 'chapter2-8c',
-        imgUrl: '/decks/chapter2/hippy-girl.png',
+        imgUrl: '/decks/chapter2/hippie-girl.png',
         title:'Powder',
         text: "Zion? Zack..? Z-zzz..... zzzzi- Zigo? Ziga? Ughh forget it.",
         faction: 'Human',
@@ -1606,7 +1606,7 @@ const chapter2 = writable([
     },
     {
         id: 'chapter2-8d',
-        imgUrl: '/decks/chapter2/hippy-girl.png',
+        imgUrl: '/decks/chapter2/hippie-girl.png',
         title:'Powder',
         text: "Did I forget again? Whatever, if I am here with someone, they'll find me eventually. I give up on looking.",
         faction: 'Human',
@@ -1639,7 +1639,7 @@ const chapter2 = writable([
     },
     {
         id: 'chapter2-8e',
-        imgUrl: '/decks/chapter2/hippy-girl.png',
+        imgUrl: '/decks/chapter2/hippie-girl.png',
         title:'Powder',
         text: "Oh.My.God. I forgot about Ziggy AGAIN! Ziggyyyyyyyy!!!",
         faction: 'Human',

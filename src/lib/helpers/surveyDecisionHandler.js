@@ -1,11 +1,54 @@
 // Hooks
-import { get } from 'svelte/store'; 
+import { get } from 'svelte/store';
 
 // Stores 
 import decks from '../stores/decks.js';
 import player from '../stores/player.js';
+import tutorial1 from '../stores/decks/tutorial1';
+import tutorial2 from '../stores/decks/tutorial2';
+import tutorial3 from '../stores/decks/tutorial3';
+import tutorial4 from '../stores/decks/tutorial4';
+import tutorialFinal from '../stores/decks/tutorialFinal';
+import survey1 from '../stores/decks/survey1';
+import survey2 from '../stores/decks/survey2';
+import survey3 from '../stores/decks/survey3';
+import survey4 from '../stores/decks/survey4';
+import chapter1 from '../stores/decks/chapter1';
+import chapter2 from '../stores/decks/chapter2';
+import chapter3 from '../stores/decks/chapter3';
+import chapter4 from '../stores/decks/chapter4';
+import soldiers from '../stores/decks/soldiers';
+import elves from '../stores/decks/elves';
+import goblins from '../stores/decks/goblins';
+import beings from '../stores/decks/beings';
+import { healthCard, auraCard, sanityCard, impulseCard } from '../helpers/stats';
 
 export function surveyDecisionHandler(choice, card) {
+  // FIXME: This does seem to be helping and almost slving the issue, but first of 4 victims is never accurate, why are they different??
+  decks.set({
+    tutorial1: get(tutorial1),
+    tutorial2: get(tutorial2),
+    tutorial3: get(tutorial3),
+    tutorial4: get(tutorial4),
+    tutorialFinal: tutorialFinal(),
+    survey1: get(survey1),
+    survey2: get(survey2),
+    survey3: get(survey3),
+    survey4: get(survey4),
+    chapter1: get(chapter1),
+    chapter2: get(chapter2),
+    chapter3: get(chapter3),
+    chapter4: get(chapter4),
+    soldiers: get(soldiers),
+    elves: get(elves),
+    goblins: get(goblins),
+    beings: get(beings),
+    health: healthCard,
+    aura: auraCard,
+    sanity: sanityCard,
+    impulse: impulseCard,
+});
+
   let nextCard;
   iconPointsHandler(choice, card);
 
@@ -14,7 +57,8 @@ export function surveyDecisionHandler(choice, card) {
       switch (card.id) {
         // Tutorial 1 (left)
         case 'tutorial1-1':
-          nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
+          // nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
+          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-1');
           break;
         case 'tutorial1-2':
         case 'tutorial1-2-1b':
@@ -585,6 +629,14 @@ export function surveyDecisionHandler(choice, card) {
           break;
         case 'tutorial-final-8a':
         case 'tutorial-final-8b':
+        case 'tutorial-final-heart':
+        case 'tutorial-final-diamond':
+        case 'tutorial-final-green':
+        case 'tutorial-final-yellow':
+        case 'tutorial-final-brain':
+        case 'tutorial-final-smiley':
+        case 'tutorial-final-knife':
+        case 'tutorial-final-cleaver':
           nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9');
           break;
         case 'tutorial-final-9':
@@ -744,9 +796,7 @@ export function surveyDecisionHandler(choice, card) {
       switch (card.id) {
         // Tutorial 1 (right)
         case 'tutorial1-1':
-          // TODO: remove comment, ffw for testing
-          nextCard = get(decks).survey4.find(card => card.id === 'survey4-17');
-          // nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
+          nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
           break;
         case 'tutorial1-2':
           nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2-1b');
@@ -1336,6 +1386,14 @@ export function surveyDecisionHandler(choice, card) {
           break;
         case 'tutorial-final-8a':
         case 'tutorial-final-8b':
+        case 'tutorial-final-heart':
+        case 'tutorial-final-diamond':
+        case 'tutorial-final-green':
+        case 'tutorial-final-yellow':
+        case 'tutorial-final-brain':
+        case 'tutorial-final-smiley':
+        case 'tutorial-final-knife':
+        case 'tutorial-final-cleaver':
           nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9');
           break;
         case 'tutorial-final-9':

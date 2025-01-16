@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 
 const backgrounds = writable({
-    active: 'bg__dark', // default
+    active: 'bg__dark',
     dark: 'bg__dark',
     darkFinal: 'bg__dark_final',
     village: 'bg__village',

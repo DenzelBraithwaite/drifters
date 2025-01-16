@@ -24,7 +24,7 @@ const decks = writable({
     tutorial2: get(tutorial2),
     tutorial3: get(tutorial3),
     tutorial4: get(tutorial4),
-    tutorialFinal: get(tutorialFinal),
+    tutorialFinal: tutorialFinal(),
     survey1: get(survey1),
     survey2: get(survey2),
     survey3: get(survey3),

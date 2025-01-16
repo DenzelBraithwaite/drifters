@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 const goblins = writable([
-    // Zig, a kid who doesn't know why he's in this form and wants his mom and dad TODO: BRAIN - he is one of the 8 special chars that will be revealed as a victim.
+    // Zig, a kid who doesn't know why he's in this form and wants his mom and dad.
     {
         id: 'chapter3-g-1a',
         imgUrl: '/decks/chapter3/goblins/goblin-child.png',
@@ -296,7 +296,7 @@ const goblins = writable([
         }
     },
 
-    // Ruck, an old goblin who has many memories and offers insight about the world. TODO: SMILEY - He is one of the 8 special chars that will be revealed as a victim.
+    // Ruck, an old goblin who has many memories and offers insight about the world.
     {
         id: 'chapter3-g-3a',
         imgUrl: '/decks/chapter3/goblins/goblin-old.png',

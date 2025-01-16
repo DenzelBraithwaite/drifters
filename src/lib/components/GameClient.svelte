@@ -79,6 +79,19 @@
     impulse: false
   }
 
+  // TODO: for testing FIXME: melody is being a bitch.
+  player.update(p => {
+    p.icons.health = 'heart';
+    p.icons.aura = 'green';
+    p.icons.sanity = 'brain';
+    p.icons.impulse = 'cleaver';
+    // p.icons.health = p.iconPoints.heart >= p.iconPoints.diamond ? 'heart' : 'diamond';
+    // p.icons.aura = p.iconPoints.greenAura >= p.iconPoints.yellowAura ? 'green' : 'yellow';
+    // p.icons.sanity = p.iconPoints.brain >= p.iconPoints.smiley ? 'brain' : 'smiley';
+    // p.icons.impulse = p.iconPoints.knife >= p.iconPoints.cleaver ? 'knife' : 'cleaver';
+    return p;
+  });
+
   function controlStats() {
       player.update(p => {
           if (p.health >= 10) p.health = 10;
@@ -112,7 +125,7 @@
           statFlashHandler('sanity', setFlashEffect(p.icons.sanity === 'brain' ? currentCard.actionLeft.brain : currentCard.actionLeft.smiley));
         };
         if (currentCard.actionLeft.knife || currentCard.actionLeft.cleaver) {
-          p.icons.impulse === 'knife' ? p.impulse -= currentCard.actionLeft.knife : p.impulse -= currentCard.actionLeft.cleaver;
+          p.icons.impulse === 'knife' ? p.impulse += currentCard.actionLeft.knife : p.impulse += currentCard.actionLeft.cleaver;
           statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionLeft.knife : currentCard.actionLeft.smiley));
         };
         if (currentCard.actionLeft.memory) {
@@ -136,7 +149,7 @@
           statFlashHandler('sanity', setFlashEffect(p.icons.sanity === 'brain' ? currentCard.actionRight.brain : currentCard.actionRight.smiley));
         };
         if (currentCard.actionRight.knife || currentCard.actionRight.cleaver) {
-          p.icons.impulse === 'knife' ? p.impulse -= currentCard.actionRight.knife : p.impulse -= currentCard.actionRight.cleaver;
+          p.icons.impulse === 'knife' ? p.impulse += currentCard.actionRight.knife : p.impulse += currentCard.actionRight.cleaver;
           statFlashHandler('impulse', setFlashEffect(p.icons.impulse === 'knife' ? currentCard.actionRight.knife : currentCard.actionRight.smiley));
         };
         if (currentCard.actionRight.memory) {
@@ -175,8 +188,8 @@
         }, 750);
       break;
       case 'impulse':
-        if (statEffect === 'positive') flashImpulse.positive = true;
-        if (statEffect === 'negative') flashImpulse.negative = true;
+        if (statEffect === 'positive') flashImpulse.negative = true;
+        if (statEffect === 'negative') flashImpulse.positive = true;
         setTimeout(() => {
           flashImpulse.positive = false;
           flashImpulse.negative = false;
@@ -301,13 +314,32 @@
       if ($player.memory < 15) $player.memory = 0;
       else if ($player.memory < 30) $player.memory = 15;
       else if ($player.memory < 45) $player.memory = 30;
-      else if ($player.memory < 75) $player.memory = 45;
+      else if ($player.memory < 50) $player.memory = 45;
       gameOver = true;
+      console.log($player);
     }
 
     // Make sure stats have a limit of 10
     controlStats();
 
+    // Move on to final chapter if enough memory.
+    if (!$player.unlockedDeck.tutorialFinal && $player.memory >= 50) { 
+      player.update(p => {
+        p.activeDeck = 'survey';
+        p.unlockedCards = [...tutorialFinalDeck];
+        currentCard = p.unlockedCards[0];
+
+        p.unlockedDeck.tutorialFinal = true;
+        return p;
+      });
+          
+      backgrounds.update(bg => {
+        $backgrounds.active = $backgrounds.darkFinal;
+        return bg;
+      });
+      return;
+    }
+    
     // Add Beings deck
     if (!$player.unlockedDeck.chapter4Beings && $player.memory >= 52) {
       newDeckAlertText = 'Beings'
@@ -410,24 +442,6 @@
       setTimeout(() => {
         newDeckAlert = false;
       }, 4500);
-    }
-
-    // Move on to final chapter if enough memory.
-    if (!$player.unlockedDeck.tutorialFinal && $player.memory >= 75) { 
-      player.update(p => {
-        p.activeDeck = 'survey';
-        p.unlockedCards = [...tutorialFinalDeck];
-        currentCard = p.unlockedCards[0];
-
-        p.unlockedDeck.tutorialFinal = true;
-        return p;
-      });
-          
-      backgrounds.update(bg => {
-        $backgrounds.active = $backgrounds.darkFinal;
-        return bg;
-      });
-      return;
     }
 
     // Move on to chapter 4 if enough memory.
@@ -654,7 +668,7 @@
               {
                 title: p.icons.aura === 'green' ? 'Green Aura' : 'Yellow Aura',
                 description: 'Aura memento',
-                img: p.icons.aura === 'green' ? '/decks/chapter2/rabbit.png' : '/decks/chapter2/hippy-boy.png'
+                img: p.icons.aura === 'green' ? '/decks/chapter2/rabbit.png' : '/decks/chapter2/hippie-boy.png'
               },
               {
                 title: 'Aura Being',
@@ -761,7 +775,7 @@
     if ($player.memory < 15) return '0';
     if ($player.memory < 30) return '15';
     if ($player.memory < 45) return '30';
-    if ($player.memory < 75) return '45';
+    if ($player.memory < 50) return '45';
     return '0';
   }
 
