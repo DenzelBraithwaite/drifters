@@ -41,6 +41,7 @@ If you want to contact me to discuss a PR or a bug or simply some ideas, you can
 <br>
 
 ![Drifters screenshot](./src/assets/repo_imgs/chapter_4.png)
+![Drifters screenshot](./src/assets/repo_imgs/final_chapter.png)
 
 **P.S.** I always appreciate those who take the time to read these, since I rarely take the time to type them! Thanks for popping in, stay awesome 😎.
 
