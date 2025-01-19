@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-// TODO: restore to defaults, unlocked decks and memoryFIXME:
+// Remember to restore to defaults after testing
 const player = writable({
   name: 'Jack',
   timesReborn: 0,
@@ -8,22 +8,22 @@ const player = writable({
   activeDeck: 'survey',
   unlockedDeck: {
     tutorial1: true, // default to true
-    tutorial2: true, // default to false
-    tutorial3: true, // default to false
-    tutorial4: true, // default to false
-    tutorialFinal: true, // default to false
+    tutorial2: false, // default to false
+    tutorial3: false, // default to false
+    tutorial4: false, // default to false
+    tutorialFinal: false, // default to false
     survey1: true, // default to true
-    survey2: true, // default to false
-    survey3: true, // default to false
-    survey4: true, // default to false
-    chapter1: true, // default to false
-    chapter1Soldiers: true, // default to false
-    chapter2: true, // default to false
-    chapter2Elves: true, // default to false
-    chapter3: true, // default to false
-    chapter3Goblins: true, // default to false
-    chapter4: true, // default to false
-    chapter4Beings: true, // default to false
+    survey2: false, // default to false
+    survey3: false, // default to false
+    survey4: false, // default to false
+    chapter1: false, // default to false
+    chapter1Soldiers: false, // default to false
+    chapter2: false, // default to false
+    chapter2Elves: false, // default to false
+    chapter3: false, // default to false
+    chapter3Goblins: false, // default to false
+    chapter4: false, // default to false
+    chapter4Beings: false, // default to false
   },
   displayDecks: [
     {
@@ -36,7 +36,7 @@ const player = writable({
   aura: 10, 
   sanity: 10, 
   impulse: 0,
-  memory: 49,
+  memory: 0,
   goodPoints: 0,
   evilPoints: 0,
   // icons determined as game progresses, memory is always a puzzle, others default to empty string
@@ -66,9 +66,5 @@ const player = writable({
 export default player;
 
 // TODO: add more good and evil points to all tutorials and surveys
-
-/* TODO:FIXME:
-The end mementos are broken(always blank), the issue stems from the fact that gameClient.svelte loads the decks on execution
-As the gameClient.svelte updates the player store, the tutorialFinal.js never receives this update since it's never "called" again, so it's version of get(player) is not up-to-date.
-The surveyDecisionHandler uses get(decks), the decks store that imports all decks is not up-to-date and tutorialFinalDeck.js reflects the player store when the game started.
-*/
+//  TODO: new deck notification should be like new achievement on bottom or somewhere else not blocking the text.
+// TODO: Add achievements like make your first dcision!

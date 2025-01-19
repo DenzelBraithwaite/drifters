@@ -192,8 +192,8 @@ const elves = writable([
         actionLeft: {
             heart: 0,
             diamond: 0,
-            greenAura: -2,
-            yellowAura: 2,
+            greenAura: 2,
+            yellowAura: -2,
             memory: 0,
         },
         actionRight: {

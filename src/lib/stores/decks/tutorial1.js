@@ -61,7 +61,7 @@ const tutorial1 = writable([
         title:'???',
         text: "Excellent, I have confirmed that we are capable of understanding each other. Now I will explain the rules and then you will follow them.",
         faction: '???',
-        textLeft: "Slow down there bucko, what rules?", // ->tutorial1-4
+        textLeft: "Slow down, what rules?", // ->tutorial1-4
         textRight: "Why would I follow your rules?", // ->tutorial1-4
         location: '???',
         actionLeft: {
@@ -134,7 +134,7 @@ const tutorial1 = writable([
         text: "That's not true at all, but answer time is actually where you answer my questions, you're thinking of question time.",
         faction: '???',
         textLeft: "And if I refuse?", // ->tutorial1-7
-        textRight: "What if I only want to participate in question time?", // ->tutorial1-7
+        textRight: "I only care about question time.", // ->tutorial1-7
         location: 'Chatter',
         actionLeft: {
             good: 0,

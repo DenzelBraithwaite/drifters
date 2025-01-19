@@ -353,12 +353,12 @@ const tutorial3 = writable([
     textRight: "You ignored my last question.", // ->tutorial3-8b
     location: 'Question',
     actionLeft: {
-      good: 0,
+      good: 1,
       evil: 0,
     },
     actionRight: {
       good: 0,
-      evil: 0,
+      evil: 1,
     }
   },
   {
@@ -372,10 +372,10 @@ const tutorial3 = writable([
     location: 'Question',
     actionLeft: {
       good: 0,
-      evil: 0,
+      evil: 1,
     },
     actionRight: {
-      good: 0,
+      good: 1,
       evil: 0,
     }
   },
@@ -472,12 +472,12 @@ const tutorial3 = writable([
     textRight: "And you wonder why I don't trust you.", // Alignment good -> tutorial3-11-good-alignment-good-1b, Alignment neutral -> tutorial3-11-good-alignment-neutral-1b, Alignment evil -> tutorial3-11-good-alignment-evil-1b
     location: 'Question',
     actionLeft: {
-      good: 0,
+      good: 1,
       evil: 0,
     },
     actionRight: {
       good: 0,
-      evil: 0,
+      evil: 1,
     }
   },
   {

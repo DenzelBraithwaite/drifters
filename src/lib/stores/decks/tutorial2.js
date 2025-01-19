@@ -335,12 +335,12 @@ const tutorial2 = writable([
         textRight: "Can you just tell me?", // ->tutorial2-6
         location: 'Question',
         actionLeft: {
-            good: 0,
+            good: 1,
             evil: 0,
         },
         actionRight: {
             good: 0,
-            evil: 0,
+            evil: 1,
         }
     },
     {
@@ -408,7 +408,7 @@ const tutorial2 = writable([
         location: 'Question',
         actionLeft: {
             good: 0,
-            evil: 0,
+            evil: 1,
         },
         actionRight: {
             good: 0,
@@ -516,7 +516,7 @@ const tutorial2 = writable([
         location: 'Question',
         actionLeft: {
             good: 0,
-            evil: 0,
+            evil: 1,
         },
         actionRight: {
             good: 0,
@@ -628,7 +628,7 @@ const tutorial2 = writable([
         },
         actionRight: {
             good: 0,
-            evil: 1,
+            evil: 2,
         }
     },
     {
@@ -646,7 +646,7 @@ const tutorial2 = writable([
         },
         actionRight: {
             good: 0,
-            evil: 1,
+            evil: 2,
         }
     },
     {
@@ -660,7 +660,7 @@ const tutorial2 = writable([
         location: '🥚🥚🥚',
         actionLeft: {
             good: 0,
-            evil: 0,
+            evil: 1,
         },
         actionRight: {
             good: 1,

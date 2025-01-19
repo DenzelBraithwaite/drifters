@@ -120,7 +120,7 @@ const tutorial4 = writable([
     location: 'Chatter',
     actionLeft: {
       good: 0,
-      evil: 0,
+      evil: 1,
     },
     actionRight: {
       good: 0,
@@ -137,12 +137,12 @@ const tutorial4 = writable([
     textRight: "How kind of you to talk about yourself.", // ->tutorial4-5a-1b
     location: 'Chatter',
     actionLeft: {
-      good: 0,
+      good: 1,
       evil: 0,
     },
     actionRight: {
       good: 0,
-      evil: 0,
+      evil: 1,
     }
   },
   {
@@ -191,12 +191,12 @@ const tutorial4 = writable([
     textRight: "How kind of you to talk about yourself.", // ->tutorial4-5a-1b
     location: 'Chatter',
     actionLeft: {
-      good: 0,
+      good: 1,
       evil: 0,
     },
     actionRight: {
       good: 0,
-      evil: 0,
+      evil: 1,
     }
   },
   {
@@ -210,7 +210,7 @@ const tutorial4 = writable([
     location: 'Story',
     actionLeft: {
       good: 0,
-      evil: 0,
+      evil: 1,
     },
     actionRight: {
       good: 0,

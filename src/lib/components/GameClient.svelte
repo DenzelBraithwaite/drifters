@@ -79,19 +79,6 @@
     impulse: false
   }
 
-  // TODO: for testing FIXME: melody is being a bitch.
-  player.update(p => {
-    p.icons.health = 'heart';
-    p.icons.aura = 'green';
-    p.icons.sanity = 'brain';
-    p.icons.impulse = 'cleaver';
-    // p.icons.health = p.iconPoints.heart >= p.iconPoints.diamond ? 'heart' : 'diamond';
-    // p.icons.aura = p.iconPoints.greenAura >= p.iconPoints.yellowAura ? 'green' : 'yellow';
-    // p.icons.sanity = p.iconPoints.brain >= p.iconPoints.smiley ? 'brain' : 'smiley';
-    // p.icons.impulse = p.iconPoints.knife >= p.iconPoints.cleaver ? 'knife' : 'cleaver';
-    return p;
-  });
-
   function controlStats() {
       player.update(p => {
           if (p.health >= 10) p.health = 10;
@@ -314,7 +301,7 @@
       if ($player.memory < 15) $player.memory = 0;
       else if ($player.memory < 30) $player.memory = 15;
       else if ($player.memory < 45) $player.memory = 30;
-      else if ($player.memory < 50) $player.memory = 45;
+      else if ($player.memory < 75) $player.memory = 45;
       gameOver = true;
       console.log($player);
     }
@@ -323,7 +310,7 @@
     controlStats();
 
     // Move on to final chapter if enough memory.
-    if (!$player.unlockedDeck.tutorialFinal && $player.memory >= 50) { 
+    if (!$player.unlockedDeck.tutorialFinal && $player.memory >= 75) { 
       player.update(p => {
         p.activeDeck = 'survey';
         p.unlockedCards = [...tutorialFinalDeck];
@@ -535,7 +522,7 @@
     toggleBlur();
 
     // for finale, flashes victims quickly. I know how bad this is lol, I don't care.
-    if (currentCard.id === 'tutorial-final-9') {
+    if (['tutorial-final-9-melody', 'tutorial-final-9-felix'].includes(currentCard.id)) {
       setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-heart'), 0);
       setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-diamond'), 250);
       setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-green'), 500);
@@ -551,8 +538,10 @@
       setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-brain'),3000);
       setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-smiley'), 3250);
       setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-knife'), 3500);
-      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-cleaver'), 3750);
-      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-9'), 4000);
+      setTimeout(() => currentCard = tutorialFinalDeck.find(c => c.id === 'tutorial-final-cleaver'), 3750); 
+      setTimeout(() => {
+      currentCard = currentCard.id === 'tutorial-final-9-melody' ? tutorialFinalDeck.find(c => c.id === 'tutorial-final-9-melody') : tutorialFinalDeck.find(c => c.id === 'tutorial-final-9-felix');
+      }, 4000);
       return;
     }
 
@@ -576,7 +565,7 @@
                 // TODO: fix knife img size AND update impulse img when victim chosen 
                 title: p.icons.impulse === 'knife' ? 'Knife' : 'Cleaver',
                 description: 'Impulse momento',
-                img: p.icons.impulse === 'knife' ? '/decks/chapter4/jessy.png' : '/decks/chapter4/jessy.png'
+                img: p.icons.impulse === 'knife' ? '/decks/chapter1/archer.png' : '/decks/chapter3/marge.png'
               },
               {
                 title: 'Impulse Being',
@@ -668,7 +657,7 @@
               {
                 title: p.icons.aura === 'green' ? 'Green Aura' : 'Yellow Aura',
                 description: 'Aura memento',
-                img: p.icons.aura === 'green' ? '/decks/chapter2/rabbit.png' : '/decks/chapter2/hippie-boy.png'
+                img: p.icons.aura === 'green' ? '/decks/chapter2/hippie-boy.png' : '/decks/chapter2/rabbit.png'
               },
               {
                 title: 'Aura Being',
@@ -768,7 +757,7 @@
 
     buttonOnCooldown = true;
     // TODO: remember to put back to 600
-    setTimeout(() => buttonOnCooldown = false, 0);
+    setTimeout(() => buttonOnCooldown = false, 600);
   }
 
   function displayMemoryCheckpoint(): string {

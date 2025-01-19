@@ -24,13 +24,12 @@ import beings from '../stores/decks/beings';
 import { healthCard, auraCard, sanityCard, impulseCard } from '../helpers/stats';
 
 export function surveyDecisionHandler(choice, card) {
-  // FIXME: This does seem to be helping and almost slving the issue, but first of 4 victims is never accurate, why are they different??
   decks.set({
     tutorial1: get(tutorial1),
     tutorial2: get(tutorial2),
     tutorial3: get(tutorial3),
     tutorial4: get(tutorial4),
-    tutorialFinal: tutorialFinal(),
+    tutorialFinal: get(tutorialFinal),
     survey1: get(survey1),
     survey2: get(survey2),
     survey3: get(survey3),
@@ -57,8 +56,7 @@ export function surveyDecisionHandler(choice, card) {
       switch (card.id) {
         // Tutorial 1 (left)
         case 'tutorial1-1':
-          // nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
-          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-1');
+          nextCard = get(decks).tutorial1.find(card => card.id === 'tutorial1-2');
           break;
         case 'tutorial1-2':
         case 'tutorial1-2-1b':
@@ -637,18 +635,26 @@ export function surveyDecisionHandler(choice, card) {
         case 'tutorial-final-smiley':
         case 'tutorial-final-knife':
         case 'tutorial-final-cleaver':
-          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9');
+          if (get(player).icons.health === 'heart') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9-felix');
+          if (get(player).icons.health === 'diamond') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9-melody');
           break;
-        case 'tutorial-final-9':
-          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-10');
+        case 'tutorial-final-9-felix':
+        case 'tutorial-final-9-melody':
+          if (get(player).icons.aura === 'green') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-10-ziggy');
+          if (get(player).icons.aura === 'yellow') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-10-bounder');
           break;
-        case 'tutorial-final-10':
-          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-11');
+        case 'tutorial-final-10-ziggy':
+        case 'tutorial-final-10-bounder':
+          if (get(player).icons.sanity === 'brain') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-11-eliza');
+          if (get(player).icons.sanity === 'smiley') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-11-luna');
           break;
-        case 'tutorial-final-11':
-          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-12');
+        case 'tutorial-final-11-eliza':
+        case 'tutorial-final-11-luna':
+          if (get(player).icons.impulse === 'knife') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-12-shelly');
+          if (get(player).icons.impulse === 'cleaver') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-12-marge');
           break;
-        case 'tutorial-final-12':
+        case 'tutorial-final-12-shelly':
+        case 'tutorial-final-12-marge':
           nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-13');
           break;
         case 'tutorial-final-13':
@@ -791,7 +797,7 @@ export function surveyDecisionHandler(choice, card) {
         default:
           console.log('No card matched...');
       }
-    // Handles all right actions
+
     } else if (choice === 'right') {
       switch (card.id) {
         // Tutorial 1 (right)
@@ -1394,18 +1400,26 @@ export function surveyDecisionHandler(choice, card) {
         case 'tutorial-final-smiley':
         case 'tutorial-final-knife':
         case 'tutorial-final-cleaver':
-          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9');
+          if (get(player).icons.health === 'heart') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9-felix');
+          if (get(player).icons.health === 'diamond') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-9-melody');
           break;
-        case 'tutorial-final-9':
-          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-10');
+        case 'tutorial-final-9-felix':
+        case 'tutorial-final-9-melody':
+          if (get(player).icons.aura === 'green') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-10-ziggy');
+          if (get(player).icons.aura === 'yellow') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-10-bounder');
           break;
-        case 'tutorial-final-10':
-          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-11');
+        case 'tutorial-final-10-ziggy':
+        case 'tutorial-final-10-bounder':
+          if (get(player).icons.sanity === 'brain') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-11-eliza');
+          if (get(player).icons.sanity === 'smiley') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-11-luna');
           break;
-        case 'tutorial-final-11':
-          nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-12');
+        case 'tutorial-final-11-eliza':
+        case 'tutorial-final-11-luna':
+          if (get(player).icons.impulse === 'knife') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-12-shelly');
+          if (get(player).icons.impulse === 'cleaver') nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-12-marge');
           break;
-        case 'tutorial-final-12':
+        case 'tutorial-final-12-shelly':
+        case 'tutorial-final-12-marge':
           nextCard = get(decks).tutorialFinal.find(card => card.id === 'tutorial-final-13');
           break;
         case 'tutorial-final-13':

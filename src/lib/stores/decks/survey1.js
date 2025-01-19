@@ -475,14 +475,14 @@ const survey1 = writable([
         actionLeft: {
             heart: 0,
             diamond: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         actionRight: {
             heart: 0,
             diamond: 0,
             good: 0,
-            evil: 0
+            evil: 1
         }
     },
     {

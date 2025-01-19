@@ -57,12 +57,12 @@ const survey4 = writable([
             knife: 1,
             cleaver: 0,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
             knife: 0,
             cleaver: 1,
-            good: 0,
+            good: 1,
             evil: 0
         },
         location: 'Answer'
@@ -100,14 +100,14 @@ const survey4 = writable([
         actionLeft: {
             knife: 1,
             cleaver: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         actionRight: {
             knife: 0,
             cleaver: 1,
             good: 0,
-            evil: 0
+            evil: 1
         },
         location: 'Answer'
     },
@@ -145,12 +145,12 @@ const survey4 = writable([
             knife: 0,
             cleaver: 1,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
             knife: 1,
             cleaver: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         location: 'Answer'
@@ -166,14 +166,14 @@ const survey4 = writable([
         actionLeft: {
             knife: 0,
             cleaver: 1,
-            good: 0,
+            good: 1,
             evil: 0
         },
         actionRight: {
             knife: 1,
             cleaver: 0,
             good: 0,
-            evil: 0
+            evil: 1
         },
         location: 'Answer'
     },
@@ -189,12 +189,12 @@ const survey4 = writable([
             knife: 0,
             cleaver: 1,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
             knife: 1,
             cleaver: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         location: 'Answer'
@@ -211,12 +211,12 @@ const survey4 = writable([
             knife: 0,
             cleaver: 1,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
             knife: 1,
             cleaver: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         location: 'Answer'
@@ -255,12 +255,12 @@ const survey4 = writable([
             knife: 0,
             cleaver: 1,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
             knife: 1,
             cleaver: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         location: 'Answer'
@@ -321,12 +321,12 @@ const survey4 = writable([
             knife: 0,
             cleaver: 0,
             good: 0,
-            evil: 0
+            evil: 1
         },
         actionRight: {
             knife: 0,
             cleaver: 0,
-            good: 0,
+            good: 1,
             evil: 0
         },
         location: 'Answer'

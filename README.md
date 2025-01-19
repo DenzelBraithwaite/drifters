@@ -4,6 +4,7 @@
 ![Drifters screenshot](./src/assets/drifters_1.png)
 
 # <mark>Update coming soon, will need to update all photos as the design has been revamped.</mark>
+# <mark>[Drifters Beta](http://drifters.website) is no longer available, so the game can't be accessed right now, but I'm working on a new url to host it. I've completed the first version of the game (meaning you can compelete a full playthrough and receive an ending, but changes and updates are still to be expected), I had taken the game down to work on it, but now it's ready again, stay tuned for v1.0.1.</mark>
 
 <br>
 <br>
