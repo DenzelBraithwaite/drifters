@@ -1,7 +1,7 @@
 # Drifters
 ### A Card based decision making story survival game.
 
-![Drifters screenshot](/repo_imgs/tutorial_1.png)
+![Drifters screenshot](./src/assets/tutorial_1.png)
 
 # <mark>Update coming soon, will need to update all photos as the design has been revamped.</mark>
 # <mark>[Drifters Beta](http://drifters.website) is no longer available, so the game can't be accessed right now, but I'm working on a new url to host it. I've completed the first version of the game (meaning you can compelete a full playthrough and receive an ending, but changes and updates are still to be expected), I had taken the game down to work on it, but now it's ready again, stay tuned for v1.0.1.</mark>
@@ -23,8 +23,8 @@ Your first stat will be health, but your icon that represents your health depend
 
 These details are subject to change, but overall that should give you a good feel of what kind of game this is. A decision based story driven card game with an ominous setting. The game is a web app so it's point and click.
 
-![Drifters screenshot](/repo_imgs/chapter_1.png)
-![Drifters screenshot](/repo_imgs/chapter_3.png)
+![Drifters screenshot](./src/assets/chapter_1.png)
+![Drifters screenshot](./src/assets/chapter_3.png)
 
 <br>
 
@@ -40,7 +40,7 @@ If you want to contact me to discuss a PR or a bug or simply some ideas, you can
 
 <br>
 
-![Drifters screenshot](/repo_imgs/chapter_4.png)
+![Drifters screenshot](./src/assets/chapter_4.png)
 
 **P.S.** I always appreciate those who take the time to read these, since I rarely take the time to type them! Thanks for popping in, stay awesome 😎.
 
